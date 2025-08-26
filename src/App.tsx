@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="min-h-screen bg-[#FAF8F3] overflow-x-hidden">
       {/* IEEE Global Bar */}
-      <div className="w-full bg-black text-gray-200 text-xs md:text-sm py-2 px-4 md:px-6 sticky top-0 z-50">
+      <div className="w-full bg-black text-gray-200 text-xs md:text-sm py-2 px-4 md:px-6 fixed top-0 z-50">
         <div className="flex justify-between items-center max-w-7xl mx-auto">
           <div className="flex gap-4 md:gap-6 items-center">
             <a href="https://www.ieee.org/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors font-mono tracking-wide">
@@ -51,26 +51,54 @@ function App() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex justify-between items-center px-6 py-4 bg-[#FAF8F3] sticky top-[40px] z-40 shadow-sm">
-        <div></div>
+      <nav className="flex justify-between items-center px-6 py-4 bg-[#FAF8F3] fixed top-[40px] left-0 right-0 z-40 shadow-sm">
+        {/* Left side - IEEE MSIT Logo and Title */}
         <div className="flex items-center gap-2">
-          <img src="/IEEEWhiteLogowithTransparentBG.png" alt="IEEE Logo" className="w-8 h-8" />
+          <img src="/IEEEWhiteLogowithTransparentBG.png" alt="IEEE Logo" className="w-8 h-8 hidden" />
           <h1 className="text-2xl font-serif text-black font-semibold">IEEE MSIT</h1>
         </div>
-        <button className="p-2 hover:bg-black/5 rounded-full transition-colors">
-          <Menu className="w-6 h-6" />
-        </button>
+        
+        {/* Center - Navigation Links (hidden on mobile) */}
+        <div className="hidden lg:flex items-center gap-8">
+          <a href="#about" className="text-gray-700 hover:text-[#C84C31] transition-colors font-medium text-sm">
+            About
+          </a>
+          <a href="#events" className="text-gray-700 hover:text-[#C84C31] transition-colors font-medium text-sm">
+            Events
+          </a>
+          <a href="#chapters" className="text-gray-700 hover:text-[#C84C31] transition-colors font-medium text-sm">
+            Chapters
+          </a>
+          <a href="#team" className="text-gray-700 hover:text-[#C84C31] transition-colors font-medium text-sm">
+            Team
+          </a>
+          <a href="#join" className="text-gray-700 hover:text-[#C84C31] transition-colors font-medium text-sm">
+            Join Us
+          </a>
+        </div>
+        
+        {/* Right side - Contact CTA and Mobile Menu */}
+        <div className="flex items-center gap-4">
+          <a href="#contact" className="hidden lg:inline-flex bg-[#C84C31] text-white px-4 py-2 rounded-full hover:bg-[#A73A26] transition-colors font-medium text-sm">
+            Contact
+          </a>
+          
+          {/* Mobile menu button */}
+          <button className="lg:hidden p-2 hover:bg-black/5 rounded-full transition-colors">
+            <Menu className="w-6 h-6" />
+          </button>
+        </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] bg-[#FAF8F3] overflow-hidden">
+      <section className="relative min-h-[80vh] bg-[#FAF8F3] overflow-hidden pt-20">
         <div className="w-full max-w-6xl mx-auto px-6 py-8 h-full flex flex-col justify-center">
           
           {/* Logo and Title - Center Aligned */}
-          <div className="text-center mb-12">
+          <div className="text-center my-12">
             <div className="flex items-center justify-center mb-6">
               <h1 className="text-6xl md:text-8xl font-serif text-black mr-4">IEEE MSIT</h1>
-              <img src="/IEEEWhiteLogowithTransparentBG.png" alt="IEEE Logo" className=" h-12 md:h-16 bg-black" />
+              <img src="/IEEEWhiteLogowithTransparentBG.png" alt="IEEE Logo" className=" h-12 md:h-16 bg-black hidden sm:block" />
             </div>
           </div>
 
@@ -95,7 +123,7 @@ function App() {
 
             {/* Right Box - Empty for spacing */}
             <div className="flex-1 flex items-end justify-end gap-1">
-              <span className="italic">"Building Tomorrow's Tech Leaders" </span> by IEEE MSIT
+              <span className="italic">"Building Tomorrow's Tech Leaders" </span><span className='hidden md:block'> by IEEE MSIT</span>
             </div>
           </div>
 
