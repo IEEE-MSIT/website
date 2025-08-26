@@ -27,6 +27,25 @@ Instagram scraper bot to fetch recent posts/images, subject to admin moderation 
 Dedicated tab with member cards for both 2025 and 2024 Execom teams.
 Each card displays name, photo, position, and LinkedIn profile for networking.
 Option to filter or toggle by year.
+4. Events Listings Section
+
+Display of upcoming and recent events using cards or list items (with title, date, brief, image).
+
+"Show All Events" button linking to a full events archive.
+
+Event data updatable from admin dashboard.
+
+5. Hackathons & Winners Section
+
+Grid or carousel showing major hackathons, including:
+
+Hackathon name, date, theme
+
+Winning team(s) with name(s), project title(s)
+
+Prize info and event images
+
+Section easily updatable from the admin dashboard.
 5. Community & Membership
 Brief explainer and CTAs for joining IEEE MSIT, with easy application/interest form.
 Showcase of alumni, mentors, and key contributors.
@@ -54,6 +73,20 @@ Enables 24/7 assistance for site visitors, prospective members, and current memb
 Reduces manual workload on Execom/admins.
 Demonstrates your society’s embrace of modern AI, aligning with Gen Z and tech enthusiast expectations.
 Supports accessibility and inclusivity with language options and context-aware responses.
+10. Admin Dashboard
+
+Role-based content management for all dynamic blocks (events, hackathons, images, member info).
+
+Image and document upload for events and hackathons.
+
+Full moderation controls for gallery/carousels.
+
+Analytics and feedback tools.
+
+Scalable and secure backend.
+
+
+
 
 Visual Design & Branding
 Luxury, professional theme using IEEE-approved fonts (including elegant serif for headers).
