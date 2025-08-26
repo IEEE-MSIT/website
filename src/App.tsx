@@ -2045,76 +2045,145 @@ SHESCRIPTS (IEEE WIE MSIT): Bite-sized tech news and updates designed for quick 
       </section> */}
 
       {/* Footer */}
-      <footer className="bg-black text-gray-300 py-16 px-6 font-sans">
+      <footer className="bg-gradient-to-b from-gray-900 to-black text-gray-300 py-16 px-6 font-sans">
         <div className="max-w-7xl mx-auto">
+          {/* Header Section */}
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-serif text-white mb-4">IEEE MSIT</h2>
-            <p className="text-lg text-gray-400">Advancing Technology for Humanity</p>
+            <div className="flex items-center justify-center mb-6">
+              <img src="/IEEEWhiteLogowithTransparentBG.png" alt="IEEE Logo" className="h-12 md:h-16 mr-4" />
+              <div>
+                <h2 className="text-3xl md:text-4xl font-serif text-white mb-2">IEEE MSIT</h2>
+                <p className="text-sm text-[#C84C31] font-medium">Advancing Technology for Humanity</p>
+              </div>
+            </div>
+            <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+              Maharaja Surajmal Institute of Technology's premier student branch, fostering innovation, 
+              leadership, and technological excellence in the heart of New Delhi.
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {/* Our Community */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            {/* Quick Links */}
             <div>
-              <h3 className="text-xl font-semibold mb-6 text-white">Our Community</h3>
-              <ul className="space-y-3 text-gray-400">
-                <li>MSIT, New Delhi</li>
-                <li>IEEE Delhi Section</li>
-                <li>IEEE Region 10 (Asia-Pacific)</li>
-                <li>IEEE India Council</li>
-              </ul>
-            </div>
-            
-            {/* Page Links */}
-            <div>
-              <h3 className="text-xl font-semibold mb-6 text-white">Page Links</h3>
+              <h3 className="text-lg font-semibold mb-6 text-white flex items-center">
+                <span className="w-8 h-8 bg-[#C84C31] rounded-full flex items-center justify-center mr-3 text-sm">🔗</span>
+                Quick Links
+              </h3>
               <ul className="space-y-3">
-                <li><a href="#events" className="hover:text-white transition-colors">Events</a></li>
-                <li><a href="#chapters" className="hover:text-white transition-colors">Chapters</a></li>
-                <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#newsletters" className="hover:text-white transition-colors">Newsletters</a></li>
-                <li><a href="#join" className="hover:text-white transition-colors">Join</a></li>
-                <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+                <li><a href="#about" className="text-gray-400 hover:text-white transition-colors hover:pl-2 duration-200">About IEEE MSIT</a></li>
+                <li><a href="#events" className="text-gray-400 hover:text-white transition-colors hover:pl-2 duration-200">Upcoming Events</a></li>
+                <li><a href="#chapters" className="text-gray-400 hover:text-white transition-colors hover:pl-2 duration-200">IEEE Societies</a></li>
+                <li><a href="#team" className="text-gray-400 hover:text-white transition-colors hover:pl-2 duration-200">Leadership Team</a></li>
+                <li><a href="#join" className="text-gray-400 hover:text-white transition-colors hover:pl-2 duration-200">Join Us</a></li>
               </ul>
             </div>
             
-            {/* Stay Connected */}
+            {/* IEEE Network */}
             <div>
-              <h3 className="text-xl font-semibold mb-6 text-white">Stay Connected</h3>
-              <p className="text-gray-400 mb-4">Subscribe for IEEE MSIT Updates and Highlights.</p>
-              <div className="flex">
-                <input 
-                  type="email" 
-                  placeholder="Your email"
-                  className="flex-1 px-4 py-3 rounded-l-full bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
-                />
-                <button className="bg-white text-black px-5 py-3 rounded-r-full hover:bg-gray-200 transition-colors">
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-              </div>
+              <h3 className="text-lg font-semibold mb-6 text-white flex items-center">
+                <span className="w-8 h-8 bg-[#A7B77F] rounded-full flex items-center justify-center mr-3 text-sm">🌐</span>
+                IEEE Network
+              </h3>
+              <ul className="space-y-3 text-gray-400">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-[#C84C31] rounded-full mr-3"></span>
+                  IEEE Delhi Section
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-[#A7B77F] rounded-full mr-3"></span>
+                  IEEE India Council
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-[#3d8499] rounded-full mr-3"></span>
+                  IEEE Region 10 (Asia-Pacific)
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-[#8a9a5b] rounded-full mr-3"></span>
+                  IEEE Global Organization
+                </li>
+              </ul>
             </div>
 
+            {/* Contact Info */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6 text-white flex items-center">
+                <span className="w-8 h-8 bg-[#3d8499] rounded-full flex items-center justify-center mr-3 text-sm">📍</span>
+                Contact Info
+              </h3>
+              <div className="space-y-4 text-gray-400">
+                <div>
+                  <p className="text-white font-medium mb-1">Address</p>
+                  <p className="text-sm leading-relaxed">
+                    Maharaja Surajmal Institute of Technology<br />
+                    C-4, Janakpuri, New Delhi - 110058
+                  </p>
+                </div>
+                <div>
+                  <p className="text-white font-medium mb-1">Email</p>
+                  <a href="mailto:ieee@msit.in" className="text-[#C84C31] hover:text-white transition-colors text-sm">
+                    ieee@msit.in
+                  </a>
+                </div>
+              </div>
+            </div>
+            
             {/* Follow Us */}
             <div>
-              <h3 className="text-xl font-semibold mb-6 text-white">Follow Us</h3>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" /></svg>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.46 6c-.8.35-1.65.58-2.5.68.9-.54 1.6-1.4 1.9-2.4-.85.5-1.8 .86-2.8 1.07C18.2 4.4 17.1 4 16 4c-2.2 0-4 1.8-4 4 0 .3.04.6.1.9-3.3-.17-6.2-1.7-8.2-4.1-.35.6-.55 1.3-.55 2.1 0 1.4.7 2.6 1.8 3.3-.65-.02-1.25-.2-1.8-.5v.05c0 1.9 1.4 3.5 3.2 3.9-.33.1-.68.15-1.04.15-.25 0-.5-.02-.74-.07.5 1.6 1.9 2.7 3.6 2.7-1.4 1.1-3.1 1.7-5 1.7-.32 0-.64-.02-.95-.05 1.8 1.15 3.9 1.8 6.1 1.8 7.3 0 11.3-6.05 11.3-11.3v-.5c.8-.58 1.5-1.3 2-2.1z" /></svg>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" clipRule="evenodd" /></svg>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.13 8.42 9.88V15.17H8.03v-3.1h2.39v-2.3c0-2.36 1.4-3.66 3.56-3.66 1.02 0 2.05.18 2.05.18v2.64h-1.3c-1.14 0-1.5.68-1.5 1.44v1.7h2.96l-.48 3.1h-2.48v6.71C18.34 21.13 22 16.99 22 12z" clipRule="evenodd" /></svg>
-                </a>
+              <h3 className="text-lg font-semibold mb-6 text-white flex items-center">
+                <span className="w-8 h-8 bg-[#8a9a5b] rounded-full flex items-center justify-center mr-3 text-sm">📱</span>
+                Follow Us
+              </h3>
+              <div className="space-y-4">
+                <p className="text-gray-400 text-sm mb-4">
+                  Connect with us on social media for latest updates and events.
+                </p>
+                <div className="flex space-x-4">
+                  <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0077B5] transition-all duration-300 group">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+                    </svg>
+                  </a>
+                  <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#1DA1F2] transition-all duration-300">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M22.46 6c-.8.35-1.65.58-2.5.68.9-.54 1.6-1.4 1.9-2.4-.85.5-1.8 .86-2.8 1.07C18.2 4.4 17.1 4 16 4c-2.2 0-4 1.8-4 4 0 .3.04.6.1.9-3.3-.17-6.2-1.7-8.2-4.1-.35.6-.55 1.3-.55 2.1 0 1.4.7 2.6 1.8 3.3-.65-.02-1.25-.2-1.8-.5v.05c0 1.9 1.4 3.5 3.2 3.9-.33.1-.68.15-1.04.15-.25 0-.5-.02-.74-.07.5 1.6 1.9 2.7 3.6 2.7-1.4 1.1-3.1 1.7-5 1.7-.32 0-.64-.02-.95-.05 1.8 1.15 3.9 1.8 6.1 1.8 7.3 0 11.3-6.05 11.3-11.3v-.5c.8-.58 1.5-1.3 2-2.1z" />
+                    </svg>
+                  </a>
+                  <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#E4405F] transition-all duration-300">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fillRule="evenodd" d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.042-3.441.219-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.357-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                  <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#FF0000] transition-all duration-300">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fillRule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
           
-          <div className="border-t border-gray-700 mt-16 pt-8 text-center text-gray-500">
-            <p>&copy; 2025 IEEE MSIT. Advancing Technology for Humanity.</p>
+          {/* Bottom Section */}
+          <div className="border-t border-gray-700 mt-16 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <div className="text-center md:text-left">
+                <p className="text-gray-500 text-sm">
+                  &copy; 2025 IEEE MSIT. All rights reserved.
+                </p>
+                <p className="text-gray-600 text-xs mt-1">
+                  Part of IEEE Delhi Section | Region 10 Student Branch
+                </p>
+              </div>
+              <div className="flex items-center space-x-6 text-sm">
+                <a href="#privacy" className="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#terms" className="text-gray-500 hover:text-white transition-colors">Terms of Use</a>
+                <div className="flex items-center text-gray-500">
+                  <span className="mr-2">Made with</span>
+                  <span className="text-red-500 text-lg">❤️</span>
+                  <span className="ml-2">by IEEE MSIT Team</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
