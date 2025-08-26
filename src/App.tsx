@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import { Menu, Heart, ArrowRight, Users, Coffee, Mic, PenTool, Award, Trophy, Camera, ExternalLink, ChevronLeft, ChevronRight, Linkedin, Calendar, Clock, MapPin, Eye } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { Menu, Heart, ArrowRight, Users, Award, Trophy, Camera, ExternalLink, ChevronLeft, ChevronRight, Linkedin, Calendar, Clock, MapPin, Eye } from 'lucide-react';
 import Marquee from 'react-fast-marquee';
 import { ChatBot } from '10xanswers';
 
