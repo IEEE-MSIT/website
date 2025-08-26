@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Menu, Heart, ArrowRight, Users, Award, Trophy, Camera, ExternalLink, ChevronLeft, ChevronRight, Linkedin, Calendar, Clock, MapPin, Eye, ChevronDown } from 'lucide-react';
 import Marquee from 'react-fast-marquee';
 import { ChatBot } from '10xanswers';
@@ -7,6 +7,21 @@ function App() {
   const eventsCarouselRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState('achievements2025');
   const [chaptersDropdownOpen, setChaptersDropdownOpen] = useState(false);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (!target.closest('.chapters-dropdown')) {
+        setChaptersDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const scrollEventsCarousel = (direction: 'left' | 'right') => {
     if (eventsCarouselRef.current) {
@@ -141,9 +156,43 @@ SHESCRIPTS (IEEE WIE MSIT): Bite-sized tech news and updates designed for quick 
           <a href="#events" className="text-gray-700 hover:text-[#C84C31] transition-colors font-medium text-sm">
             Events
           </a>
-          <a href="#chapters" className="text-gray-700 hover:text-[#C84C31] transition-colors font-medium text-sm">
-            Chapters
-          </a>
+          
+          {/* Chapters Dropdown */}
+          <div className="relative chapters-dropdown">
+            <button 
+              onClick={() => setChaptersDropdownOpen(!chaptersDropdownOpen)}
+              className="text-gray-700 hover:text-[#C84C31] transition-colors font-medium text-sm flex items-center gap-1"
+            >
+              <span>Chapters</span>
+              <ChevronDown className={`w-3 h-3 transition-transform ${chaptersDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+            
+            {chaptersDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                <div className="py-2">
+                  <a href="#cs-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#C84C31] transition-colors text-sm">
+                    Computer Society Chapter
+                  </a>
+                  <a href="#ias-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#C84C31] transition-colors text-sm">
+                    Industry Applications Society
+                  </a>
+                  <a href="#pes-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#C84C31] transition-colors text-sm">
+                    Power & Energy Society
+                  </a>
+                  <a href="#wie-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#C84C31] transition-colors text-sm">
+                    Women in Engineering
+                  </a>
+                  <a href="#ras-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#C84C31] transition-colors text-sm">
+                    Robotics & Automation Society
+                  </a>
+                  <a href="#communications-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#C84C31] transition-colors text-sm">
+                    Communications Society
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
+          
           <a href="#team" className="text-gray-700 hover:text-[#C84C31] transition-colors font-medium text-sm">
             Team
           </a>
@@ -168,18 +217,14 @@ SHESCRIPTS (IEEE WIE MSIT): Bite-sized tech news and updates designed for quick 
       {/* Hero Section */}
       <section className="relative min-h-[80vh] bg-[#FAF8F3] overflow-hidden pt-20">
         {/* Background Lines PNG */}
-        <div 
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `url('/backgroundlines.png')`,
+        
+        {/* Content */}
+        <div className="w-full max-w-6xl mx-auto px-6 py-8 h-full flex flex-col justify-center" style={{
+            backgroundImage: `url('/BackgroundLines.37b66c2a.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
-          }}
-        ></div>
-        
-        {/* Content */}
-        <div className="w-full max-w-6xl mx-auto px-6 py-8 h-full flex flex-col justify-center">
+          }}>
           
           {/* Logo and Title - Center Aligned */}
           <div className="text-center my-12">
