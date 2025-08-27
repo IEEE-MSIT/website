@@ -5,7 +5,7 @@ const Community = () => {
     <section className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-serif text-center mb-16 leading-tight">
-          Whether you're <em className="text-[#C84C31]">just starting out</em> or <em className="text-[#A7B77F]">far along</em>, this is a place for you.
+          Whether you're <em className="text-primary">just starting out</em> or <em className="text-tertiary">far along</em>, this is a place for you.
         </h2>
         
         {/* Tilted infinite scrolling carousel */}

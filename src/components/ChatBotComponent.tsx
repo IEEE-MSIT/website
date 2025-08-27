@@ -14,7 +14,7 @@ const ChatBotComponent = () => {
         "z-index": 999
       }}
       chatWindowStyle={{
-        "backgroundColor": "rgb(11 10 10)"
+        "backgroundColor": "#0b0a0a"
       }}
       backendUrl="https://ask-10x-questions.vercel.app/"
       title="IEEE MSIT"

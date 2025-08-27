@@ -2,7 +2,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 px-6 bg-white">
       <div className="max-w-4xl mx-auto text-center">
-        <div className="inline-block bg-[#C84C31] text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+        <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
           Get in Touch
         </div>
         <h2 className="text-4xl md:text-5xl font-serif text-black mb-4">

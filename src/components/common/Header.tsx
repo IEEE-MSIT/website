@@ -50,7 +50,7 @@ const Header = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="flex justify-between items-center px-6 py-4 bg-[#FAF8F3] fixed top-[40px] left-0 right-0 z-40 shadow-sm">
+      <nav className="flex justify-between items-center px-6 py-4 bg-background fixed top-[40px] left-0 right-0 z-40 shadow-sm">
         {/* Left side - IEEE MSIT Logo and Title */}
         <div className="flex items-center gap-2">
           <img src="/IEEEWhiteLogowithTransparentBG.png" alt="IEEE Logo" className="w-8 h-8 hidden" />
@@ -59,10 +59,10 @@ const Header = () => {
         
         {/* Center - Navigation Links (hidden on mobile) */}
         <div className="hidden lg:flex items-center gap-8">
-          <a href="#about" className="text-gray-700 hover:text-[#C84C31] transition-colors font-medium text-sm">
+          <a href="#about" className="text-gray-700 hover:text-primary transition-colors font-medium text-sm">
             About
           </a>
-          <a href="#events" className="text-gray-700 hover:text-[#C84C31] transition-colors font-medium text-sm">
+          <a href="#events" className="text-gray-700 hover:text-primary transition-colors font-medium text-sm">
             Events
           </a>
           
@@ -70,7 +70,7 @@ const Header = () => {
           <div className="relative chapters-dropdown">
             <button 
               onClick={() => setChaptersDropdownOpen(!chaptersDropdownOpen)}
-              className="text-gray-700 hover:text-[#C84C31] transition-colors font-medium text-sm flex items-center gap-1"
+              className="text-gray-700 hover:text-primary transition-colors font-medium text-sm flex items-center gap-1"
             >
               <span>Chapters</span>
               <ChevronDown className={`w-3 h-3 transition-transform ${chaptersDropdownOpen ? 'rotate-180' : ''}`} />
@@ -79,22 +79,22 @@ const Header = () => {
             {chaptersDropdownOpen && (
               <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
                 <div className="py-2">
-                  <a href="#cs-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#C84C31] transition-colors text-sm">
+                  <a href="#cs-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors text-sm">
                     Computer Society Chapter
                   </a>
-                  <a href="#ias-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#C84C31] transition-colors text-sm">
+                  <a href="#ias-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors text-sm">
                     Industry Applications Society
                   </a>
-                  <a href="#pes-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#C84C31] transition-colors text-sm">
+                  <a href="#pes-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors text-sm">
                     Power & Energy Society
                   </a>
-                  <a href="#wie-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#C84C31] transition-colors text-sm">
+                  <a href="#wie-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors text-sm">
                     Women in Engineering
                   </a>
-                  <a href="#ras-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#C84C31] transition-colors text-sm">
+                  <a href="#ras-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors text-sm">
                     Robotics & Automation Society
                   </a>
-                  <a href="#communications-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#C84C31] transition-colors text-sm">
+                  <a href="#communications-chapter" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors text-sm">
                     Communications Society
                   </a>
                 </div>
@@ -102,17 +102,17 @@ const Header = () => {
             )}
           </div>
           
-          <a href="#team" className="text-gray-700 hover:text-[#C84C31] transition-colors font-medium text-sm">
+          <a href="#team" className="text-gray-700 hover:text-primary transition-colors font-medium text-sm">
             Team
           </a>
-          <a href="#join" className="text-gray-700 hover:text-[#C84C31] transition-colors font-medium text-sm">
+          <a href="#join" className="text-gray-700 hover:text-primary transition-colors font-medium text-sm">
             Join Us
           </a>
         </div>
         
         {/* Right side - Contact CTA and Mobile Menu */}
         <div className="flex items-center gap-4">
-          <a href="#contact" className="hidden lg:inline-flex bg-[#C84C31] text-white px-4 py-2 rounded-full hover:bg-[#A73A26] transition-colors font-medium text-sm">
+          <a href="#contact" className="hidden lg:inline-flex bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm">
             Contact
           </a>
           

@@ -3,7 +3,7 @@ import { footer } from '../../data/data';
 
 const Footer = () => {
   return (
-    <footer className="bg-footer-bg text-footer-text py-16 px-6">
+    <footer className="bg-foreground text-muted-foreground py-16 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
@@ -12,7 +12,7 @@ const Footer = () => {
               The IEEE Student Branch at Maharaja Surajmal Institute of Technology is dedicated to advancing technology for humanity. We provide a platform for students to learn, innovate, and network with professionals in the field.
             </p>
             <div className="flex items-center gap-2 text-sm">
-              Made with <Heart className="w-4 h-4 text-red-500" /> by the students of IEEE MSIT.
+              Made with <Heart className="w-4 h-4 text-heart-red" /> by the students of IEEE MSIT.
             </div>
           </div>
 

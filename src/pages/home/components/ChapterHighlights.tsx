@@ -4,7 +4,7 @@ const ChapterHighlights = () => {
   return (
     <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <div className="inline-block bg-[#A7B77F] text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+        <div className="inline-block bg-tertiary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
           Chapter Highlights
         </div>
         
@@ -14,7 +14,7 @@ const ChapterHighlights = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {chapters.map((chapter, index) => (
-            <div key={index} className="group relative rounded-2xl h-96 p-6 flex flex-col justify-between bg-[#3d8499] text-white shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+            <div key={index} className="group relative rounded-2xl h-96 p-6 flex flex-col justify-between bg-chapter-blue text-white shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden">
               <div className="absolute inset-0 z-0">
                 <img 
                   src={chapter.image}

@@ -4,12 +4,12 @@ const About = () => {
   return (
     <section className="py-20 px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <div className="inline-block bg-[#C84C31] text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+        <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
           What We Are
         </div>
         
         <h2 className="text-4xl md:text-5xl font-serif text-black mb-8 leading-tight">
-          A Community of <span className="text-[#C84C31]">Change-Makers</span>: <span className="text-[#E2B63D]">Engineers</span>, Designers, and <span className="text-[#A7B77F]">Leaders</span>
+          A Community of <span className="text-primary">Change-Makers</span>: <span className="text-secondary">Engineers</span>, Designers, and <span className="text-tertiary">Leaders</span>
         </h2>
         
         <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-16">
@@ -24,7 +24,7 @@ const About = () => {
             {/* Region 10 Award */}
             <div className="transform rotate-1 hover:rotate-0 transition-transform">
               <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-                <div className="w-16 h-16 bg-[#C84C31] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                   <Award className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="text-xl font-semibold mb-3 text-black">Region 10 Award</h4>
@@ -37,7 +37,7 @@ const About = () => {
             {/* Darrel Chong Gold */}
             <div className="transform -rotate-1 hover:rotate-0 transition-transform">
               <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-                <div className="w-16 h-16 bg-[#E2B63D] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                   <Trophy className="w-8 h-8 text-black" />
                 </div>
                 <h4 className="text-xl font-semibold mb-3 text-black">Darrel Chong Gold</h4>
@@ -50,7 +50,7 @@ const About = () => {
             {/* IEEE Day STEM Photo Contest */}
             <div className="transform rotate-2 hover:rotate-0 transition-transform">
               <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-                <div className="w-16 h-16 bg-[#A7B77F] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-tertiary rounded-full flex items-center justify-center mx-auto mb-4">
                   <Camera className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="text-xl font-semibold mb-3 text-black">IEEE Day STEM Photo Contest</h4>

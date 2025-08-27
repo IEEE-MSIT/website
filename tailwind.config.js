@@ -8,12 +8,26 @@ export default {
         'sans': ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
-        cream: '#FAF8F3',
-        'accent-red': '#C84C31',
-        'accent-yellow': '#E2B63D',
-        'accent-green': '#A7B77F',
-        'footer-bg': '#2E2D2D',
-        'footer-text': '#F1F1F1',
+        background: '#FAF8F3',
+        foreground: '#2E2D2D',
+        'muted-foreground': '#F1F1F1',
+        
+        primary: {
+          DEFAULT: '#C84C31',
+          dark: '#A7441C',
+          hover: '#A73A26',
+        },
+        secondary: '#E2B63D',
+        tertiary: {
+          DEFAULT: '#A7B77F',
+          dark: '#8a9a5b',
+        },
+        
+        'ieee-blue': '#00629B',
+        'chapter-blue': '#3d8499',
+        'heart-red': '#EF4444',
+
+        'chatbot-bg': '#0b0a0a',
       },
     },
   },

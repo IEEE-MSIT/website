@@ -2,7 +2,7 @@ import { ArrowRight, Users } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[80vh] bg-[#FAF8F3] overflow-hidden pt-20">
+    <section className="relative min-h-[80vh] bg-background overflow-hidden pt-20">
       {/* Background Lines PNG */}
       
       {/* Content */}
@@ -27,7 +27,7 @@ const Hero = () => {
           {/* Left Box - Subtitle and Main Buttons */}
           <div className="flex-1 text-left">
             <p className="text-lg md:text-xl text-black mb-8 leading-relaxed">
-              We advance technology for <em className="border-b-2 border-dashed border-[#00629B]">humanity at MSIT</em> and empower innovators, makers, and leaders through <em className="border-b-2 border-dashed border-[#00629B]">engineering excellence</em>.
+              We advance technology for <em className="border-b-2 border-dashed border-ieee-blue">humanity at MSIT</em> and empower innovators, makers, and leaders through <em className="border-b-2 border-dashed border-ieee-blue">engineering excellence</em>.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

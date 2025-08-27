@@ -6,7 +6,7 @@ const Hackathons = () => {
     <section className="py-12 md:py-20 px-4 md:px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <div className="inline-block bg-[#C84C31] text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
             Hackathons & Winners
           </div>
           <h2 className="text-4xl md:text-5xl font-serif text-black mb-4">
@@ -22,12 +22,12 @@ const Hackathons = () => {
           <h3 className="text-2xl font-serif text-black mb-8 text-center">Past Hackathons</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
             {hackathons.past.map((hackathon, index) => (
-              <div key={index} className="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-[#C84C31] transition-all duration-500">
+              <div key={index} className="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-primary transition-all duration-500">
                 <div className="relative bg-gradient-to-br from-[#FAF8F3] to-white border-b border-gray-100 p-4 md:p-8">
                   <div className="flex items-start justify-between mb-4 md:mb-6">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 md:gap-3 mb-2">
-                        <h3 className="text-xl md:text-3xl font-serif text-black group-hover:text-[#C84C31] transition-colors">
+                        <h3 className="text-xl md:text-3xl font-serif text-black group-hover:text-primary transition-colors">
                           {hackathon.name}
                         </h3>
                         <a 
@@ -43,7 +43,7 @@ const Hackathons = () => {
                       <p className="text-gray-600 font-medium text-sm md:text-base">{hackathon.tagline}</p>
                     </div>
                     <div className="text-right">
-                      <div className="bg-[#C84C31] text-white px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium mb-2">
+                      <div className="bg-primary text-white px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium mb-2">
                         {hackathon.duration}
                       </div>
                       <p className="text-xs text-gray-500">{hackathon.date}</p>
@@ -51,15 +51,15 @@ const Hackathons = () => {
                   </div>
                   <div className="flex flex-wrap items-center gap-3 md:gap-4 text-xs md:text-sm text-gray-600">
                     <div className="flex items-center">
-                      <MapPin className="w-4 h-4 mr-2 text-[#C84C31]" />
+                      <MapPin className="w-4 h-4 mr-2 text-primary" />
                       <span>{hackathon.location}</span>
                     </div>
                     <div className="flex items-center">
-                      <Trophy className="w-4 h-4 mr-2 text-[#C84C31]" />
+                      <Trophy className="w-4 h-4 mr-2 text-primary" />
                       <span>{hackathon.prize}</span>
                     </div>
                     <div className="flex items-center">
-                      <Users className="w-4 h-4 mr-2 text-[#C84C31]" />
+                      <Users className="w-4 h-4 mr-2 text-primary" />
                       <span>{hackathon.participants}</span>
                     </div>
                   </div>
@@ -89,7 +89,7 @@ const Hackathons = () => {
                           href={winner.projectLink}
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-gray-400 hover:text-[#C84C31] transition-colors"
+                          className="text-gray-400 hover:text-primary transition-colors"
                         >
                           <ExternalLink className="w-4 h-4 md:w-5 md:h-5" />
                         </a>
@@ -107,7 +107,7 @@ const Hackathons = () => {
           <h3 className="text-2xl font-serif text-black mb-8 text-center">Upcoming Hackathons</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
             {hackathons.upcoming.map((hackathon, index) => (
-              <div key={index} className="group bg-gradient-to-br from-[#C84C31] to-[#A7441C] text-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 relative">
+              <div key={index} className="group bg-gradient-to-br from-primary to-primary-dark text-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 relative">
                 <div className="p-4 md:p-8">
                   <div className="mb-4 md:mb-6">
                     <div className="flex items-center gap-2 md:gap-3 mb-3">
@@ -142,7 +142,7 @@ const Hackathons = () => {
                     </div>
                   </div>
                   <div className="flex gap-2 md:gap-3">
-                    <button className="bg-white text-[#C84C31] px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base font-medium hover:bg-gray-100 transition-colors">
+                    <button className="bg-white text-primary px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base font-medium hover:bg-gray-100 transition-colors">
                       Get Notified
                     </button>
                     <button className="border-2 border-white/30 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base font-medium hover:bg-white/10 transition-colors">

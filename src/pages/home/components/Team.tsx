@@ -36,9 +36,9 @@ const Team = () => {
   );
 
   const renderMember = (member: Member, index: number) => (
-    <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-[#C84C31] transition-all duration-300 group">
+    <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-primary transition-all duration-300 group">
       <div className="text-center">
-        <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gray-200 group-hover:border-[#C84C31] transition-colors">
+        <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gray-200 group-hover:border-primary transition-colors">
           <img 
             src={member.image}
             alt={member.name}
@@ -46,7 +46,7 @@ const Team = () => {
           />
         </div>
         <h3 className="font-serif text-lg text-black mb-1">{member.name}</h3>
-        <p className="text-[#C84C31] font-medium text-sm mb-2">{member.position}</p>
+        <p className="text-primary font-medium text-sm mb-2">{member.position}</p>
         <p className="text-gray-600 text-xs mb-4">{member.branch}</p>
         <a 
           href={member.linkedin}
@@ -65,7 +65,7 @@ const Team = () => {
     <section className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <div className="inline-block bg-[#A7B77F] text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-block bg-tertiary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
             Our Team
           </div>
           <h2 className="text-4xl md:text-5xl font-serif text-black mb-4">
