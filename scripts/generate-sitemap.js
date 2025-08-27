@@ -8,26 +8,26 @@ const routes = [
     url: '/',
     lastmod: new Date().toISOString(),
     changefreq: 'daily',
-    priority: '1.0'
+    priority: '1.0',
   },
   {
     url: '/about',
     lastmod: new Date().toISOString(),
     changefreq: 'weekly',
-    priority: '0.8'
+    priority: '0.8',
   },
   {
     url: '/events',
     lastmod: new Date().toISOString(),
     changefreq: 'weekly',
-    priority: '0.8'
+    priority: '0.8',
   },
   {
     url: '/contact',
     lastmod: new Date().toISOString(),
     changefreq: 'monthly',
-    priority: '0.6'
-  }
+    priority: '0.6',
+  },
 ];
 
 const generateSitemap = () => {

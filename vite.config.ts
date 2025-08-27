@@ -11,7 +11,8 @@ export default defineConfig({
       manifest: {
         name: 'IEEE MSIT - Advancing Technology for Humanity',
         short_name: 'IEEE MSIT',
-        description: 'The Professional home for the Engineering and Technology world wide. IEEE MSIT Student Branch - Leading innovation and excellence in technology.',
+        description:
+          'The Professional home for the Engineering and Technology world wide. IEEE MSIT Student Branch - Leading innovation and excellence in technology.',
         theme_color: '#1e40af',
         background_color: '#ffffff',
         display: 'standalone',
@@ -26,19 +27,19 @@ export default defineConfig({
           {
             src: 'pwa-192x192.png',
             sizes: '192x192',
-            type: 'image/png'
-          },
-          {
-            src: 'pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
           },
           {
             src: 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'any maskable'
-          }
+          },
+          {
+            src: 'pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
         ],
         screenshots: [
           {
@@ -46,9 +47,9 @@ export default defineConfig({
             sizes: '1200x630',
             type: 'image/jpeg',
             form_factor: 'wide',
-            label: 'IEEE MSIT Homepage'
-          }
-        ]
+            label: 'IEEE MSIT Homepage',
+          },
+        ],
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg}'],
@@ -60,13 +61,13 @@ export default defineConfig({
               cacheName: 'google-fonts-cache',
               expiration: {
                 maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 365 // <== 365 days
-              }
-            }
-          }
-        ]
-      }
-    })
+                maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+              },
+            },
+          },
+        ],
+      },
+    }),
   ],
   optimizeDeps: {
     exclude: ['lucide-react'],

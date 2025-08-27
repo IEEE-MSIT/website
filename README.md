@@ -31,11 +31,12 @@
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 This platform is engineered with a rich feature set to inform, engage, and inspire.
 
-### 🚀 Core Features
+### Core Features
+
 | Feature                              | Description                                                                                                                     |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
 | **Dynamic Content Sections**         | Data-driven components for Events, Hackathons, Team, and Chapters that are rendered from a single, easy-to-edit `data.ts` file. |
@@ -44,22 +45,24 @@ This platform is engineered with a rich feature set to inform, engage, and inspi
 | **Hackathon & Winners Showcase**     | A dedicated hall of fame celebrating our flagship hackathons, featuring winning teams, innovative projects, and prize details.  |
 | **AI-Powered Intelligent Assistant** | An integrated RAG chatbot providing instant, context-aware answers to queries about events, membership, chapters, and more.     |
 
-### 📱 PWA Features
-| Feature                              | Description                                                                                                                     |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| **Progressive Web App**              | Full PWA support with offline capabilities, app-like experience, and home screen installation.                                  |
-| **Install Notifications**            | Smart install prompts for both Android and iOS devices with customized instructions.                                           |
-| **Service Worker Caching**           | Intelligent caching strategy for optimal performance and offline functionality.                                                 |
-| **App-like Experience**              | Native app feel with proper theming, splash screens, and seamless navigation.                                                  |
+### PWA Features
+
+| Feature                    | Description                                                                                    |
+| -------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Progressive Web App**    | Full PWA support with offline capabilities, app-like experience, and home screen installation. |
+| **Install Notifications**  | Smart install prompts for both Android and iOS devices with customized instructions.           |
+| **Service Worker Caching** | Intelligent caching strategy for optimal performance and offline functionality.                |
+| **App-like Experience**    | Native app feel with proper theming, splash screens, and seamless navigation.                  |
 
 ### 🔍 SEO & Performance
-| Feature                              | Description                                                                                                                     |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| **Comprehensive Meta Tags**          | Complete SEO optimization with Open Graph, Twitter Cards, and platform-specific meta tags.                                     |
-| **Schema.org Structured Data**       | Rich snippets and structured data for better search engine understanding.                                                      |
-| **Multi-Platform OG Images**         | Optimized social media sharing with custom OG images for different platforms.                                                  |
-| **Performance Monitoring**           | Core Web Vitals tracking and performance optimization.                                                                         |
-| **Sitemap & Robots.txt**             | Automated sitemap generation and proper SEO directives.                                                                        |
+
+| Feature                        | Description                                                                                |
+| ------------------------------ | ------------------------------------------------------------------------------------------ |
+| **Comprehensive Meta Tags**    | Complete SEO optimization with Open Graph, Twitter Cards, and platform-specific meta tags. |
+| **Schema.org Structured Data** | Rich snippets and structured data for better search engine understanding.                  |
+| **Multi-Platform OG Images**   | Optimized social media sharing with custom OG images for different platforms.              |
+| **Performance Monitoring**     | Core Web Vitals tracking and performance optimization.                                     |
+| **Sitemap & Robots.txt**       | Automated sitemap generation and proper SEO directives.                                    |
 
 ---
 

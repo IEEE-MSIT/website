@@ -1,5 +1,6 @@
 import { ExternalLink, Trophy, Users, MapPin, Clock, Award } from 'lucide-react';
 import { hackathons } from '../../../data/data';
+import type { HackathonWinner } from '../../../types';
 
 const Hackathons = () => {
   return (
@@ -26,7 +27,7 @@ const Hackathons = () => {
                 key={index}
                 className="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-primary transition-all duration-500"
               >
-                <div className="relative bg-gradient-to-br from-[#FAF8F3] to-white border-b border-gray-100 p-4 md:p-8">
+                <div className="relative bg-gradient-to-br from-background to-white border-b border-gray-100 p-4 md:p-8">
                   <div className="flex items-start justify-between mb-4 md:mb-6">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 md:gap-3 mb-2">
@@ -107,9 +108,9 @@ const Hackathons = () => {
                           Prize: {winner.prize}
                         </p>
                       </div>
-                      {winner.projectLink && (
+                      {(winner as HackathonWinner).projectLink && (
                         <a
-                          href={winner.projectLink}
+                          href={(winner as HackathonWinner).projectLink}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-gray-400 hover:text-primary transition-colors"

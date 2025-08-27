@@ -5,12 +5,14 @@ const Hero = () => {
     <section className="relative min-h-[80vh] bg-background overflow-hidden pt-20">
       <div
         className="w-full max-w-6xl mx-auto px-6 py-8 h-full flex flex-col justify-center"
-        style={{
-          backgroundImage: `url('/BackgroundLines.37b66c2a.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
+        style={
+          {
+            // backgroundImage: `url('/BackgroundLines.37b66c2a.png')`,
+            // backgroundSize: 'cover',
+            // backgroundPosition: 'center',
+            // backgroundRepeat: 'no-repeat',
+          }
+        }
       >
         <div className="text-center my-12">
           <div className="flex items-center justify-center mb-6">

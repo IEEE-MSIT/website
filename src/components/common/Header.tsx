@@ -1,14 +1,19 @@
 import { useState, useEffect } from 'react';
-import { Menu, ChevronDown } from 'lucide-react';
+import { Menu, ChevronDown, X } from 'lucide-react';
 
 const Header = () => {
   const [chaptersDropdownOpen, setChaptersDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Element;
       if (!target.closest('.chapters-dropdown')) {
         setChaptersDropdownOpen(false);
+      }
+      // Close mobile menu when clicking outside
+      if (!target.closest('.mobile-menu') && !target.closest('[aria-label="Toggle mobile menu"]')) {
+        setMobileMenuOpen(false);
       }
     };
 
@@ -17,6 +22,26 @@ const Header = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  // Handle body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
+  // Close mobile menu when clicking on links
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setChaptersDropdownOpen(false);
+  };
 
   return (
     <>
@@ -176,11 +201,136 @@ const Header = () => {
             Contact
           </a>
 
-          <button className="lg:hidden p-2 hover:bg-black/5 rounded-full transition-colors">
-            <Menu className="w-6 h-6" />
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 hover:bg-primary/10 rounded-lg transition-all duration-200 border border-transparent hover:border-primary/20"
+            aria-label="Toggle mobile menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6 text-primary" />
+            ) : (
+              <Menu className="w-6 h-6 text-gray-700 hover:text-primary transition-colors" />
+            )}
           </button>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-20"
+          onClick={closeMobileMenu}
+          style={{ top: '88px' }}
+        ></div>
+      )}
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden fixed top-[88px] left-0 right-0 bg-white border-t-2 border-primary shadow-xl z-30 max-h-[calc(100vh-88px)] overflow-y-auto animate-slide-down mobile-menu">
+          <div className="px-6 py-6 space-y-2">
+            <a
+              href="#about"
+              onClick={closeMobileMenu}
+              className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium text-base"
+            >
+              About
+            </a>
+            <a
+              href="#events"
+              onClick={closeMobileMenu}
+              className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium text-base"
+            >
+              Events
+            </a>
+
+            {/* Mobile Chapters Dropdown */}
+            <div className="chapters-dropdown">
+              <button
+                onClick={() => setChaptersDropdownOpen(!chaptersDropdownOpen)}
+                className="flex items-center justify-between w-full py-3 px-4 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium text-base"
+              >
+                <span>Chapters</span>
+                <ChevronDown
+                  className={`w-4 h-4 transition-all duration-200 ${chaptersDropdownOpen ? 'rotate-180 text-primary' : 'text-gray-500'}`}
+                />
+              </button>
+
+              {chaptersDropdownOpen && (
+                <div className="ml-4 mt-2 space-y-1 border-l-2 border-primary/20 pl-4">
+                  <a
+                    href="#cs-chapter"
+                    onClick={closeMobileMenu}
+                    className="block py-2 px-3 text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 text-sm"
+                  >
+                    Computer Society Chapter
+                  </a>
+                  <a
+                    href="#ias-chapter"
+                    onClick={closeMobileMenu}
+                    className="block py-2 px-3 text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 text-sm"
+                  >
+                    Industry Applications Society
+                  </a>
+                  <a
+                    href="#pes-chapter"
+                    onClick={closeMobileMenu}
+                    className="block py-2 px-3 text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 text-sm"
+                  >
+                    Power & Energy Society
+                  </a>
+                  <a
+                    href="#wie-chapter"
+                    onClick={closeMobileMenu}
+                    className="block py-2 px-3 text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 text-sm"
+                  >
+                    Women in Engineering
+                  </a>
+                  <a
+                    href="#ras-chapter"
+                    onClick={closeMobileMenu}
+                    className="block py-2 px-3 text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 text-sm"
+                  >
+                    Robotics & Automation Society
+                  </a>
+                  <a
+                    href="#communications-chapter"
+                    onClick={closeMobileMenu}
+                    className="block py-2 px-3 text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 text-sm"
+                  >
+                    Communications Society
+                  </a>
+                </div>
+              )}
+            </div>
+
+            <a
+              href="#team"
+              onClick={closeMobileMenu}
+              className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium text-base"
+            >
+              Team
+            </a>
+            <a
+              href="#join"
+              onClick={closeMobileMenu}
+              className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium text-base"
+            >
+              Join Us
+            </a>
+
+            {/* Contact Button with Primary Styling */}
+            <div className="pt-4 border-t border-gray-100">
+              <a
+                href="#contact"
+                onClick={closeMobileMenu}
+                className="block bg-gradient-to-r from-primary to-primary-dark text-white px-6 py-3 rounded-xl hover:from-primary-dark hover:to-primary transition-all duration-300 font-medium text-base text-center shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

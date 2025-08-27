@@ -30,9 +30,12 @@ const PWAInstallPrompt: React.FC = () => {
   const handleDismiss = () => {
     setShowPrompt(false);
     localStorage.setItem('pwa-prompt-dismissed', 'true');
-    setTimeout(() => {
-      localStorage.removeItem('pwa-prompt-dismissed');
-    }, 7 * 24 * 60 * 60 * 1000);
+    setTimeout(
+      () => {
+        localStorage.removeItem('pwa-prompt-dismissed');
+      },
+      7 * 24 * 60 * 60 * 1000
+    );
   };
 
   if (!showPrompt || isInstalled) return null;
@@ -47,32 +50,40 @@ const PWAInstallPrompt: React.FC = () => {
         >
           <X size={16} />
         </button>
-        
+
         <div className="flex items-start space-x-3">
           <div className="flex-shrink-0">
-            {isIOS ? <Smartphone className="text-blue-600" size={24} /> : <Monitor className="text-blue-600" size={24} />}
+            {isIOS ? (
+              <Smartphone className="text-blue-600" size={24} />
+            ) : (
+              <Monitor className="text-blue-600" size={24} />
+            )}
           </div>
-          
+
           <div className="flex-1">
-            <h3 className="font-semibold text-gray-900 text-sm mb-1">
-              Install IEEE MSIT App
-            </h3>
-            
+            <h3 className="font-semibold text-gray-900 text-sm mb-1">Install IEEE MSIT App</h3>
+
             {isIOS ? (
               <div className="text-xs text-gray-600 mb-3">
                 <p className="mb-2">Add to your home screen for easy access:</p>
                 <ol className="list-decimal list-inside space-y-1">
-                  <li>Tap the share button <span className="inline-block w-4 h-4 bg-blue-500 rounded text-white text-center text-xs leading-4">↗</span></li>
+                  <li>
+                    Tap the share button{' '}
+                    <span className="inline-block w-4 h-4 bg-blue-500 rounded text-white text-center text-xs leading-4">
+                      ↗
+                    </span>
+                  </li>
                   <li>Scroll down and tap "Add to Home Screen"</li>
                   <li>Tap "Add" to confirm</li>
                 </ol>
               </div>
             ) : (
               <p className="text-xs text-gray-600 mb-3">
-                Get quick access to IEEE MSIT directly from your home screen. Install our app for a better experience!
+                Get quick access to IEEE MSIT directly from your home screen. Install our app for a
+                better experience!
               </p>
             )}
-            
+
             {!isIOS && canInstall && (
               <button
                 onClick={handleInstallClick}

@@ -1,7 +1,6 @@
 import About from './components/About';
 import ChapterHighlights from './components/ChapterHighlights';
 import Community from './components/Community';
-import Contact from './components/Contact';
 import Events from './components/Events';
 import Hackathons from './components/Hackathons';
 import Hero from './components/Hero';
@@ -19,7 +18,6 @@ const HomePage = () => {
       <Hackathons />
       <Team />
       <Join />
-      <Contact />
     </main>
   );
 };

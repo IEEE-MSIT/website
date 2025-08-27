@@ -28,13 +28,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
             <h3 className="text-xl font-serif font-semibold mb-4">IEEE MSIT</h3>
-            <p className="text-sm text-gray-400 leading-relaxed mb-4">
-              {SITE_CONFIG.description}
-            </p>
+            <p className="text-sm text-gray-400 leading-relaxed mb-4">{SITE_CONFIG.description}</p>
             <div className="flex items-center gap-2 text-sm mb-6">
               Made with <Heart className="w-4 h-4 text-heart-red" /> by the students of IEEE MSIT.
             </div>
-            
+
             {/* Social Media Links */}
             <div className="flex gap-4">
               {Object.entries(SITE_CONFIG.social).map(([platform, data]) => (

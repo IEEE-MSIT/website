@@ -4,6 +4,7 @@ import { events } from '../../../data/data';
 
 const Events = () => {
   const eventsCarouselRef = useRef<HTMLDivElement>(null);
+  const scrollAmount = 400; // Define scroll amount in pixels
 
   const scrollEventsCarousel = (direction: 'left' | 'right') => {
     if (eventsCarouselRef.current) {

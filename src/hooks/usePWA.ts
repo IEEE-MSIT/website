@@ -11,8 +11,9 @@ export const usePWA = () => {
   const [isInstalled, setIsInstalled] = useState(false);
 
   useEffect(() => {
-    const isStandalone = window.matchMedia('(display-mode: standalone)').matches ||
-                        (window.navigator as any).standalone === true;
+    const isStandalone =
+      window.matchMedia('(display-mode: standalone)').matches ||
+      (window.navigator as unknown as { standalone?: boolean }).standalone === true;
     setIsInstalled(isStandalone);
 
     const handleBeforeInstallPrompt = (e: Event) => {
@@ -42,7 +43,7 @@ export const usePWA = () => {
     try {
       await deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;
-      
+
       if (outcome === 'accepted') {
         setDeferredPrompt(null);
         setIsInstallable(false);
@@ -59,7 +60,7 @@ export const usePWA = () => {
     isInstallable,
     isInstalled,
     installApp,
-    canInstall: isInstallable && !isInstalled
+    canInstall: isInstallable && !isInstalled,
   };
 };
 
