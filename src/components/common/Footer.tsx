@@ -1,7 +1,27 @@
-import { Heart } from 'lucide-react';
+import { Heart, Github, Instagram, Linkedin, Twitter, Facebook, MessageCircle } from 'lucide-react';
 import { footer } from '../../data/data';
+import SITE_CONFIG from '../../config/site';
 
 const Footer = () => {
+  const getSocialIcon = (platform: string) => {
+    switch (platform) {
+      case 'github':
+        return <Github className="w-5 h-5" />;
+      case 'instagram':
+        return <Instagram className="w-5 h-5" />;
+      case 'linkedin':
+        return <Linkedin className="w-5 h-5" />;
+      case 'twitter':
+        return <Twitter className="w-5 h-5" />;
+      case 'facebook':
+        return <Facebook className="w-5 h-5" />;
+      case 'whatsapp':
+        return <MessageCircle className="w-5 h-5" />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <footer className="bg-foreground text-muted-foreground py-16 px-6">
       <div className="max-w-6xl mx-auto">
@@ -9,12 +29,26 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h3 className="text-xl font-serif font-semibold mb-4">IEEE MSIT</h3>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
-              The IEEE Student Branch at Maharaja Surajmal Institute of Technology is dedicated to
-              advancing technology for humanity. We provide a platform for students to learn,
-              innovate, and network with professionals in the field.
+              {SITE_CONFIG.description}
             </p>
-            <div className="flex items-center gap-2 text-sm">
+            <div className="flex items-center gap-2 text-sm mb-6">
               Made with <Heart className="w-4 h-4 text-heart-red" /> by the students of IEEE MSIT.
+            </div>
+            
+            {/* Social Media Links */}
+            <div className="flex gap-4">
+              {Object.entries(SITE_CONFIG.social).map(([platform, data]) => (
+                <a
+                  key={platform}
+                  href={data.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
+                  aria-label={`Follow us on ${platform}`}
+                >
+                  {getSocialIcon(platform)}
+                </a>
+              ))}
             </div>
           </div>
 

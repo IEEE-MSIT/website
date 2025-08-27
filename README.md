@@ -8,14 +8,15 @@
   <p align="center">
     The official source code for the IEEE MSIT student branch website.
     <br />
-    This platform serves as our primary digital storefront, engineered by the Web Development Department '25.
+    A fully optimized PWA with comprehensive SEO, engineered by the Web Development Department '25.
   </p>
 
   <p align="center">
     <a href="https://github.com/IEEE-MSIT/website/stargazers"><img src="https://img.shields.io/github/stars/IEEE-MSIT/website?style=for-the-badge&logo=github&color=00629B" alt="Stars"></a>
     <a href="https://github.com/IEEE-MSIT/website/network/members"><img src="https://img.shields.io/github/forks/IEEE-MSIT/website?style=for-the-badge&logo=github&color=58595B" alt="Forks"></a>
     <a href="https://github.com/IEEE-MSIT/website/blob/main/LICENSE"><img src="https://img.shields.io/github/license/IEEE-MSIT/website?style=for-the-badge&color=A7B77F" alt="License"></a>
-    <img src="https://img.shields.io/badge/Maintained%20by-IEEE%20Web%20Dev%20Team%20'25-C84C31?style=for-the-badge" alt="Maintained by IEEE Web Dev Team '25">
+    <img src="https://img.shields.io/badge/PWA%20Ready-✓-brightgreen?style=for-the-badge" alt="PWA Ready">
+    <img src="https://img.shields.io/badge/SEO%20Optimized-✓-blue?style=for-the-badge" alt="SEO Optimized">
   </p>
 
   <p align="center">
@@ -30,10 +31,11 @@
 
 ---
 
-## Key Features
+## ✨ Key Features
 
 This platform is engineered with a rich feature set to inform, engage, and inspire.
 
+### 🚀 Core Features
 | Feature                              | Description                                                                                                                     |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
 | **Dynamic Content Sections**         | Data-driven components for Events, Hackathons, Team, and Chapters that are rendered from a single, easy-to-edit `data.ts` file. |
@@ -41,11 +43,27 @@ This platform is engineered with a rich feature set to inform, engage, and inspi
 | **Interactive Event Carousels**      | A sleek, responsive carousel for showcasing upcoming events and workshops, designed for maximum user engagement.                |
 | **Hackathon & Winners Showcase**     | A dedicated hall of fame celebrating our flagship hackathons, featuring winning teams, innovative projects, and prize details.  |
 | **AI-Powered Intelligent Assistant** | An integrated RAG chatbot providing instant, context-aware answers to queries about events, membership, chapters, and more.     |
-| **Structured & Scalable Codebase**   | A clean, component-based React architecture that is easy for new developers to understand, maintain, and extend.                |
+
+### 📱 PWA Features
+| Feature                              | Description                                                                                                                     |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Progressive Web App**              | Full PWA support with offline capabilities, app-like experience, and home screen installation.                                  |
+| **Install Notifications**            | Smart install prompts for both Android and iOS devices with customized instructions.                                           |
+| **Service Worker Caching**           | Intelligent caching strategy for optimal performance and offline functionality.                                                 |
+| **App-like Experience**              | Native app feel with proper theming, splash screens, and seamless navigation.                                                  |
+
+### 🔍 SEO & Performance
+| Feature                              | Description                                                                                                                     |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Comprehensive Meta Tags**          | Complete SEO optimization with Open Graph, Twitter Cards, and platform-specific meta tags.                                     |
+| **Schema.org Structured Data**       | Rich snippets and structured data for better search engine understanding.                                                      |
+| **Multi-Platform OG Images**         | Optimized social media sharing with custom OG images for different platforms.                                                  |
+| **Performance Monitoring**           | Core Web Vitals tracking and performance optimization.                                                                         |
+| **Sitemap & Robots.txt**             | Automated sitemap generation and proper SEO directives.                                                                        |
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
 This project is built on a modern, robust, and efficient technology stack that aligns with our organization's standards.
 
@@ -129,6 +147,24 @@ Most of the website's content (events, team members, hackathon results) is manag
 - **File to Edit:** `src/data/data.ts`
 
 To update content, simply edit this file directly on GitHub, commit your changes to a new branch, and open a Pull Request.
+
+---
+
+## 🌐 Connect With Us
+
+Stay updated with IEEE MSIT's latest activities and innovations across our social platforms:
+
+<div align="center">
+
+[![GitHub](https://img.shields.io/badge/GitHub-IEEE--MSIT-181717?style=for-the-badge&logo=github)](https://github.com/IEEE-MSIT)
+[![Instagram](https://img.shields.io/badge/Instagram-@ieeemsit-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/ieeemsit/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-IEEE%20MSIT-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/company/ieeemsit)
+[![Twitter](https://img.shields.io/badge/Twitter-@ieeemsit-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/ieeemsit)
+
+**📧 Contact**: [anupama@msit.in](mailto:anupama@msit.in) | **📞 Phone**: +91-11-2681-4816  
+**🌐 Website**: [ieeemsit.vercel.app](https://ieeemsit.vercel.app)
+
+</div>
 
 ---
 
