@@ -4,17 +4,17 @@ const ChatBotComponent = () => {
   return (
     <ChatBot
       chatComponentStyle={{
-        "maxHeight": "580px",
-        "height": "auto",
-        "width": "350px",
-        "margin": 0,
-        "z-index": 999
+        maxHeight: '580px',
+        height: 'auto',
+        width: '350px',
+        margin: 0,
+        'z-index': 999,
       }}
       chatBotIconStyle={{
-        "z-index": 999
+        'z-index': 999,
       }}
       chatWindowStyle={{
-        "backgroundColor": "#0b0a0a"
+        backgroundColor: '#0b0a0a',
       }}
       backendUrl="https://ask-10x-questions.vercel.app/"
       title="IEEE MSIT"
@@ -69,7 +69,7 @@ ROBO TIDING (IEEE RAS MSIT)
 SHESCRIPTS (IEEE WIE MSIT): Bite-sized tech news and updates designed for quick and informative reading."
       userIcon="static/images/logoImg.jpg"
       botIcon="static/images/logoImg2.jpg"
-      stylizeTitle={{"emphasized":"IEEE","normal":"MSIT"}}
+      stylizeTitle={{ emphasized: 'IEEE', normal: 'MSIT' }}
     />
   );
 };

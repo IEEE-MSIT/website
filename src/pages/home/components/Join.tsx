@@ -8,11 +8,12 @@ const Join = () => {
           Join the <span className="text-primary">Future</span> of Technology
         </h2>
         <p className="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto mb-10">
-          Become a part of our vibrant community and get access to exclusive workshops, events, and networking opportunities that will shape your career.
+          Become a part of our vibrant community and get access to exclusive workshops, events, and
+          networking opportunities that will shape your career.
         </p>
-        <a 
-          href="https://www.ieee.org/membership/join/index.html" 
-          target="_blank" 
+        <a
+          href="https://www.ieee.org/membership/join/index.html"
+          target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition-colors font-medium shadow-lg hover:shadow-xl"
         >

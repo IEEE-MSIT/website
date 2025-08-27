@@ -2,7 +2,8 @@ export const events = [
   {
     date: { month: 'AUG', day: '25', year: '2025' },
     title: 'ROBO WARS 2025: National Robotics Championship',
-    description: 'The ultimate battleground for student-built robots. Design, build, and compete with autonomous and remote-controlled robots in various technical challenges.',
+    description:
+      'The ultimate battleground for student-built robots. Design, build, and compete with autonomous and remote-controlled robots in various technical challenges.',
     category: 'Featured',
     time: '9:00 AM - 6:00 PM',
     location: 'Main Ground, MSIT Campus',
@@ -14,7 +15,8 @@ export const events = [
   {
     date: { month: 'SEP', day: '05', year: '2025' },
     title: 'Women in Tech Leadership Workshop',
-    description: 'Empowering women engineers through skill development, networking, and leadership training. Official launch of our monthly SHESCRIPTS newsletter.',
+    description:
+      'Empowering women engineers through skill development, networking, and leadership training. Official launch of our monthly SHESCRIPTS newsletter.',
     category: 'Free',
     time: '2:00 PM - 5:00 PM',
     location: 'Seminar Hall 2, MSIT',
@@ -25,7 +27,8 @@ export const events = [
   {
     date: { month: 'SEP', day: '12', year: '2025' },
     title: 'CodeFest MSIT: Programming Marathon',
-    description: 'Intensive coding competition featuring algorithmic challenges, data structures problems, and real-world programming scenarios.',
+    description:
+      'Intensive coding competition featuring algorithmic challenges, data structures problems, and real-world programming scenarios.',
     category: '₹100',
     time: '10:00 AM - 3:00 PM',
     location: 'Computer Lab A & B',
@@ -36,7 +39,8 @@ export const events = [
   {
     date: { month: 'SEP', day: '20', year: '2025' },
     title: 'Smart Grid & Renewable Energy Symposium',
-    description: 'Industry experts discuss latest trends in sustainable energy, smart grid technologies, and power system innovations.',
+    description:
+      'Industry experts discuss latest trends in sustainable energy, smart grid technologies, and power system innovations.',
     category: 'Free',
     time: '11:00 AM - 4:00 PM',
     location: 'Main Auditorium',
@@ -47,7 +51,8 @@ export const events = [
   {
     date: { month: 'OCT', day: '05', year: '2025' },
     title: 'TechnoVation Hackathon 2025',
-    description: '48-hour hackathon focusing on solutions for social impact. Build innovative tech products addressing real-world challenges.',
+    description:
+      '48-hour hackathon focusing on solutions for social impact. Build innovative tech products addressing real-world challenges.',
     category: 'Team Event',
     time: 'Oct 5-6, Full Weekend',
     location: 'Innovation Hub, MSIT',
@@ -58,7 +63,8 @@ export const events = [
   {
     date: { month: 'OCT', day: '15', year: '2025' },
     title: 'Industry Connect: Alumni Career Fair',
-    description: 'Meet successful IEEE MSIT alumni working in top tech companies. Career guidance sessions and networking opportunities.',
+    description:
+      'Meet successful IEEE MSIT alumni working in top tech companies. Career guidance sessions and networking opportunities.',
     category: 'Networking',
     time: '3:00 PM - 7:00 PM',
     location: 'Conference Hall & Lobby',
@@ -71,26 +77,34 @@ export const events = [
 export const chapters = [
   {
     name: 'Robotics & Automation Society',
-    description: 'Advancing the theory and practice of robotics, automation, and intelligent systems through our ROBO TIDING newsletter and cutting-edge workshops.',
-    image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=800&q=80',
+    description:
+      'Advancing the theory and practice of robotics, automation, and intelligent systems through our ROBO TIDING newsletter and cutting-edge workshops.',
+    image:
+      'https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=800&q=80',
     link: '#',
   },
   {
     name: 'Women in Engineering',
-    description: 'Empowering women in technology through SHESCRIPTS newsletter, mentorship programs, and professional development opportunities.',
-    image: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=800&q=80',
+    description:
+      'Empowering women in technology through SHESCRIPTS newsletter, mentorship programs, and professional development opportunities.',
+    image:
+      'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=800&q=80',
     link: '#',
   },
   {
     name: 'Power & Energy Society',
-    description: 'Focusing on sustainable energy solutions, power systems, and electrical engineering innovations for a greener future.',
-    image: 'https://images.unsplash.com/photo-1524749292158-7540c2494485?auto=format&fit=crop&w=800&q=80',
+    description:
+      'Focusing on sustainable energy solutions, power systems, and electrical engineering innovations for a greener future.',
+    image:
+      'https://images.unsplash.com/photo-1524749292158-7540c2494485?auto=format&fit=crop&w=800&q=80',
     link: '#',
   },
   {
     name: 'Computer Society',
-    description: 'Advancing computing and information technology through programming competitions, AI workshops, and software development projects.',
-    image: 'https://images.unsplash.com/photo-1618477388954-7852f32655ec?auto=format&fit=crop&w=800&q=80',
+    description:
+      'Advancing computing and information technology through programming competitions, AI workshops, and software development projects.',
+    image:
+      'https://images.unsplash.com/photo-1618477388954-7852f32655ec?auto=format&fit=crop&w=800&q=80',
     link: '#',
   },
 ];
@@ -161,21 +175,27 @@ export const hackathons = {
           place: '1st Place',
           project: '95% Problems Solved • CSE Final Year',
           prize: '₹25,000',
-          members: ['https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80'],
+          members: [
+            'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80',
+          ],
         },
         {
           team: 'Priya Patel',
           place: '2nd Place',
           project: '87% Problems Solved • ECE 3rd Year',
           prize: '₹15,000',
-          members: ['https://images.unsplash.com/photo-1494790108755-2616b4b03069?auto=format&fit=crop&w=150&q=80'],
+          members: [
+            'https://images.unsplash.com/photo-1494790108755-2616b4b03069?auto=format&fit=crop&w=150&q=80',
+          ],
         },
         {
           team: 'Rohit Kumar',
           place: '3rd Place',
           project: '82% Problems Solved • IT 2nd Year',
           prize: '₹10,000',
-          members: ['https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'],
+          members: [
+            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80',
+          ],
         },
       ],
     },
@@ -208,35 +228,155 @@ export const hackathons = {
 
 export const team = {
   execom2025: [
-    { name: 'Rajesh Kumar', position: 'President', branch: 'CSE • Final Year', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80', linkedin: 'https://linkedin.com/in/rajesh-kumar-ieee' },
-    { name: 'Priya Sharma', position: 'Vice President', branch: 'ECE • Final Year', image: 'https://images.unsplash.com/photo-1494790108755-2616b4b03069?auto=format&fit=crop&w=200&q=80', linkedin: 'https://linkedin.com/in/priya-sharma-ieee' },
-    { name: 'Arjun Patel', position: 'Technical Secretary', branch: 'CSE • 3rd Year', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80', linkedin: 'https://linkedin.com/in/arjun-patel-ieee' },
-    { name: 'Sneha Gupta', position: 'General Secretary', branch: 'IT • 3rd Year', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80', linkedin: 'https://linkedin.com/in/sneha-gupta-ieee' },
-    { name: 'Vikram Singh', position: 'Treasurer', branch: 'ME • 3rd Year', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80', linkedin: 'https://linkedin.com/in/vikram-singh-ieee' },
-    { name: 'Ananya Reddy', position: 'Event Coordinator', branch: 'EE • 2nd Year', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80', linkedin: 'https://linkedin.com/in/ananya-reddy-ieee' },
-    { name: 'Rohit Verma', position: 'PR & Marketing Head', branch: 'CSE • 2nd Year', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80', linkedin: 'https://linkedin.com/in/rohit-verma-ieee' },
-    { name: 'Kavya Joshi', position: 'Web Development Lead', branch: 'IT • 2nd Year', image: 'https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?auto=format&fit=crop&w=200&q=80', linkedin: 'https://linkedin.com/in/kavya-joshi-ieee' },
+    {
+      name: 'Rajesh Kumar',
+      position: 'President',
+      branch: 'CSE • Final Year',
+      image:
+        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+      linkedin: 'https://linkedin.com/in/rajesh-kumar-ieee',
+    },
+    {
+      name: 'Priya Sharma',
+      position: 'Vice President',
+      branch: 'ECE • Final Year',
+      image:
+        'https://images.unsplash.com/photo-1494790108755-2616b4b03069?auto=format&fit=crop&w=200&q=80',
+      linkedin: 'https://linkedin.com/in/priya-sharma-ieee',
+    },
+    {
+      name: 'Arjun Patel',
+      position: 'Technical Secretary',
+      branch: 'CSE • 3rd Year',
+      image:
+        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80',
+      linkedin: 'https://linkedin.com/in/arjun-patel-ieee',
+    },
+    {
+      name: 'Sneha Gupta',
+      position: 'General Secretary',
+      branch: 'IT • 3rd Year',
+      image:
+        'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80',
+      linkedin: 'https://linkedin.com/in/sneha-gupta-ieee',
+    },
+    {
+      name: 'Vikram Singh',
+      position: 'Treasurer',
+      branch: 'ME • 3rd Year',
+      image:
+        'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+      linkedin: 'https://linkedin.com/in/vikram-singh-ieee',
+    },
+    {
+      name: 'Ananya Reddy',
+      position: 'Event Coordinator',
+      branch: 'EE • 2nd Year',
+      image:
+        'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80',
+      linkedin: 'https://linkedin.com/in/ananya-reddy-ieee',
+    },
+    {
+      name: 'Rohit Verma',
+      position: 'PR & Marketing Head',
+      branch: 'CSE • 2nd Year',
+      image:
+        'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80',
+      linkedin: 'https://linkedin.com/in/rohit-verma-ieee',
+    },
+    {
+      name: 'Kavya Joshi',
+      position: 'Web Development Lead',
+      branch: 'IT • 2nd Year',
+      image:
+        'https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?auto=format&fit=crop&w=200&q=80',
+      linkedin: 'https://linkedin.com/in/kavya-joshi-ieee',
+    },
   ],
   execom2024: [
-    { name: 'Amit Krishnan', position: 'President (2024)', branch: 'CSE • Alumni', image: 'https://images.unsplash.com/photo-1507591064344-4c6ce005b128?auto=format&fit=crop&w=200&q=80', linkedin: 'https://linkedin.com/in/amit-krishnan-ieee' },
-    { name: 'Divya Agarwal', position: 'Vice President (2024)', branch: 'ECE • Alumni', image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=200&q=80', linkedin: 'https://linkedin.com/in/divya-agarwal-ieee' },
-    { name: 'Karan Malhotra', position: 'Technical Secretary (2024)', branch: 'CSE • Alumni', image: 'https://images.unsplash.com/photo-1566492031773-4f4e44671d66?auto=format&fit=crop&w=200&q=80', linkedin: 'https://linkedin.com/in/karan-malhotra-ieee' },
-    { name: 'Meera Nair', position: 'General Secretary (2024)', branch: 'IT • Alumni', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80', linkedin: 'https://linkedin.com/in/meera-nair-ieee' },
+    {
+      name: 'Amit Krishnan',
+      position: 'President (2024)',
+      branch: 'CSE • Alumni',
+      image:
+        'https://images.unsplash.com/photo-1507591064344-4c6ce005b128?auto=format&fit=crop&w=200&q=80',
+      linkedin: 'https://linkedin.com/in/amit-krishnan-ieee',
+    },
+    {
+      name: 'Divya Agarwal',
+      position: 'Vice President (2024)',
+      branch: 'ECE • Alumni',
+      image:
+        'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=200&q=80',
+      linkedin: 'https://linkedin.com/in/divya-agarwal-ieee',
+    },
+    {
+      name: 'Karan Malhotra',
+      position: 'Technical Secretary (2024)',
+      branch: 'CSE • Alumni',
+      image:
+        'https://images.unsplash.com/photo-1566492031773-4f4e44671d66?auto=format&fit=crop&w=200&q=80',
+      linkedin: 'https://linkedin.com/in/karan-malhotra-ieee',
+    },
+    {
+      name: 'Meera Nair',
+      position: 'General Secretary (2024)',
+      branch: 'IT • Alumni',
+      image:
+        'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+      linkedin: 'https://linkedin.com/in/meera-nair-ieee',
+    },
   ],
 };
 
 export const achievements = {
   2025: [
-    { title: 'IEEE Student Branch Excellence Award', subtitle: 'National Level • 2025', description: 'Achieved outstanding performance in technical events, community outreach, and membership growth, ranking among top 10 IEEE student branches in India.', icon: 'Award' },
-    { title: 'TechnoVation Hackathon Champion', subtitle: 'Regional Winner • 2025', description: 'Successfully organized and executed the largest student hackathon in Delhi NCR with 200+ participants and ₹3L+ prize pool.', icon: 'Trophy' },
-    { title: 'WIE Outstanding Chapter Award', subtitle: 'International • 2025', description: 'Recognized globally for exceptional initiatives in promoting women in engineering and STEM education outreach programs.', icon: 'Award' },
+    {
+      title: 'IEEE Student Branch Excellence Award',
+      subtitle: 'National Level • 2025',
+      description:
+        'Achieved outstanding performance in technical events, community outreach, and membership growth, ranking among top 10 IEEE student branches in India.',
+      icon: 'Award',
+    },
+    {
+      title: 'TechnoVation Hackathon Champion',
+      subtitle: 'Regional Winner • 2025',
+      description:
+        'Successfully organized and executed the largest student hackathon in Delhi NCR with 200+ participants and ₹3L+ prize pool.',
+      icon: 'Trophy',
+    },
+    {
+      title: 'WIE Outstanding Chapter Award',
+      subtitle: 'International • 2025',
+      description:
+        'Recognized globally for exceptional initiatives in promoting women in engineering and STEM education outreach programs.',
+      icon: 'Award',
+    },
   ],
   2024: [
-    { title: 'Best Innovation Project Award', subtitle: 'IEEE India Council • 2024', description: 'AI-powered smart campus management system won the national IEEE competition, showcasing cutting-edge IoT and machine learning integration.', icon: 'Trophy' },
-    { title: 'Community Impact Excellence', subtitle: 'IEEE Region 10 • 2024', description: 'Impacted 5000+ students through tech workshops, digital literacy programs, and rural education initiatives across Delhi NCR.', icon: 'Award' },
-    { title: 'CodeFest Programming Championship', subtitle: 'Inter-University • 2024', description: 'Organized the most competitive programming contest in the region with 100+ universities participating and industry mentorship.', icon: 'Trophy' },
-  ]
-}
+    {
+      title: 'Best Innovation Project Award',
+      subtitle: 'IEEE India Council • 2024',
+      description:
+        'AI-powered smart campus management system won the national IEEE competition, showcasing cutting-edge IoT and machine learning integration.',
+      icon: 'Trophy',
+    },
+    {
+      title: 'Community Impact Excellence',
+      subtitle: 'IEEE Region 10 • 2024',
+      description:
+        'Impacted 5000+ students through tech workshops, digital literacy programs, and rural education initiatives across Delhi NCR.',
+      icon: 'Award',
+    },
+    {
+      title: 'CodeFest Programming Championship',
+      subtitle: 'Inter-University • 2024',
+      description:
+        'Organized the most competitive programming contest in the region with 100+ universities participating and industry mentorship.',
+      icon: 'Trophy',
+    },
+  ],
+};
 
 export const footer = {
   quickLinks: [
@@ -250,5 +390,5 @@ export const footer = {
     { text: 'shubhamsharma@ieee.org', href: 'mailto:shubhamsharma@ieee.org' },
     { text: 'ishneet@ieee.org', href: 'mailto:ishneet@ieee.org' },
     { text: 'tussharaggarwal@ieee.org', href: 'mailto:tussharaggarwal@ieee.org' },
-  ]
-}
+  ],
+};

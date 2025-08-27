@@ -1,6 +1,6 @@
 Product Requirements Document (PRD)
 Product: IEEE MSIT Society Website
-ieeemsit.org or ieeemsit.com 
+ieeemsit.org or ieeemsit.com
 
 Overview
 A modern, professional web portal for IEEE MSIT and its chapters, highlighting achievements, events, leadership, and opportunities. The site will feature dynamic visuals, interactive carousels, comprehensive team sections, and streamlined admin features for maximum engagement and organizational ease.
@@ -12,22 +12,23 @@ Enable seamless updates of images/events, member info, and news by admins.
 Foster community networking with transparent leadership and contact features.
 
 Key Features & Functionalities
+
 1. Homepage Section
-Hero block with society name, mission statement, and bold CTAs (e.g., Join, Attend, Discover)
-Carousel of images/events to highlight society vibrancy and upcoming or past milestones.
-Welcome/info block explaining IEEE MSIT’s vision and impact, tailored for all audiences.
+   Hero block with society name, mission statement, and bold CTAs (e.g., Join, Attend, Discover)
+   Carousel of images/events to highlight society vibrancy and upcoming or past milestones.
+   Welcome/info block explaining IEEE MSIT’s vision and impact, tailored for all audiences.
 2. Chapter Highlights
-Grid or carousel introducing all chapters: name, focus, theme color, lead/head, key goals.
-Each chapter links to its own microsite/section with detailed info, team, events, resources.
+   Grid or carousel introducing all chapters: name, focus, theme color, lead/head, key goals.
+   Each chapter links to its own microsite/section with detailed info, team, events, resources.
 3. Events & Gallery
-Interactive event listings panel: calendar view, details, RSVP, image uploads, and archives.
-Image gallery with auto-updating carousel, filtered by event or chapter.
-Instagram scraper bot to fetch recent posts/images, subject to admin moderation before publish.
+   Interactive event listings panel: calendar view, details, RSVP, image uploads, and archives.
+   Image gallery with auto-updating carousel, filtered by event or chapter.
+   Instagram scraper bot to fetch recent posts/images, subject to admin moderation before publish.
 4. Leadership (Execom) Tab
-Dedicated tab with member cards for both 2025 and 2024 Execom teams.
-Each card displays name, photo, position, and LinkedIn profile for networking.
-Option to filter or toggle by year.
-4. Events Listings Section
+   Dedicated tab with member cards for both 2025 and 2024 Execom teams.
+   Each card displays name, photo, position, and LinkedIn profile for networking.
+   Option to filter or toggle by year.
+5. Events Listings Section
 
 Display of upcoming and recent events using cards or list items (with title, date, brief, image).
 
@@ -45,24 +46,19 @@ Winning team(s) with name(s), project title(s)
 
 Prize info and event images
 
-Section easily updatable from the admin dashboard.
-5. Community & Membership
+Section easily updatable from the admin dashboard. 5. Community & Membership
 Brief explainer and CTAs for joining IEEE MSIT, with easy application/interest form.
 Showcase of alumni, mentors, and key contributors.
-Newsletter signup in the footer for updates/highlights.
-6. General Content
+Newsletter signup in the footer for updates/highlights. 6. General Content
 Achievements, awards, and impact stories presented visually and narratively.
-Resource/download section with guides, forms, and presentations.
-7. Footer & Navigation
+Resource/download section with guides, forms, and presentations. 7. Footer & Navigation
 Clear navigation links for chapters, events, about, join, donate, and major resources.
 Quick access to society’s physical locations or chapters.
-Newsletter/mail signup field.
-8. Admin/Backend
+Newsletter/mail signup field. 8. Admin/Backend
 Role-based dashboard for content updates (events, gallery, team, chapters).
 Instagram scraper controls and moderation panel.
 Member/contact management, analytics for traffic and engagement.
-Accessibility tools to ensure full inclusivity.
-9. RAG Chatbot Integration
+Accessibility tools to ensure full inclusivity. 9. RAG Chatbot Integration
 Deploy an AI-powered chatbot capable of retrieving and generating accurate, context-aware responses from society documents, event info, guidelines, past Q&As, chapter details, and resources.
 Provide instant answers to common queries: joining instructions, event details, Execom contacts, chapter missions, project summaries, and resource downloads.
 Include smart search, filter, and follow-up features for deeper information requests.
@@ -72,8 +68,7 @@ Value Adds
 Enables 24/7 assistance for site visitors, prospective members, and current members.
 Reduces manual workload on Execom/admins.
 Demonstrates your society’s embrace of modern AI, aligning with Gen Z and tech enthusiast expectations.
-Supports accessibility and inclusivity with language options and context-aware responses.
-10. Admin Dashboard
+Supports accessibility and inclusivity with language options and context-aware responses. 10. Admin Dashboard
 
 Role-based content management for all dynamic blocks (events, hackathons, images, member info).
 
@@ -84,9 +79,6 @@ Full moderation controls for gallery/carousels.
 Analytics and feedback tools.
 
 Scalable and secure backend.
-
-
-
 
 Visual Design & Branding
 Luxury, professional theme using IEEE-approved fonts (including elegant serif for headers).
@@ -109,5 +101,3 @@ Credible, attractive presentation of IEEE MSIT’s activities and leadership.
 
 This PRD ensures an engaging, feature-rich site that honors the provided aesthetic inspiration while delivering on your operational and branding needs.
 https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/images/42585191/4fb88d9d-e5ca-4ac5-b74f-2b201326464b/screencapture-zp1v56uxy8rdx5ypatb0ockcb9tr6a-oci3-5173-96435430-local-credentialless-webcontainer-api-io-2025-08-26-20_08_12.jpg
-
-

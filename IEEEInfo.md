@@ -16,30 +16,29 @@ While the World benefits from what's new, IEEE focuses on what's next
 
 **Achievements**
 
-* **IEEE Region 10 Special Recognition of Student Branch Award:** Winning the esteemed IEEE Region 10 special award for the year 2023 among 1800 colleges across 23 countries in the asia-pacific region is an invaluable success.
-* **Gold in Student Activities Committee Darrel Chong Award:** Winning the Gold in the Student Activities Committee Darrel Chong Award provided opportunities to our students in extracurricular activities and leadership development.
-* **1st Prize in IEEE Day Photo Contest in STEM Category:** Our institutions won 1st prize and 500$ in cash in the IEEE Day photo contest in the stem category. The contest held among 160 countries worldwide took institutions recognition to the global scale.
+- **IEEE Region 10 Special Recognition of Student Branch Award:** Winning the esteemed IEEE Region 10 special award for the year 2023 among 1800 colleges across 23 countries in the asia-pacific region is an invaluable success.
+- **Gold in Student Activities Committee Darrel Chong Award:** Winning the Gold in the Student Activities Committee Darrel Chong Award provided opportunities to our students in extracurricular activities and leadership development.
+- **1st Prize in IEEE Day Photo Contest in STEM Category:** Our institutions won 1st prize and 500$ in cash in the IEEE Day photo contest in the stem category. The contest held among 160 countries worldwide took institutions recognition to the global scale.
 
 **Events**
 
 **Quick Links**
 
-* About Us
-* Join IEEE
-* MSIT
-* Opportunities
+- About Us
+- Join IEEE
+- MSIT
+- Opportunities
 
 **Contact Us**
 
-* anupama@msit.in
-* shubhamsharma@ieee.org
-* ishneet@ieee.org
-* tussharaggarwal@ieee.org
+- anupama@msit.in
+- shubhamsharma@ieee.org
+- ishneet@ieee.org
+- tussharaggarwal@ieee.org
 
 **Follow Us**
 
-*(social media icons)*
-
+_(social media icons)_
 
 ## About IEEE
 
@@ -47,7 +46,7 @@ IEEE is the world's largest technical professional organization dedicated to adv
 
 ## Regions of IEEE
 
-*(List of regions, including buttons for each)*
+_(List of regions, including buttons for each)_
 
 ## Asia and Pacific
 
@@ -63,8 +62,7 @@ Delhi Section, part of IEEE India Council and Asia-Pacific Region 10, was formed
 
 Maharaja Surajmal Institute of Technology (MSIT) located in New Delhi, is an active participant in the IEEE Delhi Section. As one of the prominent educational institutions under this section, MSIT houses a vibrant IEEE Student Branch that plays a critical role in enhancing the technical and professional development of its students. The IEEE MSIT Branch of Delhi region organizes various technical workshops, seminars, and guest lectures throughout the academic year. These activities are designed to provide students with exposure to the latest technological advancements and industry practices. By participating in these events, students not only gain knowledge but also develop essential skills such as teamwork and leadership. Through collaborative efforts and various initiatives, IEEE Delhi Section fosters innovation and academic excellence, providing platforms for knowledge exchange and skill development across its member institutions. As part of the IEEE community in Delhi, MSIT students engage in collaborative projects, research endeavors, and industry interactions, contributing to the advancement of technology and engineering in the region.
 
-*(Image caption):*  Maharaja Surajmal Institute of Technology (MSIT) students.
-
+_(Image caption):_ Maharaja Surajmal Institute of Technology (MSIT) students.
 
 ## OPPORTUNITIES
 
@@ -96,30 +94,33 @@ The purpose of this recognition system serves to change the mindset of our stude
 
 Aware of the unusual and dedicated efforts of Student Branch Counselors and Branch Chapter Advisors, the Regional and Technical Activities Boards sponsor a cash award to each of the approximately 20 outstanding Counselors and Advisors around the world.
 
-
-
 ## IEEE Newsletters
 
 ### ROBO TIDING
+
 IEEE RAS MSIT
-*13 March 2024*
+_13 March 2024_
 
 ### SHESCRIPTS
+
 IEEE WIE MSIT
-*Brace yourself for a tech journey like no other!*
+_Brace yourself for a tech journey like no other!_
 Satisfy your tech cravings with bite-sized, informative nuggets. Quick, easy, and informative - perfect for those on the go.
 
 ### SHESCRIPTS
+
 IEEE WIE MSIT
-*Brace yourself for a tech journey like no other!*
+_Brace yourself for a tech journey like no other!_
 Satisfy your tech cravings with bite-sized, informative nuggets. Quick, easy, and informative - perfect for those on the go.
 
 ### SHESCRIPTS
+
 IEEE WIE MSIT
-*Brace yourself for a tech journey like no other!*
+_Brace yourself for a tech journey like no other!_
 Satisfy your tech cravings with bite-sized, informative nuggets. Quick, easy, and informative - perfect for those on the go.
 
 ### SHESCRIPTS
+
 IEEE WIE MSIT
-*Brace yourself for a tech journey like no other!*
+_Brace yourself for a tech journey like no other!_
 Satisfy your tech cravings with bite-sized, informative nuggets. Quick, easy, and informative - perfect for those on the go.
