@@ -11,6 +11,7 @@ export const events = [
     prize: 'Prize Pool: ₹1,00,000',
     buttonText: 'Register Team',
     featured: true,
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
   },
   {
     date: { month: 'SEP', day: '05', year: '2025' },
@@ -23,6 +24,7 @@ export const events = [
     society: 'IEEE WIE MSIT',
     prize: '50 Seats Available',
     buttonText: 'Join Workshop',
+    image: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=800&q=80',
   },
   {
     date: { month: 'SEP', day: '12', year: '2025' },
@@ -35,6 +37,7 @@ export const events = [
     society: 'IEEE Computer Society',
     prize: 'Prizes worth ₹50,000',
     buttonText: 'Register Now',
+    image: 'https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&w=800&q=80',
   },
   {
     date: { month: 'SEP', day: '20', year: '2025' },
@@ -47,6 +50,7 @@ export const events = [
     society: 'IEEE PES MSIT',
     prize: '5 Industry Speakers',
     buttonText: 'Reserve Seat',
+    image: 'https://images.unsplash.com/photo-1524749292158-7540c2494485?auto=format&fit=crop&w=800&q=80',
   },
   {
     date: { month: 'OCT', day: '05', year: '2025' },
@@ -59,6 +63,7 @@ export const events = [
     society: 'IEEE MSIT',
     prize: 'Prizes worth ₹1,00,000',
     buttonText: 'Form Team',
+    image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=800&q=80',
   },
   {
     date: { month: 'OCT', day: '15', year: '2025' },
@@ -71,6 +76,7 @@ export const events = [
     society: 'IEEE MSIT',
     prize: '50+ Alumni Attending',
     buttonText: 'RSVP Now',
+    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80',
   },
 ];
 
