@@ -6,63 +6,72 @@ const Hero = () => {
       <div
         className="w-full max-w-6xl mx-auto px-6 py-8 h-full flex flex-col justify-center"
         style={{
-          backgroundImage: `url('/BackgroundLines.37b66c2a.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+          // backgroundImage: `url('/BackgroundLines.37b66c2a.png')`,
+          // backgroundSize: 'cover',
+          // backgroundPosition: 'center',
+          // backgroundRepeat: 'no-repeat',
         }}
       >
         <div className="text-center my-12">
-          <div className="flex items-center justify-center mb-6 gap-4">
+          <div className="flex items-center justify-center mb-6">
+            <h1 className="text-6xl md:text-8xl font-serif text-black mr-4">IEEE MSIT</h1>
             <img
               src="/IEEEWhiteLogowithTransparentBG.png"
               alt="IEEE Logo"
-              className=" h-12 md:h-16 bg-black hidden sm:block"
+              className=" h-12 md:h-16 bg-primary hidden sm:block"
             />
-            <h1 className="text-6xl md:text-8xl font-serif text-black mr-4">IEEE MSIT</h1>
           </div>
+          <p className="text-lg md:text-xl text-gray-600 font-medium mb-2">
+            Student Technology Club at MSIT
+          </p>
+          <p className="text-sm text-gray-500">
+            Part of IEEE - The world's largest engineering organization
+          </p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8 mb-12">
           <div className="flex-1 text-left">
-            <p className="text-lg md:text-xl text-black mb-4 leading-relaxed">
-              <strong>IEEE MSIT</strong> is the student branch of the world's largest technology organization, 
-              <em className="border-b-2 border-dashed border-ieee-blue"> IEEE</em>, at Maharaja Surajmal Institute of Technology.
+            <p className="text-lg md:text-xl text-black mb-8 leading-relaxed">
+              <strong>IEEE MSIT</strong> is the student branch of the{' '}
+              <em className="border-b-2 border-dashed border-ieee-blue">
+                world's largest technology organization
+              </em>
+              , IEEE, at Maharaja Surajmal Institute of Technology.
             </p>
-            
-            <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
-              We're a community of <strong>engineering students</strong> who organize 
-              <em className="border-b-2 border-dashed border-primary"> workshops, hackathons, and tech events</em> to 
-              help you learn cutting-edge technology, build amazing projects, and connect with like-minded innovators.
+            <p className="text-lg md:text-xl text-black mb-8 leading-relaxed">
+              We're a community of engineering students who organize{' '}
+              <em className="border-b-2 border-dashed border-primary">
+                workshops, hackathons, and tech events
+              </em>{' '}
+              to help you learn{' '}
+              <em className="border-b-2 border-dashed border-secondary">
+                cutting-edge technology
+              </em>
+              , build amazing projects, and connect with{' '}
+              <em className="border-b-2 border-dashed border-tertiary">
+                like-minded innovators
+              </em>
+              .
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#events"
-                className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors font-medium text-sm flex items-center gap-2 w-fit"
+                className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 w-fit"
               >
-                <ArrowRight className="w-4 h-4" /> EXPLORE EVENTS
+                <ArrowRight className="w-4 h-4" /> See Upcoming Events
               </a>
               <a
                 href="#join"
-                className="border border-gray-400 text-black px-6 py-3 rounded-full hover:bg-gray-100 transition-colors font-medium text-sm flex items-center gap-2 w-fit"
+                className="border border-primary text-primary px-6 py-3 rounded-full hover:bg-primary hover:text-white transition-colors font-medium text-sm flex items-center gap-2 w-fit"
               >
-                <Users className="w-4 h-4" /> JOIN OUR COMMUNITY
+                <Users className="w-4 h-4" /> Join Our Community
               </a>
             </div>
           </div>
 
-          <div className="flex-1 flex flex-col items-end justify-center gap-4 text-right">
-            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-              <p className="text-sm text-gray-600 mb-2">What we do:</p>
-              <ul className="text-sm space-y-1 text-gray-800">
-                <li>• Technical workshops & coding events</li>
-                <li>• Student hackathons with real prizes</li>
-                <li>• Industry expert talks & networking</li>
-                <li>• Skill development programs</li>
-              </ul>
-            </div>
-            <span className="text-xs text-gray-500 italic">
+          <div className="flex-1 flex items-end justify-end gap-1">
+            <span className="text-right text-gray-400 text-sm leading-relaxed">
               Part of IEEE Delhi Section • Serving 3,600+ members across Delhi NCR
             </span>
           </div>

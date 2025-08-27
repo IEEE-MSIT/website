@@ -52,36 +52,13 @@ export const events = [
     date: { month: 'OCT', day: '05', year: '2025' },
     title: 'TechnoVation Hackathon 2025',
     description:
-      '48-hour hackathon focusing on AI & Sustainability. Build innovative tech solutions addressing real-world challenges with cutting-edge technology.',
-    category: 'Hackathon',
-    time: 'Oct 5-7, Full Weekend',
+      '48-hour hackathon focusing on solutions for social impact. Build innovative tech products addressing real-world challenges.',
+    category: 'Team Event',
+    time: 'Oct 5-6, Full Weekend',
     location: 'Innovation Hub, MSIT',
     society: 'IEEE MSIT',
-    prize: 'Prizes worth ₹3,00,000',
-    buttonText: 'Register Team',
-    featured: true,
-    type: 'hackathon',
-    duration: '48 Hours',
-    participants: '200+ Expected',
-    platform: 'DoraHacks',
-    platformLink: 'https://dorahacks.io/hackathon/technovation-2025',
-  },
-  {
-    date: { month: 'NOV', day: '15', year: '2025' },
-    title: 'CodeFest MSIT 2025: Advanced Programming Marathon',
-    description:
-      'Intensive coding competition featuring advanced algorithms, data structures, and competitive programming challenges.',
-    category: 'Programming',
-    time: '10:00 AM - 4:00 PM',
-    location: 'Computer Labs & Online',
-    society: 'IEEE Computer Society',
-    prize: 'Prizes worth ₹75,000',
-    buttonText: 'Register Now',
-    type: 'hackathon',
-    duration: '6 Hours',
-    participants: '100+ Expected',
-    platform: 'Devfolio',
-    platformLink: 'https://devfolio.co/projects/codefest-2025',
+    prize: 'Prizes worth ₹1,00,000',
+    buttonText: 'Form Team',
   },
   {
     date: { month: 'OCT', day: '15', year: '2025' },
@@ -94,98 +71,6 @@ export const events = [
     society: 'IEEE MSIT',
     prize: '50+ Alumni Attending',
     buttonText: 'RSVP Now',
-  },
-];
-
-// Past Hackathon Winners and Results
-export const pastHackathons = [
-  {
-    name: 'TechnoVation 2024',
-    platform: 'DoraHacks',
-    platformLink: 'https://dorahacks.io/hackathon/technovation-2024',
-    tagline: 'Social Impact Hackathon',
-    duration: '48 Hours',
-    date: 'March 15-17, 2024',
-    location: 'Innovation Hub, MSIT',
-    prize: '₹2,00,000 Prize Pool',
-    participants: '150+ Participants',
-    winners: [
-      {
-        team: 'Team EcoSmart',
-        place: '1st Place',
-        project: 'Smart Waste Management System',
-        prize: '₹1,00,000',
-        members: [
-          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80',
-          'https://images.unsplash.com/photo-1494790108755-2616b4b03069?auto=format&fit=crop&w=150&q=80',
-          'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80',
-        ],
-        projectLink: 'https://dorahacks.io/buidl/12345/project-ecosmart',
-      },
-      {
-        team: 'Team HealthTech',
-        place: '2nd Place',
-        project: 'AI-Powered Health Monitoring',
-        prize: '₹60,000',
-        members: [
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80',
-          'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80',
-        ],
-        projectLink: 'https://dorahacks.io/buidl/12346/project-healthtech',
-      },
-      {
-        team: 'Team EduFlow',
-        place: '3rd Place',
-        project: 'Interactive Learning Platform',
-        prize: '₹40,000',
-        members: [
-          'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80',
-          'https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?auto=format&fit=crop&w=150&q=80',
-          'https://images.unsplash.com/photo-1507591064344-4c6ce005b128?auto=format&fit=crop&w=150&q=80',
-        ],
-        projectLink: 'https://dorahacks.io/buidl/12347/project-eduflow',
-      },
-    ],
-  },
-  {
-    name: 'CodeFest 2024',
-    platform: 'Devfolio',
-    platformLink: 'https://devfolio.co/projects/codefest-2024',
-    tagline: 'Programming Marathon',
-    duration: '5 Hours',
-    date: 'September 10, 2024',
-    location: 'Computer Labs A & B',
-    prize: '₹50,000 Prize Pool',
-    participants: '80+ Coders',
-    winners: [
-      {
-        team: 'Arjun Sharma',
-        place: '1st Place',
-        project: '95% Problems Solved • CSE Final Year',
-        prize: '₹25,000',
-        members: [
-          'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80',
-        ],
-      },
-      {
-        team: 'Priya Patel',
-        place: '2nd Place',
-        project: '87% Problems Solved • ECE 3rd Year',
-        prize: '₹15,000',
-        members: [
-          'https://images.unsplash.com/photo-1494790108755-2616b4b03069?auto=format&fit=crop&w=150&q=80',
-        ],
-      },
-      {
-        team: 'Rohit Kumar',
-        place: '3rd Place',
-        project: '82% Problems Solved • IT 2nd Year',
-        prize: '₹10,000',
-        members: [
-          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80',
-        ],
-      },
-    ],
   },
 ];
 
@@ -223,6 +108,123 @@ export const chapters = [
     link: '#',
   },
 ];
+
+export const hackathons = {
+  past: [
+    {
+      name: 'TechnoVation 2024',
+      platform: 'DoraHacks',
+      platformLink: 'https://dorahacks.io/hackathon/technovation-2024',
+      tagline: 'Social Impact Hackathon',
+      duration: '48 Hours',
+      date: 'March 15-17, 2024',
+      location: 'Innovation Hub, MSIT',
+      prize: '₹2,00,000 Prize Pool',
+      participants: '150+ Participants',
+      winners: [
+        {
+          team: 'Team EcoSmart',
+          place: '1st Place',
+          project: 'Smart Waste Management System',
+          prize: '₹1,00,000',
+          members: [
+            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80',
+            'https://images.unsplash.com/photo-1494790108755-2616b4b03069?auto=format&fit=crop&w=150&q=80',
+            'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80',
+          ],
+          projectLink: 'https://dorahacks.io/buidl/12345/project-ecosmart',
+        },
+        {
+          team: 'Team HealthTech',
+          place: '2nd Place',
+          project: 'AI-Powered Health Monitoring',
+          prize: '₹60,000',
+          members: [
+            'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80',
+            'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80',
+          ],
+          projectLink: 'https://dorahacks.io/buidl/12346/project-healthtech',
+        },
+        {
+          team: 'Team EduFlow',
+          place: '3rd Place',
+          project: 'Interactive Learning Platform',
+          prize: '₹40,000',
+          members: [
+            'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80',
+            'https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?auto=format&fit=crop&w=150&q=80',
+            'https://images.unsplash.com/photo-1507591064344-4c6ce005b128?auto=format&fit=crop&w=150&q=80',
+          ],
+          projectLink: 'https://dorahacks.io/buidl/12347/project-eduflow',
+        },
+      ],
+    },
+    {
+      name: 'CodeFest 2024',
+      platform: 'Devfolio',
+      platformLink: 'https://devfolio.co/projects/codefest-2024',
+      tagline: 'Programming Marathon',
+      duration: '5 Hours',
+      date: 'September 10, 2024',
+      location: 'Computer Labs A & B',
+      prize: '₹50,000 Prize Pool',
+      participants: '80+ Coders',
+      winners: [
+        {
+          team: 'Arjun Sharma',
+          place: '1st Place',
+          project: '95% Problems Solved • CSE Final Year',
+          prize: '₹25,000',
+          members: [
+            'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80',
+          ],
+        },
+        {
+          team: 'Priya Patel',
+          place: '2nd Place',
+          project: '87% Problems Solved • ECE 3rd Year',
+          prize: '₹15,000',
+          members: [
+            'https://images.unsplash.com/photo-1494790108755-2616b4b03069?auto=format&fit=crop&w=150&q=80',
+          ],
+        },
+        {
+          team: 'Rohit Kumar',
+          place: '3rd Place',
+          project: '82% Problems Solved • IT 2nd Year',
+          prize: '₹10,000',
+          members: [
+            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80',
+          ],
+        },
+      ],
+    },
+  ],
+  upcoming: [
+    {
+      name: 'TechnoVation 2025',
+      platform: 'DoraHacks',
+      platformLink: 'https://dorahacks.io/hackathon/technovation-2025',
+      tagline: 'AI & Sustainability Focus',
+      duration: '48 Hours',
+      date: 'October 5-7, 2025',
+      location: 'Innovation Hub, MSIT',
+      prize: '₹3,00,000 Prize Pool',
+      participants: '200+ Expected',
+    },
+    {
+      name: 'CodeFest 2025',
+      platform: 'Devfolio',
+      platformLink: 'https://devfolio.co/projects/codefest-2025',
+      tagline: 'Advanced Algorithms & Data Structures',
+      duration: '6 Hours',
+      date: 'November 15, 2025',
+      location: 'Computer Labs & Online',
+      prize: '₹75,000 Prize Pool',
+      participants: '100+ Expected',
+    },
+  ],
+};
 
 export const team = {
   execom2025: [
