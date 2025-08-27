@@ -1,3 +1,4 @@
+// @ts-ignore
 import { ChatBot } from '10xanswers';
 
 const ChatBotComponent = () => {
