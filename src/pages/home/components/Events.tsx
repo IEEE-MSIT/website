@@ -1,6 +1,7 @@
 import { useRef } from 'react';
-import { ArrowRight, ChevronLeft, ChevronRight, Clock, MapPin, Eye } from 'lucide-react';
-import { events } from '../../../data/data';
+import { ArrowRight, ChevronLeft, ChevronRight, Clock, MapPin, Eye, Trophy, Users, Award, ExternalLink } from 'lucide-react';
+import { events, pastHackathons } from '../../../data/data';
+import type { HackathonWinner } from '../../../types';
 
 const Events = () => {
   const eventsCarouselRef = useRef<HTMLDivElement>(null);
@@ -24,17 +25,17 @@ const Events = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-            Upcoming Events
+            Events & Hackathons
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-black mb-6">
             Join Our <span className="text-primary">Technical</span> Events &{' '}
-            <span className="text-tertiary">Workshops</span>
+            <span className="text-tertiary">Hackathons</span>
           </h2>
 
           <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-            From hands-on workshops to industry conferences, discover opportunities to learn,
-            network, and advance your engineering career.
+            From hands-on workshops to competitive hackathons, discover opportunities to learn,
+            network, build innovative solutions, and advance your engineering career.
           </p>
         </div>
 
@@ -192,6 +193,123 @@ const Events = () => {
             Show All Events
             <ArrowRight className="w-5 h-5" />
           </button>
+        </div>
+
+        {/* Past Hackathon Winners Section */}
+        <div className="mt-20 border-t border-gray-200 pt-20">
+          <div className="text-center mb-16">
+            <div className="inline-block bg-secondary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+              Past Champions
+            </div>
+            <h3 className="text-3xl sm:text-4xl font-serif text-black mb-6">
+              Hackathon <span className="text-primary">Winners</span> & <span className="text-tertiary">Innovations</span>
+            </h3>
+            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              Celebrating the brilliant minds and innovative solutions from our flagship hackathons and programming competitions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {pastHackathons.map((hackathon, index) => (
+              <div
+                key={index}
+                className="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-primary transition-all duration-500"
+              >
+                <div className="relative bg-gradient-to-br from-background to-white border-b border-gray-100 p-6">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <h4 className="text-2xl font-serif text-black group-hover:text-primary transition-colors">
+                          {hackathon.name}
+                        </h4>
+                        <a
+                          href={hackathon.platformLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-medium hover:bg-blue-200 transition-colors"
+                        >
+                          <ExternalLink className="w-3 h-3" />
+                          {hackathon.platform}
+                        </a>
+                      </div>
+                      <p className="text-gray-600 font-medium">
+                        {hackathon.tagline}
+                      </p>
+                    </div>
+                    <div className="text-right">
+                      <div className="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-2">
+                        {hackathon.duration}
+                      </div>
+                      <p className="text-xs text-gray-500">{hackathon.date}</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
+                    <div className="flex items-center">
+                      <MapPin className="w-4 h-4 mr-2 text-primary" />
+                      <span>{hackathon.location}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Trophy className="w-4 h-4 mr-2 text-primary" />
+                      <span>{hackathon.prize}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Users className="w-4 h-4 mr-2 text-primary" />
+                      <span>{hackathon.participants}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h5 className="text-xl font-serif text-black mb-6">
+                    🏆 Winning Teams
+                  </h5>
+                  {hackathon.winners.map((winner, winnerIndex) => (
+                    <div
+                      key={winnerIndex}
+                      className="flex items-center gap-4 p-4 bg-gradient-to-r from-amber-50 to-yellow-50 rounded-xl mb-4 border border-amber-200 group/winner hover:shadow-md transition-all"
+                    >
+                      <div className="flex -space-x-2">
+                        {winner.members.map((member, memberIndex) => (
+                          <div
+                            key={memberIndex}
+                            className="w-10 h-10 rounded-full border-2 border-white shadow-lg overflow-hidden"
+                          >
+                            <img
+                              src={member}
+                              alt="Team member"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Award className="w-4 h-4 text-amber-600" />
+                          <span className="font-serif text-lg text-black">
+                            {winner.team}
+                          </span>
+                          <span className="bg-amber-200 text-amber-800 px-2 py-0.5 rounded-full text-xs font-medium">
+                            {winner.place}
+                          </span>
+                        </div>
+                        <p className="text-sm text-gray-600 mb-1">{winner.project}</p>
+                        <p className="text-xs font-semibold text-primary">{winner.prize}</p>
+                      </div>
+                      {(winner as HackathonWinner).projectLink && (
+                        <a
+                          href={(winner as HackathonWinner).projectLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-amber-600 hover:text-amber-800 transition-colors"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

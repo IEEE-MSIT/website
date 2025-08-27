@@ -78,8 +78,24 @@ const Team = () => {
         </div>
 
         <div className="flex justify-center mb-8 px-4">
-          <div className="bg-gray-100 p-1 rounded-lg w-full max-w-2xl">
-            <div className="hidden sm:flex flex-wrap justify-center gap-1">
+          <div className="w-full max-w-2xl">
+            {/* Mobile: Dropdown */}
+            <div className="sm:hidden">
+              <select
+                value={activeTab}
+                onChange={(e) => setActiveTab(e.target.value)}
+                className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-sm"
+              >
+                <option value="achievements2025">Achievements 2025</option>
+                <option value="achievements2024">Achievements 2024</option>
+                <option value="execom2025">Executive Committee 2025</option>
+                <option value="execom2024">Executive Committee 2024</option>
+              </select>
+            </div>
+
+            {/* Desktop: Tab buttons */}
+            <div className="hidden sm:block bg-gray-100 p-1 rounded-lg">
+              <div className="flex flex-wrap justify-center gap-1">
               <button
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${activeTab === 'achievements2025' ? 'bg-black text-white' : 'text-gray-600 hover:text-black'}`}
                 onClick={() => setActiveTab('achievements2025')}
@@ -104,6 +120,7 @@ const Team = () => {
               >
                 Execom 2024
               </button>
+              </div>
             </div>
           </div>
         </div>

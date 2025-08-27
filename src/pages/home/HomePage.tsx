@@ -2,7 +2,6 @@ import About from './components/About';
 import ChapterHighlights from './components/ChapterHighlights';
 import Community from './components/Community';
 import Events from './components/Events';
-import Hackathons from './components/Hackathons';
 import Hero from './components/Hero';
 import Join from './components/Join';
 import Team from './components/Team';
@@ -15,7 +14,6 @@ const HomePage = () => {
       <Community />
       <Events />
       <ChapterHighlights />
-      <Hackathons />
       <Team />
       <Join />
     </main>
