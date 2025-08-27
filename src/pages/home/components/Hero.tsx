@@ -13,16 +13,16 @@ const Hero = () => {
         }}
       >
         <div className="text-center my-12">
-          <div className="flex items-center justify-center mb-6">
+          <div className="flex items-center justify-center mb-6  flex-wrap-reverse">
             <h1 className="text-6xl md:text-8xl font-serif text-black mr-4">IEEE MSIT</h1>
             <img
               src="/IEEEWhiteLogowithTransparentBG.png"
               alt="IEEE Logo"
-              className=" h-12 md:h-16 bg-primary hidden sm:block"
+              className=" h-12 md:h-16 hidden sm:block bg-primary"
             />
           </div>
           <p className="text-lg md:text-xl text-gray-600 font-medium mb-2">
-            Student Technology Club at MSIT
+            Student Technology Club
           </p>
           <p className="text-sm text-gray-500">
             Part of IEEE - The world's largest engineering organization
@@ -31,12 +31,12 @@ const Hero = () => {
 
         <div className="flex flex-col lg:flex-row gap-8 mb-12">
           <div className="flex-1 text-left">
-            <p className="text-lg md:text-xl text-black mb-8 leading-relaxed">
+            <p className="text-lg hidden md:text-xl text-black mb-8 leading-relaxed">
               <strong>IEEE MSIT</strong> is the student branch of the{' '}
               <em className="border-b-2 border-dashed border-ieee-blue">
                 world's largest technology organization
               </em>
-              , IEEE, at Maharaja Surajmal Institute of Technology.
+              , IEEE
             </p>
             <p className="text-lg md:text-xl text-black mb-8 leading-relaxed">
               We're a community of engineering students who organize{' '}
