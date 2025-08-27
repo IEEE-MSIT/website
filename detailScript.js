@@ -2,10 +2,8 @@ const csv = require('csv-parser');
 const fs = require('fs');
 const results = [];
 
-// used for temporary storage of data
 const data = [];
 
-// object of the team details
 const Team = {
   TA: [],
   MAIN: [],
@@ -22,7 +20,6 @@ const Team = {
   SPONSORSHIP_AND_MEMBERSHIP_DEVELOPMENT_COMMITTEE: [],
 };
 
-// form data format case may differ
 const form = {
   rank: '',
   name: '',
@@ -36,7 +33,6 @@ const form = {
   image: '',
 };
 
-// read from the csvfile and write into ExeComDetails file
 fs.createReadStream('./src/Pages/ExeCom/team.csv')
   .pipe(csv())
   .on('data', (data) => results.push(data))

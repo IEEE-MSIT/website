@@ -13,7 +13,7 @@ function App() {
       <Header />
       <Routes>
         <Route path={HOME_PATH} element={<HomePage />} />
-        {/* Add other routes here */}
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />

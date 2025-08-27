@@ -3,9 +3,6 @@ import { ArrowRight, Users } from 'lucide-react';
 const Hero = () => {
   return (
     <section className="relative min-h-[80vh] bg-background overflow-hidden pt-20">
-      {/* Background Lines PNG */}
-
-      {/* Content */}
       <div
         className="w-full max-w-6xl mx-auto px-6 py-8 h-full flex flex-col justify-center"
         style={{
@@ -15,7 +12,6 @@ const Hero = () => {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Logo and Title - Center Aligned */}
         <div className="text-center my-12">
           <div className="flex items-center justify-center mb-6">
             <h1 className="text-6xl md:text-8xl font-serif text-black mr-4">IEEE MSIT</h1>
@@ -27,9 +23,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Two Content Boxes */}
         <div className="flex flex-col lg:flex-row gap-8 mb-12">
-          {/* Left Box - Subtitle and Main Buttons */}
           <div className="flex-1 text-left">
             <p className="text-lg md:text-xl text-black mb-8 leading-relaxed">
               We advance technology for{' '}
@@ -54,14 +48,12 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Box - Empty for spacing */}
           <div className="flex-1 flex items-end justify-end gap-1">
             <span className="italic">"Building Tomorrow's Tech Leaders" </span>
             <span className="hidden md:block"> by IEEE MSIT</span>
           </div>
         </div>
 
-        {/* Image at Bottom - Full Width */}
         <div className="w-full flex justify-center items-end mt-auto relative">
           <img src="/socratica.png" alt="IEEE MSIT Group" className="w-full h-auto object-cover" />
         </div>

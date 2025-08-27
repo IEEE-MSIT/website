@@ -18,7 +18,6 @@ const Hackathons = () => {
           </p>
         </div>
 
-        {/* Past Hackathons */}
         <div className="mb-16">
           <h3 className="text-2xl font-serif text-black mb-8 text-center">Past Hackathons</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
@@ -126,7 +125,6 @@ const Hackathons = () => {
           </div>
         </div>
 
-        {/* Upcoming Hackathons */}
         <div>
           <h3 className="text-2xl font-serif text-black mb-8 text-center">Upcoming Hackathons</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">

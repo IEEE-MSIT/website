@@ -13,7 +13,6 @@
   }
 }
 
-/* Hide scrollbar for scrollable tabs */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;

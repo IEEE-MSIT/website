@@ -7,7 +7,6 @@ const Events = () => {
 
   const scrollEventsCarousel = (direction: 'left' | 'right') => {
     if (eventsCarouselRef.current) {
-      const scrollAmount = 620; // Width of card + gap
       const currentScroll = eventsCarouselRef.current.scrollLeft;
       const targetScroll =
         direction === 'left' ? currentScroll - scrollAmount : currentScroll + scrollAmount;
@@ -38,9 +37,7 @@ const Events = () => {
           </p>
         </div>
 
-        {/* Desktop Carousel + Mobile Grid */}
         <div className="relative">
-          {/* Navigation Arrows - Desktop Only */}
           <button
             onClick={() => scrollEventsCarousel('left')}
             className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors items-center justify-center"
@@ -54,7 +51,6 @@ const Events = () => {
             <ChevronRight className="w-6 h-6 text-gray-600" />
           </button>
 
-          {/* Desktop Carousel Container */}
           <div
             ref={eventsCarouselRef}
             className="hidden lg:block overflow-x-auto scrollbar-hide mx-12"
@@ -123,7 +119,6 @@ const Events = () => {
             </div>
           </div>
 
-          {/* Mobile/Tablet Horizontal Scroll Layout */}
           <div className="lg:hidden">
             <div className="overflow-x-auto scrollbar-hide px-4 -mx-4">
               <div className="flex gap-4 pb-4 w-max">

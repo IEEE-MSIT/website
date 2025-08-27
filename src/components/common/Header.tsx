@@ -4,7 +4,6 @@ import { Menu, ChevronDown } from 'lucide-react';
 const Header = () => {
   const [chaptersDropdownOpen, setChaptersDropdownOpen] = useState(false);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Element;
@@ -21,7 +20,6 @@ const Header = () => {
 
   return (
     <>
-      {/* IEEE Global Bar */}
       <div className="w-full bg-black text-gray-200 text-xs md:text-sm py-2 px-4 md:px-6 fixed top-0 z-50">
         <div className="flex justify-between items-center max-w-7xl mx-auto">
           <div className="flex gap-4 md:gap-6 items-center">
@@ -77,9 +75,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Navigation */}
       <nav className="flex justify-between items-center px-6 py-4 bg-background fixed top-[40px] left-0 right-0 z-40 shadow-sm">
-        {/* Left side - IEEE MSIT Logo and Title */}
         <div className="flex items-center gap-2">
           <img
             src="/IEEEWhiteLogowithTransparentBG.png"
@@ -89,7 +85,6 @@ const Header = () => {
           <h1 className="text-2xl font-serif text-black font-semibold">IEEE MSIT</h1>
         </div>
 
-        {/* Center - Navigation Links (hidden on mobile) */}
         <div className="hidden lg:flex items-center gap-8">
           <a
             href="#about"
@@ -104,7 +99,6 @@ const Header = () => {
             Events
           </a>
 
-          {/* Chapters Dropdown */}
           <div className="relative chapters-dropdown">
             <button
               onClick={() => setChaptersDropdownOpen(!chaptersDropdownOpen)}
@@ -174,7 +168,6 @@ const Header = () => {
           </a>
         </div>
 
-        {/* Right side - Contact CTA and Mobile Menu */}
         <div className="flex items-center gap-4">
           <a
             href="#contact"
@@ -183,7 +176,6 @@ const Header = () => {
             Contact
           </a>
 
-          {/* Mobile menu button */}
           <button className="lg:hidden p-2 hover:bg-black/5 rounded-full transition-colors">
             <Menu className="w-6 h-6" />
           </button>

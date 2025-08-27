@@ -19,11 +19,9 @@ const About = () => {
           achievements, foster teamwork, and help students prepare for global impact.
         </p>
 
-        {/* Achievements Section */}
         <div className="mt-16">
           <h3 className="text-2xl md:text-3xl font-serif text-black mb-12">Our Achievements</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Region 10 Award */}
             <div className="transform rotate-1 hover:rotate-0 transition-transform">
               <div className="bg-white rounded-lg shadow-lg p-6 text-center">
                 <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
@@ -37,7 +35,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* Darrel Chong Gold */}
             <div className="transform -rotate-1 hover:rotate-0 transition-transform">
               <div className="bg-white rounded-lg shadow-lg p-6 text-center">
                 <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
@@ -51,7 +48,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* IEEE Day STEM Photo Contest */}
             <div className="transform rotate-2 hover:rotate-0 transition-transform">
               <div className="bg-white rounded-lg shadow-lg p-6 text-center">
                 <div className="w-16 h-16 bg-tertiary rounded-full flex items-center justify-center mx-auto mb-4">

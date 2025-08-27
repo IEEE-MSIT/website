@@ -9,7 +9,6 @@ const Community = () => {
           <em className="text-tertiary">far along</em>, this is a place for you.
         </h2>
 
-        {/* Tilted infinite scrolling carousel */}
         <div className="mb-12 py-8 h-max transform rotate-2 overflow-hidden w-full">
           <Marquee speed={30} gradient={false} pauseOnHover={true} className="w-full">
             <div className="mx-4">
