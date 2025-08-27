@@ -36,3 +36,54 @@
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
 }
+
+/* 10xAnswers ChatBot - Ensure it stays on top */
+.chatbot-container {
+  z-index: 99999 !important;
+  position: fixed !important;
+}
+
+.chatbot-icon {
+  z-index: 99999 !important;
+  position: fixed !important;
+}
+
+.chatbot-window {
+  z-index: 99999 !important;
+  position: fixed !important;
+}
+
+/* Target specific 10xAnswers classes */
+[class*="chatbot"] {
+  z-index: 99999 !important;
+}
+
+/* Additional selectors for 10xAnswers components */
+div[style*="position: fixed"] {
+  z-index: 99999 !important;
+}
+
+/* Target React Draggable components (used by 10xAnswers) */
+.react-draggable {
+  z-index: 99999 !important;
+}
+
+/* Target any floating UI elements */
+[data-floating-ui-portal] {
+  z-index: 99999 !important;
+}
+
+/* Comprehensive coverage for all potential chatbot elements */
+[class*="chat"],
+[class*="bot"],
+[id*="chat"],
+[id*="bot"] {
+  z-index: 99999 !important;
+}
+
+/* Ensure modals and overlays from 10xAnswers stay on top */
+.modal,
+.overlay,
+.popup {
+  z-index: 99999 !important;
+}

@@ -8,13 +8,15 @@ const ChatBotComponent = () => {
         height: 'auto',
         width: '350px',
         margin: 0,
-        'z-index': 999,
+        zIndex: 99999,
       }}
       chatBotIconStyle={{
-        'z-index': 999,
+        zIndex: 99999,
+        position: 'fixed',
       }}
       chatWindowStyle={{
         backgroundColor: '#0b0a0a',
+        zIndex: 99999,
       }}
       backendUrl="https://ask-10x-questions.vercel.app/"
       title="IEEE MSIT"
@@ -50,7 +52,7 @@ These awards honor the dedication and excellence of IEEE MSIT members and leader
 
 IEEE and Regional Context
 
-IEEE: The world’s largest professional technical organization, originating in 1884, focused on innovation and technological advancement.
+IEEE: The world's largest professional technical organization, originating in 1884, focused on innovation and technological advancement.
 
 Asia-Pacific Region: A hub for innovation with active engagement from India.
 
@@ -66,9 +68,23 @@ Newsletters and Publications
 
 ROBO TIDING (IEEE RAS MSIT)
 
-SHESCRIPTS (IEEE WIE MSIT): Bite-sized tech news and updates designed for quick and informative reading."
-      userIcon="static/images/logoImg.jpg"
-      botIcon="static/images/logoImg2.jpg"
+SHESCRIPTS (IEEE WIE MSIT): Bite-sized tech news and updates designed for quick and informative reading.
+
+Social Media Links:
+- GitHub: https://github.com/IEEE-MSIT
+- Instagram: https://www.instagram.com/ieeemsit/
+- LinkedIn: https://www.linkedin.com/company/ieeemsit
+- Twitter: https://x.com/ieeemsit
+- Facebook: https://www.facebook.com/ieeemsit
+- WhatsApp Community: https://chat.whatsapp.com/B9SjKLJqgiYIeAX0tMhbIH
+
+Contact Information:
+- Email: anupama@msit.in
+- Phone: +91-11-2681-4816
+- Address: Maharaja Surajmal Institute of Technology, New Delhi, Delhi 110058, India
+- Website: https://ieeemsit.vercel.app"
+      userIcon="/IEEEBlueLogowithWhiteBG.jpg"
+      botIcon="/IEEEWhiteLogowithTransparentBG.png"
       stylizeTitle={{ emphasized: 'IEEE', normal: 'MSIT' }}
     />
   );
