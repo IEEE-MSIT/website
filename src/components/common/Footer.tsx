@@ -1,11 +1,11 @@
 import { Heart } from 'lucide-react';
+import { footer } from '../../data/data';
 
 const Footer = () => {
   return (
     <footer className="bg-footer-bg text-footer-text py-16 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* About IEEE MSIT */}
           <div className="md:col-span-2">
             <h3 className="text-xl font-serif font-semibold mb-4">IEEE MSIT</h3>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
@@ -16,25 +16,21 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3 text-sm">
-              <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="https://www.ieee.org/membership/join/index.html" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">Join IEEE</a></li>
-              <li><a href="https://msit.in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">MSIT</a></li>
-              <li><a href="#events" className="text-gray-400 hover:text-white transition-colors">Opportunities</a></li>
+              {footer.quickLinks.map((link, index) => (
+                <li key={index}><a href={link.href} className="text-gray-400 hover:text-white transition-colors">{link.text}</a></li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Us */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3 text-sm">
-              <li><a href="mailto:anupama@msit.in" className="text-gray-400 hover:text-white transition-colors">anupama@msit.in</a></li>
-              <li><a href="mailto:shubhamsharma@ieee.org" className="text-gray-400 hover:text-white transition-colors">shubhamsharma@ieee.org</a></li>
-              <li><a href="mailto:ishneet@ieee.org" className="text-gray-400 hover:text-white transition-colors">ishneet@ieee.org</a></li>
-              <li><a href="mailto:tussharaggarwal@ieee.org" className="text-gray-400 hover:text-white transition-colors">tussharaggarwal@ieee.org</a></li>
+              {footer.contact.map((contact, index) => (
+                <li key={index}><a href={contact.href} className="text-gray-400 hover:text-white transition-colors">{contact.text}</a></li>
+              ))}
             </ul>
           </div>
         </div>
