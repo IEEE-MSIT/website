@@ -1,10 +1,12 @@
-import About from './components/About';
-import ChapterHighlights from './components/ChapterHighlights';
-import Events from './components/Events';
-import Hackathons from './components/Hackathons';
 import Hero from './components/Hero';
-import Join from './components/Join';
+import About from './components/About';
+import Events from './components/Events';
+import ChapterHighlights from './components/ChapterHighlights';
+import Hackathons from './components/Hackathons';
+import Achievements from './components/Achievements';
 import Team from './components/Team';
+// import Join from './components/Join';
+import Contact from './components/Contact';
 
 const HomePage = () => {
   return (
@@ -15,8 +17,10 @@ const HomePage = () => {
       <Events />
       <ChapterHighlights />
       <Hackathons />
+      <Achievements />
       <Team />
-      <Join />
+  {/* <Join /> */}
+  <Contact />
     </main>
   );
 };

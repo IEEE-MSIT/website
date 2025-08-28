@@ -13,13 +13,13 @@ const Hero = () => {
         }}
       >
         <div className="text-center my-12">
-          <div className="flex items-center justify-center mb-6  flex-wrap-reverse">
-            <h1 className="text-6xl md:text-8xl font-serif text-black mr-4">IEEE MSIT</h1>
+          <div className="flex items-center justify-center mb-6  flex-wrap-reverse gap-4">
             <img
               src="/IEEEWhiteLogowithTransparentBG.png"
               alt="IEEE Logo"
-              className=" h-12 md:h-16 hidden sm:block bg-primary"
+              className=" h-12 mt-2 md:h-16 hidden sm:block bg-primary"
             />
+            <h1 className="text-6xl md:text-8xl text-balance font-serif text-black mr-4">IEEE MSIT</h1>
           </div>
           <p className="text-lg md:text-xl text-gray-600 font-medium mb-2">
             Student Technology Club

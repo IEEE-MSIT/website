@@ -154,8 +154,22 @@ export const hackathons = {
       date: 'January 29-30, 2025',
       location: 'Seminar Hall C-4, MSIT Janakpuri',
       prize: '₹25,000 Prize Pool',
-      participants: '50+ Participants',
+      participants: '50+ Teams',
       organizer: 'IEEE WIE MSIT',
+      image: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=800&q=80',
+      description: 'A groundbreaking women-centric hackathon that brought together brilliant minds to create innovative solutions with a focus on empowering women through technology.',
+      images: [
+        'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=600&q=80',
+        'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80',
+        'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80',
+        'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=600&q=80'
+      ],
+      judges: [
+        'Mr. Sourav Bera – Solution Architect @Microsoft',
+        'Mr. Aryan – Vice-Chairperson of IEEE WiE Special Days Subcommittee Global Team',
+        'Ms. Monika Chhikara – Senior Software Developer @Wipro Limited'
+      ],
+      technologies: ['MERN Stack', 'Blockchain', 'AI/ML', 'React Native'],
       winners: [
         {
           team: 'Smooth Operators',
@@ -163,6 +177,7 @@ export const hackathons = {
           project: 'Outstanding technical skills and creativity',
           prize: '₹15,000',
           members: [],
+          projectLink: 'https://github.com/rajveeerr/Safire',
         },
         {
           team: 'Hadn\'t',

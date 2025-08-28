@@ -63,9 +63,15 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               {footer.quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-gray-400 hover:text-white transition-colors">
-                    {link.text}
-                  </a>
+                  {link.href.startsWith('/') ? (
+                    <Link to={link.href} className="text-gray-400 hover:text-white transition-colors">
+                      {link.text}
+                    </Link>
+                  ) : (
+                    <a href={link.href} className="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                      {link.text}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -76,12 +82,19 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               {footer.contact.map((contact, index) => (
                 <li key={index}>
-                  <a
-                    href={contact.href}
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    {contact.text}
-                  </a>
+                  {contact.href.startsWith('/') ? (
+                    <Link to={contact.href} className="text-gray-400 hover:text-white transition-colors">
+                      {contact.text}
+                    </Link>
+                  ) : (
+                    <a
+                      href={contact.href}
+                      className="text-gray-400 hover:text-white transition-colors"
+                      target="_blank" rel="noopener noreferrer"
+                    >
+                      {contact.text}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

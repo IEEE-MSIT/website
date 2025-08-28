@@ -25,7 +25,6 @@ const Header = () => {
     };
   }, []);
 
-  // Handle body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -33,13 +32,11 @@ const Header = () => {
       document.body.style.overflow = 'unset';
     }
 
-    // Cleanup on unmount
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, [mobileMenuOpen]);
 
-  // Close mobile menu when clicking on links
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     setChaptersDropdownOpen(false);
@@ -113,12 +110,12 @@ const Header = () => {
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">
-          <a
-            href="#about"
+          <Link
+            to="/about"
             className="text-gray-700 hover:text-primary transition-colors font-medium text-sm"
           >
             About
-          </a>
+          </Link>
           <a
             href="#events"
             className="text-gray-700 hover:text-primary transition-colors font-medium text-sm"
@@ -147,12 +144,6 @@ const Header = () => {
                     Computer Society Chapter
                   </a>
                   <a
-                    href="#ias-chapter"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors text-sm"
-                  >
-                    Industry Applications Society
-                  </a>
-                  <a
                     href="#pes-chapter"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors text-sm"
                   >
@@ -170,44 +161,32 @@ const Header = () => {
                   >
                     Robotics & Automation Society
                   </a>
-                  <a
-                    href="#communications-chapter"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors text-sm"
-                  >
-                    Communications Society
-                  </a>
                 </div>
               </div>
             )}
           </div>
 
-          <a
-            href="#team"
+          <Link
+            to="/team"
             className="text-gray-700 hover:text-primary transition-colors font-medium text-sm"
           >
-            Team
-          </a>
+            Executive Board
+          </Link>
           <a
             href="/faq"
             className="text-gray-700 hover:text-primary transition-colors font-medium text-sm"
           >
             FAQ
           </a>
-          <a
-            href="#join"
-            className="text-gray-700 hover:text-primary transition-colors font-medium text-sm"
-          >
-            Join Us
-          </a>
         </div>
 
         <div className="flex items-center gap-4">
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="hidden lg:inline-flex bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm"
           >
             Contact
-          </a>
+          </Link>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -223,7 +202,6 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div
           className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-20"
@@ -232,17 +210,16 @@ const Header = () => {
         ></div>
       )}
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden fixed top-[88px] left-0 right-0 bg-white border-t-2 border-primary shadow-xl z-30 max-h-[calc(100vh-88px)] overflow-y-auto animate-slide-down mobile-menu">
           <div className="px-6 py-6 space-y-2">
-            <a
-              href="#about"
+            <Link
+              to="/about"
               onClick={closeMobileMenu}
               className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium text-base"
             >
               About
-            </a>
+            </Link>
             <a
               href="#events"
               onClick={closeMobileMenu}
@@ -251,7 +228,6 @@ const Header = () => {
               Events
             </a>
 
-            {/* Mobile Chapters Dropdown */}
             <div className="chapters-dropdown">
               <button
                 onClick={() => setChaptersDropdownOpen(!chaptersDropdownOpen)}
@@ -311,13 +287,13 @@ const Header = () => {
               )}
             </div>
 
-            <a
-              href="#team"
+            <Link
+              to="/team"
               onClick={closeMobileMenu}
               className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium text-base"
             >
               Team
-            </a>
+            </Link>
             <a
               href="/faq"
               onClick={closeMobileMenu}
@@ -325,23 +301,15 @@ const Header = () => {
             >
               FAQ
             </a>
-            <a
-              href="#join"
-              onClick={closeMobileMenu}
-              className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium text-base"
-            >
-              Join Us
-            </a>
 
-            {/* Contact Button with Primary Styling */}
             <div className="pt-4 border-t border-gray-100">
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 onClick={closeMobileMenu}
                 className="block bg-gradient-to-r from-primary to-primary-dark text-white px-6 py-3 rounded-xl hover:from-primary-dark hover:to-primary transition-all duration-300 font-medium text-base text-center shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
               >
                 Contact Us
-              </a>
+              </Link>
             </div>
           </div>
         </div>

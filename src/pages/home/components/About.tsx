@@ -23,7 +23,7 @@ const About = () => {
 
        
 
-          <div className="bg-background rounded-2xl p-8 text-center">
+          {/* <div className="bg-background rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-serif text-black mb-4">Why Join IEEE MSIT?</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
               <div>
@@ -51,7 +51,7 @@ const About = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="py-8 overflow-hidden w-full marquee-container">
           <Marquee 
@@ -138,7 +138,6 @@ const About = () => {
                 }}
               />
             </div>
-            {/* Duplicate images for smooth scrolling */}
             <div className="mx-4">
               <img
                 src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"

@@ -1,13 +1,8 @@
 import { useState } from 'react';
-import { Award, Trophy, Linkedin } from 'lucide-react';
-import { team, achievements } from '../../../data/data';
-
-interface Achievement {
-  title: string;
-  subtitle: string;
-  description: string;
-  icon: string;
-}
+import MemberCard from '../../../components/ui/MemberCard';
+import { Link } from 'react-router-dom';
+import { Mail, Share2, X, Eye, ArrowRight } from 'lucide-react';
+import { execom2025 } from '../../../data/execom2025';
 
 interface Member {
   name: string;
@@ -15,121 +10,110 @@ interface Member {
   branch: string;
   image: string;
   linkedin: string;
+  email?: string;
 }
 
 const Team = () => {
-  const [activeTab, setActiveTab] = useState('execom2025');
+  const [selectedMember] = useState<Member | null>(null);
+  const [showModal, setShowModal] = useState(false);
 
-  const renderAchievement = (achievement: Achievement, index: number) => (
-    <div
-      key={index}
-      className="bg-gradient-to-br from-yellow-50 to-amber-50 border border-yellow-200 rounded-xl p-6 hover:shadow-lg transition-all"
-    >
-      <div className="flex items-center mb-4">
-        {achievement.icon === 'Award' ? (
-          <Award className="w-8 h-8 text-yellow-600 mr-3" />
-        ) : (
-          <Trophy className="w-8 h-8 text-blue-600 mr-3" />
-        )}
-        <div>
-          <h3 className="font-serif text-lg text-black">{achievement.title}</h3>
-          <p className="text-yellow-700 text-sm font-medium">{achievement.subtitle}</p>
-        </div>
-      </div>
-      <p className="text-gray-700 text-sm leading-relaxed">{achievement.description}</p>
-    </div>
-  );
+  const handleShare = (member: Member) => {
+    if (navigator.share) {
+      navigator.share({
+        title: `${member.name} - ${member.position}`,
+        url: window.location.href,
+      });
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      alert('Profile link copied to clipboard!');
+    }
+  };
 
   const renderMember = (member: Member, index: number) => (
-    <div
+    <MemberCard
       key={index}
-      className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-primary transition-all duration-300 group"
-    >
-      <div className="text-center">
-        <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gray-200 group-hover:border-primary transition-colors">
-          <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-        </div>
-        <h3 className="font-serif text-lg text-black mb-1">{member.name}</h3>
-        <p className="text-primary font-medium text-sm mb-2">{member.position}</p>
-        <p className="text-gray-600 text-xs mb-4">{member.branch}</p>
-        <a
-          href={member.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-blue-100 transition-colors"
-        >
-          <Linkedin className="w-3 h-3" />
-          LinkedIn
-        </a>
-      </div>
-    </div>
+      member={member}
+      year={2025}
+    />
   );
 
   return (
     <section className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-block bg-tertiary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-            Our Team
+        <div className="text-center mb-16">
+          <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+            Meet Our Team
           </div>
           <h2 className="text-4xl md:text-5xl font-serif text-black mb-4">
-            Achievements & Leadership
+            Executive Committee
           </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Meet the dedicated leaders driving innovation and excellence at IEEE MSIT
+          </p>
         </div>
-
-        <div className="flex justify-center mb-8 px-4">
-          <div className="bg-gray-100 p-1 rounded-lg w-full max-w-2xl">
-            <div className="hidden sm:flex flex-wrap justify-center gap-1">
+        <div className="min-h-[400px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {execom2025.chapters['MAIN IEEE MSIT'].map(renderMember)}
+            </div>
+        </div>
+        <div className="text-center mt-12">
+          <Link
+            to="/team"
+            className="w-max bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 mx-auto"
+          >
+            <Eye className="w-4 h-4" />
+            Show All Members
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+        {showModal && selectedMember && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full relative">
               <button
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${activeTab === 'achievements2025' ? 'bg-black text-white' : 'text-gray-600 hover:text-black'}`}
-                onClick={() => setActiveTab('achievements2025')}
+                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white text-gray-600 transition-colors"
+                onClick={() => setShowModal(false)}
+                title="Close"
               >
-                Achievements 2025
+                <X className="w-5 h-5" />
               </button>
-              <button
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${activeTab === 'achievements2024' ? 'bg-black text-white' : 'text-gray-600 hover:text-black'}`}
-                onClick={() => setActiveTab('achievements2024')}
-              >
-                Achievements 2024
-              </button>
-              <button
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${activeTab === 'execom2025' ? 'bg-black text-white' : 'text-gray-600 hover:text-black'}`}
-                onClick={() => setActiveTab('execom2025')}
-              >
-                Execom 2025
-              </button>
-              <button
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${activeTab === 'execom2024' ? 'bg-black text-white' : 'text-gray-600 hover:text-black'}`}
-                onClick={() => setActiveTab('execom2024')}
-              >
-                Execom 2024
-              </button>
+              <div className="flex flex-col items-center">
+                <div className="w-28 h-28 mb-4 rounded-full overflow-hidden border-4 border-primary">
+                  <img src={selectedMember.image} alt={selectedMember.name} className="w-full h-full object-cover" />
+                </div>
+                <h3 className="font-serif text-2xl text-black mb-2">{selectedMember.name}</h3>
+                <p className="text-primary font-semibold text-base mb-1">{selectedMember.position}</p>
+                <p className="text-gray-600 text-sm mb-4">{selectedMember.branch}</p>
+                <div className="flex justify-center gap-3 mb-4">
+                  <a
+                    href={selectedMember.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-10 h-10 bg-primary/10 rounded-full hover:bg-primary hover:text-white transition-colors text-primary"
+                    title="LinkedIn"
+                  >
+                    <Eye className="w-5 h-5" />
+                  </a>
+                  {selectedMember.email && (
+                    <a
+                      href={`mailto:${selectedMember.email}`}
+                      className="inline-flex items-center justify-center w-10 h-10 bg-primary/10 rounded-full hover:bg-primary hover:text-white transition-colors text-primary"
+                      title="Email"
+                    >
+                      <Mail className="w-5 h-5" />
+                    </a>
+                  )}
+                </div>
+                <button
+                  className="w-full py-2 bg-primary text-white rounded-full font-medium mt-2 flex items-center justify-center gap-2 hover:bg-primary-hover transition-colors"
+                  onClick={() => handleShare(selectedMember)}
+                >
+                  <Share2 className="w-4 h-4" />
+                  Share Profile
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div className="relative">
-          {activeTab === 'achievements2025' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {achievements[2025].map(renderAchievement)}
-            </div>
-          )}
-          {activeTab === 'achievements2024' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {achievements[2024].map(renderAchievement)}
-            </div>
-          )}
-          {activeTab === 'execom2025' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {team.execom2025.map(renderMember)}
-            </div>
-          )}
-          {activeTab === 'execom2024' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {team.execom2024.map(renderMember)}
-            </div>
-          )}
-        </div>
+        )}
       </div>
     </section>
   );
