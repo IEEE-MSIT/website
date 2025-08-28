@@ -223,13 +223,13 @@ const Header = () => {
             >
               About
             </Link>
-            <a
-              href="#events"
+            <Link
+              to="/events"
               onClick={closeMobileMenu}
               className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium text-base"
             >
               Events
-            </a>
+            </Link>
 
             <div className="chapters-dropdown">
               <button

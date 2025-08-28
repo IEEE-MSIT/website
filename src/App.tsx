@@ -8,6 +8,7 @@ import PWAInstallPrompt from './components/PWAInstallPrompt';
 import HomePage from './pages/home/HomePage';
 import FAQPage from './pages/faq/FAQPage';
 import TeamPage from './pages/team/TeamPage';
+import AboutPage from './pages/AboutPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { HOME_PATH, FAQ_PATH, TEAM_PATH, EVENTS_PATH } from './constants/paths';
 import EventsPage from './pages/events/EventsPage';
@@ -21,6 +22,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path={HOME_PATH} element={<HomePage />} />
+  <Route path="/about" element={<AboutPage />} />
         <Route path={FAQ_PATH} element={<FAQPage />} />
         <Route path={TEAM_PATH} element={<TeamPage />} />
         <Route path={EVENTS_PATH} element={<EventsPage />} />

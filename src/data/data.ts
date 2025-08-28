@@ -187,17 +187,14 @@ export const achievements = {
 
 export const footer = {
   quickLinks: [
-    { text: 'About Us', href: '#about' },
+    { text: 'About Us', href: '/about' },
     { text: 'FAQ', href: '/faq' },
     { text: 'Join IEEE', href: 'https://www.ieee.org/membership/join/index.html' },
     { text: 'MSIT', href: 'https://msit.in/' },
     { text: 'Events', href: '/events' },
   ],
   contact: [
-    { text: 'anupama@msit.in', href: 'mailto:anupama@msit.in' },
-    { text: 'shubhamsharma@ieee.org', href: 'mailto:shubhamsharma@ieee.org' },
-    { text: 'ishneet@ieee.org', href: 'mailto:ishneet@ieee.org' },
-    { text: 'tussharaggarwal@ieee.org', href: 'mailto:tussharaggarwal@ieee.org' },
+    { text: 'Contact Page', href: '/contact' },
     {
       text: 'Join WhatsApp Group',
       href: 'https://chat.whatsapp.com/B9SjKLJqgiYIeAX0tMhbIH?mode=ac_t&fbclid=PAZXh0bgNhZW0CMTEAAae45hwoZS8NkSICS_2o0Hf3g0xwIafI4gV1fcB5ypODgaT1fcVPhXGYi_UrZA_aem_bQn0OhHefq8Oj9QX1J0pnA',
