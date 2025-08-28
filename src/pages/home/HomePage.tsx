@@ -2,11 +2,12 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Events from './components/Events';
 import ChapterHighlights from './components/ChapterHighlights';
-import Hackathons from './components/Hackathons';
+// import Hackathons from './components/Hackathons';
 import Achievements from './components/Achievements';
 import Team from './components/Team';
 // import Join from './components/Join';
-import Contact from './components/Contact';
+// import Contact from './components/Contact';
+import Join from './components/Join';
 
 const HomePage = () => {
   return (
@@ -16,11 +17,11 @@ const HomePage = () => {
       {/* <Community /> */}
       <Events />
       <ChapterHighlights />
-      <Hackathons />
+      {/* <Hackathons /> */}
       <Achievements />
       <Team />
-      {/* <Join /> */}
-      <Contact />
+      <Join />
+      {/* <Contact /> */}
     </main>
   );
 };

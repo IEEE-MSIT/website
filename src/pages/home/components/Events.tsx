@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 import { ChevronLeft, ChevronRight, Clock, MapPin, ArrowRight, Eye, Share2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { events } from '../../../data/data';
+import EventCard from '../../../components/ui/EventCard';
 
 const Events = () => {
   const eventsCarouselRef = useRef<HTMLDivElement>(null);
@@ -59,107 +61,8 @@ const Events = () => {
           >
             <div className="flex gap-6 pb-4 w-max">
               {events.map((event, index) => (
-                <div
-                  key={index}
-                  className="group relative rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 w-[280px] bg-white flex-shrink-0 shadow-lg transform hover:-translate-y-1 border border-gray-100 hover:border-primary/20"
-                >
-                  <div className="relative w-full h-[220px] overflow-hidden">
-                    <img
-                      src={event.cloudinary_url}
-                      alt={event.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute top-3 right-3">
-                      <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/95 backdrop-blur-sm text-gray-800 shadow-md">
-                        {event.organisedBy || event.category || ''}
-                      </span>
-                    </div>
-                    <div className="absolute top-3 left-3">
-                      <div className="bg-primary/90 backdrop-blur-sm text-white px-2 py-1 rounded-lg text-xs font-medium">
-                        <div className="text-center">
-                           {(() => {
-                             const dateStr = event.endDate || "";
-                             const match = dateStr.match(/(\d{1,2})(?:st|nd|rd|th)?\s+([A-Za-z]+)/);
-                             const day = match ? match[1] : "";
-                             const month = match ? match[2].slice(0, 3).toUpperCase() : "";
-                             return (
-                               <>
-                                 <div className="text-lg font-bold leading-none">{day}</div>
-                                 <div className="text-[10px] uppercase tracking-wide">{month}</div>
-                               </>
-                             );
-                           })()}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="p-4 flex flex-col flex-1">
-                    <h3 className="font-serif text-lg font-bold text-black mb-2 line-clamp-2 leading-tight">
-                      {event.title}
-                    </h3>
-
-                    <p className="text-sm text-gray-600 line-clamp-3 mb-4 leading-relaxed">
-                      {event.description}
-                    </p>
-
-                    <div className="flex items-center text-sm text-gray-500 mb-2">
-                      <Clock className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                      <span>{event.endDate || ''}</span>
-                    </div>
-
-                    <div className="flex items-center text-sm text-gray-500 mb-4">
-                      <MapPin className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                      <span className="truncate">{event.venue || ''}</span>
-                    </div>
-
-                    <div className="mt-auto flex gap-2">
-                      <button
-                        className="w-full bg-primary text-white py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm hover:shadow-md"
-                        onClick={() => {
-                          const registerLink = event.actionLinks
-                            ?.find((l: string) => l.startsWith('register:'))
-                            ?.split('register:')[1]
-                            ?.trim();
-                          const livestreamLink = event.actionLinks
-                            ?.find((l: string) => l.startsWith('livestream:'))
-                            ?.split('livestream:')[1]
-                            ?.trim();
-                          if (registerLink) {
-                            window.open(registerLink, '_blank');
-                          } else if (livestreamLink) {
-                            window.open(livestreamLink, '_blank');
-                          } else {
-                            window.alert('No external link available for this event.');
-                          }
-                        }}
-                      >
-                        {event.actionLinks?.some((l: string) => l.startsWith('register:'))
-                          ? 'Register'
-                          : event.actionLinks?.some((l: string) => l.startsWith('livestream:'))
-                            ? 'Join Livestream'
-                            : 'View Details'}
-                      </button>
-                      <button
-                        className="bg-primary/10 text-primary px-3 py-2 rounded-full hover:bg-primary hover:text-white transition-colors font-medium text-sm flex items-center gap-1"
-                        title="Share Event"
-                        onClick={() => {
-                          if (navigator.share) {
-                            navigator.share({
-                              title: event.title,
-                              url: window.location.href,
-                            });
-                          } else {
-                            navigator.clipboard.writeText(window.location.href);
-                            alert('Event link copied to clipboard!');
-                          }
-                        }}
-                      >
-                        <Share2 className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
+                <div key={index} className="w-[280px]">
+                  <EventCard event={event} />
                 </div>
               ))}
             </div>
@@ -170,70 +73,8 @@ const Events = () => {
             <div className="overflow-x-auto scrollbar-hide px-4 -mx-4">
               <div className="flex gap-4 pb-4 w-max">
                 {events.map((event, index) => (
-                  <div
-                    key={index}
-                    className="group relative rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 w-[200px] h-[340px] bg-white flex-shrink-0 shadow-lg transform hover:-translate-y-1 border border-gray-100 hover:border-primary/20"
-                  >
-                    <div className="relative w-full h-[160px] overflow-hidden">
-                      <img
-                        src={event.cloudinary_url || '/event.webp'}
-                        alt={event.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="absolute top-2 right-2">
-                        <span className="px-2 py-1 rounded-full text-[10px] font-medium bg-white/95 backdrop-blur-sm text-gray-800 shadow-sm">
-                          {event.category || ''}
-                        </span>
-                      </div>
-                      <div className="absolute top-2 left-2">
-                        <div className="bg-primary/90 backdrop-blur-sm text-white px-1.5 py-1 rounded-md text-[10px] font-medium">
-                          <div className="text-center">
-                            <div className="text-sm font-bold leading-none">
-                              {event.endDate || ''}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="p-3 flex flex-col flex-1">
-                      <h3 className="font-serif text-sm font-bold text-black mb-2 line-clamp-2 leading-tight">
-                        {event.title}
-                      </h3>
-
-                      <p className="text-xs text-gray-600 line-clamp-2 mb-3 leading-relaxed">
-                        {event.description}
-                      </p>
-
-                      <div className="flex items-center text-xs text-gray-500 mb-3">
-                        <Clock className="w-3 h-3 mr-1 text-primary flex-shrink-0" />
-                        <span className="truncate">{event.endDate || ''}</span>
-                      </div>
-
-                      <div className="mt-auto flex gap-2">
-                        <button className="w-full bg-primary text-white py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-xs hover:shadow-sm">
-                          {'View Details'}
-                        </button>
-                        <button
-                          className="bg-primary/10 text-primary px-2 py-2 rounded-full hover:bg-primary hover:text-white transition-colors font-medium text-xs flex items-center gap-1"
-                          title="Share Event"
-                          onClick={() => {
-                            if (navigator.share) {
-                              navigator.share({
-                                title: event.title,
-                                url: window.location.href,
-                              });
-                            } else {
-                              navigator.clipboard.writeText(window.location.href);
-                              alert('Event link copied to clipboard!');
-                            }
-                          }}
-                        >
-                          <Share2 className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </div>
+                  <div key={index} className="w-[200px] h-[340px]">
+                    <EventCard event={event} />
                   </div>
                 ))}
               </div>
@@ -252,11 +93,11 @@ const Events = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 mx-auto">
+          <Link to="/events" className="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 mx-auto w-max">
             <Eye className="w-4 h-4" />
             Show All Events
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </Link>        
         </div>
       </div>
     </section>

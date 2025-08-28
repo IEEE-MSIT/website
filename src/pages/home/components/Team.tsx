@@ -45,9 +45,17 @@ const Team = () => {
             Meet the dedicated leaders driving innovation and excellence at IEEE MSIT
           </p>
         </div>
-        <div className="min-h-[400px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {execom2025.chapters['MAIN IEEE MSIT'].map(renderMember)}
+        <div className="min-h-[320px] flex items-center">
+          <div className="w-full flex justify-center">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              {execom2025.chapters['MAIN IEEE MSIT']
+                .slice(0, 3)
+                .map((member, idx) => (
+                  <div key={idx} className="w-full md:w-80">
+                    {renderMember(member, idx)}
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
         <div className="text-center mt-12">

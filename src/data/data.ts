@@ -191,7 +191,7 @@ export const footer = {
     { text: 'FAQ', href: '/faq' },
     { text: 'Join IEEE', href: 'https://www.ieee.org/membership/join/index.html' },
     { text: 'MSIT', href: 'https://msit.in/' },
-    { text: 'Opportunities', href: '#events' },
+    { text: 'Events', href: '/events' },
   ],
   contact: [
     { text: 'anupama@msit.in', href: 'mailto:anupama@msit.in' },

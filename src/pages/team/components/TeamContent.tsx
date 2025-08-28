@@ -17,8 +17,12 @@ const TeamContent = ({ activeTab }: TeamContentProps) => {
   const renderChapterSection = (chapterName: string, members: Member[], year?: number) => (
     <div key={chapterName} className="mb-12">
       <h3 className="text-2xl font-serif text-black mb-6 text-center">{chapterName}</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {members.map((m, i) => renderMember(m, i, year))}
+      <div className="flex flex-wrap justify-center gap-6">
+        {members.map((m, i) => (
+          <div key={i} className="w-full sm:w-1/2 md:w-80">
+            {renderMember(m, i, year)}
+          </div>
+        ))}
       </div>
     </div>
   );

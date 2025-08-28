@@ -119,12 +119,12 @@ const Header = () => {
           >
             About
           </Link>
-          <a
-            href="#events"
+          <Link
+            to="/events"
             className="text-gray-700 hover:text-primary transition-colors font-medium text-sm"
           >
             Events
-          </a>
+          </Link>
 
           <div className="relative chapters-dropdown">
             <button
