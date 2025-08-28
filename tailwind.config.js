@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -8,26 +11,28 @@ export default {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
-        background: '#FAF8F3',
-        foreground: '#2E2D2D',
-        'muted-foreground': '#F1F1F1',
+        background: '#F0F5F9',
+        foreground: '#1B2A41',
+        'muted-foreground': '#627D98',
+        'dark-background': '#0D131D',        
+        'dark-foreground': '#E2E8F0',
+        'dark-muted-foreground': '#94A3B8',
 
         primary: {
-          DEFAULT: '#C84C31',
-          dark: '#A7441C',
-          hover: '#A73A26',
+          DEFAULT: '#00629B',
+          dark: '#004A77',
+          hover: '#1776B6',
         },
-        secondary: '#E2B63D',
+        secondary: '#FF6B6B',
         tertiary: {
-          DEFAULT: '#A7B77F',
-          dark: '#8a9a5b',
+          DEFAULT: '#FFC300',
+          dark: '#E8A500',
         },
 
         'ieee-blue': '#00629B',
         'chapter-blue': '#3d8499',
         'heart-red': '#EF4444',
-
-        'chatbot-bg': '#0b0a0a',
+        'chatbot-bg': '#101B2E',
       },
     },
   },
