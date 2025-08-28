@@ -1,4 +1,3 @@
-
 import MemberCard from '../../../components/ui/MemberCard';
 
 import { execom2025 } from '../../../data/execom2025';
@@ -28,7 +27,6 @@ const TeamContent = ({ activeTab }: TeamContentProps) => {
     <section className="py-16 px-4 md:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="relative">
-
           {activeTab === 'execom2025' && (
             <div>
               <h2 className="text-3xl font-serif text-black mb-8 text-center">

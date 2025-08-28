@@ -15,7 +15,6 @@ const FAQPage = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
-  
   const faqData: FAQItem[] = useMemo(
     () => [
       {
@@ -112,13 +111,11 @@ const FAQPage = () => {
     []
   );
 
-  
   const categories = useMemo(
     () => ['All', ...Array.from(new Set(faqData.map((faq) => faq.category)))],
     [faqData]
   );
 
-  
   const filteredFAQs = useMemo(
     () =>
       selectedCategory === 'All'
@@ -127,18 +124,15 @@ const FAQPage = () => {
     [faqData, selectedCategory]
   );
 
-  
   const whatsappUrl = useMemo(() => SITE_CONFIG.social.whatsapp.url, []);
 
-  
   const toggleFAQ = useCallback((index: number) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
   }, []);
 
-  
   const handleCategoryChange = useCallback((category: string) => {
     setSelectedCategory(category);
-    setOpenIndex(null); 
+    setOpenIndex(null);
   }, []);
 
   return (

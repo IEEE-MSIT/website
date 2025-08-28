@@ -180,7 +180,7 @@ export const execom2025 = {
         email: 'gominigautam@gmail.com',
       },
       {
-        name: 'Ishaan',
+        name: 'Aneesh Ahuja',
         position: 'Public Relations Representative',
         branch: 'IT',
         image:
@@ -501,6 +501,6 @@ export const execom2025 = {
         chapter: 'Creativity Committee',
         email: 'richabaghel25@gmail.com',
       },
-    ]
+    ],
   },
 };

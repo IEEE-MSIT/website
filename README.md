@@ -153,23 +153,6 @@ To update content, simply edit this file directly on GitHub, commit your changes
 
 ---
 
-## 🌐 Connect With Us
-
-Stay updated with IEEE MSIT's latest activities and innovations across our social platforms:
-
-<div align="center">
-
-[![GitHub](https://img.shields.io/badge/GitHub-IEEE--MSIT-181717?style=for-the-badge&logo=github)](https://github.com/IEEE-MSIT)
-[![Instagram](https://img.shields.io/badge/Instagram-@ieeemsit-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/ieeemsit/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-IEEE%20MSIT-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/company/ieeemsit)
-[![Twitter](https://img.shields.io/badge/Twitter-@ieeemsit-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/ieeemsit)
-
-**📧 Contact**: [anupama@msit.in](mailto:anupama@msit.in) | **📞 Phone**: +91-11-2681-4816  
-**🌐 Website**: [ieeemsit.vercel.app](https://ieeemsit.vercel.app)
-
-</div>
-
----
 
 ## Leadership: The Web Development Department '25
 
@@ -186,7 +169,6 @@ Meet the team responsible for architecting and maintaining this platform.
     <sub><b>Vice Chairperson</b></sub>
   </a>
 </td>
-<!-- Add other core team members here -->
 </tr>
 </table>
 
