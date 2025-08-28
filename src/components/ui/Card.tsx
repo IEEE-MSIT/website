@@ -16,7 +16,7 @@ const Card = ({
   variant = 'default',
 }: CardProps) => {
   const baseClasses = 'rounded-2xl';
-  
+
   const variantClasses = {
     default: 'bg-white border border-gray-200',
     gradient: 'bg-gradient-to-br from-background to-white border border-gray-100',
@@ -29,17 +29,13 @@ const Card = ({
     lg: 'p-8',
   };
 
-  const hoverClasses = hover 
+  const hoverClasses = hover
     ? 'transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-primary/30'
     : '';
 
   const classes = `${baseClasses} ${variantClasses[variant]} ${paddingClasses[padding]} ${hoverClasses} ${className}`;
 
-  return (
-    <div className={classes}>
-      {children}
-    </div>
-  );
+  return <div className={classes}>{children}</div>;
 };
 
 export default Card;

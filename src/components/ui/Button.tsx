@@ -28,8 +28,9 @@ const Button = ({
   target,
   rel,
 }: ButtonProps) => {
-  const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-200 rounded-full';
-  
+  const baseClasses =
+    'inline-flex items-center justify-center font-medium transition-all duration-200 rounded-full';
+
   const variantClasses = {
     primary: 'bg-primary text-white hover:bg-primary-hover shadow-lg hover:shadow-xl',
     secondary: 'bg-secondary text-black hover:bg-secondary/80',
@@ -49,31 +50,26 @@ const Button = ({
 
   const content = (
     <>
-      {Icon && iconPosition === 'left' && <Icon className={size === 'sm' ? 'w-4 h-4' : size === 'lg' ? 'w-6 h-6' : 'w-5 h-5'} />}
+      {Icon && iconPosition === 'left' && (
+        <Icon className={size === 'sm' ? 'w-4 h-4' : size === 'lg' ? 'w-6 h-6' : 'w-5 h-5'} />
+      )}
       {children}
-      {Icon && iconPosition === 'right' && <Icon className={size === 'sm' ? 'w-4 h-4' : size === 'lg' ? 'w-6 h-6' : 'w-5 h-5'} />}
+      {Icon && iconPosition === 'right' && (
+        <Icon className={size === 'sm' ? 'w-4 h-4' : size === 'lg' ? 'w-6 h-6' : 'w-5 h-5'} />
+      )}
     </>
   );
 
   if (href) {
     return (
-      <a
-        href={href}
-        className={classes}
-        target={target}
-        rel={rel}
-      >
+      <a href={href} className={classes} target={target} rel={rel}>
         {content}
       </a>
     );
   }
 
   return (
-    <button
-      onClick={onClick}
-      className={classes}
-      disabled={disabled}
-    >
+    <button onClick={onClick} className={classes} disabled={disabled}>
       {content}
     </button>
   );

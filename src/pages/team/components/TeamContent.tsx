@@ -11,7 +11,6 @@ interface TeamContentProps {
 }
 
 const TeamContent = ({ activeTab }: TeamContentProps) => {
-
   const renderMember = (member: Member, index: number, year?: number) => (
     <MemberCard key={index} member={member} year={year} />
   );
@@ -30,10 +29,12 @@ const TeamContent = ({ activeTab }: TeamContentProps) => {
       <div className="max-w-6xl mx-auto">
         <div className="relative">
           {/* Achievements removed. Only team members are shown. */}
-          
+
           {activeTab === 'execom2025' && (
             <div>
-              <h2 className="text-3xl font-serif text-black mb-8 text-center">Executive Committee 2025</h2>
+              <h2 className="text-3xl font-serif text-black mb-8 text-center">
+                Executive Committee 2025
+              </h2>
               <div className="mb-16">
                 <h3 className="text-2xl font-serif text-primary mb-8 text-center">IEEE Chapters</h3>
                 <div className="space-y-12">
@@ -52,10 +53,12 @@ const TeamContent = ({ activeTab }: TeamContentProps) => {
               </div>
             </div>
           )}
-          
+
           {activeTab === 'execom2024' && (
             <div>
-              <h2 className="text-3xl font-serif text-black mb-8 text-center">Executive Committee 2024</h2>
+              <h2 className="text-3xl font-serif text-black mb-8 text-center">
+                Executive Committee 2024
+              </h2>
               <div className="mb-16">
                 <h3 className="text-2xl font-serif text-primary mb-8 text-center">IEEE Chapters</h3>
                 <div className="space-y-12">

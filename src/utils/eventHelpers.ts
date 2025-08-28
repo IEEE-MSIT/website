@@ -1,14 +1,16 @@
-import { Event, EventStatus, EventType, CTA, RegistrationType, EventMode, EventStatusType, EventTypeType } from '../types';
+import { Event, EventStatus, EventType, CTA, RegistrationType, EventMode } from '../types';
 
 export const generateEventCTA = (event: Event): CTA => {
   const now = new Date();
   const registrationDeadline = new Date(event.registration.deadline);
-  const isRegistrationOpen = now < registrationDeadline && 
-    event.status !== EventStatus.CANCELLED && 
+  const isRegistrationOpen =
+    now < registrationDeadline &&
+    event.status !== EventStatus.CANCELLED &&
     event.status !== EventStatus.COMPLETED;
 
-  const isRegistrationFull = event.registration.maxParticipants && 
-    event.registration.currentParticipants && 
+  const isRegistrationFull =
+    event.registration.maxParticipants &&
+    event.registration.currentParticipants &&
     event.registration.currentParticipants >= event.registration.maxParticipants;
 
   let primary: CTA['primary'];
@@ -18,16 +20,19 @@ export const generateEventCTA = (event: Event): CTA => {
     case EventStatus.UPCOMING:
       if (isRegistrationOpen && !isRegistrationFull) {
         primary = {
-          text: event.registration.type === RegistrationType.FREE ? 'Register Free' : 
-                event.registration.type === RegistrationType.PAID ? `Register - ${event.registration.fee}` : 
-                'Register Now',
+          text:
+            event.registration.type === RegistrationType.FREE
+              ? 'Register Free'
+              : event.registration.type === RegistrationType.PAID
+                ? `Register - ${event.registration.fee}`
+                : 'Register Now',
           action: 'register',
           link: event.registration.registrationLink || '#register',
           externalLink: !!event.registration.registrationLink,
           extractedData: {
             registrationLink: event.registration.registrationLink,
-            formLink: event.registration.registrationLink
-          }
+            formLink: event.registration.registrationLink,
+          },
         };
         secondary = {
           text: 'Add to Calendar',
@@ -38,10 +43,11 @@ export const generateEventCTA = (event: Event): CTA => {
               title: event.title,
               startDate: event.startDate,
               endDate: event.endDate,
-              location: event.location.venue?.address || event.location.onlineDetails?.platform || 'Online',
-              description: event.description
-            }
-          }
+              location:
+                event.location.venue?.address || event.location.onlineDetails?.platform || 'Online',
+              description: event.description,
+            },
+          },
         };
       } else if (isRegistrationFull && event.registration.waitlistAvailable) {
         primary = {
@@ -50,24 +56,24 @@ export const generateEventCTA = (event: Event): CTA => {
           link: event.registration.registrationLink || '#waitlist',
           externalLink: !!event.registration.registrationLink,
           extractedData: {
-            registrationLink: event.registration.registrationLink
-          }
+            registrationLink: event.registration.registrationLink,
+          },
         };
         secondary = {
           text: 'Learn More',
           action: 'learn_more',
-          link: `#event-${event.id}`
+          link: `#event-${event.id}`,
         };
       } else {
         primary = {
           text: 'Learn More',
           action: 'learn_more',
-          link: `#event-${event.id}`
+          link: `#event-${event.id}`,
         };
         secondary = {
           text: 'Remind Me',
           action: 'remind_me',
-          link: '#remind'
+          link: '#remind',
         };
       }
       break;
@@ -81,19 +87,21 @@ export const generateEventCTA = (event: Event): CTA => {
           externalLink: true,
           extractedData: {
             liveStreamLink: event.location.onlineDetails?.link || event.media.livestreamLink,
-            meetingDetails: event.location.onlineDetails ? {
-              platform: event.location.onlineDetails.platform,
-              meetingId: event.location.onlineDetails.meetingId,
-              password: event.location.onlineDetails.password,
-              link: event.location.onlineDetails.link
-            } : undefined
-          }
+            meetingDetails: event.location.onlineDetails
+              ? {
+                  platform: event.location.onlineDetails.platform,
+                  meetingId: event.location.onlineDetails.meetingId,
+                  password: event.location.onlineDetails.password,
+                  link: event.location.onlineDetails.link,
+                }
+              : undefined,
+          },
         };
       } else {
         primary = {
           text: 'View Details',
           action: 'learn_more',
-          link: `#event-${event.id}`
+          link: `#event-${event.id}`,
         };
       }
       secondary = {
@@ -105,9 +113,9 @@ export const generateEventCTA = (event: Event): CTA => {
             title: event.title,
             description: event.shortDescription || event.description,
             url: `#event-${event.id}`,
-            image: event.media.coverImage
-          }
-        }
+            image: event.media.coverImage,
+          },
+        },
       };
       break;
 
@@ -116,7 +124,7 @@ export const generateEventCTA = (event: Event): CTA => {
         primary = {
           text: 'View Results',
           action: 'view_results',
-          link: `#results-${event.id}`
+          link: `#results-${event.id}`,
         };
       } else if (event.media.recordingLink) {
         primary = {
@@ -125,28 +133,28 @@ export const generateEventCTA = (event: Event): CTA => {
           link: event.media.recordingLink,
           externalLink: true,
           extractedData: {
-            liveStreamLink: event.media.recordingLink
-          }
+            liveStreamLink: event.media.recordingLink,
+          },
         };
       } else {
         primary = {
           text: 'View Summary',
           action: 'learn_more',
-          link: `#summary-${event.id}`
+          link: `#summary-${event.id}`,
         };
       }
-      
+
       if (event.media.gallery && event.media.gallery.length > 0) {
         secondary = {
           text: 'View Gallery',
           action: 'view_gallery',
-          link: `#gallery-${event.id}`
+          link: `#gallery-${event.id}`,
         };
       } else if (event.resources && event.resources.length > 0) {
         secondary = {
           text: 'Download Resources',
           action: 'download',
-          link: `#resources-${event.id}`
+          link: `#resources-${event.id}`,
         };
       }
       break;
@@ -156,12 +164,12 @@ export const generateEventCTA = (event: Event): CTA => {
       primary = {
         text: 'Learn More',
         action: 'learn_more',
-        link: `#event-${event.id}`
+        link: `#event-${event.id}`,
       };
       secondary = {
         text: 'Contact Support',
         action: 'contact',
-        link: '#contact'
+        link: '#contact',
       };
       break;
 
@@ -169,18 +177,17 @@ export const generateEventCTA = (event: Event): CTA => {
       primary = {
         text: 'Learn More',
         action: 'learn_more',
-        link: `#event-${event.id}`
+        link: `#event-${event.id}`,
       };
   }
 
   return { primary, secondary };
 };
 
-
 export const generateCalendarLink = (event: Event): string => {
   const startDate = new Date(event.startDate);
   const endDate = new Date(event.endDate);
-  
+
   const formatDate = (date: Date) => {
     return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
   };
@@ -192,12 +199,11 @@ export const generateCalendarLink = (event: Event): string => {
     details: event.description,
     location: event.location.venue?.address || event.location.onlineDetails?.platform || 'Online',
     sf: 'true',
-    output: 'xml'
+    output: 'xml',
   });
 
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
 };
-
 
 export const getEventStatusColor = (status: string): string => {
   switch (status) {
@@ -247,10 +253,9 @@ export const getEventTypeIcon = (type: string): string => {
   }
 };
 
-
 export const formatEventDate = (
-  startDate: string, 
-  endDate: string, 
+  startDate: string,
+  endDate: string,
   options: { showTime?: boolean; showYear?: boolean } = {}
 ): string => {
   const start = new Date(startDate);
@@ -261,7 +266,7 @@ export const formatEventDate = (
     month: 'short',
     day: 'numeric',
     ...(showYear && { year: 'numeric' }),
-    ...(showTime && { hour: '2-digit', minute: '2-digit' })
+    ...(showTime && { hour: '2-digit', minute: '2-digit' }),
   };
 
   if (start.toDateString() === end.toDateString()) {
@@ -307,9 +312,11 @@ export const canRegisterForEvent = (event: Event): { canRegister: boolean; reaso
     return { canRegister: false, reason: 'This is an invite-only event' };
   }
 
-  if (event.registration.maxParticipants && 
-      event.registration.currentParticipants && 
-      event.registration.currentParticipants >= event.registration.maxParticipants) {
+  if (
+    event.registration.maxParticipants &&
+    event.registration.currentParticipants &&
+    event.registration.currentParticipants >= event.registration.maxParticipants
+  ) {
     if (event.registration.waitlistAvailable) {
       return { canRegister: true, reason: 'Event is full, but you can join the waitlist' };
     }
@@ -318,7 +325,6 @@ export const canRegisterForEvent = (event: Event): { canRegister: boolean; reaso
 
   return { canRegister: true };
 };
-
 
 export const getDifficultyColor = (difficulty: string): string => {
   switch (difficulty.toLowerCase()) {
@@ -339,7 +345,7 @@ export const getEventDuration = (startDate: string, endDate: string): string => 
   const start = new Date(startDate);
   const end = new Date(endDate);
   const diffMs = end.getTime() - start.getTime();
-  
+
   const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));

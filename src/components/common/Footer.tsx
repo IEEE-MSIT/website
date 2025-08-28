@@ -29,7 +29,10 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <Link to={HOME_PATH} className="flex items-center gap-3 mb-4 hover:opacity-80 transition-opacity w-fit">
+            <Link
+              to={HOME_PATH}
+              className="flex items-center gap-3 mb-4 hover:opacity-80 transition-opacity w-fit"
+            >
               <img
                 src="/IEEEWhiteLogowithTransparentBG.png"
                 alt="IEEE Logo"
@@ -64,11 +67,19 @@ const Footer = () => {
               {footer.quickLinks.map((link, index) => (
                 <li key={index}>
                   {link.href.startsWith('/') ? (
-                    <Link to={link.href} className="text-gray-400 hover:text-white transition-colors">
+                    <Link
+                      to={link.href}
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
                       {link.text}
                     </Link>
                   ) : (
-                    <a href={link.href} className="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       {link.text}
                     </a>
                   )}
@@ -83,14 +94,18 @@ const Footer = () => {
               {footer.contact.map((contact, index) => (
                 <li key={index}>
                   {contact.href.startsWith('/') ? (
-                    <Link to={contact.href} className="text-gray-400 hover:text-white transition-colors">
+                    <Link
+                      to={contact.href}
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
                       {contact.text}
                     </Link>
                   ) : (
                     <a
                       href={contact.href}
                       className="text-gray-400 hover:text-white transition-colors"
-                      target="_blank" rel="noopener noreferrer"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       {contact.text}
                     </a>

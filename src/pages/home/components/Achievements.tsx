@@ -43,7 +43,8 @@ const Achievements = () => {
             Achievements & Recognition
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Celebrating our milestones in technical excellence, community impact, and innovation leadership
+            Celebrating our milestones in technical excellence, community impact, and innovation
+            leadership
           </p>
         </div>
 

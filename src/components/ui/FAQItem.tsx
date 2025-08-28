@@ -31,18 +31,16 @@ const FAQItem = memo(({ faq, index, isOpen, onToggle }: FAQItemProps) => {
             {faq.question}
           </h3>
         </div>
-        <div className={`flex-shrink-0 transition-all duration-200 will-change-transform ${
-          isOpen ? 'rotate-180 text-primary' : 'text-gray-400 group-hover:text-primary'
-        }`}>
-          {isOpen ? (
-            <Minus className="w-5 h-5" />
-          ) : (
-            <Plus className="w-5 h-5" />
-          )}
+        <div
+          className={`flex-shrink-0 transition-all duration-200 will-change-transform ${
+            isOpen ? 'rotate-180 text-primary' : 'text-gray-400 group-hover:text-primary'
+          }`}
+        >
+          {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
         </div>
       </button>
-      
-      <div 
+
+      <div
         id={`faq-answer-${index}`}
         className={`faq-content overflow-hidden transition-all duration-200 ease-out ${
           isOpen ? 'max-h-96 opacity-100 open' : 'max-h-0 opacity-0'
@@ -50,9 +48,7 @@ const FAQItem = memo(({ faq, index, isOpen, onToggle }: FAQItemProps) => {
       >
         <div className="px-6 pb-6">
           <div className="border-t border-gray-100 pt-4">
-            <p className="text-gray-600 leading-relaxed">
-              {faq.answer}
-            </p>
+            <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
           </div>
         </div>
       </div>

@@ -1,13 +1,12 @@
-
 export const EventStatus = {
   UPCOMING: 'upcoming',
   ONGOING: 'ongoing',
   COMPLETED: 'completed',
   CANCELLED: 'cancelled',
-  POSTPONED: 'postponed'
+  POSTPONED: 'postponed',
 } as const;
 
-export type EventStatusType = typeof EventStatus[keyof typeof EventStatus] | string;
+export type EventStatusType = (typeof EventStatus)[keyof typeof EventStatus] | string;
 
 export const EventType = {
   WORKSHOP: 'workshop',
@@ -25,10 +24,10 @@ export const EventType = {
   BOOTCAMP: 'bootcamp',
   MEETUP: 'meetup',
   PANEL_DISCUSSION: 'panel_discussion',
-  DEMO_DAY: 'demo_day'
+  DEMO_DAY: 'demo_day',
 } as const;
 
-export type EventTypeType = typeof EventType[keyof typeof EventType] | string;
+export type EventTypeType = (typeof EventType)[keyof typeof EventType] | string;
 
 export const EventCategory = {
   ARTIFICIAL_INTELLIGENCE: 'ai',
@@ -53,10 +52,10 @@ export const EventCategory = {
   AUGMENTED_REALITY: 'ar',
   VIRTUAL_REALITY: 'vr',
   SUSTAINABILITY: 'sustainability',
-  GENERAL: 'general'
+  GENERAL: 'general',
 } as const;
 
-export type EventCategoryType = typeof EventCategory[keyof typeof EventCategory] | string;
+export type EventCategoryType = (typeof EventCategory)[keyof typeof EventCategory] | string;
 
 export const RegistrationType = {
   FREE: 'free',
@@ -65,30 +64,32 @@ export const RegistrationType = {
   INVITE_ONLY: 'invite_only',
   CLOSED: 'closed',
   DONATION_BASED: 'donation_based',
-  SCHOLARSHIP_AVAILABLE: 'scholarship_available'
+  SCHOLARSHIP_AVAILABLE: 'scholarship_available',
 } as const;
 
-export type RegistrationTypeType = typeof RegistrationType[keyof typeof RegistrationType] | string;
+export type RegistrationTypeType =
+  | (typeof RegistrationType)[keyof typeof RegistrationType]
+  | string;
 
 export const EventMode = {
   ONLINE: 'online',
   OFFLINE: 'offline',
   HYBRID: 'hybrid',
   SELF_PACED: 'self_paced',
-  RECORDED: 'recorded'
+  RECORDED: 'recorded',
 } as const;
 
-export type EventModeType = typeof EventMode[keyof typeof EventMode] | string;
+export type EventModeType = (typeof EventMode)[keyof typeof EventMode] | string;
 
 export const DifficultyLevel = {
   BEGINNER: 'beginner',
   INTERMEDIATE: 'intermediate',
   ADVANCED: 'advanced',
   ALL_LEVELS: 'all_levels',
-  EXPERT: 'expert'
+  EXPERT: 'expert',
 } as const;
 
-export type DifficultyLevelType = typeof DifficultyLevel[keyof typeof DifficultyLevel] | string;
+export type DifficultyLevelType = (typeof DifficultyLevel)[keyof typeof DifficultyLevel] | string;
 
 export interface Organizer {
   id: string;
@@ -221,7 +222,16 @@ export interface SocialLinks {
 export interface CTA {
   primary: {
     text: string;
-    action: 'register' | 'learn_more' | 'view_results' | 'watch_recording' | 'join_waitlist' | 'contact' | 'join_live' | 'download' | string;
+    action:
+      | 'register'
+      | 'learn_more'
+      | 'view_results'
+      | 'watch_recording'
+      | 'join_waitlist'
+      | 'contact'
+      | 'join_live'
+      | 'download'
+      | string;
     link?: string; // Auto-extracted from image/content
     externalLink?: boolean;
     disabled?: boolean;
@@ -249,7 +259,16 @@ export interface CTA {
   };
   secondary?: {
     text: string;
-    action: 'calendar' | 'share' | 'remind_me' | 'download' | 'view_gallery' | 'learn_more' | 'contact' | 'bookmark' | string;
+    action:
+      | 'calendar'
+      | 'share'
+      | 'remind_me'
+      | 'download'
+      | 'view_gallery'
+      | 'learn_more'
+      | 'contact'
+      | 'bookmark'
+      | string;
     link?: string;
     externalLink?: boolean;
     disabled?: boolean;
@@ -279,33 +298,33 @@ export interface Event {
   subtitle?: string;
   description: string;
   shortDescription?: string; // For cards/previews
-  
+
   // Classification (AI can use any values, not restricted to enums)
   type: EventTypeType;
   category: EventCategoryType;
   status: EventStatusType;
   difficulty?: DifficultyLevelType; // Optional - AI can skip if not relevant
-  
+
   // Timing
   startDate: string; // ISO date string
   endDate: string; // ISO date string
   timezone: string;
   duration?: number; // in hours
   schedule?: ScheduleItem[];
-  
+
   // Location & Mode
   location: Location;
-  
+
   // People
   organizers: Organizer[];
   speakers?: Speaker[];
   mentors?: Speaker[]; // For hackathons
-  
+
   // Registration & Participation
   registration: Registration;
   prerequisites?: string[];
   targetAudience?: string[];
-  
+
   // Content & Resources
   agenda?: string[];
   learningOutcomes?: string[];
@@ -316,33 +335,33 @@ export interface Event {
     link: string;
     type: 'slides' | 'code' | 'documentation' | 'video' | 'article';
   }[];
-  
+
   // Competition/Hackathon Specific
   prizes?: Prize[];
   winners?: Winner[];
   themes?: string[];
   judgingCriteria?: string[];
   rules?: string[];
-  
+
   // Marketing & Media
   media: EventMedia;
   tags: string[];
   featured?: boolean;
   trending?: boolean;
-  
+
   // External Links
   socialLinks?: SocialLinks;
   sponsors?: Sponsor[];
   partners?: Sponsor[];
-  
+
   // Dynamic CTA (generated based on status and type)
   cta: CTA;
-  
+
   // Meta Information
   createdAt: string;
   updatedAt: string;
   createdBy: string;
-  
+
   // Analytics & Engagement
   views?: number;
   registrations?: number;
@@ -353,7 +372,7 @@ export interface Event {
     comment: string;
     anonymous: boolean;
   }[];
-  
+
   // SEO & Discoverability
   seo?: {
     metaTitle?: string;
@@ -361,7 +380,7 @@ export interface Event {
     keywords?: string[];
     canonicalUrl?: string;
   };
-  
+
   // Additional Metadata (for LLM parsing)
   sourceImage?: string; // Original image URL if parsed from image
   parsedData?: {

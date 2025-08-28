@@ -10,18 +10,17 @@ const About = () => {
               About IEEE MSIT
             </div>
 
-                      <h2 className="text-4xl md:text-5xl font-serif text-black mb-8 leading-tight text-balance">
-            Community of <span className="text-primary">Change-Makers</span>:{' '}
-            <span className="text-secondary">Engineers</span>, Designers, and{' '}
-            <span className="text-tertiary">Leaders</span>
-          </h2>
+            <h2 className="text-4xl md:text-5xl font-serif text-black mb-8 leading-tight text-balance">
+              Community of <span className="text-primary">Change-Makers</span>:{' '}
+              <span className="text-secondary">Engineers</span>, Designers, and{' '}
+              <span className="text-tertiary">Leaders</span>
+            </h2>
 
             <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-            Connecting ambitious minds through workshops, competitions, and research. We celebrate achievements, foster teamwork, and help students prepare for global impact.
+              Connecting ambitious minds through workshops, competitions, and research. We celebrate
+              achievements, foster teamwork, and help students prepare for global impact.
             </p>
           </div>
-
-       
 
           {/* <div className="bg-background rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-serif text-black mb-4">Why Join IEEE MSIT?</h3>
@@ -54,10 +53,10 @@ const About = () => {
           </div> */}
         </div>
         <div className="py-8 overflow-hidden w-full marquee-container">
-          <Marquee 
-            speed={50} 
-            gradient={false} 
-            pauseOnHover={true} 
+          <Marquee
+            speed={50}
+            gradient={false}
+            pauseOnHover={true}
             className="w-full h-60"
             direction="left"
           >

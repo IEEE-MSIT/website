@@ -80,7 +80,9 @@ const Events = () => {
                       <div className="bg-primary/90 backdrop-blur-sm text-white px-2 py-1 rounded-lg text-xs font-medium">
                         <div className="text-center">
                           <div className="text-lg font-bold leading-none">{event.date.day}</div>
-                          <div className="text-[10px] uppercase tracking-wide">{event.date.month}</div>
+                          <div className="text-[10px] uppercase tracking-wide">
+                            {event.date.month}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -90,11 +92,11 @@ const Events = () => {
                     <h3 className="font-serif text-lg font-bold text-black mb-2 line-clamp-2 leading-tight">
                       {event.title}
                     </h3>
-                    
+
                     <p className="text-sm text-gray-600 line-clamp-3 mb-4 leading-relaxed">
                       {event.description}
                     </p>
-                    
+
                     <div className="flex items-center text-sm text-gray-500 mb-2">
                       <Clock className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
                       <span>{event.time}</span>
@@ -142,7 +144,9 @@ const Events = () => {
                         <div className="bg-primary/90 backdrop-blur-sm text-white px-1.5 py-1 rounded-md text-[10px] font-medium">
                           <div className="text-center">
                             <div className="text-sm font-bold leading-none">{event.date.day}</div>
-                            <div className="text-[8px] uppercase tracking-wide">{event.date.month}</div>
+                            <div className="text-[8px] uppercase tracking-wide">
+                              {event.date.month}
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -153,11 +157,11 @@ const Events = () => {
                       <h3 className="font-serif text-sm font-bold text-black mb-2 line-clamp-2 leading-tight">
                         {event.title}
                       </h3>
-                      
+
                       <p className="text-xs text-gray-600 line-clamp-2 mb-3 leading-relaxed">
                         {event.description}
                       </p>
-                      
+
                       <div className="flex items-center text-xs text-gray-500 mb-3">
                         <Clock className="w-3 h-3 mr-1 text-primary flex-shrink-0" />
                         <span className="truncate">{event.time}</span>

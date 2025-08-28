@@ -30,11 +30,7 @@ const Team = () => {
   };
 
   const renderMember = (member: Member, index: number) => (
-    <MemberCard
-      key={index}
-      member={member}
-      year={2025}
-    />
+    <MemberCard key={index} member={member} year={2025} />
   );
 
   return (
@@ -44,17 +40,15 @@ const Team = () => {
           <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
             Meet Our Team
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif text-black mb-4">
-            Executive Committee
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-serif text-black mb-4">Executive Committee</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Meet the dedicated leaders driving innovation and excellence at IEEE MSIT
           </p>
         </div>
         <div className="min-h-[400px]">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {execom2025.chapters['MAIN IEEE MSIT'].map(renderMember)}
-            </div>
+          </div>
         </div>
         <div className="text-center mt-12">
           <Link
@@ -78,10 +72,16 @@ const Team = () => {
               </button>
               <div className="flex flex-col items-center">
                 <div className="w-28 h-28 mb-4 rounded-full overflow-hidden border-4 border-primary">
-                  <img src={selectedMember.image} alt={selectedMember.name} className="w-full h-full object-cover" />
+                  <img
+                    src={selectedMember.image}
+                    alt={selectedMember.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="font-serif text-2xl text-black mb-2">{selectedMember.name}</h3>
-                <p className="text-primary font-semibold text-base mb-1">{selectedMember.position}</p>
+                <p className="text-primary font-semibold text-base mb-1">
+                  {selectedMember.position}
+                </p>
                 <p className="text-gray-600 text-sm mb-4">{selectedMember.branch}</p>
                 <div className="flex justify-center gap-3 mb-4">
                   <a

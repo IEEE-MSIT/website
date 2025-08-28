@@ -11,7 +11,8 @@ export const events = [
     prize: 'Prize Pool: ₹1,00,000',
     buttonText: 'Register Team',
     featured: true,
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
+    image:
+      'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
   },
   {
     date: { month: 'SEP', day: '05', year: '2025' },
@@ -24,7 +25,8 @@ export const events = [
     society: 'IEEE WIE MSIT',
     prize: '50 Seats Available',
     buttonText: 'Join Workshop',
-    image: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=800&q=80',
+    image:
+      'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=800&q=80',
   },
   {
     date: { month: 'SEP', day: '12', year: '2025' },
@@ -37,7 +39,8 @@ export const events = [
     society: 'IEEE Computer Society',
     prize: 'Prizes worth ₹50,000',
     buttonText: 'Register Now',
-    image: 'https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&w=800&q=80',
+    image:
+      'https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&w=800&q=80',
   },
   {
     date: { month: 'SEP', day: '20', year: '2025' },
@@ -50,7 +53,8 @@ export const events = [
     society: 'IEEE PES MSIT',
     prize: '5 Industry Speakers',
     buttonText: 'Reserve Seat',
-    image: 'https://images.unsplash.com/photo-1524749292158-7540c2494485?auto=format&fit=crop&w=800&q=80',
+    image:
+      'https://images.unsplash.com/photo-1524749292158-7540c2494485?auto=format&fit=crop&w=800&q=80',
   },
   {
     date: { month: 'OCT', day: '05', year: '2025' },
@@ -63,7 +67,8 @@ export const events = [
     society: 'IEEE MSIT',
     prize: 'Prizes worth ₹1,00,000',
     buttonText: 'Form Team',
-    image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=800&q=80',
+    image:
+      'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=800&q=80',
   },
   {
     date: { month: 'OCT', day: '15', year: '2025' },
@@ -76,7 +81,8 @@ export const events = [
     society: 'IEEE MSIT',
     prize: '50+ Alumni Attending',
     buttonText: 'RSVP Now',
-    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80',
+    image:
+      'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80',
   },
 ];
 
@@ -156,18 +162,20 @@ export const hackathons = {
       prize: '₹25,000 Prize Pool',
       participants: '50+ Teams',
       organizer: 'IEEE WIE MSIT',
-      image: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=800&q=80',
-      description: 'A groundbreaking women-centric hackathon that brought together brilliant minds to create innovative solutions with a focus on empowering women through technology.',
+      image:
+        'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=800&q=80',
+      description:
+        'A groundbreaking women-centric hackathon that brought together brilliant minds to create innovative solutions with a focus on empowering women through technology.',
       images: [
         'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=600&q=80',
         'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80',
         'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80',
-        'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=600&q=80'
+        'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=600&q=80',
       ],
       judges: [
         'Mr. Sourav Bera – Solution Architect @Microsoft',
         'Mr. Aryan – Vice-Chairperson of IEEE WiE Special Days Subcommittee Global Team',
-        'Ms. Monika Chhikara – Senior Software Developer @Wipro Limited'
+        'Ms. Monika Chhikara – Senior Software Developer @Wipro Limited',
       ],
       technologies: ['MERN Stack', 'Blockchain', 'AI/ML', 'React Native'],
       winners: [
@@ -180,7 +188,7 @@ export const hackathons = {
           projectLink: 'https://github.com/rajveeerr/Safire',
         },
         {
-          team: 'Hadn\'t',
+          team: "Hadn't",
           place: '2nd Place',
           project: 'Innovation and perseverance showcase',
           prize: '₹7,000',
@@ -377,6 +385,9 @@ export const footer = {
     { text: 'shubhamsharma@ieee.org', href: 'mailto:shubhamsharma@ieee.org' },
     { text: 'ishneet@ieee.org', href: 'mailto:ishneet@ieee.org' },
     { text: 'tussharaggarwal@ieee.org', href: 'mailto:tussharaggarwal@ieee.org' },
-    { text: 'Join WhatsApp Group', href: 'https://chat.whatsapp.com/B9SjKLJqgiYIeAX0tMhbIH?mode=ac_t&fbclid=PAZXh0bgNhZW0CMTEAAae45hwoZS8NkSICS_2o0Hf3g0xwIafI4gV1fcB5ypODgaT1fcVPhXGYi_UrZA_aem_bQn0OhHefq8Oj9QX1J0pnA' },
+    {
+      text: 'Join WhatsApp Group',
+      href: 'https://chat.whatsapp.com/B9SjKLJqgiYIeAX0tMhbIH?mode=ac_t&fbclid=PAZXh0bgNhZW0CMTEAAae45hwoZS8NkSICS_2o0Hf3g0xwIafI4gV1fcB5ypODgaT1fcVPhXGYi_UrZA_aem_bQn0OhHefq8Oj9QX1J0pnA',
+    },
   ],
 };

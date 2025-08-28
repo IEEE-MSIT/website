@@ -100,7 +100,10 @@ const Header = () => {
       </div>
 
       <nav className="flex justify-between items-center px-6 py-4 bg-background fixed top-[40px] left-0 right-0 z-40 shadow-sm">
-        <Link to={HOME_PATH} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+        <Link
+          to={HOME_PATH}
+          className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+        >
           <img
             src="/IEEEWhiteLogowithTransparentBG.png"
             alt="IEEE Logo"

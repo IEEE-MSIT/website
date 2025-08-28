@@ -11,14 +11,13 @@ export interface Member {
   chapter?: string;
 }
 
-
 interface MemberCardProps {
   member: Member;
   showActions?: boolean;
   year?: number;
 }
 
-const MemberCard = ({ member, showActions = true, year }: MemberCardProps) => {
+const MemberCard = ({ member, showActions = true }: MemberCardProps) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleShare = () => {
@@ -55,14 +54,19 @@ const MemberCard = ({ member, showActions = true, year }: MemberCardProps) => {
           </div>
         )}
         <div className="text-center">
-          <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gray-200 group-hover:border-primary transition-colors">              
-              <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+          <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gray-200 group-hover:border-primary transition-colors">
+            <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
           </div>
           <h3 className="font-serif text-lg text-black mb-1">{member.name}</h3>
           <p className="text-primary text-sm font-medium mb-1">{member.position}</p>
           <p className="text-gray-500 text-xs mb-4">{member.branch}</p>
           <div className="flex justify-center gap-2">
-            <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary-dark"
+            >
               <Linkedin className="w-5 h-5" />
             </a>
             {member.email && (
@@ -85,7 +89,7 @@ const MemberCard = ({ member, showActions = true, year }: MemberCardProps) => {
             </button>
             <div className="flex flex-col items-center">
               <div className="w-28 h-28 mb-4 rounded-full overflow-hidden border-4 border-primary">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
               </div>
               <h3 className="font-serif text-2xl text-black mb-2">{member.name}</h3>
               <p className="text-primary font-semibold text-base mb-1">{member.position}</p>

@@ -10,10 +10,10 @@ const Community = () => {
         </h2>
 
         <div className="mb-12 py-8 h-max transform rotate-2 overflow-hidden w-full">
-          <Marquee 
-            speed={50} 
-            gradient={false} 
-            pauseOnHover={true} 
+          <Marquee
+            speed={50}
+            gradient={false}
+            pauseOnHover={true}
             className="w-full"
             direction="left"
           >

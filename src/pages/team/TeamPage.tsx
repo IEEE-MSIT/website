@@ -1,7 +1,6 @@
 import TeamHero from './components/TeamHero';
 import TeamContent from './components/TeamContent';
 
-
 const TeamPage = () => {
   return (
     <div className="min-h-screen bg-background pt-20">

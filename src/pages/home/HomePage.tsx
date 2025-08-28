@@ -19,8 +19,8 @@ const HomePage = () => {
       <Hackathons />
       <Achievements />
       <Team />
-  {/* <Join /> */}
-  <Contact />
+      {/* <Join /> */}
+      <Contact />
     </main>
   );
 };

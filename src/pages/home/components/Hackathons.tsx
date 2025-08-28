@@ -16,15 +16,15 @@ const Hackathons = () => {
             Innovation Through Competition
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Celebrating innovation and empowering women in technology through our successful HackWie 3.0 - 
-            a women-centric hackathon that brought together brilliant minds for 24 hours of creativity and problem-solving.
+            Celebrating innovation and empowering women in technology through our successful HackWie
+            3.0 - a women-centric hackathon that brought together brilliant minds for 24 hours of
+            creativity and problem-solving.
           </p>
         </div>
 
         <div className="mb-16">
           <h3 className="text-2xl font-serif text-black mb-8 text-center">Our Hackathons</h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
-            {/* Past Hackathon */}
             {hackathons.past.map((hackathon, index) => (
               <div
                 key={index}
@@ -37,7 +37,6 @@ const Hackathons = () => {
                         <h3 className="text-xl md:text-3xl font-serif text-black group-hover:text-primary transition-colors">
                           {hackathon.name}
                         </h3>
-                        
                       </div>
                       <p className="text-gray-600 font-medium text-sm md:text-base">
                         {hackathon.tagline}
@@ -45,14 +44,14 @@ const Hackathons = () => {
                     </div>
                     <div className="text-right">
                       <a
-                          href={hackathon.platformLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center  gap-1 bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-medium hover:bg-blue-200 transition-colors mb-2"
-                        >
-                          <ExternalLink className="w-3 h-3" />
-                          {hackathon.platform}
-                        </a>
+                        href={hackathon.platformLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center  gap-1 bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-medium hover:bg-blue-200 transition-colors mb-2"
+                      >
+                        <ExternalLink className="w-3 h-3" />
+                        {hackathon.platform}
+                      </a>
 
                       <p className="text-xs text-gray-500">{hackathon.date}</p>
                     </div>
@@ -80,9 +79,7 @@ const Hackathons = () => {
                 </div>
                 <div className="relative p-4 md:p-8">
                   <div className="flex items-center justify-between mb-4 md:mb-6">
-                    <h4 className="text-lg md:text-xl font-serif text-black">
-                      Winning Teams
-                    </h4>
+                    <h4 className="text-lg md:text-xl font-serif text-black">Winning Teams</h4>
                     <button
                       onClick={() => setSelectedHackathon(hackathon)}
                       className="flex items-center gap-2 text-primary hover:text-primary-dark transition-colors text-sm font-medium"
@@ -128,7 +125,6 @@ const Hackathons = () => {
               </div>
             ))}
 
-            {/* Upcoming Hackathon */}
             {hackathons.upcoming.map((hackathon, index) => (
               <div
                 key={index}
@@ -200,8 +196,6 @@ const Hackathons = () => {
           </div>
         </div>
       </div>
-
-      {/* Modal for More Details */}
       {selectedHackathon && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
@@ -212,7 +206,7 @@ const Hackathons = () => {
               >
                 <X className="w-6 h-6" />
               </button>
-              
+
               <div className="pr-8">
                 <div className="flex items-center gap-3 mb-4">
                   <h2 className="text-3xl font-serif text-black">{selectedHackathon.name}</h2>
@@ -226,16 +220,18 @@ const Hackathons = () => {
                     {selectedHackathon.platform}
                   </a>
                 </div>
-                
+
                 <p className="text-gray-600 text-lg mb-6">{selectedHackathon.description}</p>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div>
                     <h3 className="text-xl font-serif text-black mb-4">Event Details</h3>
                     <div className="space-y-3">
                       <div className="flex items-center">
                         <Clock className="w-5 h-5 mr-3 text-primary" />
-                        <span>{selectedHackathon.duration} • {selectedHackathon.date}</span>
+                        <span>
+                          {selectedHackathon.duration} • {selectedHackathon.date}
+                        </span>
                       </div>
                       <div className="flex items-center">
                         <MapPin className="w-5 h-5 mr-3 text-primary" />
@@ -255,7 +251,7 @@ const Hackathons = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   {selectedHackathon.technologies && (
                     <div>
                       <h3 className="text-xl font-serif text-black mb-4">Technologies</h3>
@@ -272,7 +268,7 @@ const Hackathons = () => {
                     </div>
                   )}
                 </div>
-                
+
                 {selectedHackathon.judges && (
                   <div className="mb-8">
                     <h3 className="text-xl font-serif text-black mb-4">Our Amazing Judges</h3>
@@ -285,12 +281,15 @@ const Hackathons = () => {
                     </div>
                   </div>
                 )}
-                
+
                 <div>
                   <h3 className="text-xl font-serif text-black mb-4">Winners</h3>
                   <div className="space-y-4">
                     {selectedHackathon.winners.map((winner: any, index: number) => (
-                      <div key={index} className="bg-gradient-to-r from-amber-50 to-yellow-50 p-4 rounded-xl border border-amber-200">
+                      <div
+                        key={index}
+                        className="bg-gradient-to-r from-amber-50 to-yellow-50 p-4 rounded-xl border border-amber-200"
+                      >
                         <div className="flex items-center justify-between">
                           <div className="flex-1">
                             <div className="flex items-center gap-3 mb-2">
@@ -319,14 +318,16 @@ const Hackathons = () => {
                     ))}
                   </div>
                 </div>
-                
-                {/* Event Images Gallery */}
+
                 {selectedHackathon.images && (
                   <div className="mt-8">
                     <h3 className="text-xl font-serif text-black mb-4">Event Gallery</h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                       {selectedHackathon.images.map((image: string, index: number) => (
-                        <div key={index} className="aspect-square rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                        <div
+                          key={index}
+                          className="aspect-square rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                        >
                           <img
                             src={image}
                             alt={`${selectedHackathon.name} - Image ${index + 1}`}

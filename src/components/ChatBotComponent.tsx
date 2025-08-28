@@ -1,4 +1,4 @@
-// @ts-ignore
+//@ts-expect-error this module doesnt support types out of the box
 import { ChatBot } from '10xanswers';
 
 const ChatBotComponent = () => {

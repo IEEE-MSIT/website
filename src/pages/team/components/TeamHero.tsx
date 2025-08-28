@@ -15,7 +15,7 @@ const TeamHero = () => {
             <span className="text-sm font-medium">Back to Home</span>
           </Link>
         </div>
-        
+
         <div className="text-center">
           <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
             Meet Our Team
@@ -24,8 +24,8 @@ const TeamHero = () => {
             Leadership & Achievements
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Meet the passionate individuals driving innovation and excellence at IEEE MSIT. 
-            Our dedicated team of leaders and achievers working together to create impact.
+            Meet the passionate individuals driving innovation and excellence at IEEE MSIT. Our
+            dedicated team of leaders and achievers working together to create impact.
           </p>
         </div>
       </div>

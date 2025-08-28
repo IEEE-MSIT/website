@@ -5,12 +5,14 @@ const Hero = () => {
     <section className="relative min-h-[80vh] bg-background overflow-hidden pt-20">
       <div
         className="w-full max-w-6xl mx-auto px-6 py-8 h-full flex flex-col justify-center"
-        style={{
-          // backgroundImage: `url('/BackgroundLines.37b66c2a.png')`,
-          // backgroundSize: 'cover',
-          // backgroundPosition: 'center',
-          // backgroundRepeat: 'no-repeat',
-        }}
+        style={
+          {
+            // backgroundImage: `url('/BackgroundLines.37b66c2a.png')`,
+            // backgroundSize: 'cover',
+            // backgroundPosition: 'center',
+            // backgroundRepeat: 'no-repeat',
+          }
+        }
       >
         <div className="text-center my-12">
           <div className="flex items-center justify-center mb-6  flex-wrap-reverse gap-4">
@@ -19,7 +21,9 @@ const Hero = () => {
               alt="IEEE Logo"
               className=" h-12 mt-2 md:h-16 hidden sm:block bg-primary"
             />
-            <h1 className="text-6xl md:text-8xl text-balance font-serif text-black mr-4">IEEE MSIT</h1>
+            <h1 className="text-6xl md:text-8xl text-balance font-serif text-black mr-4">
+              IEEE MSIT
+            </h1>
           </div>
           <p className="text-lg md:text-xl text-gray-600 font-medium mb-2">
             Student Technology Club
@@ -44,14 +48,9 @@ const Hero = () => {
                 workshops, hackathons, and tech events
               </em>{' '}
               to help you learn{' '}
-              <em className="border-b-2 border-dashed border-secondary">
-                cutting-edge technology
-              </em>
+              <em className="border-b-2 border-dashed border-secondary">cutting-edge technology</em>
               , build amazing projects, and connect with{' '}
-              <em className="border-b-2 border-dashed border-tertiary">
-                like-minded innovators
-              </em>
-              .
+              <em className="border-b-2 border-dashed border-tertiary">like-minded innovators</em>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

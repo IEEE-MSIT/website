@@ -46,9 +46,7 @@ const Team = () => {
           <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
             Meet Our Team
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif text-black mb-4">
-            Executive Committee
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-serif text-black mb-4">Executive Committee</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Meet the dedicated leaders driving innovation and excellence at IEEE MSIT
           </p>
@@ -59,7 +57,9 @@ const Team = () => {
             <div className="flex flex-wrap justify-center gap-1">
               <button
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                  activeTab === 'execom2025' ? 'bg-black text-white' : 'text-gray-600 hover:text-black'
+                  activeTab === 'execom2025'
+                    ? 'bg-black text-white'
+                    : 'text-gray-600 hover:text-black'
                 }`}
                 onClick={() => setActiveTab('execom2025')}
               >
@@ -67,7 +67,9 @@ const Team = () => {
               </button>
               <button
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                  activeTab === 'execom2024' ? 'bg-black text-white' : 'text-gray-600 hover:text-black'
+                  activeTab === 'execom2024'
+                    ? 'bg-black text-white'
+                    : 'text-gray-600 hover:text-black'
                 }`}
                 onClick={() => setActiveTab('execom2024')}
               >
