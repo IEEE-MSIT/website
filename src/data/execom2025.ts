@@ -26,7 +26,7 @@ export const execom2025 = {
         position: 'Vice-Chairperson (External)',
         branch: 'IT',
         image:
-          'https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=150&h=150&q=80',
+          'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150&q=80',
         linkedin: '#',
         chapter: 'IEEE MSIT',
         email: 'ishikagarg767@gmail.com',
@@ -122,7 +122,7 @@ export const execom2025 = {
         position: 'General Secretary',
         branch: 'ECE',
         image:
-          'https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=150&h=150&q=80',
+          'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150&q=80',
         linkedin: '#',
         chapter: 'IEEE CS MSIT',
         email: 'yashaswininarula@gmail.com',
@@ -154,7 +154,7 @@ export const execom2025 = {
         position: 'Vice-Chairperson',
         branch: 'IT',
         image:
-          'https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=150&h=150&q=80',
+          'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150&q=80',
         linkedin: '#',
         chapter: 'IEEE RAS MSIT',
         email: 'aarushisen182@gmail.com',
@@ -216,7 +216,7 @@ export const execom2025 = {
         position: 'Treasurer',
         branch: 'EEE',
         image:
-          'https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=150&h=150&q=80',
+          'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150&q=80',
         linkedin: '#',
         chapter: 'IEEE PES MSIT',
         email: 'kumariakriti842@gmail.com',
@@ -258,7 +258,7 @@ export const execom2025 = {
         position: 'Vice-Chairperson',
         branch: 'CSE',
         image:
-          'https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=150&h=150&q=80',
+          'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150&q=80',
         linkedin: '#',
         chapter: 'IEEE WIE MSIT',
         email: 'kopal.gupta4000@gmail.com',
@@ -278,7 +278,7 @@ export const execom2025 = {
         position: 'General Secretary',
         branch: 'ECE',
         image:
-          'https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=150&h=150&q=80',
+          'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150&q=80',
         linkedin: '#',
         chapter: 'IEEE WIE MSIT',
         email: 'vharshita334@gmail.com',
@@ -327,6 +327,50 @@ export const execom2025 = {
         email: null,
       },
     ],
+    'Web Development Committee': [
+      {
+        name: 'Raghav Gupta',
+        position: 'Chairperson',
+        branch: 'CSE',
+        image:
+          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80',
+        linkedin: '#',
+        chapter: 'Web Development Committee',
+        email: 'kraghavgupta@gmail.com',
+      },
+      {
+        name: 'Rajveer Singh',
+        position: 'Vice Chairperson',
+        branch: 'ECE',
+        image:
+          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80',
+        linkedin: '#',
+        chapter: 'Web Development Committee',
+        email: 'rajveergreets@gmail.com',
+      },
+    ],
+    'Sponsorship Committee': [
+      {
+        name: 'Abhimanyu Dalal',
+        position: 'Chairperson',
+        branch: 'ECE',
+        image:
+          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80',
+        linkedin: '#',
+        chapter: 'Sponsorship Committee',
+        email: 'abhimanyu3704@gmail.com',
+      },
+      {
+        name: 'Harshit Mittal',
+        position: 'Vice Chairperson',
+        branch: 'ECE',
+        image:
+          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80',
+        linkedin: '#',
+        chapter: 'Sponsorship Committee',
+        email: 'harshitmittal405@gmail.com',
+      },
+    ],
     'Editorial Committee': [
       {
         name: 'Devesh',
@@ -369,28 +413,6 @@ export const execom2025 = {
         linkedin: '#',
         chapter: 'Project Committee',
         email: 'avirathmagoo@gmail.com',
-      },
-    ],
-    'Web Development Committee': [
-      {
-        name: 'Raghav Gupta',
-        position: 'Chairperson',
-        branch: 'CSE',
-        image:
-          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80',
-        linkedin: '#',
-        chapter: 'Web Development Committee',
-        email: 'kraghavgupta@gmail.com',
-      },
-      {
-        name: 'Rajveer Singh',
-        position: 'Vice Chairperson',
-        branch: 'ECE',
-        image:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80',
-        linkedin: '#',
-        chapter: 'Web Development Committee',
-        email: 'rajveergreets@gmail.com',
       },
     ],
     'Publicity Committee': [
@@ -474,33 +496,11 @@ export const execom2025 = {
         position: 'Vice Chairperson',
         branch: 'ECE',
         image:
-          'https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=150&h=150&q=80',
+          'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150&q=80',
         linkedin: '#',
         chapter: 'Creativity Committee',
         email: 'richabaghel25@gmail.com',
       },
-    ],
-    'Sponsorship Committee': [
-      {
-        name: 'Abhimanyu Dalal',
-        position: 'Chairperson',
-        branch: 'ECE',
-        image:
-          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80',
-        linkedin: '#',
-        chapter: 'Sponsorship Committee',
-        email: 'abhimanyu3704@gmail.com',
-      },
-      {
-        name: 'Harshit Mittal',
-        position: 'Vice Chairperson',
-        branch: 'ECE',
-        image:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80',
-        linkedin: '#',
-        chapter: 'Sponsorship Committee',
-        email: 'harshitmittal405@gmail.com',
-      },
-    ],
+    ]
   },
 };

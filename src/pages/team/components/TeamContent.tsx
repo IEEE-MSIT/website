@@ -1,6 +1,6 @@
-// import { Award, Trophy } from 'lucide-react';
+
 import MemberCard from '../../../components/ui/MemberCard';
-// import { achievements } from '../../../data/data';
+
 import { execom2025 } from '../../../data/execom2025';
 import { execom2024 } from '../../../data/execom2024';
 
@@ -28,7 +28,6 @@ const TeamContent = ({ activeTab }: TeamContentProps) => {
     <section className="py-16 px-4 md:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="relative">
-          {/* Achievements removed. Only team members are shown. */}
 
           {activeTab === 'execom2025' && (
             <div>

@@ -1,10 +1,10 @@
 import { useRef } from 'react';
-import { ChevronLeft, ChevronRight, Clock, MapPin, ArrowRight, Eye } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Clock, MapPin, ArrowRight, Eye, Share2 } from 'lucide-react';
 import { events } from '../../../data/data';
 
 const Events = () => {
   const eventsCarouselRef = useRef<HTMLDivElement>(null);
-  const scrollAmount = 400; // Define scroll amount in pixels
+  const scrollAmount = 400; 
 
   const scrollEventsCarousel = (direction: 'left' | 'right') => {
     if (eventsCarouselRef.current) {
@@ -52,7 +52,7 @@ const Events = () => {
             <ChevronRight className="w-5 h-5 text-gray-700" />
           </button>
 
-          {/* Desktop View */}
+          {}
           <div
             ref={eventsCarouselRef}
             className="hidden lg:block overflow-x-auto scrollbar-hide mx-12"
@@ -63,7 +63,6 @@ const Events = () => {
                   key={index}
                   className="group relative rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 w-[280px] bg-white flex-shrink-0 shadow-lg transform hover:-translate-y-1 border border-gray-100 hover:border-primary/20"
                 >
-                  {/* Event Image with Overlay */}
                   <div className="relative w-full h-[220px] overflow-hidden">
                     <img
                       src="/event.webp"
@@ -107,9 +106,26 @@ const Events = () => {
                       <span className="truncate">{event.location}</span>
                     </div>
 
-                    <div className="mt-auto">
+                    <div className="mt-auto flex gap-2">
                       <button className="w-full bg-primary text-white py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm hover:shadow-md">
                         {event.buttonText || 'View Details'}
+                      </button>
+                      <button
+                        className="bg-primary/10 text-primary px-3 py-2 rounded-full hover:bg-primary hover:text-white transition-colors font-medium text-sm flex items-center gap-1"
+                        title="Share Event"
+                        onClick={() => {
+                          if (navigator.share) {
+                            navigator.share({
+                              title: event.title,
+                              url: window.location.href,
+                            });
+                          } else {
+                            navigator.clipboard.writeText(window.location.href);
+                            alert('Event link copied to clipboard!');
+                          }
+                        }}
+                      >
+                        <Share2 className="w-4 h-4" />
                       </button>
                     </div>
                   </div>
@@ -118,7 +134,7 @@ const Events = () => {
             </div>
           </div>
 
-          {/* Mobile View */}
+          {}
           <div className="lg:hidden">
             <div className="overflow-x-auto scrollbar-hide px-4 -mx-4">
               <div className="flex gap-4 pb-4 w-max">
@@ -127,7 +143,6 @@ const Events = () => {
                     key={index}
                     className="group relative rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 w-[200px] h-[340px] bg-white flex-shrink-0 shadow-lg transform hover:-translate-y-1 border border-gray-100 hover:border-primary/20"
                   >
-                    {/* Event Image with Overlay */}
                     <div className="relative w-full h-[160px] overflow-hidden">
                       <img
                         src="/event.webp"
@@ -152,7 +167,6 @@ const Events = () => {
                       </div>
                     </div>
 
-                    {/* Event Details */}
                     <div className="p-3 flex flex-col flex-1">
                       <h3 className="font-serif text-sm font-bold text-black mb-2 line-clamp-2 leading-tight">
                         {event.title}
@@ -167,9 +181,26 @@ const Events = () => {
                         <span className="truncate">{event.time}</span>
                       </div>
 
-                      <div className="mt-auto">
+                      <div className="mt-auto flex gap-2">
                         <button className="w-full bg-primary text-white py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-xs hover:shadow-sm">
                           {event.buttonText || 'View Details'}
+                        </button>
+                        <button
+                          className="bg-primary/10 text-primary px-2 py-2 rounded-full hover:bg-primary hover:text-white transition-colors font-medium text-xs flex items-center gap-1"
+                          title="Share Event"
+                          onClick={() => {
+                            if (navigator.share) {
+                              navigator.share({
+                                title: event.title,
+                                url: window.location.href,
+                              });
+                            } else {
+                              navigator.clipboard.writeText(window.location.href);
+                              alert('Event link copied to clipboard!');
+                            }
+                          }}
+                        >
+                          <Share2 className="w-4 h-4" />
                         </button>
                       </div>
                     </div>

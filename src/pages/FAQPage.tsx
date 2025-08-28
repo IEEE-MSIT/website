@@ -15,7 +15,7 @@ const FAQPage = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
-  // Memoize FAQ data to prevent recreation on every render
+  
   const faqData: FAQItem[] = useMemo(
     () => [
       {
@@ -112,13 +112,13 @@ const FAQPage = () => {
     []
   );
 
-  // Memoize categories to prevent recalculation
+  
   const categories = useMemo(
     () => ['All', ...Array.from(new Set(faqData.map((faq) => faq.category)))],
     [faqData]
   );
 
-  // Memoize filtered FAQs
+  
   const filteredFAQs = useMemo(
     () =>
       selectedCategory === 'All'
@@ -127,23 +127,23 @@ const FAQPage = () => {
     [faqData, selectedCategory]
   );
 
-  // Memoize WhatsApp URL
+  
   const whatsappUrl = useMemo(() => SITE_CONFIG.social.whatsapp.url, []);
 
-  // Optimize toggle function with useCallback
+  
   const toggleFAQ = useCallback((index: number) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
   }, []);
 
-  // Optimize category change with useCallback
+  
   const handleCategoryChange = useCallback((category: string) => {
     setSelectedCategory(category);
-    setOpenIndex(null); // Close any open FAQ when switching categories
+    setOpenIndex(null); 
   }, []);
 
   return (
     <main className="min-h-screen bg-background">
-      {/* Hero Section */}
+      {}
       <section className="pt-32 pb-16 px-6 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
         <div className="max-w-4xl mx-auto">
           <Link
@@ -170,10 +170,10 @@ const FAQPage = () => {
         </div>
       </section>
 
-      {/* FAQ Content */}
+      {}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          {/* Category Filter */}
+          {}
           <div className="mb-12">
             <h2 className="text-2xl font-serif text-black mb-6">Browse by Category</h2>
             <div className="flex flex-wrap gap-3">
@@ -193,7 +193,7 @@ const FAQPage = () => {
             </div>
           </div>
 
-          {/* FAQ Items */}
+          {}
           <div className="space-y-4">
             {filteredFAQs.length > 0 ? (
               filteredFAQs.map((faq, index) => (
@@ -212,7 +212,6 @@ const FAQPage = () => {
             )}
           </div>
 
-          {/* Contact CTA */}
           <div className="text-center mt-16">
             <div className="bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5 rounded-2xl p-8 border border-primary/10">
               <h3 className="text-2xl font-serif text-black mb-4">Still have questions?</h3>
