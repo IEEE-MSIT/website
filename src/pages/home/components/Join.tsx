@@ -15,10 +15,9 @@ const Join = () => {
           href="https://www.ieee.org/membership/join/index.html"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition-colors font-medium shadow-lg hover:shadow-xl"
+          className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 w-fit mx-auto"
         >
-          Become an IEEE Member
-          <ArrowRight className="w-5 h-5" />
+          <ArrowRight className="w-4 h-4" /> Become an IEEE Member
         </a>
       </div>
     </section>

@@ -1,6 +1,5 @@
 import About from './components/About';
 import ChapterHighlights from './components/ChapterHighlights';
-import Community from './components/Community';
 import Events from './components/Events';
 import Hackathons from './components/Hackathons';
 import Hero from './components/Hero';

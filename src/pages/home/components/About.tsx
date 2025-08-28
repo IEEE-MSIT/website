@@ -54,7 +54,13 @@ const About = () => {
           </div>
         </div>
         <div className="py-8 overflow-hidden w-full marquee-container">
-          <Marquee speed={30} gradient={false} pauseOnHover={true} className="w-full h-60">
+          <Marquee 
+            speed={50} 
+            gradient={false} 
+            pauseOnHover={true} 
+            className="w-full h-60"
+            direction="left"
+          >
             <div className="mx-4">
               <img
                 src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -118,6 +124,40 @@ const About = () => {
                 onError={(e) => {
                   e.currentTarget.src =
                     'https://via.placeholder.com/800x600/e5e7eb/6b7280?text=IEEE+Engineering';
+                }}
+              />
+            </div>
+            <div className="mx-4">
+              <img
+                src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="IEEE Competition - Hackathon and technical challenges"
+                className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    'https://via.placeholder.com/800x600/e5e7eb/6b7280?text=IEEE+Competition';
+                }}
+              />
+            </div>
+            {/* Duplicate images for smooth scrolling */}
+            <div className="mx-4">
+              <img
+                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="IEEE Workshop - Students collaborating on engineering projects"
+                className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    'https://via.placeholder.com/800x600/e5e7eb/6b7280?text=IEEE+Workshop';
+                }}
+              />
+            </div>
+            <div className="mx-4">
+              <img
+                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="IEEE Conference - Technical presentations and networking"
+                className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    'https://via.placeholder.com/800x600/e5e7eb/6b7280?text=IEEE+Conference';
                 }}
               />
             </div>

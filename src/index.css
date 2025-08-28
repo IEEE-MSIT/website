@@ -13,6 +13,72 @@
   }
 }
 
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.2s ease-out forwards;
+}
+
+/* Optimized FAQ animations */
+.faq-content {
+  will-change: max-height, opacity;
+}
+
+.faq-content.open {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-contents {
+  will-change: contents;
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -78,11 +144,20 @@
   z-index: 99999 !important;
 }
 
-/* Force no rotation on marquee elements */
-.marquee-container * {
-  transform: none !important;
+/* Marquee optimizations */
+.marquee-container {
+  overflow: hidden;
 }
 
 .marquee-container img {
+  flex-shrink: 0;
+}
+
+/* Remove transform conflicts */
+.marquee-container .rfm-marquee {
+  overflow: hidden !important;
+}
+
+.marquee-container .rfm-child {
   transform: none !important;
 }

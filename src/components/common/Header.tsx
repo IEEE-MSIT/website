@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, ChevronDown, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { HOME_PATH } from '../../constants/paths';
 
 const Header = () => {
   const [chaptersDropdownOpen, setChaptersDropdownOpen] = useState(false);
@@ -101,14 +103,14 @@ const Header = () => {
       </div>
 
       <nav className="flex justify-between items-center px-6 py-4 bg-background fixed top-[40px] left-0 right-0 z-40 shadow-sm">
-        <div className="flex items-center gap-2">
+        <Link to={HOME_PATH} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <img
             src="/IEEEWhiteLogowithTransparentBG.png"
             alt="IEEE Logo"
             className="w-8 h-8 hidden"
           />
           <h1 className="text-2xl font-serif text-black font-semibold">IEEE MSIT</h1>
-        </div>
+        </Link>
 
         <div className="hidden lg:flex items-center gap-8">
           <a
@@ -184,6 +186,12 @@ const Header = () => {
             className="text-gray-700 hover:text-primary transition-colors font-medium text-sm"
           >
             Team
+          </a>
+          <a
+            href="/faq"
+            className="text-gray-700 hover:text-primary transition-colors font-medium text-sm"
+          >
+            FAQ
           </a>
           <a
             href="#join"
@@ -309,6 +317,13 @@ const Header = () => {
               className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium text-base"
             >
               Team
+            </a>
+            <a
+              href="/faq"
+              onClick={closeMobileMenu}
+              className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium text-base"
+            >
+              FAQ
             </a>
             <a
               href="#join"

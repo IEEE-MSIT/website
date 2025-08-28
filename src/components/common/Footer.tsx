@@ -1,6 +1,8 @@
 import { Heart, Github, Instagram, Linkedin, Twitter, Facebook, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { footer } from '../../data/data';
 import SITE_CONFIG from '../../config/site';
+import { HOME_PATH } from '../../constants/paths';
 
 const Footer = () => {
   const getSocialIcon = (platform: string) => {
@@ -27,13 +29,13 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
+            <Link to={HOME_PATH} className="flex items-center gap-3 mb-4 hover:opacity-80 transition-opacity w-fit">
               <img
                 src="/IEEEWhiteLogowithTransparentBG.png"
                 alt="IEEE Logo"
                 className="h-8 w-auto"
               />
-            </div>
+            </Link>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">{SITE_CONFIG.description}</p>
             <div className="flex items-center gap-2 text-sm mb-6">
               Made with <Heart className="w-4 h-4 text-heart-red" /> by the students of IEEE MSIT.

@@ -61,7 +61,7 @@ const Events = () => {
               {events.map((event, index) => (
                 <div
                   key={index}
-                  className="group relative rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 w-[280px]  bg-white flex-shrink-0 shadow-lg transform hover:-translate-y-1"
+                  className="group relative rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 w-[280px] bg-white flex-shrink-0 shadow-lg transform hover:-translate-y-1 border border-gray-100 hover:border-primary/20"
                 >
                   {/* Event Image with Overlay */}
                   <div className="relative w-full h-[220px] overflow-hidden">
@@ -106,15 +106,7 @@ const Events = () => {
                     </div>
 
                     <div className="mt-auto">
-                      <button
-                        className={`w-full py-2 text-sm rounded-full font-medium transition-colors ${
-                          index % 3 === 0 
-                            ? 'bg-primary hover:bg-primary-hover text-white' 
-                            : index % 3 === 1 
-                            ? 'bg-ieee-blue hover:bg-chapter-blue text-white' 
-                            : 'bg-tertiary hover:bg-tertiary-dark text-white'
-                        }`}
-                      >
+                      <button className="w-full bg-primary text-white py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm hover:shadow-md">
                         {event.buttonText || 'View Details'}
                       </button>
                     </div>
@@ -131,7 +123,7 @@ const Events = () => {
                 {events.map((event, index) => (
                   <div
                     key={index}
-                    className="group relative rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 w-[200px] h-[340px] bg-white flex-shrink-0 shadow-lg transform hover:-translate-y-1"
+                    className="group relative rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 w-[200px] h-[340px] bg-white flex-shrink-0 shadow-lg transform hover:-translate-y-1 border border-gray-100 hover:border-primary/20"
                   >
                     {/* Event Image with Overlay */}
                     <div className="relative w-full h-[160px] overflow-hidden">
@@ -172,15 +164,7 @@ const Events = () => {
                       </div>
 
                       <div className="mt-auto">
-                        <button
-                          className={`w-full py-2 text-xs rounded-full font-medium transition-colors ${
-                            index % 3 === 0 
-                              ? 'bg-primary hover:bg-primary-hover text-white' 
-                              : index % 3 === 1 
-                              ? 'bg-ieee-blue hover:bg-chapter-blue text-white' 
-                              : 'bg-tertiary hover:bg-tertiary-dark text-white'
-                          }`}
-                        >
+                        <button className="w-full bg-primary text-white py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-xs hover:shadow-sm">
                           {event.buttonText || 'View Details'}
                         </button>
                       </div>
