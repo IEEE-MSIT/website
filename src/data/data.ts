@@ -83,6 +83,13 @@ export const events = [
 export const chapters = [
   {
     name: 'Robotics & Automation Society',
+    shortName: 'RAS',
+    logo: '/RAS.png',
+    bgColor: 'from-blue-900 via-blue-800 to-blue-900',
+    borderColor: 'border-blue-400',
+    accentColor: 'bg-blue-400',
+    textColor: 'text-blue-100',
+    motto: 'Innovation Through Automation',
     description:
       'Advancing the theory and practice of robotics, automation, and intelligent systems through our ROBO TIDING newsletter and cutting-edge workshops.',
     image:
@@ -91,6 +98,13 @@ export const chapters = [
   },
   {
     name: 'Women in Engineering',
+    shortName: 'WIE',
+    logo: '/WIE.png',
+    bgColor: 'from-purple-900 via-purple-800 to-purple-900',
+    borderColor: 'border-purple-400',
+    accentColor: 'bg-purple-400',
+    textColor: 'text-purple-100',
+    motto: 'Empowerment Through Excellence',
     description:
       'Empowering women in technology through SHESCRIPTS newsletter, mentorship programs, and professional development opportunities.',
     image:
@@ -99,6 +113,13 @@ export const chapters = [
   },
   {
     name: 'Power & Energy Society',
+    shortName: 'PES',
+    logo: '/PES.png',
+    bgColor: 'from-green-900 via-green-800 to-green-900',
+    borderColor: 'border-green-400',
+    accentColor: 'bg-green-400',
+    textColor: 'text-green-100',
+    motto: 'Sustainable Future Through Power',
     description:
       'Focusing on sustainable energy solutions, power systems, and electrical engineering innovations for a greener future.',
     image:
@@ -107,6 +128,13 @@ export const chapters = [
   },
   {
     name: 'Computer Society',
+    shortName: 'CS',
+    logo: '/CS.png',
+    bgColor: 'from-amber-900 via-amber-800 to-amber-900',
+    borderColor: 'border-amber-400',
+    accentColor: 'bg-amber-400',
+    textColor: 'text-amber-100',
+    motto: 'Code the Future',
     description:
       'Advancing computing and information technology through programming competitions, AI workshops, and software development projects.',
     image:

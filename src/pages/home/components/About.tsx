@@ -53,8 +53,8 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="mb-12 py-8 h-max  overflow-hidden w-full">
-          <Marquee speed={30} gradient={false} pauseOnHover={true} className="w-full">
+        <div className="py-8 overflow-hidden w-full marquee-container">
+          <Marquee speed={30} gradient={false} pauseOnHover={true} className="w-full h-60">
             <div className="mx-4">
               <img
                 src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"

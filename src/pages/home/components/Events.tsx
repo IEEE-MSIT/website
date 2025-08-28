@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { ArrowRight, ChevronLeft, ChevronRight, Clock, MapPin, Eye, Users, Trophy } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Clock, MapPin, ArrowRight, Eye } from 'lucide-react';
 import { events } from '../../../data/data';
 
 const Events = () => {
@@ -20,14 +20,14 @@ const Events = () => {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-6 bg-background">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
             Upcoming Events
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-black mb-6">
+          <h2 className="text-4xl md:text-5xl font-serif text-black mb-8 leading-tight">
             Join Our <span className="text-primary">Technical</span> Events &{' '}
             <span className="text-tertiary">Workshops</span>
           </h2>
@@ -41,15 +41,15 @@ const Events = () => {
         <div className="relative">
           <button
             onClick={() => scrollEventsCarousel('left')}
-            className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors items-center justify-center"
+            className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white transition-all duration-300 items-center justify-center border border-gray-100 hover:shadow-xl hover:scale-105"
           >
-            <ChevronLeft className="w-6 h-6 text-gray-600" />
+            <ChevronLeft className="w-5 h-5 text-gray-700" />
           </button>
           <button
             onClick={() => scrollEventsCarousel('right')}
-            className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors items-center justify-center"
+            className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white transition-all duration-300 items-center justify-center border border-gray-100 hover:shadow-xl hover:scale-105"
           >
-            <ChevronRight className="w-6 h-6 text-gray-600" />
+            <ChevronRight className="w-5 h-5 text-gray-700" />
           </button>
 
           {/* Desktop View */}
@@ -61,80 +61,63 @@ const Events = () => {
               {events.map((event, index) => (
                 <div
                   key={index}
-                  className="relative rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 w-[400px] h-[500px] flex-shrink-0 shadow-lg group"
+                  className="group relative rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 w-[280px]  bg-white flex-shrink-0 shadow-lg transform hover:-translate-y-1"
                 >
-                  {/* Full Height Image */}
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    onError={(e) => {
-                      e.currentTarget.src = 'https://via.placeholder.com/400x500/e5e7eb/6b7280?text=Event+Image';
-                    }}
-                  />
-                  
-                  {/* Overlay Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  
-                  {/* Top Content */}
-                  <div className="absolute top-4 left-4 right-4 flex justify-between items-start">
-                    <div className="text-white">
-                      <div className="text-xs font-medium opacity-90 uppercase tracking-wide">
-                        {event.date.month}
-                      </div>
-                      <div className="text-2xl font-bold">{event.date.day}</div>
-                      <div className="text-xs font-medium opacity-90">{event.date.year}</div>
+                  {/* Event Image with Overlay */}
+                  <div className="relative w-full h-[220px] overflow-hidden">
+                    <img
+                      src="/event.webp"
+                      alt={event.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute top-3 right-3">
+                      <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/95 backdrop-blur-sm text-gray-800 shadow-md">
+                        {event.society}
+                      </span>
                     </div>
-                    <span
-                      className={`px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
-                        event.featured 
-                          ? 'bg-primary/90 text-white' 
-                          : 'bg-white/90 text-gray-800'
-                      }`}
-                    >
-                      {event.category}
-                    </span>
+                    <div className="absolute top-3 left-3">
+                      <div className="bg-primary/90 backdrop-blur-sm text-white px-2 py-1 rounded-lg text-xs font-medium">
+                        <div className="text-center">
+                          <div className="text-lg font-bold leading-none">{event.date.day}</div>
+                          <div className="text-[10px] uppercase tracking-wide">{event.date.month}</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
-                  {/* Bottom Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h3 className="text-lg font-bold mb-2 leading-tight line-clamp-2">
+                  <div className="p-4 flex flex-col flex-1">
+                    <h3 className="font-serif text-lg font-bold text-black mb-2 line-clamp-2 leading-tight">
                       {event.title}
                     </h3>
-                    <p className="text-white/90 text-sm mb-4 leading-relaxed line-clamp-2">
+                    
+                    <p className="text-sm text-gray-600 line-clamp-3 mb-4 leading-relaxed">
                       {event.description}
                     </p>
-
-                    {/* Event Details */}
-                    <div className="space-y-1 mb-4">
-                      <div className="flex items-center text-sm text-white/80">
-                        <Clock className="w-4 h-4 mr-2 text-white flex-shrink-0" />
-                        <span className="truncate">{event.time}</span>
-                      </div>
-                      <div className="flex items-center text-sm text-white/80">
-                        <MapPin className="w-4 h-4 mr-2 text-white flex-shrink-0" />
-                        <span className="truncate">{event.location}</span>
-                      </div>
-                      <div className="flex items-center text-sm text-white/80">
-                        <Users className="w-4 h-4 mr-2 text-white flex-shrink-0" />
-                        <span className="truncate">{event.society}</span>
-                      </div>
-                      <div className="flex items-center text-sm text-secondary font-medium">
-                        <Trophy className="w-4 h-4 mr-2 flex-shrink-0" />
-                        <span className="truncate">{event.prize}</span>
-                      </div>
+                    
+                    <div className="flex items-center text-sm text-gray-500 mb-2">
+                      <Clock className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
+                      <span>{event.time}</span>
                     </div>
 
-                    {/* Button */}
-                    <button
-                      className={`w-full py-3 rounded-lg text-sm font-medium transition-all duration-300 backdrop-blur-sm ${
-                        event.featured
-                          ? 'bg-primary/90 text-white hover:bg-primary shadow-md hover:shadow-lg'
-                          : 'bg-tertiary/90 text-white hover:bg-tertiary shadow-md hover:shadow-lg'
-                      }`}
-                    >
-                      {event.buttonText}
-                    </button>
+                    <div className="flex items-center text-sm text-gray-500 mb-4">
+                      <MapPin className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
+                      <span className="truncate">{event.location}</span>
+                    </div>
+
+                    <div className="mt-auto">
+                      <button
+                        className={`w-full py-2 text-sm rounded-full font-medium transition-colors ${
+                          index % 3 === 0 
+                            ? 'bg-primary hover:bg-primary-hover text-white' 
+                            : index % 3 === 1 
+                            ? 'bg-ieee-blue hover:bg-chapter-blue text-white' 
+                            : 'bg-tertiary hover:bg-tertiary-dark text-white'
+                        }`}
+                      >
+                        {event.buttonText || 'View Details'}
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -148,75 +131,59 @@ const Events = () => {
                 {events.map((event, index) => (
                   <div
                     key={index}
-                    className="relative rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 w-[300px] h-[400px] flex-shrink-0 shadow-lg group"
+                    className="group relative rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 w-[200px] h-[340px] bg-white flex-shrink-0 shadow-lg transform hover:-translate-y-1"
                   >
-                    {/* Full Height Image */}
-                    <img
-                      src={event.image}
-                      alt={event.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        e.currentTarget.src = 'https://via.placeholder.com/300x400/e5e7eb/6b7280?text=Event+Image';
-                      }}
-                    />
-                    
-                    {/* Overlay Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    
-                    {/* Top Content */}
-                    <div className="absolute top-3 left-3 right-3 flex justify-between items-start">
-                      <div className="text-white">
-                        <div className="text-xs font-medium opacity-90 uppercase tracking-wide">
-                          {event.date.month} {event.date.day}
-                        </div>
-                        <div className="text-xs font-medium opacity-90">{event.date.year}</div>
+                    {/* Event Image with Overlay */}
+                    <div className="relative w-full h-[160px] overflow-hidden">
+                      <img
+                        src="/event.webp"
+                        alt={event.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute top-2 right-2">
+                        <span className="px-2 py-1 rounded-full text-[10px] font-medium bg-white/95 backdrop-blur-sm text-gray-800 shadow-sm">
+                          {event.society}
+                        </span>
                       </div>
-                      <span
-                        className={`px-2 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
-                          event.featured 
-                            ? 'bg-primary/90 text-white' 
-                            : 'bg-white/90 text-gray-800'
-                        }`}
-                      >
-                        {event.category}
-                      </span>
+                      <div className="absolute top-2 left-2">
+                        <div className="bg-primary/90 backdrop-blur-sm text-white px-1.5 py-1 rounded-md text-[10px] font-medium">
+                          <div className="text-center">
+                            <div className="text-sm font-bold leading-none">{event.date.day}</div>
+                            <div className="text-[8px] uppercase tracking-wide">{event.date.month}</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Bottom Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                      <h3 className="text-base font-bold mb-2 leading-tight line-clamp-2">
+                    {/* Event Details */}
+                    <div className="p-3 flex flex-col flex-1">
+                      <h3 className="font-serif text-sm font-bold text-black mb-2 line-clamp-2 leading-tight">
                         {event.title}
                       </h3>
-                      <p className="text-white/90 text-xs mb-3 leading-relaxed line-clamp-2">
+                      
+                      <p className="text-xs text-gray-600 line-clamp-2 mb-3 leading-relaxed">
                         {event.description}
                       </p>
-
-                      {/* Event Details */}
-                      <div className="space-y-1 mb-3">
-                        <div className="flex items-center text-xs text-white/80">
-                          <Clock className="w-3 h-3 mr-1 text-white flex-shrink-0" />
-                          <span className="truncate">{event.time}</span>
-                        </div>
-                        <div className="flex items-center text-xs text-white/80">
-                          <MapPin className="w-3 h-3 mr-1 text-white flex-shrink-0" />
-                          <span className="truncate">{event.location}</span>
-                        </div>
-                        <div className="flex items-center text-xs text-secondary font-medium">
-                          <Trophy className="w-3 h-3 mr-1 flex-shrink-0" />
-                          <span className="truncate">{event.prize}</span>
-                        </div>
+                      
+                      <div className="flex items-center text-xs text-gray-500 mb-3">
+                        <Clock className="w-3 h-3 mr-1 text-primary flex-shrink-0" />
+                        <span className="truncate">{event.time}</span>
                       </div>
 
-                      {/* Button */}
-                      <button
-                        className={`w-full py-2 rounded-lg text-xs font-medium transition-all duration-300 backdrop-blur-sm ${
-                          event.featured
-                            ? 'bg-primary/90 text-white hover:bg-primary'
-                            : 'bg-tertiary/90 text-white hover:bg-tertiary'
-                        }`}
-                      >
-                        {event.buttonText}
-                      </button>
+                      <div className="mt-auto">
+                        <button
+                          className={`w-full py-2 text-xs rounded-full font-medium transition-colors ${
+                            index % 3 === 0 
+                              ? 'bg-primary hover:bg-primary-hover text-white' 
+                              : index % 3 === 1 
+                              ? 'bg-ieee-blue hover:bg-chapter-blue text-white' 
+                              : 'bg-tertiary hover:bg-tertiary-dark text-white'
+                          }`}
+                        >
+                          {event.buttonText || 'View Details'}
+                        </button>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -236,10 +203,10 @@ const Events = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition-colors font-medium flex items-center gap-3 mx-auto shadow-lg hover:shadow-xl">
-            <Eye className="w-5 h-5" />
+          <button className="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 mx-auto">
+            <Eye className="w-4 h-4" />
             Show All Events
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-4 h-4" />
           </button>
         </div>
       </div>

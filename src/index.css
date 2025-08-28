@@ -6,10 +6,10 @@
 
 @keyframes scroll {
   0% {
-    transform: translateX(0) rotate(2deg);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%) rotate(2deg);
+    transform: translateX(-50%);
   }
 }
 
@@ -52,6 +52,37 @@
   animation: slide-down 0.3s ease-out;
 }
 
+/* Line clamp utilities */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
 .chat-and-icon-container {
   z-index: 99999 !important;
+}
+
+/* Force no rotation on marquee elements */
+.marquee-container * {
+  transform: none !important;
+}
+
+.marquee-container img {
+  transform: none !important;
 }

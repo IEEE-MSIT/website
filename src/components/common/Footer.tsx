@@ -23,11 +23,17 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-foreground text-muted-foreground py-16 px-6">
+    <footer className="bg-black text-muted-foreground py-16 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <h3 className="text-xl font-serif font-semibold mb-4">IEEE MSIT</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src="/IEEEWhiteLogowithTransparentBG.png"
+                alt="IEEE Logo"
+                className="h-8 w-auto"
+              />
+            </div>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">{SITE_CONFIG.description}</p>
             <div className="flex items-center gap-2 text-sm mb-6">
               Made with <Heart className="w-4 h-4 text-heart-red" /> by the students of IEEE MSIT.
