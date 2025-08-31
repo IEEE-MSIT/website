@@ -1,8 +1,62 @@
+import React, { useRef } from 'react';
 import { ArrowRight, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { EVENTS_PATH } from '../../../constants/paths';
 
 const Hero = () => {
+  const topImgRef = useRef<HTMLImageElement | null>(null);
+  const glassOverlayRef = useRef<HTMLDivElement | null>(null);
+  const magnifierRef = useRef<HTMLImageElement | null>(null);
+
+  const handlePointerMove = (e: React.MouseEvent) => {
+    const img = topImgRef.current;
+    const glassOverlay = glassOverlayRef.current;
+    const magnifier = magnifierRef.current;
+    
+    if (!img) return;
+    
+    const rect = img.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    img.style.setProperty('--cx', `${x}px`);
+    img.style.setProperty('--cy', `${y}px`);
+    img.style.setProperty('--r', `200px`);
+    
+    if (glassOverlay) {
+      glassOverlay.style.setProperty('--gx', `${x}px`);
+      glassOverlay.style.setProperty('--gy', `${y}px`);
+      glassOverlay.style.setProperty('--gr', `120px`);
+    }
+    
+    if (magnifier) {
+      magnifier.style.setProperty('--mx', `${x}px`);
+      magnifier.style.setProperty('--my', `${y}px`);
+      magnifier.style.setProperty('--mr', `80px`);
+    }
+  };
+
+  const handlePointerLeave = () => {
+    const img = topImgRef.current;
+    const glassOverlay = glassOverlayRef.current;
+    const magnifier = magnifierRef.current;
+    
+    if (img) {
+      img.style.setProperty('--cx', `-9999px`);
+      img.style.setProperty('--cy', `-9999px`);
+    }
+    
+    if (glassOverlay) {
+      glassOverlay.style.setProperty('--gx', `-9999px`);
+      glassOverlay.style.setProperty('--gy', `-9999px`);
+    }
+    
+    if (magnifier) {
+      magnifier.style.setProperty('--mx', `-9999px`);
+      magnifier.style.setProperty('--my', `-9999px`);
+    }
+  };
+
   return (
     <section className="relative min-h-[80vh] bg-background overflow-hidden pt-20">
       <div
@@ -17,11 +71,11 @@ const Hero = () => {
         }
       >
         <div className="text-center my-12">
-          <div className="flex items-center justify-center mb-6  flex-wrap-reverse gap-4">
+          <div className="flex items-center justify-center mb-6  flex-wrap gap-4">
             <img
               src="/IEEEWhiteLogowithTransparentBG.png"
               alt="IEEE Logo"
-              className=" h-12 mt-2 md:h-16 hidden sm:block bg-primary"
+              className=" h-12 mt-2 md:h-16 block bg-primary"
             />
             <h1 className="text-6xl md:text-8xl text-balance font-serif text-black mr-4">
               IEEE MSIT
@@ -78,8 +132,73 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="w-full flex justify-center items-end mt-auto relative">
-          <img src="https://res.cloudinary.com/ddmw4spnt/image/upload/w_768,f_auto,q_auto/v1756643762/uadzh5x4yeq0aq73gqmk.jpg" alt="IEEE MSIT Group" className="w-full h-auto rounded-2xl grayscale object-cover" />
+        <div
+          className="w-full flex justify-center items-end mt-auto relative"
+          onMouseMove={handlePointerMove}
+          onMouseLeave={handlePointerLeave}
+        >
+          <div className="relative w-full rounded-2xl overflow-hidden">
+            <img
+              src="https://res.cloudinary.com/ddmw4spnt/image/upload/w_768,f_auto,q_auto/v1756643762/uadzh5x4yeq0aq73gqmk.jpg"
+              alt="IEEE MSIT Group"
+              className="w-full h-auto block grayscale object-cover"
+            />
+
+            <img
+              ref={topImgRef}
+              src="https://res.cloudinary.com/ddmw4spnt/image/upload/w_768,f_auto,q_auto/v1756643762/uadzh5x4yeq0aq73gqmk.jpg"
+              alt="IEEE MSIT Group - color"
+              className="w-full h-auto block absolute inset-0 pointer-events-none object-cover"
+              style={{
+                WebkitMaskImage:
+                  'radial-gradient(circle var(--r,200px) at var(--cx, -9999px) var(--cy, -9999px), rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%)',
+                maskImage:
+                  'radial-gradient(circle var(--r,200px) at var(--cx, -9999px) var(--cy, -9999px), rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%)',
+                transition: 'mask-position 0.1s ease-out, -webkit-mask-position 0.1s ease-out',
+              }}
+            />
+
+            <div
+              ref={glassOverlayRef}
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: 'radial-gradient(circle var(--gr,120px) at var(--gx, -9999px) var(--gy, -9999px), rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 40%, transparent 70%)',
+                backdropFilter: 'blur(0px)',
+                WebkitBackdropFilter: 'blur(0px)',
+                boxShadow: 'inset 0 0 60px rgba(255,255,255,0.1)',
+                transition: 'background 0.1s ease-out, backdrop-filter 0.2s ease-out',
+                WebkitMaskImage:
+                  'radial-gradient(circle var(--gr,120px) at var(--gx, -9999px) var(--gy, -9999px), rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0) 70%)',
+                maskImage:
+                  'radial-gradient(circle var(--gr,120px) at var(--gx, -9999px) var(--gy, -9999px), rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0) 70%)',
+              }}
+            />
+
+            <img
+              ref={magnifierRef}
+              src="https://res.cloudinary.com/ddmw4spnt/image/upload/w_1200,f_auto,q_auto/v1756643762/uadzh5x4yeq0aq73gqmk.jpg"
+              alt="IEEE MSIT Group - magnified"
+              className="w-full h-auto block absolute inset-0 pointer-events-none object-cover"
+              style={{
+                transform: 'scale(1.3)',
+                transformOrigin: 'var(--mx, -9999px) var(--my, -9999px)',
+                filter: 'brightness(1.1) contrast(1.05) saturate(1.1)',
+                WebkitMaskImage:
+                  'radial-gradient(circle var(--mr,80px) at var(--mx, -9999px) var(--my, -9999px), rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,0) 100%)',
+                maskImage:
+                  'radial-gradient(circle var(--mr,80px) at var(--mx, -9999px) var(--my, -9999px), rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,0) 100%)',
+                transition: 'transform-origin 0.05s linear, mask-position 0.05s linear, -webkit-mask-position 0.05s linear',
+              }}
+            />
+
+            <div
+              className="absolute inset-0 pointer-events-none rounded-2xl"
+              style={{
+                background: 'radial-gradient(circle var(--gr,120px) at var(--gx, -9999px) var(--gy, -9999px), transparent 0%, transparent 90%, rgba(255,255,255,0.2) 95%, transparent 100%)',
+                transition: 'background 0.1s ease-out',
+              }}
+            />
+          </div>
         </div>
       </div>
     </section>

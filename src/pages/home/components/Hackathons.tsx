@@ -1,5 +1,6 @@
-import { ExternalLink, Trophy, Users, MapPin, Clock, Award, Info, X } from 'lucide-react';
+import { ExternalLink, Trophy, Users, MapPin, Clock, Award, Info, X, ArrowRight, Eye } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { hackathons } from '../../../data/data';
 
 const Hackathons = () => {
@@ -343,6 +344,13 @@ const Hackathons = () => {
           </div>
         </div>
       )}
+       <div className="text-center mt-12">
+          <Link to="/events" className="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 mx-auto w-max">
+            <Eye className="w-4 h-4" />
+            Show All Events
+            <ArrowRight className="w-4 h-4" />
+          </Link>        
+        </div>
     </section>
   );
 };

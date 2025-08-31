@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { ChevronLeft, ChevronRight, Clock, MapPin, ArrowRight, Eye, Share2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { events } from '../../../data/data';
 import EventCard from '../../../components/ui/EventCard';

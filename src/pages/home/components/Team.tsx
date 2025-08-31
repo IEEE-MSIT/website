@@ -34,7 +34,7 @@ const Team = () => {
   );
 
   return (
-    <section className="py-20 px-6 bg-background">
+    <section className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">

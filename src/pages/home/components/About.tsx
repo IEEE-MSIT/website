@@ -1,5 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import Marquee from 'react-fast-marquee';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Eye } from 'lucide-react';
 
 const images = [
     {
@@ -88,14 +90,12 @@ const SmartImage: React.FC<SmartImageProps> = ({ src, fallback, alt, className =
 
   const current = candidates[index] ?? fallback;
 
-  // If the resolved image is hosted on Cloudinary, generate an optimized src and srcSet
   const isCloudinary = typeof current === 'string' && current.includes('res.cloudinary.com');
 
   const makeCloudinaryUrl = (url: string, width: number) => {
     const marker = '/upload/';
     const i = url.indexOf(marker);
     if (i === -1) return url;
-    // insert transformations right after /upload/
     const before = url.slice(0, i + marker.length);
     const after = url.slice(i + marker.length);
     return `${before}w_${width},f_auto,q_auto/${after}`;
@@ -164,7 +164,7 @@ const About = () => {
             <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
               Connecting ambitious minds through workshops, competitions, and research. We celebrate
               achievements, foster teamwork, and help students prepare for global impact.
-            </p>
+            </p>           
           </div>
         </div>
         <div className="py-8 overflow-hidden w-full marquee-container">
@@ -186,6 +186,13 @@ const About = () => {
               </div>
             ))}
           </Marquee>
+        </div>
+           <div className="text-center mt-12">
+          <Link to="/events" className="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 mx-auto w-max">
+            <Eye className="w-4 h-4" />
+            Show More
+            <ArrowRight className="w-4 h-4" />
+          </Link>        
         </div>
       </section>
     </>
