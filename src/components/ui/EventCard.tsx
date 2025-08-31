@@ -25,14 +25,16 @@ const EventCard: React.FC<EventCardProps> = ({ event, className = '' }) => {
     };
 
     return (
-        <div className={`${className} overflow-hidden rounded-xl shadow-lg bg-white flex flex-col group transition-all h-full`}>
-            <div className="relative w-full h-48 overflow-hidden">
-                <img
-                    src={event.cloudinary_url || '/event.webp'}
-                    alt={event.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className={`${className} overflow-hidden rounded-xl bg-white flex flex-col group transition-shadow duration-200 h-full border border-gray-100 hover:shadow-xl`}>
+                <div className="relative w-full overflow-hidden" style={{ paddingTop: '75%' }}>
+                    <img
+                        src={event.cloudinary_url || '/event.webp'}
+                        alt={event.title}
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-3 right-3">
                     <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/95 backdrop-blur-sm text-gray-800 shadow-md">
                         {event.organisedBy || event.category || ''}
@@ -59,7 +61,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, className = '' }) => {
             </div>
 
             <div className="p-4 flex flex-col flex-1">
-                <h3 className="font-serif text-lg font-bold text-black mb-2 line-clamp-2 leading-tight">{event.title}</h3>
+                <h3 className="font-serif text-xl md:text-2xl font-semibold text-gray-900 mb-2 line-clamp-2 leading-tight tracking-tight">{event.title}</h3>
                 <p className="text-sm text-gray-600 line-clamp-3 mb-4 leading-relaxed">{event.description}</p>
 
                 <div className="flex items-center text-sm text-gray-500 mb-2">
