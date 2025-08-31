@@ -73,7 +73,7 @@ const Events = () => {
             <div className="overflow-x-auto scrollbar-hide px-4 -mx-4">
               <div className="flex gap-4 pb-4 w-max">
                 {events.map((event, index) => (
-                  <div key={index} className="w-[200px] h-[340px]">
+                  <div key={index} className="w-[200px] h-[440px]">
                     <EventCard event={event} />
                   </div>
                 ))}
