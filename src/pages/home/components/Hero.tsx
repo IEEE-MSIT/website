@@ -1,4 +1,6 @@
 import { ArrowRight, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { EVENTS_PATH } from '../../../constants/paths';
 
 const Hero = () => {
   return (
@@ -54,12 +56,12 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#events"
+              <Link
+                to={EVENTS_PATH}
                 className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 w-fit"
               >
                 <ArrowRight className="w-4 h-4" /> See Upcoming Events
-              </a>
+              </Link>
               <a
                 href="#join"
                 className="border border-primary text-primary px-6 py-3 rounded-full hover:bg-primary hover:text-white transition-colors font-medium text-sm flex items-center gap-2 w-fit"

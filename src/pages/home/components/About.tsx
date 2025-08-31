@@ -80,12 +80,33 @@ const buildDriveCandidates = (url: string) => {
   return Array.from(new Set(candidates));
 };
 
-const SmartImage: React.FC<SmartImageProps> = ({ src, fallback, alt, className, ...rest }) => {
+const SmartImage: React.FC<SmartImageProps> = ({ src, fallback, alt, className = '', ...rest }) => {
   const candidates = useMemo(() => buildDriveCandidates(src), [src]);
   const [index, setIndex] = useState(0);
   const [failedFallback, setFailedFallback] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   const current = candidates[index] ?? fallback;
+
+  // If the resolved image is hosted on Cloudinary, generate an optimized src and srcSet
+  const isCloudinary = typeof current === 'string' && current.includes('res.cloudinary.com');
+
+  const makeCloudinaryUrl = (url: string, width: number) => {
+    const marker = '/upload/';
+    const i = url.indexOf(marker);
+    if (i === -1) return url;
+    // insert transformations right after /upload/
+    const before = url.slice(0, i + marker.length);
+    const after = url.slice(i + marker.length);
+    return `${before}w_${width},f_auto,q_auto/${after}`;
+  };
+
+  const cloudinaryWidths = [320, 480, 768, 1024];
+  const srcSet = isCloudinary
+    ? cloudinaryWidths.map((w) => `${makeCloudinaryUrl(String(current), w)} ${w}w`).join(', ')
+    : undefined;
+
+  const preferredSrc = isCloudinary ? makeCloudinaryUrl(String(current), 800) : current;
 
   const handleError = () => {
     if (index < candidates.length - 1) {
@@ -101,12 +122,21 @@ const SmartImage: React.FC<SmartImageProps> = ({ src, fallback, alt, className, 
     setFailedFallback(true);
   };
 
+  const handleLoad = () => setLoaded(true);
+
+  const combinedClass = `${className} transition-all duration-700 ease-out ${loaded ? 'opacity-100 blur-0 scale-100' : 'opacity-0 blur-sm scale-105'}`.trim();
+
   return (
     <img
-      src={current}
+      src={String(preferredSrc)}
+      srcSet={srcSet}
+      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 320px, 400px"
       alt={alt}
-      className={className}
+      className={combinedClass}
       onError={handleError}
+      onLoad={handleLoad}
+      loading="lazy"
+      decoding="async"
       referrerPolicy="no-referrer"
       crossOrigin="anonymous"
       {...rest}
