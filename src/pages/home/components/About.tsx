@@ -3,47 +3,47 @@ import Marquee from 'react-fast-marquee';
 
 const images = [
   {
-  src: "https://drive.google.com/thumbnail?id=1SqwmMUfeomyHxFVhHb-NNsX1hqEoXpJp&sz=w100",
+  src: "https://lh3.googleusercontent.com/d/1SqwmMUfeomyHxFVhHb-NNsX1hqEoXpJp=s0",
     alt: "IEEE Workshop - Students collaborating on engineering projects",
   fallback: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   },
+  //   {
+  // src: "https://lh3.googleusercontent.com/d/1_ILFKiSxAcxeCgOKhFEpmU91eQFdKofZ=s0",
+  //   alt: "IEEE Networking - Professional development and mentorship",
+  // fallback: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  // },
   {
-  src: "https://drive.google.com/thumbnail?id=1FFqLefXYjuSBi5RbeNbbxiI99yOve1wt&sz=w100",
+  src: "https://lh3.googleusercontent.com/d/1FFqLefXYjuSBi5RbeNbbxiI99yOve1wt=s0",
     alt: "IEEE Conference - Technical presentation and networking",
   fallback: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   },
   {
-  src: "https://drive.google.com/thumbnail?id=1OoLFgWwPaW4EQFJ8ZO_qShx51NAbrLwU&sz=w100",
+  src: "https://lh3.googleusercontent.com/d/1OoLFgWwPaW4EQFJ8ZO_qShx51NAbrLwU=s0",
     alt: "IEEE Research - Circuit board and electronics development",
   fallback: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   },
+  // {
+  // src: "https://lh3.googleusercontent.com/d/1K2QyTDzKxPUShy_zvn4KMsM-w6SjT3P1=s0",
+  //   alt: "IEEE Innovation - Computer programming and coding",
+  // fallback: "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  // }
+  
   {
-  src: "https://drive.google.com/thumbnail?id=1K2QyTDzKxPUShy_zvn4KMsM-w6SjT3P1&sz=w100",
-    alt: "IEEE Innovation - Computer programming and coding",
-  fallback: "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    src: "https://lh3.googleusercontent.com/d/10vnVgtN5Y_06XtitV3yZU3LXmR8wRkgV=s0",
+    alt: "IEEE Event - Students presenting projects",
+    fallback: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   },
   {
-  src: "https://drive.google.com/thumbnail?id=1FFqLefXYjuSBi5RbeNbbxiI99yOve1wt&sz=w100",
-    alt: "IEEE Technology - AI and Robotics demonstration",
-  fallback: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    src: "https://lh3.googleusercontent.com/d/1SbPEuCVMxGN3Nnyvd1l3XdKaZq-xnvLM=s0",
+    alt: "IEEE Research - Lab and experiments",
+    fallback: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   },
   {
-  src: "https://drive.google.com/thumbnail?id=1lytlyaecLJ__OU8QQK9NmRGwjVKnN3KF&sz=w100",
-    alt: "IEEE Engineering - Mechanical and electrical systems",
-  fallback: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-  src: "https://drive.google.com/thumbnail?id=1_ILFKiSxAcxeCgOKhFEpmU91eQFdKofZ&sz=w100",
-    alt: "IEEE Networking - Professional development and mentorship",
-  fallback: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-  src: "https://drive.google.com/thumbnail?id=1_ILFKiSxAcxeCgOKhFEpmU91eQFdKofZ&sz=w100",
-    alt: "IEEE Competition - Hackathon and technical challenges",
-  fallback: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    src: "https://lh3.googleusercontent.com/d/19xKYe40OQmsMpjB8moYpA1_9NO_SDdCx=s0",
+    alt: "IEEE Competition - Teams at a hackathon",
+    fallback: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   }
 ];
-
 type SmartImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
   src: string;
   fallback?: string;
@@ -54,7 +54,6 @@ const buildDriveCandidates = (url: string) => {
   if (!url) return candidates;
   candidates.push(url);
 
-  // try to extract a Drive file id from common URL patterns
   const driveIdMatch = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
   const idQueryMatch = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
   const id = driveIdMatch ? driveIdMatch[1] : idQueryMatch ? idQueryMatch[1] : null;
@@ -66,13 +65,11 @@ const buildDriveCandidates = (url: string) => {
     candidates.push(`https://drive.google.com/thumbnail?id=${id}`);
   }
 
-  // also try replacing common suffixes
   if (url.includes('/view')) {
     candidates.push(url.replace('/view', '/uc?export=view'));
     candidates.push(url.replace('/view', '/uc?export=download'));
   }
 
-  // dedupe while preserving order
   return Array.from(new Set(candidates));
 };
 
@@ -84,24 +81,20 @@ const SmartImage: React.FC<SmartImageProps> = ({ src, fallback, alt, className, 
   const current = candidates[index] ?? fallback;
 
   const handleError = () => {
-    // If there are more candidates, try next
     if (index < candidates.length - 1) {
       setIndex((i) => i + 1);
       return;
     }
 
-    // If we've exhausted candidates and we have a fallback not yet tried, switch to it
     if (fallback && current !== fallback && !failedFallback) {
-      setIndex(candidates.length); // will cause current to be fallback
+      setIndex(candidates.length);
       return;
     }
 
-    // If fallback failed too, avoid looping
     setFailedFallback(true);
   };
 
   return (
-    // no-referrer helps some hosting sources avoid 403s caused by referrer checks
     <img
       src={current}
       alt={alt}
