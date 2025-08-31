@@ -3,42 +3,42 @@ import Marquee from 'react-fast-marquee';
 
 const images = [
   {
-    src: "https://drive.google.com/uc?export=view&id=1SqwmMUfeomyHxFVhHb-NNsX1hqEoXpJp",
+  src: "https://drive.google.com/thumbnail?id=1SqwmMUfeomyHxFVhHb-NNsX1hqEoXpJp&sz=w100",
     alt: "IEEE Workshop - Students collaborating on engineering projects",
   fallback: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   },
   {
-    src: "https://drive.google.com/uc?export=view&id=1FFqLefXYjuSBi5RbeNbbxiI99yOve1wt",
+  src: "https://drive.google.com/thumbnail?id=1FFqLefXYjuSBi5RbeNbbxiI99yOve1wt&sz=w100",
     alt: "IEEE Conference - Technical presentation and networking",
   fallback: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   },
   {
-    src: "https://drive.google.com/uc?export=view&id=1OoLFgWwPaW4EQFJ8ZO_qShx51NAbrLwU",
+  src: "https://drive.google.com/thumbnail?id=1OoLFgWwPaW4EQFJ8ZO_qShx51NAbrLwU&sz=w100",
     alt: "IEEE Research - Circuit board and electronics development",
   fallback: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   },
   {
-    src: "https://drive.google.com/uc?export=view&id=1K2QyTDzKxPUShy_zvn4KMsM-w6SjT3P1",
+  src: "https://drive.google.com/thumbnail?id=1K2QyTDzKxPUShy_zvn4KMsM-w6SjT3P1&sz=w100",
     alt: "IEEE Innovation - Computer programming and coding",
   fallback: "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   },
   {
-    src: "https://drive.google.com/uc?export=view&id=1FFqLefXYjuSBi5RbeNbbxiI99yOve1wt",
+  src: "https://drive.google.com/thumbnail?id=1FFqLefXYjuSBi5RbeNbbxiI99yOve1wt&sz=w100",
     alt: "IEEE Technology - AI and Robotics demonstration",
   fallback: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   },
   {
-  src: "https://drive.google.com/uc?export=view&id=1lytlyaecLJ__OU8QQK9NmRGwjVKnN3KF",
+  src: "https://drive.google.com/thumbnail?id=1lytlyaecLJ__OU8QQK9NmRGwjVKnN3KF&sz=w100",
     alt: "IEEE Engineering - Mechanical and electrical systems",
   fallback: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   },
   {
-  src: "https://drive.google.com/uc?export=view&id=1_ILFKiSxAcxeCgOKhFEpmU91eQFdKofZ",
+  src: "https://drive.google.com/thumbnail?id=1_ILFKiSxAcxeCgOKhFEpmU91eQFdKofZ&sz=w100",
     alt: "IEEE Networking - Professional development and mentorship",
-  fallback: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  fallback: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   },
   {
-  src: "https://drive.google.com/uc?export=view&id=1_ILFKiSxAcxeCgOKhFEpmU91eQFdKofZ",
+  src: "https://drive.google.com/thumbnail?id=1_ILFKiSxAcxeCgOKhFEpmU91eQFdKofZ&sz=w100",
     alt: "IEEE Competition - Hackathon and technical challenges",
   fallback: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   }
