@@ -2,48 +2,55 @@ import React, { useMemo, useState } from 'react';
 import Marquee from 'react-fast-marquee';
 
 const images = [
-  {
-  src: "https://lh3.googleusercontent.com/d/1SqwmMUfeomyHxFVhHb-NNsX1hqEoXpJp=s0",
-    alt: "IEEE Workshop - Students collaborating on engineering projects",
-  fallback: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  //   {
-  // src: "https://lh3.googleusercontent.com/d/1_ILFKiSxAcxeCgOKhFEpmU91eQFdKofZ=s0",
-  //   alt: "IEEE Networking - Professional development and mentorship",
-  // fallback: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  // },
-  {
-  src: "https://lh3.googleusercontent.com/d/1FFqLefXYjuSBi5RbeNbbxiI99yOve1wt=s0",
-    alt: "IEEE Conference - Technical presentation and networking",
-  fallback: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-  src: "https://lh3.googleusercontent.com/d/1OoLFgWwPaW4EQFJ8ZO_qShx51NAbrLwU=s0",
-    alt: "IEEE Research - Circuit board and electronics development",
-  fallback: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  // {
-  // src: "https://lh3.googleusercontent.com/d/1K2QyTDzKxPUShy_zvn4KMsM-w6SjT3P1=s0",
-  //   alt: "IEEE Innovation - Computer programming and coding",
-  // fallback: "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  // }
-  
-  {
-    src: "https://lh3.googleusercontent.com/d/10vnVgtN5Y_06XtitV3yZU3LXmR8wRkgV=s0",
-    alt: "IEEE Event - Students presenting projects",
-    fallback: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    src: "https://lh3.googleusercontent.com/d/1SbPEuCVMxGN3Nnyvd1l3XdKaZq-xnvLM=s0",
-    alt: "IEEE Research - Lab and experiments",
-    fallback: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    src: "https://lh3.googleusercontent.com/d/19xKYe40OQmsMpjB8moYpA1_9NO_SDdCx=s0",
-    alt: "IEEE Competition - Teams at a hackathon",
-    fallback: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  }
-];
+    {
+        "src": {
+            "src": "https://lh3.googleusercontent.com/d/1SqwmMUfeomyHxFVhHb-NNsX1hqEoXpJp=s0",
+            "alt": "IEEE Workshop - Students collaborating on engineering projects",
+            "fallback": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        "dest": "https://res.cloudinary.com/ddmw4spnt/image/upload/v1756643759/ujh6tki6svdwvtotwjzv.jpg"
+    },
+    {
+        "src": {
+            "src": "https://lh3.googleusercontent.com/d/1FFqLefXYjuSBi5RbeNbbxiI99yOve1wt=s0",
+            "alt": "IEEE Conference - Technical presentation and networking",
+            "fallback": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        "dest": "https://res.cloudinary.com/ddmw4spnt/image/upload/v1756643761/vneng9zh5wenljgy1n9x.jpg"
+    },
+    {
+        "src": {
+            "src": "https://lh3.googleusercontent.com/d/1OoLFgWwPaW4EQFJ8ZO_qShx51NAbrLwU=s0",
+            "alt": "IEEE Research - Circuit board and electronics development",
+            "fallback": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        "dest": "https://res.cloudinary.com/ddmw4spnt/image/upload/v1756643762/uadzh5x4yeq0aq73gqmk.jpg"
+    },
+    {
+        "src": {
+            "src": "https://lh3.googleusercontent.com/d/10vnVgtN5Y_06XtitV3yZU3LXmR8wRkgV=s0",
+            "alt": "IEEE Event - Students presenting projects",
+            "fallback": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        "dest": "https://res.cloudinary.com/ddmw4spnt/image/upload/v1756643765/nxzpu1vsl0eqw6ooc44o.jpg"
+    },
+    {
+        "src": {
+            "src": "https://lh3.googleusercontent.com/d/1SbPEuCVMxGN3Nnyvd1l3XdKaZq-xnvLM=s0",
+            "alt": "IEEE Research - Lab and experiments",
+            "fallback": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        "dest": "https://res.cloudinary.com/ddmw4spnt/image/upload/v1756643768/iwudg6h1049clgvr0lda.jpg"
+    },
+    {
+        "src": {
+            "src": "https://lh3.googleusercontent.com/d/19xKYe40OQmsMpjB8moYpA1_9NO_SDdCx=s0",
+            "alt": "IEEE Competition - Teams at a hackathon",
+            "fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        "dest": "https://res.cloudinary.com/ddmw4spnt/image/upload/v1756643770/jwd0cnvzo0xq3ouvrtj4.jpg"
+    }
+]
 type SmartImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
   src: string;
   fallback?: string;
@@ -131,7 +138,7 @@ const About = () => {
           </div>
         </div>
         <div className="py-8 overflow-hidden w-full marquee-container">
-          <Marquee
+    <Marquee
             speed={50}
             gradient={false}
             pauseOnHover={true}
@@ -141,9 +148,9 @@ const About = () => {
             {images.map((img, idx) => (
               <div className="mx-4" key={idx}>
                 <SmartImage
-                  src={img.src}
-                  alt={img.alt}
-                  fallback={img.fallback}
+      src={img.dest ?? img.src?.src}
+      alt={img.src?.alt}
+      fallback={img.src?.fallback}
                   className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
                 />
               </div>
