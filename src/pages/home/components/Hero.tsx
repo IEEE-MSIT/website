@@ -9,10 +9,10 @@ const Hero = () => {
         className="w-full max-w-6xl mx-auto px-6 py-8 h-full flex flex-col justify-center"
         style={
           {
-            // backgroundImage: `url('/BackgroundLines.37b66c2a.png')`,
-            // backgroundSize: 'cover',
-            // backgroundPosition: 'center',
-            // backgroundRepeat: 'no-repeat',
+            backgroundImage: `url('/BackgroundLines.37b66c2a.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
           }
         }
       >
@@ -79,7 +79,7 @@ const Hero = () => {
         </div>
 
         <div className="w-full flex justify-center items-end mt-auto relative">
-          <img src="/socratica.png" alt="IEEE MSIT Group" className="w-full h-auto object-cover" />
+          <img src="https://res.cloudinary.com/ddmw4spnt/image/upload/w_768,f_auto,q_auto/v1756643762/uadzh5x4yeq0aq73gqmk.jpg" alt="IEEE MSIT Group" className="w-full h-auto rounded-2xl grayscale object-cover" />
         </div>
       </div>
     </section>
