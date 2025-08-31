@@ -1,4 +1,119 @@
+import React, { useMemo, useState } from 'react';
 import Marquee from 'react-fast-marquee';
+
+const images = [
+  {
+    src: "https://drive.google.com/uc?export=view&id=1SqwmMUfeomyHxFVhHb-NNsX1hqEoXpJp",
+    alt: "IEEE Workshop - Students collaborating on engineering projects",
+  fallback: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    src: "https://drive.google.com/uc?export=view&id=1FFqLefXYjuSBi5RbeNbbxiI99yOve1wt",
+    alt: "IEEE Conference - Technical presentation and networking",
+  fallback: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    src: "https://drive.google.com/uc?export=view&id=1OoLFgWwPaW4EQFJ8ZO_qShx51NAbrLwU",
+    alt: "IEEE Research - Circuit board and electronics development",
+  fallback: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    src: "https://drive.google.com/uc?export=view&id=1K2QyTDzKxPUShy_zvn4KMsM-w6SjT3P1",
+    alt: "IEEE Innovation - Computer programming and coding",
+  fallback: "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    src: "https://drive.google.com/uc?export=view&id=1FFqLefXYjuSBi5RbeNbbxiI99yOve1wt",
+    alt: "IEEE Technology - AI and Robotics demonstration",
+  fallback: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+  src: "https://drive.google.com/uc?export=view&id=1lytlyaecLJ__OU8QQK9NmRGwjVKnN3KF",
+    alt: "IEEE Engineering - Mechanical and electrical systems",
+  fallback: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+  src: "https://drive.google.com/uc?export=view&id=1_ILFKiSxAcxeCgOKhFEpmU91eQFdKofZ",
+    alt: "IEEE Networking - Professional development and mentorship",
+  fallback: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+  src: "https://drive.google.com/uc?export=view&id=1_ILFKiSxAcxeCgOKhFEpmU91eQFdKofZ",
+    alt: "IEEE Competition - Hackathon and technical challenges",
+  fallback: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  }
+];
+
+type SmartImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
+  src: string;
+  fallback?: string;
+};
+
+const buildDriveCandidates = (url: string) => {
+  const candidates: string[] = [];
+  if (!url) return candidates;
+  candidates.push(url);
+
+  // try to extract a Drive file id from common URL patterns
+  const driveIdMatch = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  const idQueryMatch = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+  const id = driveIdMatch ? driveIdMatch[1] : idQueryMatch ? idQueryMatch[1] : null;
+
+  if (id) {
+    candidates.push(`https://drive.google.com/uc?export=view&id=${id}`);
+    candidates.push(`https://drive.google.com/uc?export=download&id=${id}`);
+    candidates.push(`https://docs.google.com/uc?export=download&id=${id}`);
+    candidates.push(`https://drive.google.com/thumbnail?id=${id}`);
+  }
+
+  // also try replacing common suffixes
+  if (url.includes('/view')) {
+    candidates.push(url.replace('/view', '/uc?export=view'));
+    candidates.push(url.replace('/view', '/uc?export=download'));
+  }
+
+  // dedupe while preserving order
+  return Array.from(new Set(candidates));
+};
+
+const SmartImage: React.FC<SmartImageProps> = ({ src, fallback, alt, className, ...rest }) => {
+  const candidates = useMemo(() => buildDriveCandidates(src), [src]);
+  const [index, setIndex] = useState(0);
+  const [failedFallback, setFailedFallback] = useState(false);
+
+  const current = candidates[index] ?? fallback;
+
+  const handleError = () => {
+    // If there are more candidates, try next
+    if (index < candidates.length - 1) {
+      setIndex((i) => i + 1);
+      return;
+    }
+
+    // If we've exhausted candidates and we have a fallback not yet tried, switch to it
+    if (fallback && current !== fallback && !failedFallback) {
+      setIndex(candidates.length); // will cause current to be fallback
+      return;
+    }
+
+    // If fallback failed too, avoid looping
+    setFailedFallback(true);
+  };
+
+  return (
+    // no-referrer helps some hosting sources avoid 403s caused by referrer checks
+    <img
+      src={current}
+      alt={alt}
+      className={className}
+      onError={handleError}
+      referrerPolicy="no-referrer"
+      crossOrigin="anonymous"
+      {...rest}
+    />
+  );
+};
+
 
 const About = () => {
   return (
@@ -21,36 +136,6 @@ const About = () => {
               achievements, foster teamwork, and help students prepare for global impact.
             </p>
           </div>
-
-          {/* <div className="bg-background rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-serif text-black mb-4">Why Join IEEE MSIT?</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-              <div>
-                <h4 className="font-semibold text-black mb-2">Career-Focused Programs</h4>
-                <p className="text-gray-600 text-sm">
-                  Resume workshops, interview prep, and direct access to recruitment opportunities
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-black mb-2">Cutting-Edge Technology</h4>
-                <p className="text-gray-600 text-sm">
-                  AI/ML, IoT, Web3, and emerging tech workshops led by industry experts
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-black mb-2">Recognition & Awards</h4>
-                <p className="text-gray-600 text-sm">
-                  Showcase your skills through competitions and get recognized at regional/global levels
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-black mb-2">Global Community</h4>
-                <p className="text-gray-600 text-sm">
-                  Access to IEEE's worldwide network of 400,000+ professionals and researchers
-                </p>
-              </div>
-            </div>
-          </div> */}
         </div>
         <div className="py-8 overflow-hidden w-full marquee-container">
           <Marquee
@@ -60,116 +145,16 @@ const About = () => {
             className="w-full h-60"
             direction="left"
           >
-            <div className="mx-4">
-              <img
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="IEEE Workshop - Students collaborating on engineering projects"
-                className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    'https://via.placeholder.com/800x600/e5e7eb/6b7280?text=IEEE+Workshop';
-                }}
-              />
-            </div>
-            <div className="mx-4">
-              <img
-                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="IEEE Conference - Technical presentation and networking"
-                className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    'https://via.placeholder.com/800x600/e5e7eb/6b7280?text=IEEE+Conference';
-                }}
-              />
-            </div>
-            <div className="mx-4">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="IEEE Research - Circuit board and electronics development"
-                className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    'https://via.placeholder.com/800x600/e5e7eb/6b7280?text=IEEE+Research';
-                }}
-              />
-            </div>
-            <div className="mx-4">
-              <img
-                src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="IEEE Innovation - Computer programming and coding"
-                className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    'https://via.placeholder.com/800x600/e5e7eb/6b7280?text=IEEE+Innovation';
-                }}
-              />
-            </div>
-            <div className="mx-4">
-              <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="IEEE Technology - AI and Robotics demonstration"
-                className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    'https://via.placeholder.com/800x600/e5e7eb/6b7280?text=IEEE+Technology';
-                }}
-              />
-            </div>
-            <div className="mx-4">
-              <img
-                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="IEEE Engineering - Mechanical and electrical systems"
-                className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    'https://via.placeholder.com/800x600/e5e7eb/6b7280?text=IEEE+Engineering';
-                }}
-              />
-            </div>
-            <div className="mx-4">
-              <img
-                src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="IEEE Competition - Hackathon and technical challenges"
-                className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    'https://via.placeholder.com/800x600/e5e7eb/6b7280?text=IEEE+Competition';
-                }}
-              />
-            </div>
-            <div className="mx-4">
-              <img
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="IEEE Workshop - Students collaborating on engineering projects"
-                className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    'https://via.placeholder.com/800x600/e5e7eb/6b7280?text=IEEE+Workshop';
-                }}
-              />
-            </div>
-            <div className="mx-4">
-              <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="IEEE Conference - Technical presentations and networking"
-                className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    'https://via.placeholder.com/800x600/e5e7eb/6b7280?text=IEEE+Conference';
-                }}
-              />
-            </div>
-            <div className="mx-4">
-              <img
-                src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="IEEE Competition - Hackathon and technical challenges"
-                className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    'https://via.placeholder.com/800x600/e5e7eb/6b7280?text=IEEE+Competition';
-                }}
-              />
-            </div>
+            {images.map((img, idx) => (
+              <div className="mx-4" key={idx}>
+                <SmartImage
+                  src={img.src}
+                  alt={img.alt}
+                  fallback={img.fallback}
+                  className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
+                />
+              </div>
+            ))}
           </Marquee>
         </div>
       </section>
