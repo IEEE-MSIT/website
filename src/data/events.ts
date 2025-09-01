@@ -3,7 +3,7 @@ export const events = [
     title: 'The SIH MINDset',
     type: 'seminar',
     category: 'hackathon preparation',
-    status: 'upcoming',
+    status: 'completed',
     startDate: '30th August 2025',
     endDate: '30th August 2025',
     venue: 'Google Meet',
@@ -544,33 +544,6 @@ export const events = [
     cloudinary_url:
       'https://res.cloudinary.com/ddmw4spnt/image/upload/v1756403101/pkpvnicre7uwk2uxdqww.webp',
     organisedBy: 'IEEE PES MSIT',
-  },
-  {
-    _id: {
-      $oid: '68b095aeeb5e7854310e5cb5',
-    },
-    title: 'IEEE Student Awards Ceremony',
-    type: 'award ceremonies',
-    category: null,
-    status: 'upcoming',
-    startDate: null,
-    endDate: null,
-    venue: 'IEEE Maharaja Surajmal Institute of Technology (MSIT) SB',
-    registrationType: null,
-    actionLinks: [
-      'https://www.facebook.com/ieeedelhissn',
-      'https://www.instagram.com/ieeedelhissn',
-      'https://www.linkedin.com/ieeedelhissn',
-      'https://www.youtube.com/ieeedelhissn',
-    ],
-    prizes: null,
-    description:
-      'IEEE Delhi Section Student Activities Committee is proud to announce that the much-anticipated award ceremony is on the horizon! Get ready to celebrate remarkable achievements and honor the exceptional talents within our community. With great excitement, we reveal our esteemed host for this grand occasion: IEEE Maharaja Surajmal Institute of Technology (MSIT) SB. A hub of academic brilliance and student-driven initiatives, our host brings an inspiring aura to the event. Their presence promises an atmosphere of encouragement and achievement. Join us in celebrating remarkable accomplishments, fostering connections, and cherishing the spirit of excellence. The countdown begins for a day of recognition and inspiration!',
-    isRelevant: true,
-    post_date: '2025-03-29T07:48:32.000Z',
-    cloudinary_url:
-      'https://res.cloudinary.com/ddmw4spnt/image/upload/v1756403117/ccobiiowvxhjj415kmfq.jpg',
-    organisedBy: 'IEEE MSIT',
   },
   {
     _id: {
