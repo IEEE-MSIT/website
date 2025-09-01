@@ -6,19 +6,31 @@ const PWAInstallPrompt: React.FC = () => {
   const { canInstall, installApp, isInstalled } = usePWA();
   const [showPrompt, setShowPrompt] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
+  const [isAndroid, setIsAndroid] = useState(false);
 
   useEffect(() => {
-    const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const userAgent = navigator.userAgent;
+    const iOS = /iPad|iPhone|iPod/.test(userAgent);
+    const android = /Android/.test(userAgent);
+    
     setIsIOS(iOS);
+    setIsAndroid(android);
 
     if (isInstalled) return;
 
-    setTimeout(() => {
-      if (!localStorage.getItem('pwa-prompt-dismissed') && (canInstall || iOS)) {
+    const timer = setTimeout(() => {
+      const dismissed = localStorage.getItem('pwa-prompt-dismissed');
+      const lastDismissed = dismissed ? parseInt(dismissed) : 0;
+      const now = Date.now();
+      const sevenDays = 7 * 24 * 60 * 60 * 1000;
+      
+      if ((!dismissed || (now - lastDismissed > sevenDays)) && (canInstall || iOS || android)) {
         setShowPrompt(true);
       }
     }, 3000);
-  }, [canInstall, isInstalled]);
+
+    return () => clearTimeout(timer);
+  }, [canInstall, isInstalled, isIOS, isAndroid]);
 
   const handleInstallClick = async () => {
     const success = await installApp();
@@ -29,13 +41,7 @@ const PWAInstallPrompt: React.FC = () => {
 
   const handleDismiss = () => {
     setShowPrompt(false);
-    localStorage.setItem('pwa-prompt-dismissed', 'true');
-    setTimeout(
-      () => {
-        localStorage.removeItem('pwa-prompt-dismissed');
-      },
-      7 * 24 * 60 * 60 * 1000
-    );
+    localStorage.setItem('pwa-prompt-dismissed', Date.now().toString());
   };
 
   if (!showPrompt || isInstalled) return null;
@@ -53,7 +59,7 @@ const PWAInstallPrompt: React.FC = () => {
 
         <div className="flex items-start space-x-3">
           <div className="flex-shrink-0">
-            {isIOS ? (
+            {isIOS || isAndroid ? (
               <Smartphone className="text-blue-600" size={24} />
             ) : (
               <Monitor className="text-blue-600" size={24} />
@@ -77,14 +83,23 @@ const PWAInstallPrompt: React.FC = () => {
                   <li>Tap "Add" to confirm</li>
                 </ol>
               </div>
+            ) : isAndroid && !canInstall ? (
+              <div className="text-xs text-gray-600 mb-3">
+                <p className="mb-2">Install the app for a better experience:</p>
+                <ol className="list-decimal list-inside space-y-1">
+                  <li>Tap the menu button (⋮) in your browser</li>
+                  <li>Look for "Install app" or "Add to Home screen"</li>
+                  <li>Follow the prompts to install</li>
+                </ol>
+              </div>
             ) : (
               <p className="text-xs text-gray-600 mb-3">
                 Get quick access to IEEE MSIT directly from your home screen. Install our app for a
-                better experience!
+                better experience with offline access and faster loading!
               </p>
             )}
 
-            {!isIOS && canInstall && (
+            {canInstall && (
               <button
                 onClick={handleInstallClick}
                 className="inline-flex items-center space-x-2 bg-blue-600 text-white px-3 py-1.5 rounded text-xs font-medium hover:bg-blue-700 transition-colors"
