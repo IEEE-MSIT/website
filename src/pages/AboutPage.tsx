@@ -8,7 +8,7 @@ import Team from './home/components/Team';
 const AboutPage = () => {
   return (
     <div className="min-h-screen pt-20">
-  <section className="pt-12 px-4 md:px-6">
+      <section className="pt-12 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="mb-4">
             <Link

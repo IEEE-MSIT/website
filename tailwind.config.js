@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       fontFamily: {
@@ -14,7 +11,7 @@ export default {
         background: '#F0F5F9',
         foreground: '#1B2A41',
         'muted-foreground': '#627D98',
-        'dark-background': '#0D131D',        
+        'dark-background': '#0D131D',
         'dark-foreground': '#E2E8F0',
         'dark-muted-foreground': '#94A3B8',
 

@@ -1,5 +1,25 @@
 export const events = [
   {
+    title: 'The SIH MINDset',
+    type: 'seminar',
+    category: 'hackathon preparation',
+    status: 'upcoming',
+    startDate: '30th August 2025',
+    endDate: '30th August 2025',
+    venue: 'Google Meet',
+    registrationType: 'free',
+    actionLinks: [
+      'social: https://chat.whatsapp.com/HFx3J7zSLE22HwR6VWh6rT?mode=ems_copy_t',
+      'contact: 9145835906',
+    ],
+    prizes: null,
+    description:
+      'A Special Interest Group (SIG) session on the SIH MINDset, designed to help participants prepare for the Smart India Hackathon 2025. The session will cover a deeper understanding of the SIH journey, innovative thinking, real-world problem-solving, and tips from past winners. It will also include an open discussion, Q&A, and idea exchange. The speaker for the session is Vansh Mehta, an SIH 2023 Winner and Public Speaker. Topics to be covered include Collaboration, Creativity & Change. This SIG aims to help participants build the right mindset for hackathons, focusing on teamwork, creativity, and innovation. The event is organized by IEEE MSIT. Contact Yash Bagga at 9145835906 for more information.',
+    isRelevant: true,
+    cloudinary_url:
+      'https://res.cloudinary.com/ddmw4spnt/image/upload/v1756390384/ic1yrwigdbzzkrhn10ns.webp',
+  },
+  {
     _id: {
       $oid: '68b06f5f9eab71d4cb7ca6aa',
     },
@@ -678,4 +698,5 @@ export const events = [
     cloudinary_url:
       'https://res.cloudinary.com/ddmw4spnt/image/upload/v1756403199/ee4vwvo68a5cd3mvylmx.jpg',
     organisedBy: 'IEEE MSIT & IEEE WIE MSIT',
-  }];
+  },
+];

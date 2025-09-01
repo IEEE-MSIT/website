@@ -7,7 +7,6 @@ import { HOME_PATH } from '../../constants/paths';
 import { Link } from 'react-router-dom';
 // import Hackathons from '../home/components/Hackathons';
 
-
 const EventsPage: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
 
@@ -17,7 +16,10 @@ const EventsPage: React.FC = () => {
     events.forEach((e) => {
       const key = e.organisedBy || e.category || '';
       if (!key) return;
-      const parts = key.split(splitter).map((p) => p.trim()).filter(Boolean);
+      const parts = key
+        .split(splitter)
+        .map((p) => p.trim())
+        .filter(Boolean);
       parts.forEach((p) => set.add(p));
     });
     return ['All', ...Array.from(set)];
@@ -29,7 +31,10 @@ const EventsPage: React.FC = () => {
     return events.filter((e) => {
       const key = e.organisedBy || e.category || '';
       if (!key) return false;
-      const parts = key.split(splitter).map((p) => p.trim()).filter(Boolean);
+      const parts = key
+        .split(splitter)
+        .map((p) => p.trim())
+        .filter(Boolean);
       return parts.includes(activeFilter);
     });
   }, [activeFilter]);
@@ -68,9 +73,12 @@ const EventsPage: React.FC = () => {
             <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
               Events & Workshops
             </div>
-            <h1 className="text-4xl md:text-6xl font-serif text-black mb-6">All Events & Workshops</h1>
+            <h1 className="text-4xl md:text-6xl font-serif text-black mb-6">
+              All Events & Workshops
+            </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Explore all our technical events, workshops, webinars, and hackathons. Stay updated and join us to learn, network, and grow your engineering career with IEEE MSIT.
+              Explore all our technical events, workshops, webinars, and hackathons. Stay updated
+              and join us to learn, network, and grow your engineering career with IEEE MSIT.
             </p>
           </div>
         </div>

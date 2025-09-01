@@ -153,7 +153,6 @@ To update content, simply edit this file directly on GitHub, commit your changes
 
 ---
 
-
 ## Leadership: The Web Development Department '25
 
 Meet the team responsible for architecting and maintaining this platform.

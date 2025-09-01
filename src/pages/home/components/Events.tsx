@@ -93,11 +93,14 @@ const Events = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Link to="/events" className="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 mx-auto w-max">
+          <Link
+            to="/events"
+            className="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 mx-auto w-max"
+          >
             <Eye className="w-4 h-4" />
             Show All Events
             <ArrowRight className="w-4 h-4" />
-          </Link>        
+          </Link>
         </div>
       </div>
     </section>

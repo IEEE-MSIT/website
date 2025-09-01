@@ -12,23 +12,23 @@ const Hero = () => {
     const img = topImgRef.current;
     const glassOverlay = glassOverlayRef.current;
     const magnifier = magnifierRef.current;
-    
+
     if (!img) return;
-    
+
     const rect = img.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    
+
     img.style.setProperty('--cx', `${x}px`);
     img.style.setProperty('--cy', `${y}px`);
     img.style.setProperty('--r', `200px`);
-    
+
     if (glassOverlay) {
       glassOverlay.style.setProperty('--gx', `${x}px`);
       glassOverlay.style.setProperty('--gy', `${y}px`);
       glassOverlay.style.setProperty('--gr', `120px`);
     }
-    
+
     if (magnifier) {
       magnifier.style.setProperty('--mx', `${x}px`);
       magnifier.style.setProperty('--my', `${y}px`);
@@ -40,17 +40,17 @@ const Hero = () => {
     const img = topImgRef.current;
     const glassOverlay = glassOverlayRef.current;
     const magnifier = magnifierRef.current;
-    
+
     if (img) {
       img.style.setProperty('--cx', `-9999px`);
       img.style.setProperty('--cy', `-9999px`);
     }
-    
+
     if (glassOverlay) {
       glassOverlay.style.setProperty('--gx', `-9999px`);
       glassOverlay.style.setProperty('--gy', `-9999px`);
     }
-    
+
     if (magnifier) {
       magnifier.style.setProperty('--mx', `-9999px`);
       magnifier.style.setProperty('--my', `-9999px`);
@@ -61,14 +61,12 @@ const Hero = () => {
     <section className="relative min-h-[80vh] bg-background overflow-hidden pt-20">
       <div
         className="w-full max-w-6xl mx-auto px-6 py-8 h-full flex flex-col justify-center"
-        style={
-          {
-            backgroundImage: `url('/BackgroundLines.37b66c2a.png')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-          }
-        }
+        style={{
+          backgroundImage: `url('/BackgroundLines.37b66c2a.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
       >
         <div className="text-center my-12">
           <div className="flex items-center justify-center mb-6  flex-wrap gap-4">
@@ -162,7 +160,8 @@ const Hero = () => {
               ref={glassOverlayRef}
               className="absolute inset-0 pointer-events-none"
               style={{
-                background: 'radial-gradient(circle var(--gr,120px) at var(--gx, -9999px) var(--gy, -9999px), rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 40%, transparent 70%)',
+                background:
+                  'radial-gradient(circle var(--gr,120px) at var(--gx, -9999px) var(--gy, -9999px), rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 40%, transparent 70%)',
                 backdropFilter: 'blur(0px)',
                 WebkitBackdropFilter: 'blur(0px)',
                 boxShadow: 'inset 0 0 60px rgba(255,255,255,0.1)',
@@ -187,14 +186,16 @@ const Hero = () => {
                   'radial-gradient(circle var(--mr,80px) at var(--mx, -9999px) var(--my, -9999px), rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,0) 100%)',
                 maskImage:
                   'radial-gradient(circle var(--mr,80px) at var(--mx, -9999px) var(--my, -9999px), rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,0) 100%)',
-                transition: 'transform-origin 0.05s linear, mask-position 0.05s linear, -webkit-mask-position 0.05s linear',
+                transition:
+                  'transform-origin 0.05s linear, mask-position 0.05s linear, -webkit-mask-position 0.05s linear',
               }}
             />
 
             <div
               className="absolute inset-0 pointer-events-none rounded-2xl"
               style={{
-                background: 'radial-gradient(circle var(--gr,120px) at var(--gx, -9999px) var(--gy, -9999px), transparent 0%, transparent 90%, rgba(255,255,255,0.2) 95%, transparent 100%)',
+                background:
+                  'radial-gradient(circle var(--gr,120px) at var(--gx, -9999px) var(--gy, -9999px), transparent 0%, transparent 90%, rgba(255,255,255,0.2) 95%, transparent 100%)',
                 transition: 'background 0.1s ease-out',
               }}
             />
