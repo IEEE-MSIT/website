@@ -73,13 +73,13 @@ const EventCard: React.FC<EventCardProps> = ({ event, className = '' }) => {
             decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          {isPastEvent && (
+          {/* {isPastEvent && (
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
               <span className="bg-black/70 text-white px-3 py-1 rounded-full text-sm font-medium">
                 Event Completed
               </span>
             </div>
-          )}
+          )} */}
           <div className="absolute top-3 right-3">
             <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/95 backdrop-blur-sm text-gray-800 shadow-md">
               {event.organisedBy || event.category || ''}
@@ -152,7 +152,6 @@ const EventCard: React.FC<EventCardProps> = ({ event, className = '' }) => {
         </div>
       </div>
 
-      {/* Past Event Modal */}
       {showPastEventModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
           <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[80vh] overflow-hidden">

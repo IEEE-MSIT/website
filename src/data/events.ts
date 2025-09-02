@@ -2,7 +2,7 @@ export const events = [
   {
     title: 'The SIH MINDset',
     type: 'seminar',
-    category: 'hackathon preparation',
+    category: 'Hackathon Preparation',
     status: 'completed',
     startDate: '30th August 2025',
     endDate: '30th August 2025',
