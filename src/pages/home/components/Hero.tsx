@@ -69,17 +69,26 @@ const Hero = () => {
         }}
       >
         <div className="text-center my-12">
-          <div className="flex items-center justify-center mb-6  flex-wrap gap-4">
-            <img
-              src="/IEEEWhiteLogowithTransparentBG.png"
-              alt="IEEE Logo"
-              className=" h-12 mt-2 md:h-16 block bg-primary"
-            />
-            <h1 className="text-6xl md:text-8xl text-balance font-serif text-black mr-4">
-              IEEE MSIT
-            </h1>
+          <div
+            className="relative inline-block bg-gradient-to-b from-primary via-primary-dark to-primary text-white shadow-2xl transform transition-all duration-300 overflow-hidden border-4 border-blue-400 py-8 px-6"
+            style={{
+              clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%)',
+            }}
+          >
+            <div className="flex items-center justify-center flex-wrap gap-4">
+              {/* <img
+                src="/IEEEWhiteLogowithTransparentBG.png"
+                alt="IEEE Logo"
+                className="h-12 md:h-16 block"
+              /> */}
+              <h1 className="text-6xl md:text-8xl text-balance font-serif text-white mr-4">
+                IEEE MSIT
+              </h1>
+            </div>
           </div>
-          <p className="text-lg md:text-xl text-gray-600 font-medium mb-2">
+          {/* END OF UPDATED HEADER SECTION */}
+
+          <p className="text-lg md:text-xl text-gray-600 font-medium mb-2 mt-6">
             Student Technology Club
           </p>
           <p className="text-sm text-gray-500">
