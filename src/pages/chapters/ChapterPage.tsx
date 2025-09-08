@@ -6,7 +6,7 @@ import MemberCard from '../../components/ui/MemberCard';
 import EventCard from '../../components/ui/EventCard';
 import type { Event } from '../../types';
 import { HOME_PATH } from '../../constants/paths';
-import { Chapter } from './ChapterTypes';
+import Chapter from './ChapterTypes';
 
 interface ChapterPageProps {
   chapter: Chapter;
@@ -123,13 +123,39 @@ const ChapterPage: React.FC<ChapterPageProps> = ({ chapter, chaptersList }) => {
 
           <section>
             <h2 className="text-3xl font-serif text-center text-black mb-10">Our Events</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {chapter.events.length > 0 ? (
-                chapter.events.map((event: Event, index: number) => <EventCard key={index} event={event} />)
-              ) : (
-                <p className="text-center text-gray-500 col-span-full">No events to display for this chapter yet.</p>
-              )}
-            </div>
+              {(() => {
+                const upcoming = chapter.events.filter((e) => String((e as any).status).toLowerCase() !== 'completed');
+                const completed = chapter.events.filter((e) => String((e as any).status).toLowerCase() === 'completed');
+
+                return (
+                  <>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                      {upcoming.length > 0 ? (
+                        upcoming.map((event: Event, index: number) => (
+                          <div key={`up-${index}`} className="h-full flex">
+                            <EventCard event={event} className="flex-1" />
+                          </div>
+                        ))
+                      ) : (
+                        <p className="text-center text-gray-500 col-span-full">No upcoming events for this chapter.</p>
+                      )}
+                    </div>
+
+                    {completed.length > 0 && (
+                      <div className="mt-12">
+                        <h3 className="text-2xl font-serif text-center text-gray-700 mb-6">Past Events</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                          {completed.map((event: Event, index: number) => (
+                            <div key={`past-${index}`} className="h-full flex opacity-90">
+                              <EventCard event={event} className="flex-1" />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </>
+                );
+              })()}
           </section>
         </div>
       </main>

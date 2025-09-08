@@ -7,6 +7,7 @@ interface EventCardProps {
 }
 
 const EventCard: React.FC<EventCardProps> = ({ event, className = '' }) => {
+  const isCompleted = String((event && event.status) || '').toLowerCase() === 'completed';
   const handlePrimary = () => {
     const registerLink = event.actionLinks
       ?.find((l: string) => l.startsWith('register:'))
@@ -88,14 +89,21 @@ const EventCard: React.FC<EventCardProps> = ({ event, className = '' }) => {
 
         <div className="mt-auto flex gap-2">
           <button
-            className="w-full bg-primary text-white py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm hover:shadow-md"
-            onClick={handlePrimary}
+            className={`w-full py-2 rounded-full transition-colors font-medium text-sm ${
+              isCompleted
+                ? 'bg-gray-200 text-gray-600 cursor-default'
+                : 'bg-primary text-white hover:bg-primary-hover hover:shadow-md'
+            }`}
+            onClick={isCompleted ? undefined : handlePrimary}
+            disabled={isCompleted}
           >
-            {event.actionLinks?.some((l: string) => l.startsWith('register:'))
+            {isCompleted
+              ? 'Event Ended'
+              : event.actionLinks?.some((l: string) => l.startsWith('register:'))
               ? 'Register'
               : event.actionLinks?.some((l: string) => l.startsWith('livestream:'))
-                ? 'Join Livestream'
-                : 'View Details'}
+              ? 'Join Livestream'
+              : 'View Details'}
           </button>
 
           <button
