@@ -13,7 +13,6 @@ const Header = () => {
       if (!target.closest('.chapters-dropdown')) {
         setChaptersDropdownOpen(false);
       }
-      // Close mobile menu when clicking outside
       if (!target.closest('.mobile-menu') && !target.closest('[aria-label="Toggle mobile menu"]')) {
         setMobileMenuOpen(false);
       }
@@ -252,13 +251,6 @@ const Header = () => {
                     Computer Society Chapter
                   </a>
                   <a
-                    href="#ias-chapter"
-                    onClick={closeMobileMenu}
-                    className="block py-2 px-3 text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 text-sm"
-                  >
-                    Industry Applications Society
-                  </a>
-                  <a
                     href="#pes-chapter"
                     onClick={closeMobileMenu}
                     className="block py-2 px-3 text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 text-sm"
@@ -278,13 +270,6 @@ const Header = () => {
                     className="block py-2 px-3 text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 text-sm"
                   >
                     Robotics & Automation Society
-                  </a>
-                  <a
-                    href="#communications-chapter"
-                    onClick={closeMobileMenu}
-                    className="block py-2 px-3 text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 text-sm"
-                  >
-                    Communications Society
                   </a>
                 </div>
               )}

@@ -1,4 +1,4 @@
-import { Send } from 'lucide-react';
+import { Globe, Mail, MapPin, MessageCircle, Phone, Send, Users } from 'lucide-react';
 import { useState } from 'react';
 
 const Contact = () => {
@@ -21,51 +21,51 @@ const Contact = () => {
     });
   };
 
-  // const contactInfo = [
-  //   {
-  //     icon: Mail,
-  //     title: 'Email Us',
-  //     details: [
-  //       'anupama@msit.in',
-  //       'shubhamsharma@ieee.org',
-  //       'ishneet@ieee.org',
-  //       'tussharaggarwal@ieee.org',
-  //     ],
-  //     action: 'Send Email',
-  //   },
-  //   {
-  //     icon: Phone,
-  //     title: 'Call Us',
-  //     details: [
-  //       'Deepak Garg: +91 8287529584',
-  //       'Ishika Garg: +91 9958463960',
-  //       'Inder Sharma: +91 9971794796',
-  //       'Raghav Gupta: +91 9045091370',
-  //     ],
-  //     action: 'Call Now',
-  //   },
-  //   {
-  //     icon: MapPin,
-  //     title: 'Visit Us',
-  //     details: [
-  //       'Maharaja Surajmal Institute of Technology',
-  //       'C-4, Janakpuri, New Delhi - 110058',
-  //       'India',
-  //     ],
-  //     action: 'Get Directions',
-  //   },
-  //   {
-  //     icon: MessageCircle,
-  //     title: 'WhatsApp',
-  //     details: ['Join our community group for updates', 'Quick responses and announcements'],
-  //     action: 'Join Group',
-  //   },
-  // ];
+  const contactInfo = [
+    // {
+    //   icon: Mail,
+    //   title: 'Email Us',
+    //   details: [
+    //     'anupama@msit.in',
+    //     'shubhamsharma@ieee.org',
+    //     'ishneet@ieee.org',
+    //     'tussharaggarwal@ieee.org',
+    //   ],
+    //   action: 'Send Email',
+    // },
+    // {
+    //   icon: Phone,
+    //   title: 'Call Us',
+    //   details: [
+    //     'Deepak Garg: +91 8287529584',
+    //     'Ishika Garg: +91 9958463960',
+    //     'Inder Sharma: +91 9971794796',
+    //     'Raghav Gupta: +91 9045091370',
+    //   ],
+    //   action: 'Call Now',
+    // },
+    {
+      icon: MapPin,
+      title: 'Visit Us',
+      details: [
+        'Maharaja Surajmal Institute of Technology',
+        'C-4, Janakpuri, New Delhi - 110058',
+        'India',
+      ],
+      action: 'Get Directions',
+    },
+    {
+      icon: MessageCircle,
+      title: 'WhatsApp',
+      details: ['Join our community group for updates', 'Quick responses and announcements'],
+      action: 'Join Group',
+    },
+  ];
 
   return (
     <section
       id="contact"
-      className="py-20 px-4 md:px-6 bg-gradient-to-br from-primary/5 to-primary/10"
+      className="py-20 pt-40 px-4 md:px-6 bg-gradient-to-br from-primary/5 to-primary/10"
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
@@ -79,7 +79,7 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-serif text-black mb-6">Let's Connect</h3>
@@ -107,26 +107,8 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-xl p-6">
-              <h4 className="font-serif text-lg text-black mb-4">Why Join IEEE MSIT?</h4>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                    <Users className="w-6 h-6 text-primary" />
-                  </div>
-                  <p className="text-2xl font-bold text-primary">500+</p>
-                  <p className="text-gray-600 text-sm">Active Members</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                    <Globe className="w-6 h-6 text-primary" />
-                  </div>
-                  <p className="text-2xl font-bold text-primary">50+</p>
-                  <p className="text-gray-600 text-sm">Events Hosted</p>
-                </div>
-              </div>
-            </div>
-          </div> */}
+            
+          </div>
 
         <div className="bg-white border border-gray-200 rounded-xl p-8 max-w-[800px] mx-auto">
           <h3 className="text-2xl font-serif text-black mb-6">Send us a Message</h3>
@@ -207,7 +189,7 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* </div> */}
+      </div>
     </section>
   );
 };

@@ -10,6 +10,7 @@ import FAQPage from './pages/faq/FAQPage';
 import TeamPage from './pages/team/TeamPage';
 import AboutPage from './pages/AboutPage';
 import NotFoundPage from './pages/NotFoundPage';
+import ContactPage from './pages/ContactPage';
 import { HOME_PATH, FAQ_PATH, TEAM_PATH, EVENTS_PATH } from './constants/paths';
 import EventsPage from './pages/events/EventsPage';
 
@@ -26,6 +27,7 @@ function App() {
         <Route path={FAQ_PATH} element={<FAQPage />} />
         <Route path={TEAM_PATH} element={<TeamPage />} />
         <Route path={EVENTS_PATH} element={<EventsPage />} />
+  <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
