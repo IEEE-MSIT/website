@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, ChevronDown, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { HOME_PATH } from '../../constants/paths';
+import { chaptersList } from '../../data/chapters';
 
 const Header = () => {
   const [chaptersDropdownOpen, setChaptersDropdownOpen] = useState(false);
@@ -139,30 +140,16 @@ const Header = () => {
             {chaptersDropdownOpen && (
               <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
                 <div className="py-2">
-                  <a
-                    href="#cs-chapter"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors text-sm"
-                  >
-                    Computer Society Chapter
-                  </a>
-                  <a
-                    href="#pes-chapter"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors text-sm"
-                  >
-                    Power & Energy Society
-                  </a>
-                  <a
-                    href="#wie-chapter"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors text-sm"
-                  >
-                    Women in Engineering
-                  </a>
-                  <a
-                    href="#ras-chapter"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors text-sm"
-                  >
-                    Robotics & Automation Society
-                  </a>
+                  {chaptersList.map((c) => (
+                    <Link
+                      key={c.shortName}
+                      to={c.path}
+                      onClick={() => setChaptersDropdownOpen(false)}
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors text-sm"
+                    >
+                      {c.name}
+                    </Link>
+                  ))}
                 </div>
               </div>
             )}
@@ -243,34 +230,18 @@ const Header = () => {
 
               {chaptersDropdownOpen && (
                 <div className="ml-4 mt-2 space-y-1 border-l-2 border-primary/20 pl-4">
-                  <a
-                    href="#cs-chapter"
-                    onClick={closeMobileMenu}
-                    className="block py-2 px-3 text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 text-sm"
-                  >
-                    Computer Society Chapter
-                  </a>
-                  <a
-                    href="#pes-chapter"
-                    onClick={closeMobileMenu}
-                    className="block py-2 px-3 text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 text-sm"
-                  >
-                    Power & Energy Society
-                  </a>
-                  <a
-                    href="#wie-chapter"
-                    onClick={closeMobileMenu}
-                    className="block py-2 px-3 text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 text-sm"
-                  >
-                    Women in Engineering
-                  </a>
-                  <a
-                    href="#ras-chapter"
-                    onClick={closeMobileMenu}
-                    className="block py-2 px-3 text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 text-sm"
-                  >
-                    Robotics & Automation Society
-                  </a>
+                  {chaptersList.map((c) => (
+                    <Link
+                      key={c.shortName}
+                      to={c.path}
+                      onClick={() => {
+                        closeMobileMenu();
+                      }}
+                      className="block py-2 px-3 text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 text-sm"
+                    >
+                      {c.name}
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>
