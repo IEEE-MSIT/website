@@ -12,7 +12,7 @@ const PWAInstallPrompt: React.FC = () => {
     const userAgent = navigator.userAgent;
     const iOS = /iPad|iPhone|iPod/.test(userAgent);
     const android = /Android/.test(userAgent);
-    
+
     setIsIOS(iOS);
     setIsAndroid(android);
 
@@ -23,8 +23,8 @@ const PWAInstallPrompt: React.FC = () => {
       const lastDismissed = dismissed ? parseInt(dismissed) : 0;
       const now = Date.now();
       const sevenDays = 7 * 24 * 60 * 60 * 1000;
-      
-      if ((!dismissed || (now - lastDismissed > sevenDays)) && (canInstall || iOS || android)) {
+
+      if ((!dismissed || now - lastDismissed > sevenDays) && (canInstall || iOS || android)) {
         setShowPrompt(true);
       }
     }, 3000);

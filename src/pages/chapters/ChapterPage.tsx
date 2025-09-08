@@ -40,11 +40,7 @@ const ChapterPage: React.FC<ChapterPageProps> = ({ chapter, chaptersList }) => {
             </Link>
           </div>
           <div className="text-center">
-            <img
-              src={chapter.logo}
-              alt={`${chapter.name} Logo`}
-              className="w-24 mx-auto mb-6"
-            />
+            <img src={chapter.logo} alt={`${chapter.name} Logo`} className="w-24 mx-auto mb-6" />
             <h1 className="text-4xl md:text-6xl font-serif mb-4">{chapter.name}</h1>
             <p className="text-lg md:text-xl italic max-w-3xl mx-auto">{chapter.theme}</p>
           </div>
@@ -109,13 +105,16 @@ const ChapterPage: React.FC<ChapterPageProps> = ({ chapter, chaptersList }) => {
                       </div>
                     </div>
                     <p className="text-gray-700 text-sm leading-relaxed">
-                      A notable accomplishment by the {chapter.name} chapter, showcasing their dedication and excellence.
+                      A notable accomplishment by the {chapter.name} chapter, showcasing their
+                      dedication and excellence.
                     </p>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-center text-gray-500 col-span-full">This chapter's achievements will be updated soon.</p>
+              <p className="text-center text-gray-500 col-span-full">
+                This chapter's achievements will be updated soon.
+              </p>
             )}
           </section>
 

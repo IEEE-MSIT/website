@@ -15,7 +15,7 @@ export const usePWA = () => {
       window.matchMedia('(display-mode: standalone)').matches ||
       (window.navigator as unknown as { standalone?: boolean }).standalone === true ||
       document.referrer.includes('android-app://');
-    
+
     setIsInstalled(isStandalone);
 
     const handleBeforeInstallPrompt = (e: Event) => {
@@ -37,14 +37,14 @@ export const usePWA = () => {
       const isChrome = /Chrome/.test(navigator.userAgent);
       const isFirefox = /Firefox/.test(navigator.userAgent);
       const isSafari = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
-      
+
       return (isAndroid && (isChrome || isFirefox)) || (!isAndroid && !isSafari);
     };
 
     if (checkPWASupport()) {
       window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
     }
-    
+
     window.addEventListener('appinstalled', handleAppInstalled);
 
     if (import.meta.env.DEV) {

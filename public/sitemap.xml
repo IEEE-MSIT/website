@@ -5,25 +5,25 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://ieeemsit.vercel.app/</loc>
-    <lastmod>2025-09-01T12:33:03.526Z</lastmod>
+    <lastmod>2025-09-08T20:41:17.429Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://ieeemsit.vercel.app/about</loc>
-    <lastmod>2025-09-01T12:33:03.526Z</lastmod>
+    <lastmod>2025-09-08T20:41:17.430Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ieeemsit.vercel.app/events</loc>
-    <lastmod>2025-09-01T12:33:03.526Z</lastmod>
+    <lastmod>2025-09-08T20:41:17.430Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ieeemsit.vercel.app/contact</loc>
-    <lastmod>2025-09-01T12:33:03.526Z</lastmod>
+    <lastmod>2025-09-08T20:41:17.430Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

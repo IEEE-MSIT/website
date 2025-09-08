@@ -52,8 +52,7 @@ export const execom2025 = {
         name: 'Chaitanya',
         position: 'Public Relations Representative',
         branch: 'ECE',
-        image:
-          'https://drive.google.com/file/d/1afT_3PB_m5uVFvgYyaoYCOSsiXI0D1KR/view?usp=sharing',
+        image: 'https://drive.google.com/file/d/1afT_3PB_m5uVFvgYyaoYCOSsiXI0D1KR/view?usp=sharing',
         linkedin: 'https://www.linkedin.com/in/chaitanya-ba0621271/',
         chapter: 'IEEE MSIT',
         email: 'nandinis898@gmail.com',
@@ -170,7 +169,8 @@ export const execom2025 = {
         name: 'Aneesh Ahuja',
         position: 'Public Relations Representative',
         branch: 'IT',
-        image: 'https://drive.google.com/file/d/1dzIHe4K0n5OWIKcrCo-J_QSpmUUhpuVX/view?usp=drivesdk',
+        image:
+          'https://drive.google.com/file/d/1dzIHe4K0n5OWIKcrCo-J_QSpmUUhpuVX/view?usp=drivesdk',
         linkedin: '#',
         chapter: 'IEEE RAS MSIT',
         email: 'https://www.linkedin.com/in/aneeshahuja',
@@ -223,8 +223,7 @@ export const execom2025 = {
         name: 'Rohit Rajput',
         position: 'Public Relations Representative',
         branch: 'EEE',
-        image:
-          'https://drive.google.com/drive/folders/1kYh4wh_dIbSOoeTMWCUqC0eK6kNDzg_X',
+        image: 'https://drive.google.com/drive/folders/1kYh4wh_dIbSOoeTMWCUqC0eK6kNDzg_X',
         linkedin: 'https://www.linkedin.com/in/rohit-rajput-25370a328/',
         chapter: 'IEEE PES MSIT',
         email: 'rohit4545tanwar@gmail.com',
@@ -235,8 +234,7 @@ export const execom2025 = {
         name: 'Sneha Kumari',
         position: 'Chairperson',
         branch: 'CSE',
-        image:
-          'https://drive.google.com/file/d/1v9XvTZk8o24xaMRKG6oyweY14buxSWMi/view?usp=sharing',
+        image: 'https://drive.google.com/file/d/1v9XvTZk8o24xaMRKG6oyweY14buxSWMi/view?usp=sharing',
         linkedin: 'https://www.linkedin.com/in/sneha1106',
         chapter: 'IEEE WIE MSIT',
         email: 'snehsingh2021@gmail.com',
@@ -245,8 +243,7 @@ export const execom2025 = {
         name: 'Kopal Gupta',
         position: 'Vice-Chairperson',
         branch: 'CSE',
-        image:
-          'https://drive.google.com/file/d/1pMQ83c1o4EWZMtPBD7c3p1ovmoC9R--R/view?usp=sharing',
+        image: 'https://drive.google.com/file/d/1pMQ83c1o4EWZMtPBD7c3p1ovmoC9R--R/view?usp=sharing',
         linkedin: 'https://www.linkedin.com/in/kopalgupta04/',
         chapter: 'IEEE WIE MSIT',
         email: 'kopal.gupta4000@gmail.com',

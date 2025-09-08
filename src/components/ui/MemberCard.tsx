@@ -24,7 +24,9 @@ const MemberCard = ({ member, showActions = true }: MemberCardProps) => {
     if (!url) return false;
     try {
       const u = url.trim();
-      return /^(https?:)?\/\//.test(u) || u.startsWith('www.') ? /linkedin\.com/i.test(u) : /linkedin\.com/i.test(u);
+      return /^(https?:)?\/\//.test(u) || u.startsWith('www.')
+        ? /linkedin\.com/i.test(u)
+        : /linkedin\.com/i.test(u);
     } catch {
       return false;
     }
@@ -38,7 +40,9 @@ const MemberCard = ({ member, showActions = true }: MemberCardProps) => {
   };
 
   const handleMissingLinkedIn = () => {
-    alert('LinkedIn profile not available for this member. Check upcoming members or view full team.');
+    alert(
+      'LinkedIn profile not available for this member. Check upcoming members or view full team.'
+    );
   };
 
   const handleShare = () => {
@@ -143,8 +147,14 @@ const MemberCard = ({ member, showActions = true }: MemberCardProps) => {
         )}
         <div className="text-center">
           <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gray-200 group-hover:border-primary transition-colors flex items-center justify-center bg-gray-50 text-gray-700">
-            {(member.image && member.image !== '#') ? (
-              <img src={String(currentImg)} alt={member.name} className="w-full h-full object-cover" onError={handleImgError} loading={preloaded ? 'eager' : 'lazy'} />
+            {member.image && member.image !== '#' ? (
+              <img
+                src={String(currentImg)}
+                alt={member.name}
+                className="w-full h-full object-cover"
+                onError={handleImgError}
+                loading={preloaded ? 'eager' : 'lazy'}
+              />
             ) : (
               <div className="w-full h-full flex items-center justify-center text-xl font-semibold">
                 {getInitials(member.name)}
@@ -195,8 +205,14 @@ const MemberCard = ({ member, showActions = true }: MemberCardProps) => {
             </button>
             <div className="flex flex-col items-center">
               <div className="w-28 h-28 mb-4 rounded-full overflow-hidden border-4 border-primary flex items-center justify-center bg-gray-50 text-gray-700">
-                {(member.image && member.image !== '#') ? (
-                  <img src={String(currentImg)} alt={member.name} className="w-full h-full object-cover" onError={handleImgError} loading={preloaded ? 'eager' : 'lazy'} />
+                {member.image && member.image !== '#' ? (
+                  <img
+                    src={String(currentImg)}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                    onError={handleImgError}
+                    loading={preloaded ? 'eager' : 'lazy'}
+                  />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-3xl font-semibold">
                     {getInitials(member.name)}
