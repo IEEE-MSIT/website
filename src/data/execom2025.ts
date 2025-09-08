@@ -323,7 +323,7 @@ export const execom2025 = {
         branch: 'ECE',
         image:
           'https://drive.google.com/file/d/17-cUfUUStmpyiyo87b6YHs3xQW7kpC9i/view?usp=drivesdk',
-        linkedin: 'https://linkedin.com/rajveeerr',
+        linkedin: 'https://linkedin.com/in/rajveeerr',
         chapter: 'Web Development Committee',
         email: 'rajveergreets@gmail.com',
       },

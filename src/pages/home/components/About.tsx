@@ -154,7 +154,8 @@ const SmartImage: React.FC<SmartImageProps> = ({ src, fallback, alt, className =
 const About = () => {
   return (
     <>
-      <section className="py-20 px-6 bg-white">
+  {/* Add a negative margin here to tuck it under the hero banner */}
+  <section className="py-20 px-6 bg-white -mt-24 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
