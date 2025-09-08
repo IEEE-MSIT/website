@@ -188,18 +188,14 @@ const Hackathons = () => {
                   </div>
                   <div className="mt-auto">
                     <div className="flex gap-2 md:gap-3 mb-4">
-                      {/* <button className="bg-white text-primary px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base font-medium hover:bg-gray-100 transition-colors">
-                        Get Notified
-                      </button> */}
-                      <a
-                        href={hackathon.platformLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="border-2 border-white/30 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base font-medium hover:bg-white/10 transition-colors flex items-center gap-2"
+                      <button
+                        className="border-2 border-white/30 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base font-medium opacity-90 cursor-not-allowed flex items-center gap-2"
+                        disabled
+                        title="Coming Soon"
                       >
-                        <ExternalLink className="w-4 h-4" />
-                        View on DoraHacks
-                      </a>
+                        <ExternalLink className="w-4 h-4 opacity-60" />
+                        Coming Soon
+                      </button>
                     </div>
                   </div>
                 </div>

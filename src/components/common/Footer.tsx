@@ -41,7 +41,7 @@ const Footer = () => {
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">{SITE_CONFIG.description}</p>
             <div className="flex items-center gap-2 text-sm mb-6">
-              Made with <Heart className="w-4 h-4 text-heart-red" /> by the students of IEEE MSIT.
+              Made with <Heart className="w-4 h-4 text-heart-red" /> by the Web Development Committee of IEEE MSIT.
             </div>
 
             {/* Social Media Links */}
