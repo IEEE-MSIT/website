@@ -165,7 +165,7 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-serif text-black mb-8 leading-tight text-balance">
               Community of <span className="text-primary">Change-Makers</span>:{' '}
               <span className="text-secondary">Engineers</span>, Designers, and{' '}
-              <span className="text-tertiary">Leaders</span>
+              <span className="text-accent">Leaders</span>
             </h2>
 
             <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">

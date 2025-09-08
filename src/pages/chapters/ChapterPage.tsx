@@ -102,15 +102,15 @@ const ChapterPage: React.FC<ChapterPageProps> = ({ chapter, chaptersList }) => {
                 {chapter.achievements.map((achievement: string, index: number) => (
                   <div
                     key={index}
-                    className="bg-gradient-to-br from-yellow-50 to-amber-50 border border-yellow-200 rounded-xl p-6 hover:shadow-lg transition-all"
+                    className="bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/20 rounded-xl p-6 hover:shadow-lg transition-all"
                   >
                     <div className="flex items-center mb-4">
-                      <Trophy className="w-8 h-8 text-yellow-600 mr-3" />
+                      <Trophy className="w-8 h-8 text-accent mr-3" />
                       <div>
-                        <h3 className="font-serif text-lg text-black">{achievement}</h3>
+                        <h3 className="font-serif text-lg text-foreground">{achievement}</h3>
                       </div>
                     </div>
-                    <p className="text-gray-700 text-sm leading-relaxed">
+                    <p className="text-muted-foreground text-sm leading-relaxed">
                       A notable accomplishment by the {chapter.name} chapter, showcasing their dedication and excellence.
                     </p>
                   </div>

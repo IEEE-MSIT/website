@@ -8,7 +8,7 @@ export const chapters = [
     shortName: 'RAS',
     path: '/chapters/ras',
     logo: '/RAS.png',
-    bgColor: 'from-blue-900 via-blue-800 to-blue-900',
+    bgColor: 'from-slate-800 via-slate-900 to-black', // Richer
     borderColor: 'border-blue-400',
     accentColor: 'bg-blue-400',
     textColor: 'text-blue-100',
@@ -24,7 +24,7 @@ export const chapters = [
     shortName: 'WIE',
     path: '/chapters/wie',
     logo: '/WIE.png',
-    bgColor: 'from-purple-900 via-purple-800 to-purple-900',
+    bgColor: 'from-indigo-800 via-indigo-900 to-black', // Richer
     borderColor: 'border-purple-400',
     accentColor: 'bg-purple-400',
     textColor: 'text-purple-100',
@@ -40,7 +40,7 @@ export const chapters = [
     shortName: 'PES',
     path: '/chapters/pes',
     logo: '/PES.png',
-    bgColor: 'from-green-900 via-green-800 to-green-900',
+    bgColor: 'from-emerald-800 via-emerald-900 to-black', // Richer
     borderColor: 'border-green-400',
     accentColor: 'bg-green-400',
     textColor: 'text-green-100',
@@ -56,7 +56,7 @@ export const chapters = [
     shortName: 'CS',
     path: '/chapters/cs',
     logo: '/CS.png',
-    bgColor: 'from-amber-900 via-amber-800 to-amber-900',
+    bgColor: 'from-amber-800 via-amber-900 to-black', // Richer
     borderColor: 'border-amber-400',
     accentColor: 'bg-amber-400',
     textColor: 'text-amber-100',

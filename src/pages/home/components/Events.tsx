@@ -31,7 +31,7 @@ const Events = () => {
 
           <h2 className="text-4xl md:text-5xl font-serif text-black mb-8 leading-tight">
             Join Our <span className="text-primary">Technical</span> Events &{' '}
-            <span className="text-tertiary">Workshops</span>
+            <span className="text-accent">Workshops</span>
           </h2>
 
           <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
