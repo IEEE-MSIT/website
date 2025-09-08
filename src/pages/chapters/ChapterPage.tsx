@@ -43,7 +43,7 @@ const ChapterPage: React.FC<ChapterPageProps> = ({ chapter, chaptersList }) => {
             <img
               src={chapter.logo}
               alt={`${chapter.name} Logo`}
-              className="w-24 h-24 mx-auto mb-6"
+              className="w-24 mx-auto mb-6"
             />
             <h1 className="text-4xl md:text-6xl font-serif mb-4">{chapter.name}</h1>
             <p className="text-lg md:text-xl italic max-w-3xl mx-auto">{chapter.theme}</p>
@@ -95,16 +95,28 @@ const ChapterPage: React.FC<ChapterPageProps> = ({ chapter, chaptersList }) => {
 
           <section className="mb-16">
             <h2 className="text-3xl font-serif text-center text-black mb-10">Achievements</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {chapter.achievements.map((achievement, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md flex items-center">
-                  <div className={`p-3 rounded-full ${chapter.bgColor} mr-4`}>
-                    <Trophy className="w-6 h-6 text-white" />
+            {chapter.achievements && chapter.achievements.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {chapter.achievements.map((achievement, index) => (
+                  <div
+                    key={index}
+                    className="bg-gradient-to-br from-yellow-50 to-amber-50 border border-yellow-200 rounded-xl p-6 hover:shadow-lg transition-all"
+                  >
+                    <div className="flex items-center mb-4">
+                      <Trophy className="w-8 h-8 text-yellow-600 mr-3" />
+                      <div>
+                        <h3 className="font-serif text-lg text-black">{achievement}</h3>
+                      </div>
+                    </div>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      A notable accomplishment by the {chapter.name} chapter, showcasing their dedication and excellence.
+                    </p>
                   </div>
-                  <p className="text-gray-800 font-medium">{achievement}</p>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-center text-gray-500 col-span-full">This chapter's achievements will be updated soon.</p>
+            )}
           </section>
 
           <section>

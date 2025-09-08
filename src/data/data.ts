@@ -6,6 +6,7 @@ export const chapters = [
   {
     name: 'Robotics & Automation Society',
     shortName: 'RAS',
+  path: '/chapters/ras',
     logo: '/RAS.png',
     bgColor: 'from-blue-900 via-blue-800 to-blue-900',
     borderColor: 'border-blue-400',
@@ -21,6 +22,7 @@ export const chapters = [
   {
     name: 'Women in Engineering',
     shortName: 'WIE',
+  path: '/chapters/wie',
     logo: '/WIE.png',
     bgColor: 'from-purple-900 via-purple-800 to-purple-900',
     borderColor: 'border-purple-400',
@@ -36,6 +38,7 @@ export const chapters = [
   {
     name: 'Power & Energy Society',
     shortName: 'PES',
+  path: '/chapters/pes',
     logo: '/PES.png',
     bgColor: 'from-green-900 via-green-800 to-green-900',
     borderColor: 'border-green-400',
@@ -51,6 +54,7 @@ export const chapters = [
   {
     name: 'Computer Society',
     shortName: 'CS',
+  path: '/chapters/cs',
     logo: '/CS.png',
     bgColor: 'from-amber-900 via-amber-800 to-amber-900',
     borderColor: 'border-amber-400',

@@ -16,6 +16,7 @@ export interface Event {
   isRelevant: boolean;
   post_date: string;
   cloudinary_url: string;
+  organisedBy?: string | string[];
 }
 
 export const EventStatus = {

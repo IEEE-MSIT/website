@@ -1,4 +1,4 @@
-import { Globe, Mail, MapPin, MessageCircle, Phone, Send, Users } from 'lucide-react';
+import { MapPin, MessageCircle, Send } from 'lucide-react';
 import { useState } from 'react';
 
 const Contact = () => {

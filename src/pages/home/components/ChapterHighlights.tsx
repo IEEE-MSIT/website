@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { chapters } from '../../../data/data';
 
 const ChapterHighlights = () => {
@@ -18,13 +19,13 @@ const ChapterHighlights = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {chapters.map((chapter, index) => (
-            <div
-              key={index}
-              className={`group relative bg-gradient-to-b ${chapter.bgColor} text-white shadow-2xl hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden border-4 ${chapter.borderColor} h-[480px]`}
-              style={{
-                clipPath: 'polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%)',
-              }}
-            >
+            <Link to={chapter.path || '#'} key={index}>
+              <div
+                className={`group relative bg-gradient-to-b ${chapter.bgColor} text-white shadow-2xl hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden border-4 ${chapter.borderColor} h-[480px]`}
+                style={{
+                  clipPath: 'polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%)',
+                }}
+              >
               <div
                 className="absolute inset-0 border-2 border-yellow-400/40 m-3"
                 style={{
@@ -74,7 +75,8 @@ const ChapterHighlights = () => {
                   </p>
                 </div>
               </div>
-            </div>
+              </div>
+            </Link>
           ))}
         </div>
 
@@ -84,8 +86,8 @@ const ChapterHighlights = () => {
             join a brotherhood of innovators, researchers, and future leaders.
           </p>
           <div className="text-center mt-8">
-            <a
-              href="/chapters"
+            <Link
+              to="/chapters/wie"
               className="w-max bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 mx-auto"
             >
               Explore All Chapters
@@ -103,7 +105,7 @@ const ChapterHighlights = () => {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

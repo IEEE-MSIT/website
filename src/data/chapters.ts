@@ -21,11 +21,13 @@ const getChapterTheme = (shortName: string) => {
 };
 
 const getChapterEvents = (chapterShortName: string): Event[] => {
+  const normalizedShort = String(chapterShortName).trim();
+  const pattern = new RegExp(`\\b${normalizedShort}\\b`, 'i');
   return events.filter((event) => {
     const org = (event as unknown as { organisedBy?: string | string[] }).organisedBy;
     if (!org) return false;
-    if (Array.isArray(org)) return org.includes(chapterShortName);
-    return String(org).includes(chapterShortName);
+    if (Array.isArray(org)) return org.some((o) => pattern.test(String(o)));
+    return pattern.test(String(org));
   }) as Event[];
 };
 
