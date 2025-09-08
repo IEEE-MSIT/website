@@ -98,6 +98,27 @@ const Contact = () => {
                             {info.details.map((detail, idx) => (
                               <p key={idx} className="text-gray-600 text-sm">{detail}</p>
                             ))}
+                            {info.title === 'Visit Us' && (
+                              <div className="mt-4">
+                                <div className="rounded-lg overflow-hidden border border-gray-100">
+                                  <iframe
+                                    title="MSIT location"
+                                    src="https://maps.google.com/maps?q=Maharaja%20Surajmal%20Institute%20of%20Technology%20Janakpuri%20New%20Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                    className="w-full h-48 md:h-56"
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                  />
+                                </div>
+                                <a
+                                  href="https://www.google.com/maps/dir/?api=1&destination=Maharaja%20Surajmal%20Institute%20of%20Technology%20Janakpuri%20New%20Delhi"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-block mt-3 text-primary font-medium hover:underline"
+                                >
+                                  Get Directions →
+                                </a>
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>
