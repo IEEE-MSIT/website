@@ -23,6 +23,10 @@ const EventCard: React.FC<EventCardProps> = ({ event, className = '' }) => {
   };
 
   const handleShare = () => {
+    if (isCompleted) {
+      return;
+    }
+
     if (navigator.share) {
       navigator.share({ title: event.title, url: window.location.href });
     } else {
@@ -107,9 +111,13 @@ const EventCard: React.FC<EventCardProps> = ({ event, className = '' }) => {
           </button>
 
           <button
-            className="bg-primary/10 text-primary px-3 py-2 rounded-full hover:bg-primary hover:text-white transition-colors font-medium text-sm flex items-center gap-1"
-            title="Share Event"
-            onClick={handleShare}
+            className={`bg-primary/10 text-primary px-3 py-2 rounded-full transition-colors font-medium text-sm flex items-center gap-1 ${
+              isCompleted ? 'opacity-50 cursor-not-allowed' : 'hover:bg-primary hover:text-white'
+            }`}
+            title={isCompleted ? 'Sharing disabled for ended events' : 'Share Event'}
+            onClick={isCompleted ? undefined : handleShare}
+            aria-disabled={isCompleted}
+            disabled={isCompleted}
           >
             <Share2 className="w-4 h-4" />
           </button>
