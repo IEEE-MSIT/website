@@ -42,7 +42,7 @@ const ChapterPage: React.FC<ChapterPageProps> = ({ chapter, chaptersList }) => {
                   <img
                     src={chapter.logo}
                     alt={`${chapter.name} Logo`}
-                    className="w-auto max-w-[96px] h-auto block"
+                    className="w-auto max-w-[72px] md:max-w-[96px] h-auto block"
                   />
                 </div>
               </div>
@@ -59,12 +59,12 @@ const ChapterPage: React.FC<ChapterPageProps> = ({ chapter, chaptersList }) => {
 
       <nav className="bg-white border-b border-gray-200 -mt-16 relative z-10">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="flex justify-center -mb-px">
+    <div className="flex flex-wrap justify-center -mb-px gap-2 overflow-x-auto sm:overflow-visible -mx-2 px-2">
             {chaptersList.map((c) => (
               <Link
                 key={c.shortName}
                 to={c.path}
-                className={`py-4 px-6 text-sm font-medium border-b-2 transition-colors ${
+      className={`py-3 px-3 sm:px-6 text-sm font-medium border-b-2 transition-colors ${
                   c.shortName === chapter.shortName
                     ? 'border-primary text-primary'
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'

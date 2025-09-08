@@ -146,7 +146,7 @@ const MemberCard = ({ member, showActions = true }: MemberCardProps) => {
           </div>
         )}
         <div className="text-center">
-          <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gray-200 group-hover:border-primary transition-colors flex items-center justify-center bg-gray-50 text-gray-700">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gray-200 group-hover:border-primary transition-colors flex items-center justify-center bg-gray-50 text-gray-700">
             {member.image && member.image !== '#' ? (
               <img
                 src={String(currentImg)}
@@ -204,7 +204,7 @@ const MemberCard = ({ member, showActions = true }: MemberCardProps) => {
               <X className="w-5 h-5" />
             </button>
             <div className="flex flex-col items-center">
-              <div className="w-28 h-28 mb-4 rounded-full overflow-hidden border-4 border-primary flex items-center justify-center bg-gray-50 text-gray-700">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 mb-4 rounded-full overflow-hidden border-4 border-primary flex items-center justify-center bg-gray-50 text-gray-700">
                 {member.image && member.image !== '#' ? (
                   <img
                     src={String(currentImg)}
