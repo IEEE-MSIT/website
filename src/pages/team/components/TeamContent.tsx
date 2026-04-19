@@ -2,6 +2,7 @@ import MemberCard from '../../../components/ui/MemberCard';
 
 import { execom2025 } from '../../../data/execom2025';
 import { execom2024 } from '../../../data/execom2024';
+import { execom2026 } from '../../../data/execom2026';
 
 import type { Member } from '../../../components/ui/MemberCard';
 
@@ -31,6 +32,31 @@ const TeamContent = ({ activeTab }: TeamContentProps) => {
     <section className="py-16 px-4 md:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="relative">
+          {activeTab === 'execom2026' && (
+            <div>
+              <h2 className="text-3xl font-serif text-black mb-8 text-center">
+                Executive Committee 2026
+              </h2>
+              <div className="mb-16">
+                <h3 className="text-2xl font-serif text-primary mb-8 text-center">IEEE Chapters</h3>
+                <div className="space-y-12">
+                  {Object.entries(execom2026.chapters).map(([chapterName, members]) =>
+                    renderChapterSection(chapterName, members as Member[], 2026)
+                  )}
+                </div>
+              </div>
+              <div>
+                <h3 className="text-2xl font-serif text-primary mb-8 text-center">Committees</h3>
+                <div className="space-y-12">
+                  {Object.entries(execom2026.committees).map(([committeeName, members]) =>
+                    renderChapterSection(committeeName, members as Member[], 2026)
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
+
           {activeTab === 'execom2025' && (
             <div>
               <h2 className="text-3xl font-serif text-black mb-8 text-center">

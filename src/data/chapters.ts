@@ -1,4 +1,4 @@
-import { execom2025 } from './execom2025';
+import { execom2026 } from './execom2026';
 import { events } from './events';
 import { chapters as chapterThemes } from './data';
 import { Member } from '../components/ui/MemberCard';
@@ -40,7 +40,7 @@ export const chaptersData = {
     theme: 'Advancing Women in Engineering Towards a Diverse and Inclusive Future',
     mission:
       'To connect, support, and inspire women and girls worldwide, and facilitate their recruitment and retention in STEM fields, fostering technological innovation and excellence for the benefit of humanity.',
-    members: (execom2025 as ExecomShape).chapters['IEEE WIE MSIT'] as Member[],
+    members: (execom2026 as ExecomShape).chapters['IEEE WIE MSIT'] as Member[],
     events: getChapterEvents('WIE'),
     achievements: ['Star Program', 'Leadhership', 'SheScripts'],
   },
@@ -52,7 +52,7 @@ export const chaptersData = {
     theme: 'Empowering a Sustainable World, Energising the Future',
     mission:
       'To be the leading provider of scientific and engineering information on electric power and energy for the betterment of society, and the preferred professional development source for our members',
-    members: (execom2025 as ExecomShape).chapters['IEEE PES MSIT'] as Member[],
+    members: (execom2026 as ExecomShape).chapters['IEEE PES MSIT'] as Member[],
     events: getChapterEvents('PES'),
     achievements: [],
   },
@@ -64,7 +64,7 @@ export const chaptersData = {
     theme: 'Advancing Computing, Empowering Innovation',
     mission:
       'Be essential to the global technical community and computer professionals everywhere, and be universally recognised for the contributions of technical professionals in developing and applying technology to improve global conditions.',
-    members: (execom2025 as ExecomShape).chapters['IEEE CS MSIT'] as Member[],
+    members: (execom2026 as ExecomShape).chapters['IEEE CS MSIT'] as Member[],
     events: getChapterEvents('CS'),
     achievements: [],
   },
@@ -76,7 +76,7 @@ export const chaptersData = {
     theme: 'Advancing Robotics, Transforming the Future',
     mission:
       'To foster the development and facilitate the exchange of scientific and technological knowledge in Robotics and Automation that benefits members, the profession and humanity.',
-    members: (execom2025 as ExecomShape).chapters['IEEE RAS MSIT'] as Member[],
+    members: (execom2026 as ExecomShape).chapters['IEEE RAS MSIT'] as Member[],
     events: getChapterEvents('RAS'),
     achievements: [],
   },

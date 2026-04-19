@@ -2,7 +2,7 @@ import { useState } from 'react';
 import MemberCard from '../../../components/ui/MemberCard';
 import { Link } from 'react-router-dom';
 import { Mail, Share2, X, Eye, ArrowRight } from 'lucide-react';
-import { execom2025 } from '../../../data/execom2025';
+import { execom2026 } from '../../../data/execom2026';
 
 interface Member {
   name: string;
@@ -48,7 +48,7 @@ const Team = () => {
         <div className="min-h-[320px] flex items-center">
           <div className="w-full flex justify-center">
             <div className="flex flex-col md:flex-row items-center gap-6">
-              {execom2025.chapters['MAIN IEEE MSIT'].slice(0, 3).map((member, idx) => (
+              {execom2026.chapters['MAIN IEEE MSIT'].slice(0, 3).map((member, idx) => (
                 <div key={idx} className="w-full md:w-80">
                   {renderMember(member, idx)}
                 </div>

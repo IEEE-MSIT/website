@@ -5,7 +5,7 @@ const TeamPage = () => {
   return (
     <div className="min-h-screen bg-background pt-20">
       <TeamHero />
-      <TeamContent activeTab={'execom2025'} />
+      <TeamContent activeTab={'execom2026'} />
     </div>
   );
 };
