@@ -168,6 +168,15 @@ Meet the team responsible for architecting and maintaining this platform.
     <sub><b>Chairperson</b></sub>
   </a>
 </td>
+  <td align="center">
+  <a href="https://github.com/Anurajx">
+    <img src="https://avatars.githubusercontent.com/u/169916150?v=4" width="100px;" alt="Anuraj"/>
+    <br />
+    <sub><b>Anuraj</b></sub>
+    <br 
+    <sub><b>Vice Chairperson</b></sub>
+  </a>
+</td>
 </tr>
 </table>
 
