@@ -1,6 +1,10 @@
-import { events } from './events';
+import { events as rawEvents } from './events';
 
-export { events };
+export const events = [...rawEvents].sort((a, b) => {
+  const dateA = a.startDate ? new Date(a.startDate.replace(/(\d+)(st|nd|rd|th)/, '$1')).getTime() : 0;
+  const dateB = b.startDate ? new Date(b.startDate.replace(/(\d+)(st|nd|rd|th)/, '$1')).getTime() : 0;
+  return (Number.isNaN(dateB) ? 0 : dateB) - (Number.isNaN(dateA) ? 0 : dateA);
+});
 
 export const chapters = [
   {
