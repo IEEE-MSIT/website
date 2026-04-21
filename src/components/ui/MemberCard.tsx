@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Linkedin, Eye, Share2, Mail, X } from 'lucide-react';
 
 export interface Member {
@@ -56,73 +56,16 @@ const MemberCard = ({ member, showActions = true }: MemberCardProps) => {
       alert('Profile link copied to clipboard!');
     }
   };
-  const buildDriveCandidates = (url?: string) => {
-    const candidates: string[] = [];
-    if (!url) return candidates;
-    candidates.push(url);
-
-    const driveIdMatch = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-    const idQueryMatch = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
-    const id = driveIdMatch ? driveIdMatch[1] : idQueryMatch ? idQueryMatch[1] : null;
-
-    if (id) {
-      candidates.push(`https://drive.google.com/uc?export=view&id=${id}`);
-      candidates.push(`https://drive.google.com/uc?export=download&id=${id}`);
-      candidates.push(`https://docs.google.com/uc?export=download&id=${id}`);
-      candidates.push(`https://drive.google.com/thumbnail?id=${id}`);
-    }
-
-    if (url.includes('/view')) {
-      candidates.push(url.replace('/view', '/uc?export=view'));
-      candidates.push(url.replace('/view', '/uc?export=download'));
-    }
-
-    return Array.from(new Set(candidates));
-  };
-
-  const candidates = buildDriveCandidates(member.image);
-  const [imgIndex, setImgIndex] = useState(0);
+  const currentImg = member.image && member.image !== '#' 
+    ? member.image.includes('drive.usercontent.google.com') 
+      ? `http://localhost:5000/image?url=${encodeURIComponent(member.image)}`
+      : member.image 
+    : member.image;
   const [imgFailed, setImgFailed] = useState(false);
-  const [preloaded, setPreloaded] = useState(false);
-
-  const currentImg = candidates[imgIndex] ?? member.image;
 
   const handleImgError = () => {
-    if (imgIndex < candidates.length - 1) {
-      setImgIndex((i) => i + 1);
-      return;
-    }
     setImgFailed(true);
   };
-
-  useEffect(() => {
-    let cancelled = false;
-    setPreloaded(false);
-
-    const srcToLoad = String(currentImg || '');
-    if (!srcToLoad) return;
-
-    const img = new window.Image();
-    img.crossOrigin = 'anonymous';
-    img.src = srcToLoad;
-    img.onload = () => {
-      if (!cancelled) setPreloaded(true);
-    };
-    img.onerror = () => {
-      if (!cancelled) setPreloaded(false);
-    };
-
-    const next = candidates[imgIndex + 1];
-    if (next) {
-      const n = new window.Image();
-      n.crossOrigin = 'anonymous';
-      n.src = String(next);
-    }
-
-    return () => {
-      cancelled = true;
-    };
-  }, [currentImg, imgIndex, candidates]);
 
   return (
     <>
@@ -153,7 +96,9 @@ const MemberCard = ({ member, showActions = true }: MemberCardProps) => {
                 alt={member.name}
                 className="w-full h-full object-cover"
                 onError={handleImgError}
-                loading={preloaded ? 'eager' : 'lazy'}
+                loading="lazy"
+                crossOrigin="anonymous"
+                referrerPolicy="no-referrer"
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center text-xl font-semibold">
@@ -211,7 +156,9 @@ const MemberCard = ({ member, showActions = true }: MemberCardProps) => {
                     alt={member.name}
                     className="w-full h-full object-cover"
                     onError={handleImgError}
-                    loading={preloaded ? 'eager' : 'lazy'}
+                    loading="lazy"
+                    crossOrigin="anonymous"
+                    referrerPolicy="no-referrer"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-3xl font-semibold">

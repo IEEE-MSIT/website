@@ -33,7 +33,7 @@ export const execom2025 = {
         position: 'Treasurer',
         branch: 'EEE',
         image:
-          'https://drive.google.com/file/d/1aguB8YdI9BcTyKAIATDnvg78WiGe5Fhu/view?usp=drive_link',
+          'https://drive.google.com/uc?export=view&id=1aguB8YdI9BcTyKAIATDnvg78WiGe5Fhu',
         linkedin: 'https://www.linkedin.com/in/tanujkhanna1208/',
         chapter: 'IEEE MSIT',
         email: 'khannatanuj0@gmail.com',
@@ -52,7 +52,7 @@ export const execom2025 = {
         name: 'Chaitanya',
         position: 'Public Relations Representative',
         branch: 'ECE',
-        image: 'https://drive.google.com/file/d/1afT_3PB_m5uVFvgYyaoYCOSsiXI0D1KR/view?usp=sharing',
+        image: 'https://drive.google.com/uc?export=view&id=1afT_3PB_m5uVFvgYyaoYCOSsiXI0D1KR',
         linkedin: 'https://www.linkedin.com/in/chaitanya-ba0621271/',
         chapter: 'IEEE MSIT',
         email: 'nandinis898@gmail.com',
@@ -62,7 +62,7 @@ export const execom2025 = {
         position: 'SIG Lead',
         branch: 'CSE',
         image:
-          'https://drive.google.com/file/d/1WlCeZkCSkUBf8wIJwfx3OzXUbGnxtZHW/view?usp=drivesdk',
+          'https://drive.google.com/uc?export=view&id=1WlCeZkCSkUBf8wIJwfx3OzXUbGnxtZHW',
         linkedin: 'https://www.linkedin.com/in/yash-bagga-a32b1a256/',
         chapter: 'IEEE MSIT',
         email: 'yashbagga5@gmail.com',
@@ -101,7 +101,7 @@ export const execom2025 = {
         position: 'Treasurer',
         branch: 'CSE',
         image:
-          'https://drive.google.com/file/d/1MaRWjwpaxj4ja_xqx6O81hKJQhESxJgv/view?usp=drivesdk',
+          'https://drive.google.com/uc?export=view&id=1MaRWjwpaxj4ja_xqx6O81hKJQhESxJgv',
         linkedin:
           'https://www.linkedin.com/in/pratyushdubey18?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         chapter: 'IEEE CS MSIT',
@@ -132,7 +132,7 @@ export const execom2025 = {
         position: 'Chairperson',
         branch: 'CSE',
         image:
-          'https://drive.google.com/file/d/1perSqYPmuK_8KEFCVgm_umoEZGlVaJUG/view?usp=drive_link',
+          'https://drive.google.com/uc?export=view&id=1perSqYPmuK_8KEFCVgm_umoEZGlVaJUG',
         linkedin: 'https://www.linkedin.com/in/shauryaguptaa',
         chapter: 'IEEE RAS MSIT',
         email: 'guptashaurya2004@gmail.com',
@@ -151,7 +151,7 @@ export const execom2025 = {
         position: 'Treasurer',
         branch: 'ECE',
         image:
-          'https://drive.google.com/file/d/1HO9IDUlOFKaEQsXnU0co8qyHRnJgoUVe/view?usp=drive_link',
+          'https://drive.google.com/uc?export=view&id=1HO9IDUlOFKaEQsXnU0co8qyHRnJgoUVe',
         linkedin: 'https://www.linkedin.com/in/harshit-khaneja-12036818a',
         chapter: 'IEEE RAS MSIT',
         email: 'Khanejaharshit040@gmail.com',
@@ -170,7 +170,7 @@ export const execom2025 = {
         position: 'Public Relations Representative',
         branch: 'IT',
         image:
-          'https://drive.google.com/file/d/1dzIHe4K0n5OWIKcrCo-J_QSpmUUhpuVX/view?usp=drivesdk',
+          'https://drive.google.com/uc?export=view&id=1dzIHe4K0n5OWIKcrCo-J_QSpmUUhpuVX',
         linkedin: '#',
         chapter: 'IEEE RAS MSIT',
         email: 'https://www.linkedin.com/in/aneeshahuja',
@@ -192,7 +192,7 @@ export const execom2025 = {
         position: 'Vice-Chairperson',
         branch: 'EEE',
         image:
-          'https://drive.google.com/file/d/10b8yuavGyRoFKjMTwyAP9aMspOXAfTUu/view?usp=drivesdk',
+          'https://drive.google.com/uc?export=view&id=10b8yuavGyRoFKjMTwyAP9aMspOXAfTUu',
         linkedin:
           'https://www.linkedin.com/in/pranav-sood-1a920821a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         chapter: 'IEEE PES MSIT',
@@ -203,7 +203,7 @@ export const execom2025 = {
         position: 'Treasurer',
         branch: 'EEE',
         image:
-          'https://drive.google.com/file/d/15vywA-dIA1CUXzUEHpH-FDhEpJIC0i61/view?usp=drivesdk',
+          'https://drive.google.com/uc?export=view&id=15vywA-dIA1CUXzUEHpH-FDhEpJIC0i61',
         linkedin:
           'https://www.linkedin.com/in/akriti--kumari?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         chapter: 'IEEE PES MSIT',
@@ -214,7 +214,7 @@ export const execom2025 = {
         position: 'General Secretary',
         branch: 'CSE',
         image:
-          'https://drive.google.com/file/d/1CHAgPPyxMyoTiyhIT6e-Iumt94GJWoU9/view?usp=drivesdk',
+          'https://drive.google.com/uc?export=view&id=1CHAgPPyxMyoTiyhIT6e-Iumt94GJWoU9',
         linkedin: 'https://www.linkedin.com/in/ishika-deshwal-9b3307272?',
         chapter: 'IEEE PES MSIT',
         email: 'ishikadeshwal1002@gmail.com',
@@ -223,7 +223,7 @@ export const execom2025 = {
         name: 'Rohit Rajput',
         position: 'Public Relations Representative',
         branch: 'EEE',
-        image: 'https://drive.google.com/drive/folders/1kYh4wh_dIbSOoeTMWCUqC0eK6kNDzg_X',
+        image: '#',
         linkedin: 'https://www.linkedin.com/in/rohit-rajput-25370a328/',
         chapter: 'IEEE PES MSIT',
         email: 'rohit4545tanwar@gmail.com',
@@ -234,7 +234,7 @@ export const execom2025 = {
         name: 'Sneha Kumari',
         position: 'Chairperson',
         branch: 'CSE',
-        image: 'https://drive.google.com/file/d/1v9XvTZk8o24xaMRKG6oyweY14buxSWMi/view?usp=sharing',
+        image: 'https://drive.google.com/uc?export=view&id=1v9XvTZk8o24xaMRKG6oyweY14buxSWMi',
         linkedin: 'https://www.linkedin.com/in/sneha1106',
         chapter: 'IEEE WIE MSIT',
         email: 'snehsingh2021@gmail.com',
@@ -243,7 +243,7 @@ export const execom2025 = {
         name: 'Kopal Gupta',
         position: 'Vice-Chairperson',
         branch: 'CSE',
-        image: 'https://drive.google.com/file/d/1pMQ83c1o4EWZMtPBD7c3p1ovmoC9R--R/view?usp=sharing',
+        image: 'https://drive.google.com/uc?export=view&id=1pMQ83c1o4EWZMtPBD7c3p1ovmoC9R--R',
         linkedin: 'https://www.linkedin.com/in/kopalgupta04/',
         chapter: 'IEEE WIE MSIT',
         email: 'kopal.gupta4000@gmail.com',
@@ -253,7 +253,7 @@ export const execom2025 = {
         position: 'Treasurer',
         branch: 'ECE',
         image:
-          'https://drive.google.com/file/d/17EMEN0rB-XwHMdgcwlq0L5CT9GEPF3yw/view?usp=drivesdk',
+          'https://drive.google.com/uc?export=view&id=17EMEN0rB-XwHMdgcwlq0L5CT9GEPF3yw',
         linkedin: 'https://www.linkedin.com/in/sneha-juyal',
         chapter: 'IEEE WIE MSIT',
         email: 'snehajuyal20@gmail.com',
@@ -322,7 +322,7 @@ export const execom2025 = {
         position: 'Vice chairperson',
         branch: 'ECE',
         image:
-          'https://drive.google.com/file/d/17-cUfUUStmpyiyo87b6YHs3xQW7kpC9i/view?usp=drivesdk',
+          'https://drive.google.com/uc?export=view&id=17-cUfUUStmpyiyo87b6YHs3xQW7kpC9i',
         linkedin: 'https://linkedin.com/in/rajveeerr',
         chapter: 'Web Development Committee',
         email: 'rajveergreets@gmail.com',
@@ -334,7 +334,7 @@ export const execom2025 = {
         position: 'Chairperson',
         branch: 'ECE',
         image:
-          'https://drive.google.com/file/d/1y9uwttWvqzqaq3uKZWIL5SAs4HL4MdUP/view?usp=share_link',
+          'https://drive.google.com/uc?export=view&id=1y9uwttWvqzqaq3uKZWIL5SAs4HL4MdUP',
         linkedin: '#',
         chapter: 'Sponsorship Committee',
         email: 'abhimanyu3704@gmail.com',
@@ -405,7 +405,7 @@ export const execom2025 = {
         position: 'Vicechairperson',
         branch: 'CSE',
         image:
-          'https://drive.google.com/file/d/1bd-emVV0Os84annGRLjxKS3UQ3sWo5o3/view?usp=drivesdk',
+          'https://drive.google.com/uc?export=view&id=1bd-emVV0Os84annGRLjxKS3UQ3sWo5o3',
         linkedin: 'https://linkedin.com/in/mehak-singh-200244304',
         chapter: 'Publicity Committee',
         email: 'mehaksingh13m@gmail.com',
@@ -466,7 +466,7 @@ export const execom2025 = {
         position: 'Vicechairperson',
         branch: 'ECE',
         image:
-          'https://drive.google.com/file/d/1H_SO0fbA1XQ70UHVMAUc-B8vAEmgEoES/view?usp=drivesdk',
+          'https://drive.google.com/uc?export=view&id=1H_SO0fbA1XQ70UHVMAUc-B8vAEmgEoES',
         linkedin:
           'https://www.linkedin.com/in/richa-631b4132a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         chapter: 'Creativity Committee',
