@@ -161,7 +161,7 @@ Meet the team responsible for architecting and maintaining this platform.
 <tr>
 <td align="center">
   <a href="https://github.com/Nithin0620">
-    <img src="https://avatars.githubusercontent.com/u/177396649?v=4" width="100px;" alt="Nithin"/>
+    <img src="https://avatars.githubusercontent.com/u/177396649?v=4" width="110px;" alt="Nithin"/>
     <br />
     <sub><b>Nithin</b></sub>
     <br 
@@ -170,7 +170,7 @@ Meet the team responsible for architecting and maintaining this platform.
 </td>
   <td align="center">
   <a href="https://github.com/Anurajx">
-    <img src="https://avatars.githubusercontent.com/u/169916150?v=4" width="100px;" alt="Anuraj"/>
+    <img src="https://avatars.githubusercontent.com/u/169916150?v=4" width="110px;" alt="Anuraj"/>
     <br />
     <sub><b>Anuraj</b></sub>
     <br 
