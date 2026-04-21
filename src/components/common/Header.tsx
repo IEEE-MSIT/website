@@ -102,14 +102,13 @@ const Header = () => {
       <nav className="flex justify-between items-center px-6 py-4 bg-background fixed top-[40px] left-0 right-0 z-40 shadow-sm">
         <Link
           to={HOME_PATH}
-          className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+          className="flex items-center justify-center hover:opacity-80 transition-opacity bg-primary px-2 py-1"
         >
           <img
             src="/IEEEWhiteLogowithTransparentBG.png"
-            alt="IEEE Logo"
-            className="w-8 h-8 hidden"
+            alt="IEEE MSIT Logo"
+            className="h-6 sm:h-7 md:h-8 w-auto object-contain"
           />
-          <h1 className="text-2xl font-serif text-black font-semibold">IEEE MSIT</h1>
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">
