@@ -47,15 +47,6 @@ export const usePWA = () => {
 
     window.addEventListener('appinstalled', handleAppInstalled);
 
-    if (import.meta.env.DEV) {
-      setTimeout(() => {
-        if (!isStandalone && !deferredPrompt) {
-          console.log('Development mode: Setting installable to true for testing');
-          setIsInstallable(true);
-        }
-      }, 2000);
-    }
-
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
       window.removeEventListener('appinstalled', handleAppInstalled);

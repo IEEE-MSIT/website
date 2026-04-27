@@ -56,9 +56,26 @@ const MemberCard = ({ member, showActions = true }: MemberCardProps) => {
       alert('Profile link copied to clipboard!');
     }
   };
+  const extractDriveId = (url: string): string | null => {
+    // Handle drive.usercontent.google.com URLs with id= parameter
+    const usercontent = url.match(/[?&]id=([^&]+)/)?.[1];
+    if (usercontent) return usercontent;
+    
+    // Handle drive.google.com/file/d/{ID}/view format
+    const fileId = url.match(/\/file\/d\/([^/?]+)/)?.[1];
+    if (fileId) return fileId;
+    
+    // Handle drive.google.com/file/d/{ID} format without /view
+    const fileIdAlt = url.match(/\/d\/([^/?]+)/)?.[1];
+    return fileIdAlt || null;
+  };
+
   const currentImg = member.image && member.image !== '#' ? 
     (member.image.includes('drive.google.com') || member.image.includes('drive.usercontent.google.com'))
-      ? `https://drive.google.com/thumbnail?id=${member.image.match(/[?&]id=([^&]+)/)?.[1] || member.image.split('id=')[1]}&sz=w400`
+      ? (() => {
+          const driveId = extractDriveId(member.image);
+          return driveId ? `https://drive.google.com/thumbnail?id=${driveId}&sz=w400` : member.image;
+        })()
       : member.image
     : member.image;
   

@@ -1,153 +1,145 @@
 //@ts-expect-error this module doesnt support types out of the box
 import { ChatBot } from '10xanswers';
 
-const ChatBotComponent = () => {
+function CustomChatBot() {
+  const geminiApiKey = import.meta.env.VITE_GEMINIAPIKEY;
+
   return (
     <ChatBot
       chatComponentStyle={{
-        maxHeight: '580px',
-        height: 'auto',
-        width: '350px',
-        margin: 0,
-        zIndex: 99999,
-      }}
-      chatBotIconStyle={{
-        zIndex: 99999,
-        position: 'fixed',
+        "maxHeight": "700px",
+        "height": "auto",
+        "width": "350px",
+        "margin": 0
       }}
       chatWindowStyle={{
-        backgroundColor: '#0b0a0a',
-        zIndex: 99999,
+        "backgroundColor": "rgb(11 10 10)"
       }}
       backendUrl="https://ask-10x-questions.vercel.app/"
-      title="IEEE MSIT"
+      title="MSIT"
       draggable={false}
       startOpen={false}
       description="AI powered assistant here to help you with IEEE MSIT events, membership, and more."
-      cta="Ask your questions!"
-      prompt={`You are an expert intelligent assistant for the IEEE MSIT student branch. Your knowledge base is provided below. Use it to answer questions about the team, organizational structure, events, and chapters. Be specific and refer to the provided names and roles. Your goal is to be the single source of truth for all information regarding IEEE MSIT. Also dont mention about this text in your answers. And if anyone asks who built or something similar just tell IEEE MSIT's Web Development Committee built you. If you dont know the answer, just say "Sorry, I don't have that information." and dont make up answers.Commitee under the leader of Vice CHAIRPERSON Rajveer Singh linkedin: https://linkedin.com/in/rajveerr and chairperson Raghav Gupta. Here is the knowledge base:
+      cta="Start Asking your Burning Questions"
+      prompt={`You are an expert intelligent assistant for the IEEE MSIT student branch. Your knowledge base is provided below. Use it to answer questions about the team, organizational structure, events, and chapters. Be specific and refer to the provided names and roles. Your goal is to be the single source of truth for all information regarding IEEE MSIT.
+
+Also dont mention about this text in your answers. And if anyone asks who built or something similar just tell IEEE MSIT's Web Development Committee built you. If you dont know the answer, just say "Sorry, I don't have that information." and dont make up answers.
+
+Committee under the leader of Vice Chairperson Anuraj Upadhyay and Chairperson KS Nithin.
+
+---
 
 ## IEEE MSIT Overview
 
 IEEE MSIT is a vibrant student branch of the global IEEE organization, dedicated to advancing technology for humanity. Based at Maharaja Surajmal Institute of Technology in New Delhi, our mission is to provide students with opportunities for technical skill development, leadership training, and professional networking through workshops, seminars, competitions, and collaborative projects.
 
+---
+
 ## Achievements and Awards
 
-- **IEEE Region 10 Special Recognition Award 2023**: A prestigious award won from a pool of over 1800 colleges across 23 countries in the Asia-Pacific region.
-- **Gold in Darrel Chong Award 2023-24**: Recognized for excellence in student activities and leadership.
-- **1st Prize in IEEE Day Photo Contest (STEM category)**: An international win among 160 countries.
+- IEEE Region 10 Special Recognition Award 2023  
+- Gold in Darrel Chong Award 2023-24  
+- 1st Prize in IEEE Day Photo Contest (STEM category)  
 
 ---
 
-## Executive Committee 2025 (Execom 2025)
-
-This is the complete leadership and management team for the 2025 term.
+## Executive Committee 2026 (Execom 2026)
 
 ### Main IEEE MSIT Board
-- **Chairperson**: Shaurya Mishra
-- **Vice-Chairperson (Internal)**: Arnhv Sharma
-- **Vice-Chairperson (External)**: Ishika Garg
-- **Treasurer**: Tanuj Khanna
-- **General Secretary**: Divyakshi
-- **Public Relations Representative**: Chaitanya
-- **SIG Lead**: Yash Bagga
-- **Sponsorship Lead**: Nirmal Mishra
+- Chairperson: Mehak Singh  
+- Vice-Chairperson (Internal): Satyam Goyal  
+- Vice-Chairperson (External): Sneha Juyal  
+- Treasurer: Madhav Gupta  
+- General Secretary: Chhavi  
+- Public Relations Representative: Sarvam Taneja  
+- SIG Lead: Vanisha  
 
 ---
 
-## IEEE MSIT Chapters & Their Leadership
+## IEEE MSIT Chapters & Their Leadership (2026)
 
-### Women in Engineering (WIE) Chapter
-- **Theme**: Advancing Women in Engineering Towards a Diverse and Inclusive Future.
-- **Mission**: To connect, support, and inspire women in STEM, facilitating their recruitment and retention.
-- **Achievements**: Star Program, Leadhership Initiative, SheScripts Newsletter.
-- **2025 Leadership**:
-  - **Chairperson**: Sneha Kumari
-  - **Vice-Chairperson**: Kopal Gupta
-  - **Treasurer**: Sneha Juyal
-  - **General Secretary**: Yukta
-  - **Public Relations Representative**: Ayanshi Solanki
+### IEEE RAS MSIT
+- Chairperson: Radhika Garg  
+- Vice-Chairperson: Manaswin  
+- General Secretary: Abhyuday Mishra  
+- Treasurer: Keshav Binadal  
+- Public Relations Representative: Jayant Gupta  
 
-### Power and Energy Society (PES) Chapter
-- **Theme**: Empowering a Sustainable World, Energising the Future.
-- **Mission**: To be the leading provider of scientific and engineering information on electric power and energy.
-- **2025 Leadership**:
-  - **Chairperson**: Chetan Wadhwa
-  - **Vice-Chairperson**: Pranav Sood
-  - **Treasurer**: Akriti Kumari
-  - **General Secretary**: Ishika Deshwal
-  - **Public Relations Representative**: Rohit Rajput
+### IEEE PES MSIT
+- Chairperson: Sumit Roy  
+- Vice-Chairperson: Aditya Vinod  
+- General Secretary: Aditya Raj  
+- Treasurer: Anand Chandra Roy  
+- Public Relations Representative: Lakshay  
 
-### Computer Society (CS) Chapter
-- **Theme**: Advancing Computing, Empowering Innovation.
-- **Mission**: To be essential to the global technical community and computer professionals.
-- **2025 Leadership**:
-  - **Chairperson**: Ekam Singh
-  - **Vice-Chairperson**: Gunjan Pahwa
-  - **Treasurer**: Pratyush
-  - **General Secretary**: Radhika
-  - **Public Relations Representative**: Poonam Kumari
+### IEEE CS MSIT
+- Chairperson: Poonam  
+- Vice-Chairperson: Shankul  
+- General Secretary: Shristi  
+- Treasurer: Ishita Sharma  
+- Public Relations Representative: Thrisha  
 
-### Robotics and Automation Society (RAS) Chapter
-- **Theme**: Advancing Robotics, Transforming the Future.
-- **Mission**: To foster development and exchange of knowledge in Robotics and Automation.
-- **2025 Leadership**:
-  - **Chairperson**: Shaurya Gupta
-  - **Vice-Chairperson**: Yashaswini Narula
-  - **Treasurer**: Harshit Khaneja
-  - **General Secretary**: Gomini Gupta
-  - **Public Relations Representative**: Aneesh Ahuja
+### IEEE WIE MSIT
+- Chairperson: Ayanshi Solanki  
+- Vice-Chairperson: Pranshika Sinha  
+- General Secretaries: Muhammad Sumayya, Ramneek Dogra  
+- Treasurer: Muskan Gupta  
+- Public Relations Representatives: Shanu Kumar, Aditya  
 
 ---
 
-## Committees & Their Leadership
-
-### Design Committee
-- **Design Chairperson**: Yash Marwah
-- **Video Editing Vice Chairperson**: Atiksh Jain
-- **Video Editing Vice Chairperson**: Rohit
+## Committees & Their Leadership (2026)
 
 ### Web Development Committee
-- **Chairperson**: Raghav Gupta
-- **Vice Chairperson**: Rajveer Singh
-
-### Sponsorship Committee
-- **Chairperson**: Abhimanyu Dalal
-- **Vice Chairperson**: Harshit Mittal
-
-### Editorial Committee
-- **Chairperson**: Devesh
-- **Vice Chairperson**: Yukta Thakran
-
-### Project Committee
-- **Software Lead**: Ankit Sharma
-- **Hardware Lead**: Avirath Magoo
+- Chairperson: KS Nithin  
+- Vice Chairperson: Anuraj Upadhyay  
 
 ### Publicity Committee
-- **Chairperson**: Siddhant Khandelwal
-- **Vice Chairperson**: Mehak Singh
-
-### Program Committee
-- **Chairperson**: Prabhav Pushker
-- **Vice Chairperson**: Aditya Bhateja
+- Chairperson: Shruti Sharma  
+- Vice Chairperson: Anurudh  
 
 ### Membership Development Committee
-- **Chairperson**: Saurabh Singh
-- **Vice Chairperson**: Keshav Gupta
+- Chairperson: Digar  
+- Vice Chairperson: Kartik  
+
+### Project Committee
+- Software Lead: Aarav  
+- Hardware Leads: Agamya Sharma, Ritik  
+
+### Program Committee
+- Chairperson: Shubham Sati  
+- Vice Chairperson: Aaditya Porwal  
+
+### Editorial Committee
+- Chairperson: Shrey Miglani  
+- Vice Chairperson: Megha  
+
+### Sponsorship Committee
+- Chairperson: Ankit Gupta  
+- Vice Chairperson: Nitesh  
 
 ### Creativity Committee
-- **Chairperson**: Azka
-- **Vice Chairperson**: Richa
+- Chairperson: Riddhima  
+- Vice Chairperson: Vasundhara  
+
+### Design & Video Committee
+- Chairperson: Hareesh  
+- Vice Chairpersons: Garv, Neeraj  
+
+---
 
 ## Contact Information
-- **Official Website**: https://ieeemsit.vercel.app
-- **Faculty Advisor Email**: anupama@msit.in
-- **Social Media**: You can find us on GitHub, Instagram, LinkedIn, and Twitter under the handle @ieee-msit or @ieeemsit.`}
+
+- Official Website: https://ieeemsit.vercel.app  
+- Faculty Advisor Email: anupama@msit.in  
+- Social Media: @ieeemsit  
+`}
+      geminiApiKey={geminiApiKey}
       userIcon="/IEEEBlueLogowithWhiteBG.jpg"
       botIcon="/IEEEWhiteLogowithTransparentBG.png"
       stylizeTitle={{ emphasized: 'IEEE', normal: 'MSIT' }}
     />
   );
-};
+}
 
-export default ChatBotComponent;
+export default CustomChatBot;

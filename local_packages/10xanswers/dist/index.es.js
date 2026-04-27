@@ -666,18 +666,18 @@ function hn() {
   }
   return /* @__PURE__ */ E.jsxs("div", { className: "input-area", children: [
     /* @__PURE__ */ E.jsx("textarea", { ref: e, onKeyUp: i, placeholder: "Ask or search anything and press Enter", className: "prompt-input" }),
-    /* @__PURE__ */ E.jsx("span", { ref: t, onClick: s, className: "search-icon disabled", title: "Send", children: /* @__PURE__ */ E.jsx("i", { class: "fa-solid fa-square-arrow-up-right" }) }),
+    /* @__PURE__ */ E.jsx("span", { ref: t, onClick: s, className: "search-icon disabled", title: "Send", children: /* @__PURE__ */ E.jsx("i", { className: "fa-solid fa-square-arrow-up-right" }) }),
     /* @__PURE__ */ E.jsx(Ti, {})
   ] });
 }
 function Ti() {
   return /* @__PURE__ */ E.jsxs("div", { className: "input-options", children: [
     /* @__PURE__ */ E.jsxs("div", { className: "input-option", children: [
-      /* @__PURE__ */ E.jsx("span", { className: "input-option-icon", children: /* @__PURE__ */ E.jsx("i", { class: "fa-regular fa-file" }) }),
+      /* @__PURE__ */ E.jsx("span", { className: "input-option-icon", children: /* @__PURE__ */ E.jsx("i", { className: "fa-regular fa-file" }) }),
       /* @__PURE__ */ E.jsx("p", { className: "option-description", children: "Add Media" })
     ] }),
     /* @__PURE__ */ E.jsxs("div", { className: "input-option", children: [
-      /* @__PURE__ */ E.jsx("span", { className: "input-option-icon", children: /* @__PURE__ */ E.jsx("i", { class: "fa-brands fa-soundcloud" }) }),
+      /* @__PURE__ */ E.jsx("span", { className: "input-option-icon", children: /* @__PURE__ */ E.jsx("i", { className: "fa-brands fa-soundcloud" }) }),
       /* @__PURE__ */ E.jsx("p", { className: "option-description", children: "Voice Chat" })
     ] })
   ] });
@@ -750,15 +750,15 @@ function Ri(e) {
     /* @__PURE__ */ E.jsxs("div", { className: "question", children: [
       /* @__PURE__ */ E.jsx("span", { className: "bot-icon", children: /* @__PURE__ */ E.jsx("img", { src: t || "/node_modules/10xanswers/dist/logoImg.jpg" }) }),
       /* @__PURE__ */ E.jsx("p", { className: "question-txt", ref: i, children: n.question }),
-      !a && /* @__PURE__ */ E.jsx("span", { className: "edit-icon", onClick: o, children: /* @__PURE__ */ E.jsx("i", { class: "fa-solid fa-pen" }) })
+      !a && /* @__PURE__ */ E.jsx("span", { className: "edit-icon", onClick: o, children: /* @__PURE__ */ E.jsx("i", { className: "fa-solid fa-pen" }) })
     ] }),
     a && /* @__PURE__ */ E.jsxs("div", { className: "chat-options edit-options", children: [
       /* @__PURE__ */ E.jsxs("span", { onClick: l, className: "copy chat-option", children: [
-        /* @__PURE__ */ E.jsx("span", { className: "copy-icon", children: /* @__PURE__ */ E.jsx("i", { class: "fa-regular fa-clipboard" }) }),
+        /* @__PURE__ */ E.jsx("span", { className: "copy-icon", children: /* @__PURE__ */ E.jsx("i", { className: "fa-regular fa-clipboard" }) }),
         "Save"
       ] }),
       /* @__PURE__ */ E.jsxs("span", { onClick: d, className: "collection chat-option", children: [
-        /* @__PURE__ */ E.jsx("span", { className: "collection-icon", children: /* @__PURE__ */ E.jsx("i", { class: "fa-solid fa-xmark" }) }),
+        /* @__PURE__ */ E.jsx("span", { className: "collection-icon", children: /* @__PURE__ */ E.jsx("i", { className: "fa-solid fa-xmark" }) }),
         "Cancel"
       ] })
     ] })
@@ -16337,7 +16337,7 @@ let Gt = [], Cl = jn({
           History of User Questions and Context: ${o}.
           
           Respond directly and concisely based on the history. If the history is empty, consider this as the first question. Don't let the end-user know about this history. Use markdown for formatting code or other structured content where necessary.` : (l = "Please provide either backend url or gemini api", console.log("Please provide either backend Url or geminiApi for the chat-component"));
-      let u = await (await fetch(s, {
+      let u = await fetch(s, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -16347,12 +16347,14 @@ let Gt = [], Cl = jn({
             parts: [{ text: l }]
           }]
         })
-      })).json();
-      return Gt.push({ role: "bot", message: u.candidates[0].content.parts[0].text }), {
+      }), f = await u.json(), m = f == null ? void 0 : f.candidates, h = m != null && m[0] && m[0].content && m[0].content.parts && m[0].content.parts[0] ? m[0].content.parts[0].text : null;
+      if (!u.ok || !h)
+        throw new Error((f == null ? void 0 : f.error) && f.error.message ? f.error.message : "Invalid response from chat backend");
+      return Gt.push({ role: "bot", message: h }), {
         id: e,
         question: t,
         userIcon: i || "/node_modules/10xanswers/dist/logoImg2.jpg",
-        answer: u.candidates[0].content.parts[0].text
+        answer: h
       };
     }
   })
@@ -16382,7 +16384,7 @@ function Ml(e) {
     /* @__PURE__ */ E.jsxs("div", { className: "chat-and-options", children: [
       /* @__PURE__ */ E.jsx("p", { className: "chat-content", children: /* @__PURE__ */ E.jsx(wi, { remarkPlugins: [Ol], rehypePlugins: [us], children: r.contents.answer }) }),
       /* @__PURE__ */ E.jsx("div", { className: "chat-options", children: /* @__PURE__ */ E.jsxs("span", { onClick: s, className: "copy chat-option", children: [
-        /* @__PURE__ */ E.jsx("span", { className: "copy-icon", children: /* @__PURE__ */ E.jsx("i", { class: "fa-regular fa-clipboard" }) }),
+        /* @__PURE__ */ E.jsx("span", { className: "copy-icon", children: /* @__PURE__ */ E.jsx("i", { className: "fa-regular fa-clipboard" }) }),
         "Copy"
       ] }) })
     ] })
@@ -16398,7 +16400,7 @@ function Wn() {
   }, [e]), /* @__PURE__ */ E.jsxs("div", { className: "chat-area", ref: n, children: [
     /* @__PURE__ */ E.jsx(Ai, {}),
     /* @__PURE__ */ E.jsx(Dl, {}),
-    /* @__PURE__ */ E.jsx("div", { style: { width: "100%" }, children: e.map((r, a) => /* @__PURE__ */ E.jsxs(E.Fragment, { children: [
+    /* @__PURE__ */ E.jsx("div", { style: { width: "100%" }, children: e.map((r, a) => /* @__PURE__ */ E.jsxs(E.Fragment, { key: r.question + "-" + a, children: [
       /* @__PURE__ */ E.jsx(Ri, { id: r.question }, a + r.question),
       /* @__PURE__ */ E.jsx(Ml, { questionId: r.question }, a)
     ] })) })
@@ -16412,9 +16414,9 @@ function Dl() {
   }
   return /* @__PURE__ */ E.jsxs("div", { className: "hero-section", children: [
     /* @__PURE__ */ E.jsxs("div", { className: "floating-icons", children: [
-      /* @__PURE__ */ E.jsx("span", { className: "icon forward forward-second", children: /* @__PURE__ */ E.jsx("i", { class: "fa-solid fa-comments-dollar" }) }),
-      /* @__PURE__ */ E.jsx("span", { className: "icon backward backward-first", children: /* @__PURE__ */ E.jsx("i", { class: "fa-regular fa-compass" }) }),
-      /* @__PURE__ */ E.jsx("span", { className: "icon backward backward-second", children: /* @__PURE__ */ E.jsx("i", { class: "fa-solid fa-sitemap" }) })
+      /* @__PURE__ */ E.jsx("span", { className: "icon forward forward-second", children: /* @__PURE__ */ E.jsx("i", { className: "fa-solid fa-comments-dollar" }) }),
+      /* @__PURE__ */ E.jsx("span", { className: "icon backward backward-first", children: /* @__PURE__ */ E.jsx("i", { className: "fa-regular fa-compass" }) }),
+      /* @__PURE__ */ E.jsx("span", { className: "icon backward backward-second", children: /* @__PURE__ */ E.jsx("i", { className: "fa-solid fa-sitemap" }) })
     ] }),
     /* @__PURE__ */ E.jsxs("h1", { className: "hero-title", children: [
       /* @__PURE__ */ E.jsx("span", { className: "stylize", style: a ? {} : { display: "none" }, children: a ? t.emphasized : "10x" }),
@@ -16428,7 +16430,7 @@ function Yn({ setWindowState: e }) {
   let { title: t } = kt(ot);
   return /* @__PURE__ */ E.jsxs("div", { className: "chat-component-heading flex justify-between", children: [
     /* @__PURE__ */ E.jsxs("h3", { children: [
-      /* @__PURE__ */ E.jsx("i", { class: "fa-solid fa-robot" }),
+      /* @__PURE__ */ E.jsx("i", { className: "fa-solid fa-robot" }),
       t || "10xAnswers"
     ] }),
     /* @__PURE__ */ E.jsx(
@@ -16438,7 +16440,7 @@ function Yn({ setWindowState: e }) {
         onClick: () => {
           e((n) => !n);
         },
-        children: /* @__PURE__ */ E.jsx("i", { class: "fa-solid fa-xmark" })
+        children: /* @__PURE__ */ E.jsx("i", { className: "fa-solid fa-xmark" })
       }
     )
   ] });
@@ -16486,14 +16488,14 @@ function Pl({
       /* @__PURE__ */ E.jsx(Wn, {}),
       /* @__PURE__ */ E.jsx(hn, {})
     ] }),
-    /* @__PURE__ */ E.jsx("div", { className: "chatbot-open-icon " + y, style: { ...p }, onClick: () => O(!M), children: /* @__PURE__ */ E.jsx("span", { children: /* @__PURE__ */ E.jsx("i", { class: "fa-solid fa-robot" }) }) })
+    /* @__PURE__ */ E.jsx("div", { className: "chatbot-open-icon " + y, style: { ...p }, onClick: () => O(!M), children: /* @__PURE__ */ E.jsx("span", { children: /* @__PURE__ */ E.jsx("i", { className: "fa-solid fa-robot" }) }) })
   ] }) }) : /* @__PURE__ */ E.jsxs("div", { style: M ? { ...h } : { height: "min-content", width: "min-content" }, className: "chat-and-icon-container transition-all " + v, children: [
     /* @__PURE__ */ E.jsxs("div", { className: "chat-section transition-all" + _, style: M ? { ...b } : { width: 0, height: 0, display: "none" }, children: [
       /* @__PURE__ */ E.jsx(Yn, { setWindowState: O }),
       /* @__PURE__ */ E.jsx(Wn, {}),
       /* @__PURE__ */ E.jsx(hn, {})
     ] }),
-    !M && /* @__PURE__ */ E.jsx("div", { className: "chatbot-open-icon " + y, style: { ...p }, onClick: () => O(!M), children: /* @__PURE__ */ E.jsx("span", { children: /* @__PURE__ */ E.jsx("i", { class: "fa-solid fa-robot" }) }) })
+    !M && /* @__PURE__ */ E.jsx("div", { className: "chatbot-open-icon " + y, style: { ...p }, onClick: () => O(!M), children: /* @__PURE__ */ E.jsx("span", { children: /* @__PURE__ */ E.jsx("i", { className: "fa-solid fa-robot" }) }) })
   ] }) });
 }
 export {

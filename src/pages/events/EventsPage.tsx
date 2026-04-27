@@ -41,7 +41,7 @@ const EventsPage: React.FC = () => {
 
   // Pagination
   const [page, setPage] = useState<number>(1);
-  const [pageSize, setPageSize] = useState<number>(9);
+  const [pageSize, setPageSize] = useState<number>(6);
 
   useEffect(() => {
     // reset to first page when filter or pageSize changes
