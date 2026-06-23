@@ -46,10 +46,16 @@ const ChapterPage: React.FC<ChapterPageProps> = ({ chapter, chaptersList }) => {
                   />
                 </div>
               </div>
-              <h1 className="text-4xl md:text-6xl font-serif mb-4" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.5)' }}>
+              <h1
+                className="text-4xl md:text-6xl font-serif mb-4"
+                style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.5)' }}
+              >
                 {chapter.name}
               </h1>
-              <p className="text-lg md:text-xl italic max-w-3xl mx-auto" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.5)' }}>
+              <p
+                className="text-lg md:text-xl italic max-w-3xl mx-auto"
+                style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.5)' }}
+              >
                 {chapter.theme}
               </p>
             </div>
@@ -59,12 +65,12 @@ const ChapterPage: React.FC<ChapterPageProps> = ({ chapter, chaptersList }) => {
 
       <nav className="bg-white border-b border-gray-200 -mt-16 relative z-10">
         <div className="max-w-6xl mx-auto px-4">
-    <div className="flex flex-wrap justify-center -mb-px gap-2 overflow-x-auto sm:overflow-visible -mx-2 px-2">
+          <div className="flex flex-wrap justify-center -mb-px gap-2 overflow-x-auto sm:overflow-visible -mx-2 px-2">
             {chaptersList.map((c) => (
               <Link
                 key={c.shortName}
                 to={c.path}
-      className={`py-3 px-3 sm:px-6 text-sm font-medium border-b-2 transition-colors ${
+                className={`py-3 px-3 sm:px-6 text-sm font-medium border-b-2 transition-colors ${
                   c.shortName === chapter.shortName
                     ? 'border-primary text-primary'
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
@@ -81,13 +87,17 @@ const ChapterPage: React.FC<ChapterPageProps> = ({ chapter, chaptersList }) => {
         <div className="max-w-6xl mx-auto">
           <section className="mb-16">
             <h2 className="text-3xl font-serif text-center text-black mb-6">Our Mission</h2>
-            <div className={`bg-white border-l-4 ${chapter.borderColor} p-6 rounded-r-lg shadow-md`}>
+            <div
+              className={`bg-white border-l-4 ${chapter.borderColor} p-6 rounded-r-lg shadow-md`}
+            >
               <p className="text-gray-700 leading-relaxed italic">{chapter.mission}</p>
             </div>
           </section>
 
           <section className="mb-16">
-            <h2 className="text-3xl font-serif text-center text-black mb-10">Executive Committee</h2>
+            <h2 className="text-3xl font-serif text-center text-black mb-10">
+              Executive Committee
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {chapter.members.map((member: Member, index: number) => (
                 <MemberCard key={index} member={member} />
@@ -111,51 +121,62 @@ const ChapterPage: React.FC<ChapterPageProps> = ({ chapter, chaptersList }) => {
                       </div>
                     </div>
                     <p className="text-muted-foreground text-sm leading-relaxed">
-                      A notable accomplishment by the {chapter.name} chapter, showcasing their dedication and excellence.
+                      A notable accomplishment by the {chapter.name} chapter, showcasing their
+                      dedication and excellence.
                     </p>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-center text-gray-500 col-span-full">This chapter's achievements will be updated soon.</p>
+              <p className="text-center text-gray-500 col-span-full">
+                This chapter's achievements will be updated soon.
+              </p>
             )}
           </section>
 
           <section>
             <h2 className="text-3xl font-serif text-center text-black mb-10">Our Events</h2>
-              {(() => {
-                const upcoming = chapter.events.filter((e) => String((e as any).status).toLowerCase() !== 'completed');
-                const completed = chapter.events.filter((e) => String((e as any).status).toLowerCase() === 'completed');
+            {(() => {
+              const upcoming = chapter.events.filter(
+                (e) => String(e.status).toLowerCase() !== 'completed'
+              );
+              const completed = chapter.events.filter(
+                (e) => String(e.status).toLowerCase() === 'completed'
+              );
 
-                return (
-                  <>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-                      {upcoming.length > 0 ? (
-                        upcoming.map((event: Event, index: number) => (
-                          <div key={`up-${index}`} className="h-full flex">
+              return (
+                <>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                    {upcoming.length > 0 ? (
+                      upcoming.map((event: Event, index: number) => (
+                        <div key={`up-${index}`} className="h-full flex">
+                          <EventCard event={event} className="flex-1" />
+                        </div>
+                      ))
+                    ) : (
+                      <p className="text-center text-gray-500 col-span-full">
+                        No upcoming events for this chapter.
+                      </p>
+                    )}
+                  </div>
+
+                  {completed.length > 0 && (
+                    <div className="mt-12">
+                      <h3 className="text-2xl font-serif text-center text-gray-700 mb-6">
+                        Past Events
+                      </h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {completed.map((event: Event, index: number) => (
+                          <div key={`past-${index}`} className="h-full flex opacity-90">
                             <EventCard event={event} className="flex-1" />
                           </div>
-                        ))
-                      ) : (
-                        <p className="text-center text-gray-500 col-span-full">No upcoming events for this chapter.</p>
-                      )}
-                    </div>
-
-                    {completed.length > 0 && (
-                      <div className="mt-12">
-                        <h3 className="text-2xl font-serif text-center text-gray-700 mb-6">Past Events</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                          {completed.map((event: Event, index: number) => (
-                            <div key={`past-${index}`} className="h-full flex opacity-90">
-                              <EventCard event={event} className="flex-1" />
-                            </div>
-                          ))}
-                        </div>
+                        ))}
                       </div>
-                    )}
-                  </>
-                );
-              })()}
+                    </div>
+                  )}
+                </>
+              );
+            })()}
           </section>
         </div>
       </main>

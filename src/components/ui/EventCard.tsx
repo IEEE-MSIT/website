@@ -1,8 +1,9 @@
 import React from 'react';
 import { Clock, MapPin, Share2 } from 'lucide-react';
+import type { Event } from '../../types';
 
 interface EventCardProps {
-  event: any;
+  event: Event;
   className?: string;
 }
 
@@ -104,10 +105,10 @@ const EventCard: React.FC<EventCardProps> = ({ event, className = '' }) => {
             {isCompleted
               ? 'Event Ended'
               : event.actionLinks?.some((l: string) => l.startsWith('register:'))
-              ? 'Register'
-              : event.actionLinks?.some((l: string) => l.startsWith('livestream:'))
-              ? 'Join Livestream'
-              : 'View Details'}
+                ? 'Register'
+                : event.actionLinks?.some((l: string) => l.startsWith('livestream:'))
+                  ? 'Join Livestream'
+                  : 'View Details'}
           </button>
 
           <button

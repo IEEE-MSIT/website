@@ -23,3 +23,10 @@ pnpm-lock.yaml
 # IDE files
 .vscode/
 .idea/
+
+# Generated and proxy files
+dev-dist/
+local_packages/
+image-proxy-server.js
+package-proxy.json
+README-proxy.md

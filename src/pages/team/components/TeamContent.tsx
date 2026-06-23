@@ -56,7 +56,6 @@ const TeamContent = ({ activeTab }: TeamContentProps) => {
             </div>
           )}
 
-
           {activeTab === 'execom2025' && (
             <div>
               <h2 className="text-3xl font-serif text-black mb-8 text-center">

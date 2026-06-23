@@ -14,8 +14,36 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { hackathons } from '../../../data/data';
 
+interface HackathonWinner {
+  team: string;
+  place: string;
+  project: string;
+  prize: string;
+  members: [];
+  projectLink?: string;
+}
+
+interface PastHackathon {
+  name: string;
+  platform: string;
+  platformLink: string;
+  tagline: string;
+  duration: string;
+  date: string;
+  location: string;
+  prize: string;
+  participants: string;
+  organizer: string;
+  image: string;
+  description: string;
+  images: string[];
+  judges: string[];
+  technologies: string[];
+  winners: HackathonWinner[];
+}
+
 const Hackathons = () => {
-  const [selectedHackathon, setSelectedHackathon] = useState<any>(null);
+  const [selectedHackathon, setSelectedHackathon] = useState<PastHackathon | null>(null);
 
   return (
     <section className="py-12 md:py-20 px-4 md:px-6 bg-background">
@@ -293,7 +321,7 @@ const Hackathons = () => {
                 <div>
                   <h3 className="text-xl font-serif text-black mb-4">Winners</h3>
                   <div className="space-y-4">
-                    {selectedHackathon.winners.map((winner: any, index: number) => (
+                    {selectedHackathon.winners.map((winner: HackathonWinner, index: number) => (
                       <div
                         key={index}
                         className="bg-gradient-to-r from-amber-50 to-yellow-50 p-4 rounded-xl border border-amber-200"

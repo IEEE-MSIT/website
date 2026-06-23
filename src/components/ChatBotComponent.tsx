@@ -7,13 +7,13 @@ function CustomChatBot() {
   return (
     <ChatBot
       chatComponentStyle={{
-        "maxHeight": "700px",
-        "height": "auto",
-        "width": "350px",
-        "margin": 0
+        maxHeight: '700px',
+        height: 'auto',
+        width: '350px',
+        margin: 0,
       }}
       chatWindowStyle={{
-        "backgroundColor": "rgb(11 10 10)"
+        backgroundColor: 'rgb(11 10 10)',
       }}
       backendUrl="https://ask-10x-questions.vercel.app/"
       title="MSIT"

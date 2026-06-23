@@ -9,15 +9,13 @@ export const events = [
     endDate: '14th April 2026',
     venue: 'MSIT',
     registrationType: 'free',
-    actionLinks: [
-      'contact: Mehak : +91 8368215595',
-      'contact: Satyam : +91 7451005000',
-    ],
+    actionLinks: ['contact: Mehak : +91 8368215595', 'contact: Satyam : +91 7451005000'],
     prizes: null,
     description:
       'IEEE MSIT is conducting interviews for various department committees including Design, Project, Web Dev, Editorial, Program, Creativity, Publicity, Sponsorship, and Membership Committees. The registration deadline was 14th April 2026. This is an opportunity for students to shape ideas and lead innovation within the society.',
     isRelevant: true,
-    cloudinary_url: 'https://res.cloudinary.com/db8dyoify/image/upload/v1776786817/WhatsApp_Image_2026-04-12_at_11.57.17_cr7jt3.jpg',
+    cloudinary_url:
+      'https://res.cloudinary.com/db8dyoify/image/upload/v1776786817/WhatsApp_Image_2026-04-12_at_11.57.17_cr7jt3.jpg',
     organisedBy: 'IEEE MSIT',
   },
   {
@@ -29,14 +27,13 @@ export const events = [
     endDate: '13 April, 2026',
     venue: 'Google Meet',
     registrationType: 'free',
-    actionLinks: [
-      'join: Online Webinar',
-    ],
+    actionLinks: ['join: Online Webinar'],
     prizes: null,
     description:
       'IEEE MSIT and IEEE WIE present a webinar on Cybersecurity & Ethical Hacking. The session explores real-world hacking techniques, cybersecurity threats, and digital protection. The speaker is Krishna Mahajan, a Cybersecurity Expert and Industry Professional. The event was held from 8:00 PM – 9:00 PM.',
     isRelevant: true,
-    cloudinary_url: 'https://res.cloudinary.com/db8dyoify/image/upload/v1776786816/WhatsApp_Image_2026-04-13_at_18.08.08_dawewe.jpg',
+    cloudinary_url:
+      'https://res.cloudinary.com/db8dyoify/image/upload/v1776786816/WhatsApp_Image_2026-04-13_at_18.08.08_dawewe.jpg',
     organisedBy: 'IEEE MSIT & IEEE WIE MSIT',
   },
   {
@@ -48,15 +45,13 @@ export const events = [
     endDate: '16 April 2026',
     venue: 'Room No 206',
     registrationType: 'free',
-    actionLinks: [
-      'contact: JAYANT : 95999 18990',
-      'contact: RADHIKA : 96504 22130',
-    ],
+    actionLinks: ['contact: JAYANT : 95999 18990', 'contact: RADHIKA : 96504 22130'],
     prizes: null,
     description:
       'A one-stop guide to VLSI covering roadmaps, EDA tools, and career opportunities to get industry-ready. The session was led by Rajat Kumar Singh, Founder & CEO of VLSI FOR ALL Pvt. Ltd. Organized by IEEE MSIT Robotics & Automation Society under the guidance of Chapter Advisor Dr. Anshul Pareek.',
     isRelevant: true,
-    cloudinary_url: 'https://res.cloudinary.com/db8dyoify/image/upload/v1776786816/WhatsApp_Image_2026-04-15_at_08.00.20_unh9op.jpg',
+    cloudinary_url:
+      'https://res.cloudinary.com/db8dyoify/image/upload/v1776786816/WhatsApp_Image_2026-04-15_at_08.00.20_unh9op.jpg',
     organisedBy: 'IEEE RAS MSIT',
   },
   {
@@ -68,15 +63,13 @@ export const events = [
     endDate: '17th April 2026',
     venue: 'Room no. 206',
     registrationType: 'free',
-    actionLinks: [
-      'contact: Sumit Roy : +91 8510020963',
-      'contact: Lakshay : +91 7988944892',
-    ],
+    actionLinks: ['contact: Sumit Roy : +91 8510020963', 'contact: Lakshay : +91 7988944892'],
     prizes: null,
     description:
       'An expert tech talk session on Industrial Automation featuring Vishwjeet Kumar Singh, Lead Technical Consultant & Expert Trainer in PLC and SCADA. The session covered expertise in Embedded Systems, IOT, and real-time projects like Smart Home Automation and RFID based attendance systems.',
     isRelevant: true,
-    cloudinary_url: 'https://res.cloudinary.com/db8dyoify/image/upload/v1776786817/WhatsApp_Image_2026-04-16_at_20.44.48_ejgciw.jpg',
+    cloudinary_url:
+      'https://res.cloudinary.com/db8dyoify/image/upload/v1776786817/WhatsApp_Image_2026-04-16_at_20.44.48_ejgciw.jpg',
     organisedBy: 'IEEE PES MSIT',
   },
   {
@@ -96,7 +89,8 @@ export const events = [
     description:
       'IEEE MSIT Computer Society presents a webinar on Digital Forensics and Cyber Familiarity. The speaker, Himanshu Joshi (Founder of NK Cyber Solution), shared insights on OSINT, Digital Forensics, and Android/iOS Hardware. The session started at 07:00 PM.',
     isRelevant: true,
-    cloudinary_url: 'https://res.cloudinary.com/db8dyoify/image/upload/v1776786817/WhatsApp_Image_2026-04-17_at_16.47.58_l0ed0c.jpg',
+    cloudinary_url:
+      'https://res.cloudinary.com/db8dyoify/image/upload/v1776786817/WhatsApp_Image_2026-04-17_at_16.47.58_l0ed0c.jpg',
     organisedBy: 'IEEE CS MSIT',
   },
   {
@@ -108,14 +102,13 @@ export const events = [
     endDate: '22nd April 2026',
     venue: 'Online',
     registrationType: 'free',
-    actionLinks: [
-      'contact: Vanisha Raj (SIG Lead) : +91 85058 26381',
-    ],
+    actionLinks: ['contact: Vanisha Raj (SIG Lead) : +91 85058 26381'],
     prizes: null,
     description:
       'A two-day Special Interest Group (SIG) workshop titled "The Generative Era." Led by Aarav Aggarwal, Software Lead of the Project Committee and AI/ML expert. The workshop focused on the latest trends in Generative AI and was held from 6:30 to 7:30 PM on both days.',
     isRelevant: true,
-    cloudinary_url: 'https://res.cloudinary.com/db8dyoify/image/upload/v1776786817/WhatsApp_Image_2026-04-20_at_22.51.59_hbyooz.jpg',
+    cloudinary_url:
+      'https://res.cloudinary.com/db8dyoify/image/upload/v1776786817/WhatsApp_Image_2026-04-20_at_22.51.59_hbyooz.jpg',
     organisedBy: 'IEEE MSIT SIG',
   },
   {

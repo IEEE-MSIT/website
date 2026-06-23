@@ -11,6 +11,7 @@ export default tseslint.config(
   {
     ignores: [
       'dist/',
+      'dev-dist/',
       'build/',
       'node_modules/',
       '*.config.js',
