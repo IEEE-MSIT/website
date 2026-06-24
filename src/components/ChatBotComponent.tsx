@@ -6,40 +6,74 @@ import { execom2026 } from '../data/execom2026';
 import { execom2025 } from '../data/execom2025';
 import { execom2024 } from '../data/execom2024';
 
+interface Achievement {
+  title: string;
+  subtitle: string;
+  description: string;
+  icon?: string;
+}
+
+interface ExecomMember {
+  name: string;
+  position: string;
+  linkedin?: string;
+}
+
+interface ExecomData {
+  chapters: Record<string, ExecomMember[]>;
+  committees: Record<string, ExecomMember[]>;
+}
+
 function CustomChatBot() {
   const geminiApiKey = import.meta.env.VITE_GEMINIAPIKEY;
 
-  const chaptersKnowledge = chapters.map(c => `### ${c.name} (${c.shortName})
+  const chaptersKnowledge = chapters
+    .map(
+      (c) => `### ${c.name} (${c.shortName})
 - Motto: ${c.motto}
 - Description: ${c.description}
-- Link: ${c.path}`).join('\n\n');
+- Link: ${c.path}`
+    )
+    .join('\n\n');
 
   const hackathonsKnowledge = `### Past Hackathons
-${hackathons.past.map(h => `- **${h.name}**: ${h.tagline} on ${h.date}. Held at ${h.location}. Organized by ${h.organizer}. Prizes: ${h.prize}. Winners: ${h.winners.map(w => `${w.place}: Team ${w.team} (${w.project}, Prize: ${w.prize})`).join(', ')}`).join('\n')}
+${hackathons.past.map((h) => `- **${h.name}**: ${h.tagline} on ${h.date}. Held at ${h.location}. Organized by ${h.organizer}. Prizes: ${h.prize}. Winners: ${h.winners.map((w) => `${w.place}: Team ${w.team} (${w.project}, Prize: ${w.prize})`).join(', ')}`).join('\n')}
 
 ### Upcoming Hackathons
-${hackathons.upcoming.map(h => `- **${h.name}**: ${h.tagline} on ${h.date}. Organized by ${h.organizer}. Expected participants: ${h.participants}.`).join('\n')}`;
+${hackathons.upcoming.map((h) => `- **${h.name}**: ${h.tagline} on ${h.date}. Organized by ${h.organizer}. Expected participants: ${h.participants}.`).join('\n')}`;
 
-  const achievementsKnowledge = Object.entries(achievements).map(([year, list]) => `### Year ${year} Achievements
-${(list as any[]).map(a => `- **${a.title}** (${a.subtitle}): ${a.description}`).join('\n')}`).join('\n\n');
+  const achievementsKnowledge = Object.entries(achievements)
+    .map(
+      ([year, list]) => `### Year ${year} Achievements
+${(list as Achievement[]).map((a) => `- **${a.title}** (${a.subtitle}): ${a.description}`).join('\n')}`
+    )
+    .join('\n\n');
 
-  const eventsKnowledge = events.map(e => `- **${e.title}** (${e.type} organised by ${e.organisedBy})
+  const eventsKnowledge = events
+    .map(
+      (e) => `- **${e.title}** (${e.type} organised by ${e.organisedBy})
   - Date: ${e.startDate} to ${e.endDate}
   - Venue: ${e.venue}
   - Registration: ${e.registrationType || 'Contact organizers'}
   - Details: ${e.description}
-  - Status: ${e.status}`).join('\n\n');
+  - Status: ${e.status}`
+    )
+    .join('\n\n');
 
-  const formatExecom = (year: number, data: typeof execom2026) => {
-    const chaptersText = Object.entries(data.chapters).map(([chapterName, members]) => {
-      return `#### ${chapterName}
-${members.map(m => `- **${m.name}**: ${m.position} ${m.linkedin && m.linkedin !== '#' ? `([LinkedIn](${m.linkedin}))` : ''}`).join('\n')}`;
-    }).join('\n\n');
+  const formatExecom = (year: number, data: ExecomData) => {
+    const chaptersText = Object.entries(data.chapters)
+      .map(([chapterName, members]) => {
+        return `#### ${chapterName}
+${members.map((m) => `- **${m.name}**: ${m.position} ${m.linkedin && m.linkedin !== '#' ? `([LinkedIn](${m.linkedin}))` : ''}`).join('\n')}`;
+      })
+      .join('\n\n');
 
-    const committeesText = Object.entries(data.committees).map(([committeeName, members]) => {
-      return `#### ${committeeName}
-${members.map(m => `- **${m.name}**: ${m.position} ${m.linkedin && m.linkedin !== '#' ? `([LinkedIn](${m.linkedin}))` : ''}`).join('\n')}`;
-    }).join('\n\n');
+    const committeesText = Object.entries(data.committees)
+      .map(([committeeName, members]) => {
+        return `#### ${committeeName}
+${members.map((m) => `- **${m.name}**: ${m.position} ${m.linkedin && m.linkedin !== '#' ? `([LinkedIn](${m.linkedin}))` : ''}`).join('\n')}`;
+      })
+      .join('\n\n');
 
     return `### Execom Year ${year}
   
@@ -51,8 +85,8 @@ ${committeesText}`;
   };
 
   const execom2026Knowledge = formatExecom(2026, execom2026);
-  const execom2025Knowledge = formatExecom(2025, execom2025 as any);
-  const execom2024Knowledge = formatExecom(2024, execom2024 as any);
+  const execom2025Knowledge = formatExecom(2025, execom2025 as ExecomData);
+  const execom2024Knowledge = formatExecom(2024, execom2024 as ExecomData);
 
   const knowledgeBase = `
 ## Chapters
