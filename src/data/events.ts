@@ -1,4 +1,46 @@
 export const events = [
+  {
+    title: 'Exploring the World of IoT: Architecture & Applications',
+    type: 'workshop',
+    category: 'IoT & Automation',
+    status: 'completed',
+    startDate: '23 June 2026',
+    endDate: '23 June 2026',
+    venue: 'Online',
+    registrationType: 'free',
+    actionLinks: [
+      'https://chat.whatsapp.com/HSRz9eY8ViQ1539VqpjAqc',
+      'contact: Radhika (RAS Chairperson) : +91 9650422130',
+      'contact: Jayant (RAS PR Head) : +91 9599918990',
+    ],
+    prizes: null,
+    description:
+      'IEEE MSIT RAS invites you to embark on an exciting journey into the world of the Internet of Things (IoT) and discover how connected devices are transforming industries and shaping the future! Speaker: Nishant Kumar (Founder & CEO, TechGlaz Labs | PhD Scholar, IIT Guwahati). Time: 6:00 PM – 7:00 PM.',
+    isRelevant: true,
+    cloudinary_url: '/iot-workshop.png',
+    organisedBy: 'IEEE RAS MSIT',
+  },
+  {
+    title: 'How Graduates Should Prepare for the AI Era',
+    type: 'webinar',
+    category: 'AI & Careers',
+    status: 'completed',
+    startDate: '13th May 2026',
+    endDate: '13th May 2026',
+    venue: 'Google Meet',
+    registrationType: 'free',
+    actionLinks: [
+      'https://tinyurl.com/334j6psr',
+      'contact: Poonam (CS Chair person) : +91 97738 56422',
+      'contact: Shankul (CS Vice Chair person) : +91 78408 08449',
+    ],
+    prizes: ['Free Swags Achievable!'],
+    description:
+      'We are excited to invite you to an insightful "How Graduates Should Prepare for the AI Era" Webinar featuring industry expert Apoorv Garg (Member at Django Software Foundation, Community Manager at Observal, Ex-SDE @Wells Fargo, GSOC Mentor). Learn about navigating the AI landscape, essential skills for the future job market, and leveraging open source.',
+    isRelevant: true,
+    cloudinary_url: '/ai-era-webinar.jpg',
+    organisedBy: 'IEEE CS MSIT',
+  },
   // ... existing events
   {
     title: 'IEEE Interviews: Calls for Department Committees',
