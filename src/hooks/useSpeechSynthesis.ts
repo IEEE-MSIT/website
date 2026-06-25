@@ -23,7 +23,7 @@ export function useSpeechSynthesis() {
     if (synthRef.current) {
       try {
         synthRef.current.cancel();
-      } catch (err) {
+      } catch {
         // Cancel failed
       }
     }
@@ -36,7 +36,7 @@ export function useSpeechSynthesis() {
       try {
         synthRef.current.pause();
         setIsSpeechPaused(true);
-      } catch (err) {
+      } catch {
         // Pause failed
       }
     }
@@ -47,63 +47,69 @@ export function useSpeechSynthesis() {
       try {
         synthRef.current.resume();
         setIsSpeechPaused(false);
-      } catch (err) {
+      } catch {
         // Resume failed
       }
     }
   }, [speakingMessageId, isSpeechPaused]);
 
-  const speak = useCallback((text: string, msgId: string) => {
-    if (!synthRef.current) return;
+  const speak = useCallback(
+    (text: string, msgId: string) => {
+      if (!synthRef.current) return;
 
-    stop();
+      stop();
 
-    const cleanText = text
-      .replace(/\*\*?/g, '')
-      .replace(/###?/g, '')
-      .replace(/[-*]\s+/g, '')
-      .trim();
+      const cleanText = text
+        .replace(/\*\*?/g, '')
+        .replace(/###?/g, '')
+        .replace(/[-*]\s+/g, '')
+        .trim();
 
-    try {
-      const utterance = new SpeechSynthesisUtterance(cleanText);
+      try {
+        const utterance = new SpeechSynthesisUtterance(cleanText);
 
-      const voices = synthRef.current.getVoices();
-      const naturalVoice = voices.find(
-        (v) =>
-          v.lang.startsWith('en') &&
-          (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Microsoft'))
-      ) || voices.find((v) => v.lang.startsWith('en'));
+        const voices = synthRef.current.getVoices();
+        const naturalVoice =
+          voices.find(
+            (v) =>
+              v.lang.startsWith('en') &&
+              (v.name.includes('Natural') ||
+                v.name.includes('Google') ||
+                v.name.includes('Microsoft'))
+          ) || voices.find((v) => v.lang.startsWith('en'));
 
-      if (naturalVoice) {
-        utterance.voice = naturalVoice;
+        if (naturalVoice) {
+          utterance.voice = naturalVoice;
+        }
+
+        utterance.onend = () => {
+          setSpeakingMessageId(null);
+          setIsSpeechPaused(false);
+        };
+
+        utterance.onerror = () => {
+          setSpeakingMessageId(null);
+          setIsSpeechPaused(false);
+        };
+
+        utteranceRef.current = utterance;
+        setSpeakingMessageId(msgId);
+        synthRef.current.speak(utterance);
+      } catch (err) {
+        if (import.meta.env.DEV) {
+          console.error('Speech synthesis speak action failed:', err);
+        }
       }
-
-      utterance.onend = () => {
-        setSpeakingMessageId(null);
-        setIsSpeechPaused(false);
-      };
-
-      utterance.onerror = () => {
-        setSpeakingMessageId(null);
-        setIsSpeechPaused(false);
-      };
-
-      utteranceRef.current = utterance;
-      setSpeakingMessageId(msgId);
-      synthRef.current.speak(utterance);
-    } catch (err) {
-      if (import.meta.env.DEV) {
-        console.error('Speech synthesis speak action failed:', err);
-      }
-    }
-  }, [stop]);
+    },
+    [stop]
+  );
 
   useEffect(() => {
     return () => {
       if (synthRef.current) {
         try {
           synthRef.current.cancel();
-        } catch (err) {
+        } catch {
           // Cancel failed
         }
       }

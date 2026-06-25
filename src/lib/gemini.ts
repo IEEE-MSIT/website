@@ -193,11 +193,11 @@ export async function askGemini(chatHistory: Message[]): Promise<string> {
       });
 
       if (upcoming.length === 0) {
-        return "There are currently no upcoming events listed on the IEEE MSIT website.";
+        return 'There are currently no upcoming events listed on the IEEE MSIT website.';
       }
 
       return (
-        "Here are the upcoming events listed on the website:\n\n" +
+        'Here are the upcoming events listed on the website:\n\n' +
         upcoming
           .map(
             (e) =>
@@ -207,7 +207,7 @@ export async function askGemini(chatHistory: Message[]): Promise<string> {
       );
     } else {
       return (
-        "Here are the events listed on the IEEE MSIT website:\n\n" +
+        'Here are the events listed on the IEEE MSIT website:\n\n' +
         events
           .map(
             (e) =>
@@ -272,7 +272,9 @@ export async function askGemini(chatHistory: Message[]): Promise<string> {
       response.status === 504
     ) {
       if (isDev) {
-        console.warn(`Primary model failed with status ${response.status}. Retrying with fallback model...`);
+        console.warn(
+          `Primary model failed with status ${response.status}. Retrying with fallback model...`
+        );
       }
       response = await fetch(endpointFallback, fetchParams);
     }
@@ -304,7 +306,7 @@ export async function askGemini(chatHistory: Message[]): Promise<string> {
 
   let data: GeminiResponse;
   try {
-    data = await response.json() as GeminiResponse;
+    data = (await response.json()) as GeminiResponse;
   } catch (jsonErr: unknown) {
     if (isDev) {
       console.error('Failed to parse Gemini API JSON response:', jsonErr);
@@ -325,7 +327,7 @@ export async function askGemini(chatHistory: Message[]): Promise<string> {
 
   const candidate = data.candidates?.[0];
   const parts = candidate?.content?.parts;
-  
+
   if (!parts || parts.length === 0) {
     if (isDev) {
       console.error('Response structure was valid but lacked content parts:', data);
@@ -349,7 +351,7 @@ export async function askGemini(chatHistory: Message[]): Promise<string> {
     if (isDev) {
       console.warn(`Gemini response indicates partial execution. FinishReason: ${finishReason}`);
     }
-    
+
     // Ensure markdown tags are correctly paired/closed
     const codeBlockCount = (generatedText.match(/```/g) || []).length;
     if (codeBlockCount % 2 !== 0) {
@@ -360,7 +362,11 @@ export async function askGemini(chatHistory: Message[]): Promise<string> {
       generatedText += '**';
     }
 
-    if (!generatedText.endsWith('.') && !generatedText.endsWith('!') && !generatedText.endsWith('?')) {
+    if (
+      !generatedText.endsWith('.') &&
+      !generatedText.endsWith('!') &&
+      !generatedText.endsWith('?')
+    ) {
       generatedText += '... [Response truncated]';
     } else {
       generatedText += ' [Response truncated]';

@@ -28,14 +28,17 @@ export function useSpeechRecognition() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [transcript, setTranscript] = useState('');
   const [error, setError] = useState<string | null>(null);
-  
+
   const recognitionRef = useRef<ISpeechRecognitionInstance | null>(null);
   const [isSupported, setIsSupported] = useState(false);
 
   useEffect(() => {
     try {
-      const SpeechRecognitionAPI =
-        (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+      const win = window as unknown as {
+        SpeechRecognition?: new () => ISpeechRecognitionInstance;
+        webkitSpeechRecognition?: new () => ISpeechRecognitionInstance;
+      };
+      const SpeechRecognitionAPI = win.SpeechRecognition || win.webkitSpeechRecognition;
       if (SpeechRecognitionAPI) {
         // Wrap instantiation in try-catch to prevent iframe/sandboxed crashes
         const rec = new SpeechRecognitionAPI() as ISpeechRecognitionInstance;
@@ -113,7 +116,7 @@ export function useSpeechRecognition() {
     if (recognitionRef.current) {
       try {
         recognitionRef.current.stop();
-      } catch (err) {
+      } catch {
         // Already stopped
       }
     }
@@ -123,7 +126,7 @@ export function useSpeechRecognition() {
     if (recognitionRef.current) {
       try {
         recognitionRef.current.abort();
-      } catch (err) {
+      } catch {
         // Already aborted
       }
     }

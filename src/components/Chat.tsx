@@ -1,5 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X, Send, Trash2, Mic, MicOff, Volume2, Settings, User as UserIcon, Square } from 'lucide-react';
+import {
+  MessageSquare,
+  X,
+  Send,
+  Trash2,
+  Mic,
+  MicOff,
+  Volume2,
+  Settings,
+  User as UserIcon,
+} from 'lucide-react';
 import { askGemini, Message } from '../lib/gemini';
 import { useSpeechRecognition } from '../hooks/useSpeechRecognition';
 import { useSpeechSynthesis } from '../hooks/useSpeechSynthesis';
@@ -17,10 +27,14 @@ const isDev = import.meta.env.DEV;
 const renderInlineMarkdown = (text: string) => {
   const boldAndLinkRegex = /(\*\*.*?\*\*|\[.*?\]\(.*?\))/g;
   const parts = text.split(boldAndLinkRegex);
-  
+
   return parts.map((part, idx) => {
     if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={idx} className="font-bold text-white">{part.slice(2, -2)}</strong>;
+      return (
+        <strong key={idx} className="font-bold text-white">
+          {part.slice(2, -2)}
+        </strong>
+      );
     }
     const linkMatch = part.match(/^\[(.*?)\]\((.*?)\)$/);
     if (linkMatch) {
@@ -46,13 +60,25 @@ const renderMessageText = (text: string) => {
   const lines = text.split('\n');
   return lines.map((line, lineIdx) => {
     if (line.startsWith('### ')) {
-      return <h3 key={lineIdx} className="text-base font-bold text-blue-400 mt-2 mb-1">{renderInlineMarkdown(line.slice(4))}</h3>;
+      return (
+        <h3 key={lineIdx} className="text-base font-bold text-blue-400 mt-2 mb-1">
+          {renderInlineMarkdown(line.slice(4))}
+        </h3>
+      );
     }
     if (line.startsWith('#### ')) {
-      return <h4 key={lineIdx} className="text-sm font-bold text-slate-300 mt-2 mb-1">{renderInlineMarkdown(line.slice(5))}</h4>;
+      return (
+        <h4 key={lineIdx} className="text-sm font-bold text-slate-300 mt-2 mb-1">
+          {renderInlineMarkdown(line.slice(5))}
+        </h4>
+      );
     }
     if (line.startsWith('## ')) {
-      return <h2 key={lineIdx} className="text-lg font-bold text-blue-300 mt-3 mb-2">{renderInlineMarkdown(line.slice(3))}</h2>;
+      return (
+        <h2 key={lineIdx} className="text-lg font-bold text-blue-300 mt-3 mb-2">
+          {renderInlineMarkdown(line.slice(3))}
+        </h2>
+      );
     }
     if (line.trim().startsWith('- ') || line.trim().startsWith('* ')) {
       const bulletContent = line.trim().slice(2);
@@ -108,7 +134,6 @@ export default function Chat() {
     stopListening,
     cancelListening,
     resetTranscript,
-    setError: setRecognitionError,
   } = useSpeechRecognition();
 
   const {
@@ -169,7 +194,7 @@ export default function Chat() {
 
   const handleSend = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
-    
+
     const trimmedInput = inputValue.trim();
     if (!trimmedInput || isLoading) return;
 
@@ -222,7 +247,8 @@ export default function Chat() {
       }
 
       const errorString = err instanceof Error ? err.message : '';
-      let userFriendlyText = "Sorry, I couldn't process your request right now. Please try again in a moment.";
+      let userFriendlyText =
+        "Sorry, I couldn't process your request right now. Please try again in a moment.";
 
       if (errorString === 'EMPTY_RESPONSE') {
         userFriendlyText = "I couldn't find an answer for that.";
@@ -249,7 +275,7 @@ export default function Chat() {
       if (isListening) {
         cancelListening();
       }
-      
+
       const initialMsgs: ChatMessage[] = [
         {
           id: 'welcome',
@@ -286,7 +312,11 @@ export default function Chat() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 font-sans" role="region" aria-label="IEEE Chat Assistant">
+    <div
+      className="fixed bottom-6 right-6 z-50 font-sans"
+      role="region"
+      aria-label="IEEE Chat Assistant"
+    >
       {/* Floating Toggle Button */}
       {!isOpen && (
         <button
@@ -339,7 +369,9 @@ export default function Chat() {
               <button
                 onClick={() => setShowSettings(!showSettings)}
                 className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
-                  showSettings ? 'text-blue-400 bg-slate-800/80' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+                  showSettings
+                    ? 'text-blue-400 bg-slate-800/80'
+                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
                 }`}
                 title="Voice Settings Menu"
                 aria-label="Toggle voice settings menu"
@@ -368,7 +400,9 @@ export default function Chat() {
             {/* Voice Settings Dropdown */}
             {showSettings && (
               <div className="absolute top-14 right-4 bg-slate-900 border border-slate-800 rounded-xl p-3 shadow-xl w-60 text-slate-200 z-50">
-                <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Voice Configuration</div>
+                <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                  Voice Configuration
+                </div>
                 <label className="flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-800/55 p-2 rounded-lg transition-colors">
                   <span className="text-sm select-none">Voice Responses</span>
                   <input
@@ -418,17 +452,15 @@ export default function Chat() {
                       ) : (
                         <span>AI</span>
                       )
+                    ) : !userAvatarError ? (
+                      <img
+                        src="/IEEEBlueLogowithWhiteBG.jpg"
+                        alt="User Avatar"
+                        className="w-full h-full object-cover"
+                        onError={() => setUserAvatarError(true)}
+                      />
                     ) : (
-                      !userAvatarError ? (
-                        <img
-                          src="/IEEEBlueLogowithWhiteBG.jpg"
-                          alt="User Avatar"
-                          className="w-full h-full object-cover"
-                          onError={() => setUserAvatarError(true)}
-                        />
-                      ) : (
-                        <UserIcon className="w-4.5 h-4.5 text-slate-400" />
-                      )
+                      <UserIcon className="w-4.5 h-4.5 text-slate-400" />
                     )}
                   </div>
 
@@ -443,9 +475,11 @@ export default function Chat() {
                     >
                       {isBot ? renderMessageText(msg.text) : msg.text}
                     </div>
-                    
+
                     {/* Audio Controls & Time Row */}
-                    <div className={`flex items-center gap-2 mt-1 ${isBot ? 'justify-start' : 'justify-end'}`}>
+                    <div
+                      className={`flex items-center gap-2 mt-1 ${isBot ? 'justify-start' : 'justify-end'}`}
+                    >
                       {isBot && msg.id !== 'welcome' && (
                         <VoiceControls
                           msgId={msg.id}
@@ -485,9 +519,18 @@ export default function Chat() {
                 <div className="bg-[rgb(11,10,10)] border border-slate-800/80 text-slate-400 px-4 py-3 rounded-2xl rounded-tl-none text-xs flex items-center gap-1.5 shadow-sm">
                   <span className="text-slate-400 font-medium">Assistant is thinking</span>
                   <div className="flex gap-1 items-center ml-1">
-                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                    <span
+                      className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce"
+                      style={{ animationDelay: '0ms' }}
+                    />
+                    <span
+                      className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce"
+                      style={{ animationDelay: '150ms' }}
+                    />
+                    <span
+                      className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce"
+                      style={{ animationDelay: '300ms' }}
+                    />
                   </div>
                 </div>
               </div>
@@ -532,7 +575,12 @@ export default function Chat() {
                   <Volume2 className="w-3.5 h-3.5 text-blue-400 animate-pulse" />
                   <span>Reading assistant reply aloud...</span>
                 </div>
-                <button onClick={stopSpeaking} className="text-xs text-red-400 font-semibold hover:underline">Stop</button>
+                <button
+                  onClick={stopSpeaking}
+                  className="text-xs text-red-400 font-semibold hover:underline"
+                >
+                  Stop
+                </button>
               </div>
             )}
 
@@ -560,8 +608,10 @@ export default function Chat() {
                     ? 'bg-red-500/20 border-red-500 text-red-400 animate-pulse shadow-red-500/10'
                     : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200'
                 }`}
-                title={isListening ? "Stop listening" : "Start Voice Input"}
-                aria-label={isListening ? "Stop voice listening mode" : "Start voice listening mode"}
+                title={isListening ? 'Stop listening' : 'Start Voice Input'}
+                aria-label={
+                  isListening ? 'Stop voice listening mode' : 'Start voice listening mode'
+                }
               >
                 <Mic className={`w-4 h-4 ${isListening ? 'text-red-500 animate-ping' : ''}`} />
               </button>
@@ -582,12 +632,14 @@ export default function Chat() {
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              placeholder={isListening ? "Listening continuously... speak now" : "Ask about IEEE MSIT..."}
+              placeholder={
+                isListening ? 'Listening continuously... speak now' : 'Ask about IEEE MSIT...'
+              }
               disabled={isLoading}
               className="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500/40 transition-colors disabled:opacity-50"
               aria-label="Type message here"
             />
-            
+
             <button
               type="submit"
               disabled={isLoading || !inputValue.trim()}
