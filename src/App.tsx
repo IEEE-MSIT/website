@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
-import ChatBotComponent from './components/ChatBotComponent';
+import Chat from './components/Chat';
+import { ErrorBoundary } from './components/common/ErrorBoundary';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import SEO from './components/SEO';
@@ -22,7 +23,9 @@ function App() {
   return (
     <BrowserRouter>
       <SEO />
-      <ChatBotComponent />
+      <ErrorBoundary>
+        <Chat />
+      </ErrorBoundary>
       <Header />
       <ScrollToTop />
       <Routes>

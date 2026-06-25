@@ -75,7 +75,6 @@
     <meta name="msapplication-config" content="/browserconfig.xml" />
 
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
 
     <link rel="prefetch" href="/src/main.tsx" />
@@ -117,6 +116,23 @@
           "1st Prize in IEEE Day Photo Contest STEM Category"
         ]
       }
+    </script>
+    <script>
+      window.addEventListener('error', function(e) {
+        if (e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) {
+          console.warn('Resource load failed. Clearing Service Worker registrations and reloading...', e.target.src || e.target.href);
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+              for (var i = 0; i < registrations.length; i++) {
+                registrations[i].unregister();
+              }
+              window.location.reload();
+            });
+          } else {
+            window.location.reload();
+          }
+        }
+      }, true);
     </script>
   </head>
   <body>
