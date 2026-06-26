@@ -1,5 +1,25 @@
 export const events = [
   {
+    title: 'Optimization Using Intelligence Techniques',
+    type: 'seminar',
+    category: 'Power & Energy',
+    status: 'completed',
+    startDate: '22 April 2026',
+    endDate: '22 April 2026',
+    venue: 'MSIT, Room No. 406',
+    registrationType: 'free',
+    actionLinks: [
+      'contact: Sumit Roy (PES Chairperson) : +91 85100 20963',
+      'contact: Lakshya (PES pr head) : +91 79889 44892',
+    ],
+    prizes: null,
+    description:
+      'In collaboration with IEEE PES IAS Delhi Chapter, IEEE PES MSIT brings to you an insightful seminar on Optimization Using Intelligence Techniques. Led by speaker Prof. Uma Nangia from DTU Delhi. Explore advanced concepts in optimization and intelligence techniques and gain valuable insights from an industry expert.',
+    isRelevant: true,
+    cloudinary_url: '/pes-day-seminar.png',
+    organisedBy: 'IEEE PES MSIT',
+  },
+  {
     title: 'Exploring the World of IoT: Architecture & Applications',
     type: 'workshop',
     category: 'IoT & Automation',
