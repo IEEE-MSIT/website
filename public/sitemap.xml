@@ -5,25 +5,25 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://ieeemsit-ochre.vercel.app/</loc>
-    <lastmod>2026-06-26T15:00:24.946Z</lastmod>
+    <lastmod>2026-06-26T15:32:25.170Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://ieeemsit-ochre.vercel.app/about</loc>
-    <lastmod>2026-06-26T15:00:24.947Z</lastmod>
+    <lastmod>2026-06-26T15:32:25.170Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ieeemsit-ochre.vercel.app/events</loc>
-    <lastmod>2026-06-26T15:00:24.947Z</lastmod>
+    <lastmod>2026-06-26T15:32:25.170Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ieeemsit-ochre.vercel.app/contact</loc>
-    <lastmod>2026-06-26T15:00:24.947Z</lastmod>
+    <lastmod>2026-06-26T15:32:25.170Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

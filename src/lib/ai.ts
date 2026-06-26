@@ -6,9 +6,13 @@ const fmtMember = (m: { name: string; position: string; linkedin?: string }) =>
   `- **${m.name}**: ${m.position}${m.linkedin && m.linkedin !== '#' ? ` ([LinkedIn](${m.linkedin}))` : ''}`;
 
 const fmtExecom = (data: typeof execom2026) =>
-  Object.entries(data).map(([section, groups]) =>
-    Object.entries(groups).map(([name, members]) => `#### ${name} (${section})\n${members.map(fmtMember).join('\n')}`).join('\n\n')
-  ).join('\n\n');
+  Object.entries(data)
+    .map(([section, groups]) =>
+      Object.entries(groups)
+        .map(([name, members]) => `#### ${name} (${section})\n${members.map(fmtMember).join('\n')}`)
+        .join('\n\n')
+    )
+    .join('\n\n');
 
 const execom2026Summary = fmtExecom(execom2026);
 
@@ -48,14 +52,14 @@ function getGroqClient(): Groq {
   return groqClient;
 }
 
-const debug = (import.meta.env.DEV ? console.log.bind(console, '[AI]') : () => {});
+const debug = import.meta.env.DEV ? console.log.bind(console, '[AI]') : () => {};
 
 export async function askAI(chatHistory: Message[]): Promise<string> {
   const lastUserMessage = chatHistory[chatHistory.length - 1];
   const query = lastUserMessage?.parts[0]?.text || '';
   const queryLower = query.toLowerCase();
 
-  const fmtEvent = (e: typeof events[0], extra?: string) =>
+  const fmtEvent = (e: (typeof events)[0], extra?: string) =>
     `- **${e.title}** (${e.type})\n  * Date: ${e.startDate}\n  * Venue: ${e.venue}\n  * Organised by: ${e.organisedBy || 'IEEE MSIT'}${extra || ''}`;
 
   if (
@@ -78,12 +82,19 @@ export async function askAI(chatHistory: Message[]): Promise<string> {
         return !isNaN(eventDate.getTime()) && eventDate >= new Date('2026-06-25');
       });
 
-      if (!upcoming.length) return 'There are currently no upcoming events listed on the IEEE MSIT website.';
+      if (!upcoming.length)
+        return 'There are currently no upcoming events listed on the IEEE MSIT website.';
 
-      return 'Here are the upcoming events listed on the website:\n\n' + upcoming.map((e) => fmtEvent(e)).join('\n\n');
+      return (
+        'Here are the upcoming events listed on the website:\n\n' +
+        upcoming.map((e) => fmtEvent(e)).join('\n\n')
+      );
     }
 
-    return 'Here are the events listed on the IEEE MSIT website:\n\n' + events.map((e) => fmtEvent(e, `\n  * Status: ${e.status || 'completed'}`)).join('\n\n');
+    return (
+      'Here are the events listed on the IEEE MSIT website:\n\n' +
+      events.map((e) => fmtEvent(e, `\n  * Status: ${e.status || 'completed'}`)).join('\n\n')
+    );
   }
 
   let client: Groq;
@@ -141,7 +152,9 @@ export async function askAI(chatHistory: Message[]): Promise<string> {
     const boldCount = (generatedText.match(/\*\*/g) || []).length;
     if (boldCount % 2 !== 0) generatedText += '**';
 
-    generatedText += generatedText.match(/[.!?]$/) ? ' [Response truncated]' : '... [Response truncated]';
+    generatedText += generatedText.match(/[.!?]$/)
+      ? ' [Response truncated]'
+      : '... [Response truncated]';
   }
 
   return generatedText;

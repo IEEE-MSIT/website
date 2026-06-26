@@ -1,11 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import {
-  Bot,
-  X,
-  Send,
-  Trash2,
-  User as UserIcon,
-} from 'lucide-react';
+import { Bot, X, Send, Trash2, User as UserIcon } from 'lucide-react';
 import { askAI, Message } from '../lib/ai';
 
 interface ChatMessage {
@@ -15,7 +9,8 @@ interface ChatMessage {
   timestamp: string;
 }
 
-const WELCOME_TEXT = 'Hello! I am the IEEE MSIT AI Assistant. Ask me anything about our upcoming events, executive committees (Execom), chapters, achievements, or website details!';
+const WELCOME_TEXT =
+  'Hello! I am the IEEE MSIT AI Assistant. Ask me anything about our upcoming events, executive committees (Execom), chapters, achievements, or website details!';
 
 const renderInlineMarkdown = (text: string) => {
   const boldAndLinkRegex = /(\*\*.*?\*\*|\[.*?\]\(.*?\))/g;
@@ -183,9 +178,10 @@ export default function Chat() {
       setMessages(finalMessages);
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : '';
-      const userFriendlyText = msg === 'EMPTY_RESPONSE'
-        ? "I couldn't find an answer for that."
-        : "Sorry, I couldn't process your request right now. Please try again in a moment.";
+      const userFriendlyText =
+        msg === 'EMPTY_RESPONSE'
+          ? "I couldn't find an answer for that."
+          : "Sorry, I couldn't process your request right now. Please try again in a moment.";
 
       setUiError(userFriendlyText);
 
