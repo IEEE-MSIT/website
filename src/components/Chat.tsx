@@ -177,6 +177,7 @@ export default function Chat() {
       const finalMessages = [...updatedMessages, botMsg].slice(-MAX_MESSAGES);
       setMessages(finalMessages);
     } catch (err: unknown) {
+      console.error('[Chat]', err);
       const msg = err instanceof Error ? err.message : '';
       const userFriendlyText =
         msg === 'EMPTY_RESPONSE'

@@ -52,7 +52,7 @@ function getGroqClient(): Groq {
   return groqClient;
 }
 
-const debug = import.meta.env.DEV ? console.log.bind(console, '[AI]') : () => {};
+const debug = (...args: unknown[]) => console.log('[AI]', ...args);
 
 export async function askAI(chatHistory: Message[]): Promise<string> {
   const lastUserMessage = chatHistory[chatHistory.length - 1];
