@@ -44,14 +44,14 @@ import { generateShareUrl } from './utils/siteHelpers';
 const shareOnTwitter = () => {
   const url = generateShareUrl.twitter(
     'Check out IEEE MSIT Student Branch!',
-    'https://ieeemsit.vercel.app'
+    'https://ieeemsit-ochre.vercel.app/'
   );
   window.open(url, '_blank');
 };
 
 const shareOnLinkedIn = () => {
   const url = generateShareUrl.linkedin(
-    'https://ieeemsit.vercel.app',
+    'https://ieeemsit-ochre.vercel.app/',
     'IEEE MSIT - Advancing Technology for Humanity',
     'Join our award-winning technology community'
   );
