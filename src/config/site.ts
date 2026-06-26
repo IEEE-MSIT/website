@@ -4,8 +4,8 @@ export const SITE_CONFIG = {
   tagline: 'Advancing Technology for Humanity',
   description:
     'The Professional home for the Engineering and Technology world wide. IEEE MSIT Student Branch - Leading innovation and excellence in technology with award-winning achievements in the Asia-Pacific region.',
-  url: 'https://ieeemsit.vercel.app',
-  domain: 'ieeemsit.vercel.app',
+  url: 'https://ieeemsit-ochre.vercel.app',
+  domain: 'ieeemsit-ochre.vercel.app',
   email: 'anupama@msit.in',
   phone: '+91-11-2681-4816',
 

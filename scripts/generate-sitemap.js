@@ -1,7 +1,7 @@
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 
-const baseUrl = 'https://ieeemsit.vercel.app';
+const baseUrl = 'https://ieeemsit-ochre.vercel.app';
 
 const routes = [
   {

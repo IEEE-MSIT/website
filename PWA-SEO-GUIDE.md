@@ -15,7 +15,7 @@ All social media links and site information are managed through a centralized co
 ```typescript
 export const SITE_CONFIG = {
   name: 'IEEE MSIT',
-  url: 'https://ieeemsit.vercel.app',
+  url: 'https://ieeemsit-ochre.vercel.app/',
 
   social: {
     github: {
