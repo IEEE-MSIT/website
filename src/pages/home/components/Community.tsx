@@ -49,7 +49,7 @@ const Community = () => {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-serif text-center mb-16 leading-tight">
           Whether you're <em className="text-primary">just starting out</em> or{' '}
-          <em className="text-tertiary">far along</em>, this is a place for you.
+          <em className="text-accent">far along</em>, this is a place for you.
         </h2>
 
         <div className="mb-12 py-8 h-max transform rotate-2 overflow-hidden w-full">
