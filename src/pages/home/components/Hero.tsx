@@ -103,7 +103,7 @@ const Hero = () => {
               to help you learn{' '}
               <em className="border-b-2 border-dashed border-secondary">cutting-edge technology</em>
               , build amazing projects, and connect with{' '}
-              <em className="border-b-2 border-dashed border-tertiary">like-minded innovators</em>.
+              <em className="border-b-2 border-dashed border-accent">like-minded innovators</em>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -138,14 +138,14 @@ const Hero = () => {
             <img
               src="https://res.cloudinary.com/ddmw4spnt/image/upload/w_768,f_auto,q_auto/v1756643762/uadzh5x4yeq0aq73gqmk.jpg"
               alt="IEEE MSIT Group"
-              className="w-full h-auto block grayscale object-cover"
+              className="w-full aspect-[4/3] sm:aspect-[16/9] md:aspect-auto block grayscale object-cover object-top"
             />
 
             <img
               ref={topImgRef}
               src="https://res.cloudinary.com/ddmw4spnt/image/upload/w_768,f_auto,q_auto/v1756643762/uadzh5x4yeq0aq73gqmk.jpg"
               alt="IEEE MSIT Group - color"
-              className="w-full h-auto block absolute inset-0 pointer-events-none object-cover"
+              className="w-full h-full block absolute inset-0 pointer-events-none object-cover object-top"
               style={{
                 WebkitMaskImage:
                   'radial-gradient(circle var(--r,200px) at var(--cx, -9999px) var(--cy, -9999px), rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%)',
@@ -176,7 +176,7 @@ const Hero = () => {
               ref={magnifierRef}
               src="https://res.cloudinary.com/ddmw4spnt/image/upload/w_1200,f_auto,q_auto/v1756643762/uadzh5x4yeq0aq73gqmk.jpg"
               alt="IEEE MSIT Group - magnified"
-              className="w-full h-auto block absolute inset-0 pointer-events-none object-cover"
+              className="w-full h-full block absolute inset-0 pointer-events-none object-cover object-top"
               style={{
                 transform: 'scale(1.3)',
                 transformOrigin: 'var(--mx, -9999px) var(--my, -9999px)',

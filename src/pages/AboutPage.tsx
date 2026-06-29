@@ -4,6 +4,7 @@ import { HOME_PATH } from '../constants/paths';
 import About from './home/components/About';
 import Achievements from './home/components/Achievements';
 import Team from './home/components/Team';
+import AboutDetails from './home/components/AboutDetails';
 
 const AboutPage = () => {
   return (
@@ -23,6 +24,7 @@ const AboutPage = () => {
       </section>
 
       <About />
+      <AboutDetails />
       <Achievements />
       <Team />
     </div>
