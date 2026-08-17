@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Linkedin, Eye, Share2, Mail, X } from 'lucide-react';
 
 export interface Member {
@@ -93,27 +94,34 @@ const MemberCard = ({ member, showActions = true }: MemberCardProps) => {
 
   return (
     <>
-      <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-primary transition-all duration-300 group relative">
+      <motion.div
+        whileHover={{ y: -6, transition: { duration: 0.22, ease: 'easeOut' } }}
+        className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-xl hover:border-primary/40 transition-all duration-300 group relative"
+      >
         {showActions && (
           <div className="absolute top-3 right-3 flex gap-2">
-            <button
+            <motion.button
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.9 }}
               className="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary hover:text-white text-primary transition-colors"
               onClick={handleShare}
               title="Share profile"
             >
               <Share2 className="w-4 h-4" />
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.9 }}
               className="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary hover:text-white text-primary transition-colors"
               onClick={() => setShowModal(true)}
               title="View details"
             >
               <Eye className="w-4 h-4" />
-            </button>
+            </motion.button>
           </div>
         )}
         <div className="text-center">
-          <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gray-200 group-hover:border-primary transition-colors flex items-center justify-center bg-gray-50 text-gray-700">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gray-200 group-hover:border-primary group-hover:scale-105 transition-all duration-300 flex items-center justify-center bg-gray-50 text-gray-700 shadow-inner">
             {showImage ? (
               <img
                 src={String(currentImg)}
@@ -129,24 +137,28 @@ const MemberCard = ({ member, showActions = true }: MemberCardProps) => {
               </div>
             )}
           </div>
-          <h3 className="font-serif text-lg text-black mb-1">{member.name}</h3>
+          <h3 className="font-serif text-lg text-black mb-1 group-hover:text-primary transition-colors duration-200">
+            {member.name}
+          </h3>
           <p className="text-primary text-sm font-medium mb-1">{member.position}</p>
           <p className="text-gray-500 text-xs mb-4">{member.branch}</p>
           <div className="flex justify-center gap-2">
             {isValidLinkedIn(member.linkedin) ? (
-              <a
+              <motion.a
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:text-primary-dark"
+                className="text-primary hover:text-primary-dark p-1"
                 aria-label={`Open ${member.name}'s LinkedIn profile`}
               >
                 <Linkedin className="w-5 h-5" />
-              </a>
+              </motion.a>
             ) : (
               <button
                 onClick={handleMissingLinkedIn}
-                className=" text-gray-400 cursor-not-allowed"
+                className="text-gray-400 cursor-not-allowed p-1"
                 title="LinkedIn not available"
                 aria-disabled
               >
@@ -154,85 +166,113 @@ const MemberCard = ({ member, showActions = true }: MemberCardProps) => {
               </button>
             )}
             {member.email && (
-              <a href={`mailto:${member.email}`} className="text-primary hover:text-primary-dark">
+              <motion.a
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                href={`mailto:${member.email}`}
+                className="text-primary hover:text-primary-dark p-1"
+              >
                 <Mail className="w-5 h-5" />
-              </a>
+              </motion.a>
             )}
           </div>
         </div>
-      </div>
-      {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-          <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full relative">
-            <button
-              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white text-gray-600 transition-colors"
-              onClick={() => setShowModal(false)}
-              title="Close"
+      </motion.div>
+      <AnimatePresence>
+        {showModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+            onClick={() => setShowModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full relative"
+              onClick={(e) => e.stopPropagation()}
             >
-              <X className="w-5 h-5" />
-            </button>
-            <div className="flex flex-col items-center">
-              <div className="w-24 h-24 sm:w-28 sm:h-28 mb-4 rounded-full overflow-hidden border-4 border-primary flex items-center justify-center bg-gray-50 text-gray-700">
-                {showImage ? (
-                  <img
-                    src={String(currentImg)}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                    onError={handleImgError}
-                    loading="lazy"
-                    referrerPolicy="no-referrer"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-3xl font-semibold">
-                    {getInitials(member.name)}
-                  </div>
-                )}
-              </div>
-              <h3 className="font-serif text-2xl text-black mb-2">{member.name}</h3>
-              <p className="text-primary font-semibold text-base mb-1">{member.position}</p>
-              <p className="text-gray-600 text-sm mb-4">{member.branch}</p>
-              <div className="flex justify-center gap-3 mb-4">
-                {isValidLinkedIn(member.linkedin) ? (
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-10 h-10 bg-primary/10 rounded-full hover:bg-primary hover:text-white transition-colors text-primary"
-                    title="LinkedIn"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                ) : (
-                  <button
-                    onClick={handleMissingLinkedIn}
-                    className="inline-flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full text-gray-400 cursor-not-allowed"
-                    title="LinkedIn not available"
-                    aria-disabled
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </button>
-                )}
-                {member.email && (
-                  <a
-                    href={`mailto:${member.email}`}
-                    className="inline-flex items-center justify-center w-10 h-10 bg-primary/10 rounded-full hover:bg-primary hover:text-white transition-colors text-primary"
-                    title="Email"
-                  >
-                    <Mail className="w-5 h-5" />
-                  </a>
-                )}
-              </div>
-              <button
-                className="w-full py-2 bg-primary text-white rounded-full font-medium mt-2 flex items-center justify-center gap-2 hover:bg-primary-hover transition-colors"
-                onClick={handleShare}
+              <motion.button
+                whileHover={{ scale: 1.1, rotate: 90 }}
+                whileTap={{ scale: 0.9 }}
+                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white text-gray-600 transition-colors"
+                onClick={() => setShowModal(false)}
+                title="Close"
               >
-                <Share2 className="w-4 h-4" />
-                Share Profile
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+                <X className="w-5 h-5" />
+              </motion.button>
+              <div className="flex flex-col items-center">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 mb-4 rounded-full overflow-hidden border-4 border-primary flex items-center justify-center bg-gray-50 text-gray-700 shadow-md">
+                  {showImage ? (
+                    <img
+                      src={String(currentImg)}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                      onError={handleImgError}
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-3xl font-semibold">
+                      {getInitials(member.name)}
+                    </div>
+                  )}
+                </div>
+                <h3 className="font-serif text-2xl text-black mb-2">{member.name}</h3>
+                <p className="text-primary font-semibold text-base mb-1">{member.position}</p>
+                <p className="text-gray-600 text-sm mb-4">{member.branch}</p>
+                <div className="flex justify-center gap-3 mb-4">
+                  {isValidLinkedIn(member.linkedin) ? (
+                    <motion.a
+                      whileHover={{ scale: 1.15 }}
+                      whileTap={{ scale: 0.9 }}
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-10 h-10 bg-primary/10 rounded-full hover:bg-primary hover:text-white transition-colors text-primary"
+                      title="LinkedIn"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </motion.a>
+                  ) : (
+                    <button
+                      onClick={handleMissingLinkedIn}
+                      className="inline-flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full text-gray-400 cursor-not-allowed"
+                      title="LinkedIn not available"
+                      aria-disabled
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </button>
+                  )}
+                  {member.email && (
+                    <motion.a
+                      whileHover={{ scale: 1.15 }}
+                      whileTap={{ scale: 0.9 }}
+                      href={`mailto:${member.email}`}
+                      className="inline-flex items-center justify-center w-10 h-10 bg-primary/10 rounded-full hover:bg-primary hover:text-white transition-colors text-primary"
+                      title="Email"
+                    >
+                      <Mail className="w-5 h-5" />
+                    </motion.a>
+                  )}
+                </div>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.96 }}
+                  className="w-full py-2 bg-primary text-white rounded-full font-medium mt-2 flex items-center justify-center gap-2 hover:bg-primary-hover transition-colors shadow-sm"
+                  onClick={handleShare}
+                >
+                  <Share2 className="w-4 h-4" />
+                  Share Profile
+                </motion.button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

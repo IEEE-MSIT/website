@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ArrowRight, Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { events } from '../../../data/data';
@@ -24,8 +25,14 @@ const Events = () => {
   return (
     <section className="py-20 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          className="text-center mb-16"
+        >
+          <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-sm">
             Upcoming Events
           </div>
 
@@ -38,39 +45,56 @@ const Events = () => {
             From hands-on workshops to industry conferences, discover opportunities to learn,
             network, and advance your engineering career.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="relative">
-          <button
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="relative"
+        >
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             onClick={() => scrollEventsCarousel('left')}
-            className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white transition-all duration-300 items-center justify-center border border-gray-100 hover:shadow-xl hover:scale-105"
+            className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white transition-colors items-center justify-center border border-gray-100"
           >
             <ChevronLeft className="w-5 h-5 text-gray-700" />
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             onClick={() => scrollEventsCarousel('right')}
-            className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white transition-all duration-300 items-center justify-center border border-gray-100 hover:shadow-xl hover:scale-105"
+            className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white transition-colors items-center justify-center border border-gray-100"
           >
             <ChevronRight className="w-5 h-5 text-gray-700" />
-          </button>
+          </motion.button>
 
           {}
           <div
             ref={eventsCarouselRef}
-            className="hidden lg:block overflow-x-auto scrollbar-hide mx-12"
+            className="hidden lg:block overflow-x-auto scrollbar-hide mx-12 py-2"
           >
             <div className="flex gap-6 pb-4 w-max">
               {events.map((event, index) => (
-                <div key={index} className="w-[280px]">
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
+                  className="w-[280px]"
+                >
                   <EventCard event={event} />
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
 
           {}
           <div className="lg:hidden">
-            <div className="overflow-x-auto scrollbar-hide px-4 -mx-4">
+            <div className="overflow-x-auto scrollbar-hide px-4 -mx-4 py-2">
               <div className="flex gap-4 pb-4 w-max">
                 {events.map((event, index) => (
                   <div key={index} className="w-[200px] h-[440px]">
@@ -90,17 +114,23 @@ const Events = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <div className="text-center mt-12">
-          <Link
-            to="/events"
-            className="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 mx-auto w-max"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block"
           >
-            <Eye className="w-4 h-4" />
-            Show All Events
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+            <Link
+              to="/events"
+              className="bg-primary text-white px-5 py-2.5 rounded-full hover:bg-primary-hover shadow-md hover:shadow-lg transition-all font-medium text-sm flex items-center gap-2 mx-auto w-max"
+            >
+              <Eye className="w-4 h-4" />
+              Show All Events
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>

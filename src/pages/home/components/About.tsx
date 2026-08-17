@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { motion } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Eye } from 'lucide-react';
@@ -157,8 +158,14 @@ const About = () => {
       {/* Add a negative margin here to tuck it under the hero banner */}
       <section className="py-20 px-6 bg-white -mt-24 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-center mb-16"
+          >
+            <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-sm">
               About IEEE MSIT
             </div>
 
@@ -172,9 +179,15 @@ const About = () => {
               Connecting ambitious minds through workshops, competitions, and research. We celebrate
               achievements, foster teamwork, and help students prepare for global impact.
             </p>
-          </div>
+          </motion.div>
         </div>
-        <div className="py-8 overflow-hidden w-full marquee-container">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="py-8 overflow-hidden w-full marquee-container"
+        >
           <Marquee
             speed={50}
             gradient={false}
@@ -188,21 +201,27 @@ const About = () => {
                   src={img.dest ?? img.src?.src}
                   alt={img.src?.alt}
                   fallback={img.src?.fallback}
-                  className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg"
+                  className="w-80 h-60 object-cover bg-gray-100 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                 />
               </div>
             ))}
           </Marquee>
-        </div>
+        </motion.div>
         <div className="text-center mt-12">
-          <Link
-            to="/events"
-            className="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 mx-auto w-max"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block"
           >
-            <Eye className="w-4 h-4" />
-            Show More
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+            <Link
+              to="/events"
+              className="bg-primary text-white px-5 py-2.5 rounded-full hover:bg-primary-hover shadow-md hover:shadow-lg transition-all font-medium text-sm flex items-center gap-2 mx-auto w-max"
+            >
+              <Eye className="w-4 h-4" />
+              Show More
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
         </div>
       </section>
     </>

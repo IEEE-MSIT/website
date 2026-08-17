@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { ArrowRight, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { EVENTS_PATH } from '../../../constants/paths';
@@ -59,23 +60,25 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[80vh] bg-background overflow-hidden pt-20">
-      <div
-        className="w-full max-w-6xl mx-auto px-6 py-8 h-full flex flex-col justify-center"
-        // style={{
-        //   backgroundImage: `url('/BackgroundLines.37b66c2a.png')`,
-        //   backgroundSize: 'cover',
-        //   backgroundPosition: 'center',
-        //   backgroundRepeat: 'no-repeat',
-        // }}
-      >
-        <div className="text-center my-12">
+      <div className="w-full max-w-6xl mx-auto px-6 py-8 h-full flex flex-col justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          className="text-center my-12"
+        >
           <div className="flex items-center justify-center mb-6 gap-4">
-            <img
+            <motion.img
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               src="/IEEEWhiteLogowithTransparentBG.png"
               alt="IEEE Logo"
-              className="h-12 md:h-16 bg-primary hidden sm:block"
+              className="h-12 md:h-16 bg-primary hidden sm:block rounded-md p-1 shadow-sm"
             />
-            <h1 className="text-6xl md:text-8xl font-serif text-black mr-4">IEEE MSIT</h1>
+            <h1 className="text-6xl md:text-8xl font-serif text-black mr-4 tracking-tight">
+              IEEE MSIT
+            </h1>
           </div>
 
           <p className="text-lg md:text-xl text-gray-600 font-medium mb-2">
@@ -84,9 +87,14 @@ const Hero = () => {
           <p className="text-sm text-gray-500">
             Part of IEEE - The world's largest engineering organization
           </p>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-8 mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+          className="flex flex-col lg:flex-row gap-8 mb-12"
+        >
           <div className="flex-1 text-left">
             <p className="text-lg hidden md:text-xl text-black mb-8 leading-relaxed">
               <strong>IEEE MSIT</strong> is the student branch of the{' '}
@@ -107,18 +115,22 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to={EVENTS_PATH}
-                className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 w-fit"
-              >
-                <ArrowRight className="w-4 h-4" /> See Upcoming Events
-              </Link>
-              <a
-                href="#join"
-                className="border border-primary text-primary px-6 py-3 rounded-full hover:bg-primary hover:text-white transition-colors font-medium text-sm flex items-center gap-2 w-fit"
-              >
-                <Users className="w-4 h-4" /> Join Our Community
-              </a>
+              <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+                <Link
+                  to={EVENTS_PATH}
+                  className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-hover shadow-md hover:shadow-lg transition-all font-medium text-sm flex items-center gap-2 w-fit"
+                >
+                  <ArrowRight className="w-4 h-4" /> See Upcoming Events
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+                <a
+                  href="#join"
+                  className="border border-primary text-primary bg-white/50 backdrop-blur-sm px-6 py-3 rounded-full hover:bg-primary hover:text-white transition-all font-medium text-sm flex items-center gap-2 w-fit shadow-sm hover:shadow-md"
+                >
+                  <Users className="w-4 h-4" /> Join Our Community
+                </a>
+              </motion.div>
             </div>
           </div>
 
@@ -127,9 +139,12 @@ const Hero = () => {
               Part of IEEE Delhi Section • Serving 3,600+ members across Delhi NCR
             </span>
           </div>
-        </div>
+        </motion.div>
 
-        <div
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
           className="w-full flex justify-center items-end mt-auto relative"
           onMouseMove={handlePointerMove}
           onMouseLeave={handlePointerLeave}
@@ -199,7 +214,7 @@ const Hero = () => {
               }}
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

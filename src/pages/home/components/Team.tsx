@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import MemberCard from '../../../components/ui/MemberCard';
 import { Link } from 'react-router-dom';
 import { Mail, Share2, X, Eye, ArrowRight } from 'lucide-react';
@@ -36,35 +37,54 @@ const Team = () => {
   return (
     <section className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          className="text-center mb-16"
+        >
+          <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-sm">
             Meet Our Team
           </div>
           <h2 className="text-4xl md:text-5xl font-serif text-black mb-4">Executive Committee</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Meet the dedicated leaders driving innovation and excellence at IEEE MSIT
           </p>
-        </div>
+        </motion.div>
         <div className="min-h-[320px] flex items-center">
           <div className="w-full flex justify-center">
             <div className="flex flex-col md:flex-row items-center gap-6">
               {execom2026.chapters['MAIN IEEE MSIT'].slice(0, 3).map((member, idx) => (
-                <div key={idx} className="w-full md:w-80">
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.12 }}
+                  className="w-full md:w-80"
+                >
                   {renderMember(member, idx)}
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </div>
         <div className="text-center mt-12">
-          <Link
-            to="/team"
-            className="w-max bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-hover transition-colors font-medium text-sm flex items-center gap-2 mx-auto"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block"
           >
-            <Eye className="w-4 h-4" />
-            Show All Members
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+            <Link
+              to="/team"
+              className="w-max bg-primary text-white px-5 py-2.5 rounded-full hover:bg-primary-hover shadow-md hover:shadow-lg transition-all font-medium text-sm flex items-center gap-2 mx-auto"
+            >
+              <Eye className="w-4 h-4" />
+              Show All Members
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
         </div>
         {showModal && selectedMember && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">

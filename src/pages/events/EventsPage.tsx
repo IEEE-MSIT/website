@@ -1,11 +1,9 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { events } from '../../data/data';
 import EventCard from '../../components/ui/EventCard';
-import Hackathons from '../home/components/Hackathons';
 import { ArrowLeft } from 'lucide-react';
 import { HOME_PATH } from '../../constants/paths';
 import { Link } from 'react-router-dom';
-// import Hackathons from '../home/components/Hackathons';
 
 const EventsPage: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
@@ -77,8 +75,9 @@ const EventsPage: React.FC = () => {
               All Events & Workshops
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Explore all our technical events, workshops, webinars, and hackathons. Stay updated
-              and join us to learn, network, and grow your engineering career with IEEE MSIT.
+              Explore all our technical events, workshops, webinars, and technical sessions. Stay
+              updated and join us to learn, network, and grow your engineering career with IEEE
+              MSIT.
             </p>
           </div>
         </div>
@@ -156,10 +155,6 @@ const EventsPage: React.FC = () => {
                 ))}
               </select>
             </div>
-          </div>
-
-          <div className="mt-16">
-            <Hackathons />
           </div>
         </div>
       </main>
