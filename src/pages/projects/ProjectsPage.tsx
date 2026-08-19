@@ -18,7 +18,8 @@ import {
   Image as ImageIcon,
   Calculator,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  X
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { HOME_PATH } from '../../constants/paths';
@@ -47,6 +48,7 @@ export default function ProjectsPage() {
   const [activeTab, setActiveTab] = useState<'smp' | 'toolkit'>('smp');
   const [smpImgIndex, setSmpImgIndex] = useState(0);
   const [toolkitImgIndex, setToolkitImgIndex] = useState(0);
+  const [selectedImg, setSelectedImg] = useState<{ src: string, title: string } | null>(null);
 
   const nextSmpImage = () => {
     setSmpImgIndex((prev) => (prev + 1) % smpImages.length);
@@ -181,7 +183,8 @@ export default function ProjectsPage() {
                   <img
                     src={smpImages[smpImgIndex].src}
                     alt={smpImages[smpImgIndex].title}
-                    className="w-full h-full object-cover select-none"
+                    onClick={() => setSelectedImg(smpImages[smpImgIndex])}
+                    className="w-full h-full object-cover select-none cursor-zoom-in hover:scale-[1.02] transition-transform duration-300"
                   />
                   {/* Overlay title */}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
@@ -380,7 +383,8 @@ export default function ProjectsPage() {
                   <img
                     src={toolkitImages[toolkitImgIndex].src}
                     alt={toolkitImages[toolkitImgIndex].title}
-                    className="w-full h-full object-cover select-none"
+                    onClick={() => setSelectedImg(toolkitImages[toolkitImgIndex])}
+                    className="w-full h-full object-cover select-none cursor-zoom-in hover:scale-[1.02] transition-transform duration-300"
                   />
                   {/* Overlay title */}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
@@ -514,6 +518,57 @@ export default function ProjectsPage() {
           </div>
         )}
       </section>
+
+      {/* Lightbox / Zoom Modal */}
+      {selectedImg && (
+        <div 
+          className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex flex-col items-center justify-center p-4 select-none animate-fade-in"
+          onClick={() => setSelectedImg(null)}
+        >
+          {/* Close button */}
+          <button
+            onClick={() => setSelectedImg(null)}
+            className="absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            aria-label="Close image overview"
+          >
+            <X className="w-6 h-6" />
+          </button>
+
+          {/* Image & Navigation container */}
+          <div 
+            className="relative max-w-5xl w-full flex flex-col items-center space-y-4 px-12"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Left navigation arrow */}
+            <button
+              onClick={activeTab === 'smp' ? prevSmpImage : prevToolkitImage}
+              className="absolute left-0 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            <img
+              src={activeTab === 'smp' ? smpImages[smpImgIndex].src : toolkitImages[toolkitImgIndex].src}
+              alt={activeTab === 'smp' ? smpImages[smpImgIndex].title : toolkitImages[toolkitImgIndex].title}
+              className="max-w-full max-h-[75vh] object-contain rounded-2xl shadow-2xl border border-white/10"
+            />
+
+            {/* Right navigation arrow */}
+            <button
+              onClick={activeTab === 'smp' ? nextSmpImage : nextToolkitImage}
+              className="absolute right-0 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              aria-label="Next image"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
+            <p className="text-white/90 text-sm font-semibold tracking-wide bg-white/10 px-4 py-1.5 rounded-full border border-white/15 backdrop-blur-md">
+              {activeTab === 'smp' ? smpImages[smpImgIndex].title : toolkitImages[toolkitImgIndex].title}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
