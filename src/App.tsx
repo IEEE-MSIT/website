@@ -9,7 +9,7 @@ import Footer from './components/common/Footer';
 import SEO from './components/SEO';
 import PWAInstallPrompt from './components/PWAInstallPrompt';
 import PageLoader from './components/common/PageLoader';
-import { HOME_PATH, FAQ_PATH, TEAM_PATH, EVENTS_PATH } from './constants/paths';
+import { HOME_PATH, FAQ_PATH, TEAM_PATH, EVENTS_PATH, PROJECTS_PATH } from './constants/paths';
 
 const HomePage = lazy(() => import('./pages/home/HomePage'));
 const FAQPage = lazy(() => import('./pages/faq/FAQPage'));
@@ -18,6 +18,7 @@ const AboutPage = lazy(() => import('./pages/AboutPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const EventsPage = lazy(() => import('./pages/events/EventsPage'));
+const ProjectsPage = lazy(() => import('./pages/projects/ProjectsPage'));
 const WiePage = lazy(() => import('./pages/chapters/WiePage'));
 const PesPage = lazy(() => import('./pages/chapters/PesPage'));
 const CsPage = lazy(() => import('./pages/chapters/CsPage'));
@@ -41,6 +42,7 @@ export default function App() {
               <Route path={FAQ_PATH} element={<FAQPage />} />
               <Route path={TEAM_PATH} element={<TeamPage />} />
               <Route path={EVENTS_PATH} element={<EventsPage />} />
+              <Route path={PROJECTS_PATH} element={<ProjectsPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/chapters/wie" element={<WiePage />} />
               <Route path="/chapters/pes" element={<PesPage />} />

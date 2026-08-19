@@ -204,6 +204,7 @@ export const footer = {
     { text: 'Join IEEE', href: 'https://www.ieee.org/membership/join/index.html' },
     { text: 'MSIT', href: 'https://msit.in/' },
     { text: 'Events', href: '/events' },
+    { text: 'Projects', href: '/projects' },
   ],
   contact: [
     { text: 'Contact Page', href: '/contact' },
