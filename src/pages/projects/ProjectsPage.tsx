@@ -1,25 +1,23 @@
 import React, { useState } from 'react';
-import { 
-  ArrowLeft, 
-  ExternalLink, 
-  Github, 
-  Layers, 
-  ShieldCheck, 
-  CalendarRange, 
-  Bot, 
-  MessageSquare, 
-  Cpu, 
-  Smartphone, 
-  CheckCircle, 
-  Sparkles, 
-  Code2, 
-  Users, 
-  FileText, 
+import {
+  ArrowLeft,
+  ExternalLink,
+  Github,
+  Layers,
+  ShieldCheck,
+  CalendarRange,
+  Bot,
+  MessageSquare,
+  Cpu,
+  CheckCircle,
+  Code2,
+  Users,
+  FileText,
   Image as ImageIcon,
   Calculator,
   ChevronLeft,
   ChevronRight,
-  X
+  X,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { HOME_PATH } from '../../constants/paths';
@@ -29,7 +27,7 @@ const smpImages = [
   { src: '/projects/smp-dashboard.png', title: 'Admin Dashboard' },
   { src: '/projects/smp-departments.png', title: 'Department Structure' },
   { src: '/projects/smp-members.png', title: 'Society Members List' },
-  { src: '/projects/smp-attendance.png', title: 'Attendance Logger' }
+  { src: '/projects/smp-attendance.png', title: 'Attendance Logger' },
 ];
 
 // Student Toolkit Images list
@@ -41,14 +39,14 @@ const toolkitImages = [
   { src: '/projects/st-attendance.png', title: 'Attendance Tracker' },
   { src: '/projects/st-calendar.png', title: 'Academic Calendar' },
   { src: '/projects/st-timetable.png', title: 'Timetable Manager' },
-  { src: '/projects/st-qr.png', title: 'QR Scanner' }
+  { src: '/projects/st-qr.png', title: 'QR Scanner' },
 ];
 
 export default function ProjectsPage() {
   const [activeTab, setActiveTab] = useState<'smp' | 'toolkit'>('smp');
   const [smpImgIndex, setSmpImgIndex] = useState(0);
   const [toolkitImgIndex, setToolkitImgIndex] = useState(0);
-  const [selectedImg, setSelectedImg] = useState<{ src: string, title: string } | null>(null);
+  const [selectedImg, setSelectedImg] = useState<{ src: string; title: string } | null>(null);
 
   const nextSmpImage = () => {
     setSmpImgIndex((prev) => (prev + 1) % smpImages.length);
@@ -88,7 +86,8 @@ export default function ProjectsPage() {
             Flagship Projects
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Discover the custom portals, tools, and platforms designed and built by the developers of IEEE MSIT. We turn concepts into production-ready software solutions.
+            Discover the custom portals, tools, and platforms designed and built by the developers
+            of IEEE MSIT. We turn concepts into production-ready software solutions.
           </p>
         </div>
 
@@ -135,7 +134,9 @@ export default function ProjectsPage() {
                 </div>
 
                 <p className="text-gray-600 leading-relaxed">
-                  A full-stack, multi-tenant platform designed to manage society operations, technical groups, and event coordination. It streamlines student community management by centralizing resources, planning, and communications.
+                  A full-stack, multi-tenant platform designed to manage society operations,
+                  technical groups, and event coordination. It streamlines student community
+                  management by centralizing resources, planning, and communications.
                 </p>
 
                 {/* Problems and Solutions */}
@@ -143,13 +144,16 @@ export default function ProjectsPage() {
                   <div className="bg-red-50/50 border border-red-100 p-4 rounded-2xl">
                     <h4 className="text-red-800 font-bold text-sm mb-2">The Problem</h4>
                     <p className="text-xs text-red-700/90 leading-relaxed">
-                      Society management operations are often scattered across Google Sheets, Discord, notion, and manual spreadsheets, leading to data fragmentation and miscommunication.
+                      Society management operations are often scattered across Google Sheets,
+                      Discord, notion, and manual spreadsheets, leading to data fragmentation and
+                      miscommunication.
                     </p>
                   </div>
                   <div className="bg-green-50/50 border border-green-100 p-4 rounded-2xl">
                     <h4 className="text-green-800 font-bold text-sm mb-2">The Solution</h4>
                     <p className="text-xs text-green-700/90 leading-relaxed">
-                      A unified portal bringing society operations, member coordination, real-time channels, and event scheduling under a single tenant architecture.
+                      A unified portal bringing society operations, member coordination, real-time
+                      channels, and event scheduling under a single tenant architecture.
                     </p>
                   </div>
                 </div>
@@ -236,23 +240,33 @@ export default function ProjectsPage() {
                 <ul className="space-y-3.5 text-sm text-gray-600">
                   <li className="flex gap-2">
                     <ShieldCheck className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                    <span><strong>Secure Auth</strong>: Authentication via Clerk with roles.</span>
+                    <span>
+                      <strong>Secure Auth</strong>: Authentication via Clerk with roles.
+                    </span>
                   </li>
                   <li className="flex gap-2">
                     <Cpu className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                    <span><strong>Multi-Tenant System</strong>: Isolated dashboard settings per society.</span>
+                    <span>
+                      <strong>Multi-Tenant System</strong>: Isolated dashboard settings per society.
+                    </span>
                   </li>
                   <li className="flex gap-2">
                     <CalendarRange className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                    <span><strong>Event Scheduler</strong>: Publish and promote upcoming activities.</span>
+                    <span>
+                      <strong>Event Scheduler</strong>: Publish and promote upcoming activities.
+                    </span>
                   </li>
                   <li className="flex gap-2">
                     <Bot className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                    <span><strong>AI Event Assistant</strong>: Powered by Gemini 1.5 Flash.</span>
+                    <span>
+                      <strong>AI Event Assistant</strong>: Powered by Gemini 1.5 Flash.
+                    </span>
                   </li>
                   <li className="flex gap-2">
                     <MessageSquare className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                    <span><strong>Real-time Chats</strong>: Built-in channels for active committees.</span>
+                    <span>
+                      <strong>Real-time Chats</strong>: Built-in channels for active committees.
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -267,27 +281,40 @@ export default function ProjectsPage() {
                     <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">Frontend</h5>
                     <div className="flex flex-wrap gap-1.5">
                       {['React', 'TypeScript', 'Vite', 'Tailwind CSS'].map((tech) => (
-                        <span key={tech} className="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-lg border border-gray-200/50 font-medium">
+                        <span
+                          key={tech}
+                          className="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-lg border border-gray-200/50 font-medium"
+                        >
                           {tech}
                         </span>
                       ))}
                     </div>
                   </div>
                   <div>
-                    <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">Backend & Database</h5>
+                    <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">
+                      Backend & Database
+                    </h5>
                     <div className="flex flex-wrap gap-1.5">
                       {['Node.js', 'Express', 'TypeScript', 'PostgreSQL'].map((tech) => (
-                        <span key={tech} className="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-lg border border-gray-200/50 font-medium">
+                        <span
+                          key={tech}
+                          className="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-lg border border-gray-200/50 font-medium"
+                        >
                           {tech}
                         </span>
                       ))}
                     </div>
                   </div>
                   <div>
-                    <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">Auth & Services</h5>
+                    <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">
+                      Auth & Services
+                    </h5>
                     <div className="flex flex-wrap gap-1.5">
                       {['Clerk Auth', 'Gemini 1.5 Flash', 'Vercel Deployment'].map((tech) => (
-                        <span key={tech} className="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-lg border border-gray-200/50 font-medium">
+                        <span
+                          key={tech}
+                          className="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-lg border border-gray-200/50 font-medium"
+                        >
                           {tech}
                         </span>
                       ))}
@@ -304,10 +331,15 @@ export default function ProjectsPage() {
                 <div className="space-y-3.5">
                   <div className="flex items-center justify-between border-b border-gray-50 pb-2">
                     <span className="font-semibold text-sm text-gray-800">Gourav</span>
-                    <span className="bg-primary/10 text-primary text-[10px] px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wide">Team Lead</span>
+                    <span className="bg-primary/10 text-primary text-[10px] px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wide">
+                      Team Lead
+                    </span>
                   </div>
                   {['Kabir', 'Daksh', 'Hitesh', 'Harsh'].map((dev) => (
-                    <div key={dev} className="flex items-center justify-between border-b border-gray-50 pb-2 last:border-0 last:pb-0">
+                    <div
+                      key={dev}
+                      className="flex items-center justify-between border-b border-gray-50 pb-2 last:border-0 last:pb-0"
+                    >
                       <span className="text-sm font-medium text-gray-700">{dev}</span>
                       <span className="text-xs text-gray-400">Developer</span>
                     </div>
@@ -335,7 +367,10 @@ export default function ProjectsPage() {
                 </div>
 
                 <p className="text-gray-600 leading-relaxed">
-                  An all-in-one productivity suite built to resolve fragmented students utilities. Instead of navigating separate sites to convert tools, calculate grades, or track attendance, the Student Toolkit bundles these services into a centralized, fast dashboard.
+                  An all-in-one productivity suite built to resolve fragmented students utilities.
+                  Instead of navigating separate sites to convert tools, calculate grades, or track
+                  attendance, the Student Toolkit bundles these services into a centralized, fast
+                  dashboard.
                 </p>
 
                 {/* Problems and Solutions */}
@@ -343,13 +378,16 @@ export default function ProjectsPage() {
                   <div className="bg-red-50/50 border border-red-100 p-4 rounded-2xl">
                     <h4 className="text-red-800 font-bold text-sm mb-2">The Problem</h4>
                     <p className="text-xs text-red-700/90 leading-relaxed">
-                      Students bounce between multiple sites to manage schedules, convert documents, check attendance limits, or calculate semester GPAs, creating an unorganized workflow.
+                      Students bounce between multiple sites to manage schedules, convert documents,
+                      check attendance limits, or calculate semester GPAs, creating an unorganized
+                      workflow.
                     </p>
                   </div>
                   <div className="bg-green-50/50 border border-green-100 p-4 rounded-2xl">
                     <h4 className="text-green-800 font-bold text-sm mb-2">The Solution</h4>
                     <p className="text-xs text-green-700/90 leading-relaxed">
-                      A lightweight toolkit providing GPA planning, attendance trackers, local image/PDF converters, and academic calendars under one OAuth login.
+                      A lightweight toolkit providing GPA planning, attendance trackers, local
+                      image/PDF converters, and academic calendars under one OAuth login.
                     </p>
                   </div>
                 </div>
@@ -436,23 +474,33 @@ export default function ProjectsPage() {
                 <ul className="space-y-3.5 text-sm text-gray-600">
                   <li className="flex gap-2">
                     <ShieldCheck className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                    <span><strong>GitHub OAuth</strong>: Secure login integration for developers.</span>
+                    <span>
+                      <strong>GitHub OAuth</strong>: Secure login integration for developers.
+                    </span>
                   </li>
                   <li className="flex gap-2">
                     <Calculator className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                    <span><strong>Academic Calculators</strong>: CGPA planners & Percentage utilities.</span>
+                    <span>
+                      <strong>Academic Calculators</strong>: CGPA planners & Percentage utilities.
+                    </span>
                   </li>
                   <li className="flex gap-2">
                     <FileText className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                    <span><strong>PDF Merger</strong>: Client-side file consolidation tool.</span>
+                    <span>
+                      <strong>PDF Merger</strong>: Client-side file consolidation tool.
+                    </span>
                   </li>
                   <li className="flex gap-2">
                     <ImageIcon className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                    <span><strong>Image Compressor</strong>: Custom image formats optimization.</span>
+                    <span>
+                      <strong>Image Compressor</strong>: Custom image formats optimization.
+                    </span>
                   </li>
                   <li className="flex gap-2">
                     <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                    <span><strong>Attendance Tracker</strong>: Smart alerts on attendance safe zones.</span>
+                    <span>
+                      <strong>Attendance Tracker</strong>: Smart alerts on attendance safe zones.
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -467,27 +515,40 @@ export default function ProjectsPage() {
                     <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">Frontend</h5>
                     <div className="flex flex-wrap gap-1.5">
                       {['React', 'JavaScript', 'HTML5', 'Vanilla CSS', 'Vite'].map((tech) => (
-                        <span key={tech} className="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-lg border border-gray-200/50 font-medium">
+                        <span
+                          key={tech}
+                          className="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-lg border border-gray-200/50 font-medium"
+                        >
                           {tech}
                         </span>
                       ))}
                     </div>
                   </div>
                   <div>
-                    <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">Backend & DB</h5>
+                    <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">
+                      Backend & DB
+                    </h5>
                     <div className="flex flex-wrap gap-1.5">
                       {['Node.js', 'Express.js', 'MongoDB', 'Mongoose'].map((tech) => (
-                        <span key={tech} className="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-lg border border-gray-200/50 font-medium">
+                        <span
+                          key={tech}
+                          className="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-lg border border-gray-200/50 font-medium"
+                        >
                           {tech}
                         </span>
                       ))}
                     </div>
                   </div>
                   <div>
-                    <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">OAuth & Modules</h5>
+                    <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">
+                      OAuth & Modules
+                    </h5>
                     <div className="flex flex-wrap gap-1.5">
                       {['GitHub OAuth', 'REST APIs', 'PDF/Image Client Processing'].map((tech) => (
-                        <span key={tech} className="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-lg border border-gray-200/50 font-medium">
+                        <span
+                          key={tech}
+                          className="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-lg border border-gray-200/50 font-medium"
+                        >
                           {tech}
                         </span>
                       ))}
@@ -504,10 +565,21 @@ export default function ProjectsPage() {
                 <div className="space-y-3.5">
                   <div className="flex items-center justify-between border-b border-gray-150 pb-2">
                     <span className="font-bold text-sm text-gray-800">IEEE MSIT Devs</span>
-                    <span className="bg-secondary/15 text-secondary-dark text-[10px] px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wide">Toolkit Team</span>
+                    <span className="bg-secondary/15 text-secondary-dark text-[10px] px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wide">
+                      Toolkit Team
+                    </span>
                   </div>
-                  {['Nirmit Aggarwal', 'Arpit Singh', 'Aaryan Gupta', 'Vaibhav Gupta', 'Abhishek Choudhary'].map((dev) => (
-                    <div key={dev} className="flex items-center justify-between border-b border-gray-50 pb-2 last:border-0 last:pb-0">
+                  {[
+                    'Nirmit Aggarwal',
+                    'Arpit Singh',
+                    'Aaryan Gupta',
+                    'Vaibhav Gupta',
+                    'Abhishek Choudhary',
+                  ].map((dev) => (
+                    <div
+                      key={dev}
+                      className="flex items-center justify-between border-b border-gray-50 pb-2 last:border-0 last:pb-0"
+                    >
                       <span className="text-sm font-medium text-gray-700">{dev}</span>
                       <span className="text-xs text-gray-400">Developer</span>
                     </div>
@@ -521,7 +593,7 @@ export default function ProjectsPage() {
 
       {/* Lightbox / Zoom Modal */}
       {selectedImg && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex flex-col items-center justify-center p-4 select-none animate-fade-in"
           onClick={() => setSelectedImg(null)}
         >
@@ -535,7 +607,7 @@ export default function ProjectsPage() {
           </button>
 
           {/* Image & Navigation container */}
-          <div 
+          <div
             className="relative max-w-5xl w-full flex flex-col items-center space-y-4 px-12"
             onClick={(e) => e.stopPropagation()}
           >
@@ -549,8 +621,16 @@ export default function ProjectsPage() {
             </button>
 
             <img
-              src={activeTab === 'smp' ? smpImages[smpImgIndex].src : toolkitImages[toolkitImgIndex].src}
-              alt={activeTab === 'smp' ? smpImages[smpImgIndex].title : toolkitImages[toolkitImgIndex].title}
+              src={
+                activeTab === 'smp'
+                  ? smpImages[smpImgIndex].src
+                  : toolkitImages[toolkitImgIndex].src
+              }
+              alt={
+                activeTab === 'smp'
+                  ? smpImages[smpImgIndex].title
+                  : toolkitImages[toolkitImgIndex].title
+              }
               className="max-w-full max-h-[75vh] object-contain rounded-2xl shadow-2xl border border-white/10"
             />
 
@@ -564,7 +644,9 @@ export default function ProjectsPage() {
             </button>
 
             <p className="text-white/90 text-sm font-semibold tracking-wide bg-white/10 px-4 py-1.5 rounded-full border border-white/15 backdrop-blur-md">
-              {activeTab === 'smp' ? smpImages[smpImgIndex].title : toolkitImages[toolkitImgIndex].title}
+              {activeTab === 'smp'
+                ? smpImages[smpImgIndex].title
+                : toolkitImages[toolkitImgIndex].title}
             </p>
           </div>
         </div>
