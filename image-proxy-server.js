@@ -1,5 +1,5 @@
 const express = require('express');
-const fetch = require('node-fetch');
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -40,19 +40,48 @@ function isValidUrl(url) {
   }
 }
 
-// Get content type from response headers
-function getContentType(headers) {
+// Get content type from response headers and url
+function getContentType(headers, targetUrl) {
   const contentType = headers.get('content-type');
   if (contentType) return contentType;
   
-  // Fallback to common image types
-  const url = headers.get('url') || '';
+  // Fallback to common image types based on URL
+  const url = (targetUrl || '').toLowerCase();
   if (url.includes('.jpg') || url.includes('.jpeg')) return 'image/jpeg';
   if (url.includes('.png')) return 'image/png';
   if (url.includes('.gif')) return 'image/gif';
   if (url.includes('.webp')) return 'image/webp';
   
   return 'image/jpeg'; // Default fallback
+}
+
+// Safe fetch function that validates redirect locations to prevent SSRF
+async function safeFetch(url, options, depth = 0) {
+  if (depth > 5) {
+    throw new Error('Too many redirects');
+  }
+  
+  const response = await fetch(url, {
+    ...options,
+    redirect: 'manual'
+  });
+  
+  if (response.status >= 300 && response.status < 400) {
+    const location = response.headers.get('location');
+    if (!location) {
+      return response;
+    }
+    
+    // Resolve relative redirects against the current URL
+    const resolvedUrl = new URL(location, url).toString();
+    if (!isValidUrl(resolvedUrl)) {
+      throw new Error('Redirect to non-permitted domain is blocked');
+    }
+    
+    return safeFetch(resolvedUrl, options, depth + 1);
+  }
+  
+  return response;
 }
 
 // Main image proxy endpoint
@@ -83,17 +112,24 @@ app.get('/image', async (req, res) => {
       allowedDomains: ALLOWED_DOMAINS 
     });
   }
+
+  // Create timeout controller (15s timeout limit)
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 15000);
   
   try {
-    // Fetch the image
-    const response = await fetch(decodedUrl, {
+    // Fetch the image safely
+    const response = await safeFetch(decodedUrl, {
       method: 'GET',
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
         'Accept': 'image/*',
         'Accept-Encoding': 'gzip, deflate, br'
-      }
+      },
+      signal: controller.signal
     });
+    
+    clearTimeout(timeoutId);
     
     if (!response.ok) {
       return res.status(response.status).json({ 
@@ -101,22 +137,45 @@ app.get('/image', async (req, res) => {
         status: response.status 
       });
     }
+
+    // Size check from headers
+    const contentLength = response.headers.get('content-length');
+    const MAX_BYTES = 50 * 1024 * 1024; // 50MB
+    if (contentLength && parseInt(contentLength, 10) > MAX_BYTES) {
+      return res.status(413).json({ error: 'File size exceeds 50MB limit' });
+    }
     
-    // Get image buffer
-    const buffer = await response.buffer();
-    
-    // Set appropriate headers
-    const contentType = getContentType(response.headers);
+    // Set appropriate response headers
+    const contentType = getContentType(response.headers, decodedUrl);
     res.setHeader('Content-Type', contentType);
-    res.setHeader('Content-Length', buffer.length);
+    if (contentLength) {
+      res.setHeader('Content-Length', contentLength);
+    }
     res.setHeader('Cache-Control', 'public, max-age=3600'); // Cache for 1 hour
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
     
-    // Send the image
-    res.send(buffer);
+    // Stream response body directly with byte limit check to prevent memory exhaustion
+    let bytesRead = 0;
+    response.body.on('data', (chunk) => {
+      bytesRead += chunk.length;
+      if (bytesRead > MAX_BYTES) {
+        response.body.destroy();
+        if (!res.headersSent) {
+          res.status(413).json({ error: 'File size limit exceeded' });
+        }
+      }
+    });
+
+    response.body.pipe(res);
     
   } catch (error) {
+    clearTimeout(timeoutId);
     console.error('Proxy error:', error);
+    
+    if (error.name === 'AbortError') {
+      return res.status(504).json({ error: 'Gateway timeout: Request took longer than 15s' });
+    }
+    
     res.status(500).json({ 
       error: 'Internal server error while fetching image',
       details: error.message 
@@ -151,11 +210,7 @@ app.use((req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Image proxy server running on http://localhost:${PORT}`);
-  console.log(`📡 Proxy endpoint: http://localhost:${PORT}/image?url=ENCODED_URL`);
-  console.log(`🏥 Health check: http://localhost:${PORT}/health`);
-  console.log(`🔒 CORS enabled for: http://localhost:5173`);
-  console.log(`✅ Allowed domains: ${ALLOWED_DOMAINS.join(', ')}`);
+  console.log(`Image proxy server running on http://localhost:${PORT}`);
 });
 
 module.exports = app;

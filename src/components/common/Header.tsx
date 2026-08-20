@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, ChevronDown, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { HOME_PATH } from '../../constants/paths';
+import { HOME_PATH, PROJECTS_PATH } from '../../constants/paths';
 import { chaptersList } from '../../data/chapters';
 
 const Header = () => {
@@ -124,6 +124,12 @@ const Header = () => {
           >
             Events
           </Link>
+          <Link
+            to={PROJECTS_PATH}
+            className="text-gray-700 hover:text-primary transition-colors font-medium text-sm"
+          >
+            Projects
+          </Link>
 
           <div className="relative chapters-dropdown">
             <button
@@ -214,6 +220,13 @@ const Header = () => {
               className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium text-base"
             >
               Events
+            </Link>
+            <Link
+              to={PROJECTS_PATH}
+              onClick={closeMobileMenu}
+              className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium text-base"
+            >
+              Projects
             </Link>
 
             <div className="chapters-dropdown">
