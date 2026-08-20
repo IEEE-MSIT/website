@@ -28,6 +28,12 @@ const routes = [
     changefreq: 'monthly',
     priority: '0.6',
   },
+  {
+    url: '/projects',
+    lastmod: new Date().toISOString(),
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
 ];
 
 const generateSitemap = () => {

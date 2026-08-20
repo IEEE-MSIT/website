@@ -204,12 +204,14 @@ export default function ProjectsPage() {
                   <button
                     onClick={prevSmpImage}
                     className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/20 backdrop-blur text-white hover:bg-white/40 transition-colors"
+                    aria-label="Previous screenshot"
                   >
                     <ChevronLeft className="w-4 h-4" />
                   </button>
                   <button
                     onClick={nextSmpImage}
                     className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/20 backdrop-blur text-white hover:bg-white/40 transition-colors"
+                    aria-label="Next screenshot"
                   >
                     <ChevronRight className="w-4 h-4" />
                   </button>
@@ -224,6 +226,7 @@ export default function ProjectsPage() {
                       className={`h-2 rounded-full transition-all ${
                         smpImgIndex === idx ? 'w-6 bg-primary' : 'w-2 bg-gray-300'
                       }`}
+                      aria-label={`Go to screenshot ${idx + 1}`}
                     />
                   ))}
                 </div>
@@ -438,12 +441,14 @@ export default function ProjectsPage() {
                   <button
                     onClick={prevToolkitImage}
                     className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/20 backdrop-blur text-white hover:bg-white/40 transition-colors"
+                    aria-label="Previous screenshot"
                   >
                     <ChevronLeft className="w-4 h-4" />
                   </button>
                   <button
                     onClick={nextToolkitImage}
                     className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/20 backdrop-blur text-white hover:bg-white/40 transition-colors"
+                    aria-label="Next screenshot"
                   >
                     <ChevronRight className="w-4 h-4" />
                   </button>
@@ -458,6 +463,7 @@ export default function ProjectsPage() {
                       className={`h-2 rounded-full transition-all ${
                         toolkitImgIndex === idx ? 'w-6 bg-primary' : 'w-2 bg-gray-300'
                       }`}
+                      aria-label={`Go to screenshot ${idx + 1}`}
                     />
                   ))}
                 </div>
