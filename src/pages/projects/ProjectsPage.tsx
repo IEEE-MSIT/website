@@ -335,7 +335,7 @@ export default function ProjectsPage() {
                       Team Lead
                     </span>
                   </div>
-                  {['Kabir', 'Daksh', 'Hitesh', 'Harsh'].map((dev) => (
+                  {['Kabir', 'Daksh', 'Hitesh'].map((dev) => (
                     <div
                       key={dev}
                       className="flex items-center justify-between border-b border-gray-50 pb-2 last:border-0 last:pb-0"
@@ -575,6 +575,7 @@ export default function ProjectsPage() {
                     'Aaryan Gupta',
                     'Vaibhav Gupta',
                     'Abhishek Choudhary',
+                    'Abhinav',
                   ].map((dev) => (
                     <div
                       key={dev}
