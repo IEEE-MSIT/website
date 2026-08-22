@@ -9,9 +9,9 @@ import Footer from './components/common/Footer';
 import SEO from './components/SEO';
 import PWAInstallPrompt from './components/PWAInstallPrompt';
 import PageLoader from './components/common/PageLoader';
-import HomePage from './pages/home/HomePage';
 import { HOME_PATH, FAQ_PATH, TEAM_PATH, EVENTS_PATH, PROJECTS_PATH } from './constants/paths';
 
+const HomePage = lazy(() => import('./pages/home/HomePage'));
 const FAQPage = lazy(() => import('./pages/faq/FAQPage'));
 const TeamPage = lazy(() => import('./pages/team/TeamPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));

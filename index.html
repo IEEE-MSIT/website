@@ -2,25 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <script>
-      (function () {
-        var host = location.hostname;
-        if (host !== 'localhost' && host !== '127.0.0.1') return;
-        if (!('serviceWorker' in navigator)) return;
-        navigator.serviceWorker.getRegistrations().then(function (registrations) {
-          for (var i = 0; i < registrations.length; i++) {
-            registrations[i].unregister();
-          }
-        });
-        if ('caches' in window) {
-          caches.keys().then(function (names) {
-            for (var j = 0; j < names.length; j++) {
-              caches.delete(names[j]);
-            }
-          });
-        }
-      })();
-    </script>
 
     <title>IEEE MSIT - Advancing Technology for Humanity</title>
     <meta name="title" content="IEEE MSIT - Advancing Technology for Humanity" />
@@ -99,6 +80,8 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
 
+    <link rel="prefetch" href="/src/main.tsx" />
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -136,6 +119,30 @@
           "1st Prize in IEEE Day Photo Contest STEM Category"
         ]
       }
+    </script>
+    <script>
+      window.addEventListener(
+        'error',
+        function (e) {
+          if (e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) {
+            console.warn(
+              'Resource load failed. Clearing Service Worker registrations and reloading...',
+              e.target.src || e.target.href
+            );
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.getRegistrations().then(function (registrations) {
+                for (var i = 0; i < registrations.length; i++) {
+                  registrations[i].unregister();
+                }
+                window.location.reload();
+              });
+            } else {
+              window.location.reload();
+            }
+          }
+        },
+        true
+      );
     </script>
   </head>
   <body>

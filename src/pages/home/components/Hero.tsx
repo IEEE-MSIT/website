@@ -74,7 +74,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               src="/IEEEWhiteLogowithTransparentBG.png"
               alt="IEEE Logo"
-              className="h-12 md:h-16 bg-primary hidden sm:block  p-1 shadow-sm"
+              className="h-12 md:h-16 bg-primary hidden sm:block rounded-md p-1 shadow-sm"
             />
             <h1 className="text-6xl md:text-8xl font-serif text-black mr-4 tracking-tight">
               IEEE MSIT
