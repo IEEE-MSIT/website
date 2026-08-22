@@ -332,11 +332,10 @@ export const execom2026 = {
 
     'Membership Development Committee': [
       {
-        name: 'Digar',
+        name: 'Anika Kohli',
         position: 'Chairperson',
         branch: 'N/A',
-        image:
-          'https://drive.google.com/file/d/1xIaB9pXptKqPYXDJFLlvxFjZiGEgcw2E/view?usp=drive_link',
+        image: '#',
         linkedin: '#',
         chapter: 'Membership Development Committee',
         email: undefined,
