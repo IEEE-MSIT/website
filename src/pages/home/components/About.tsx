@@ -169,10 +169,10 @@ const About = () => {
               About IEEE MSIT
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-serif text-black mb-8 leading-tight text-balance">
-              Community of <span className="text-primary">Change-Makers</span>:{' '}
-              <span className="text-secondary">Engineers</span>, Designers, and{' '}
-              <span className="text-accent">Leaders</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-8 leading-tight text-balance">
+              Community of <span className="text-orange-500">Change-Makers</span>:{' '}
+              <span className="text-primary">Engineers</span>, Designers, and{' '}
+              <span className="text-rose-500">Leaders</span>
             </h2>
 
             <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">

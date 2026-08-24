@@ -16,10 +16,10 @@ export const chapters = [
     shortName: 'RAS',
     path: '/chapters/ras',
     logo: '/RAS.png',
-    bgColor: 'from-slate-800 via-slate-900 to-black', // Richer
-    borderColor: 'border-blue-400',
-    accentColor: 'bg-blue-400',
-    textColor: 'text-blue-100',
+    bgColor: 'from-red-800 via-red-900 to-black', // Deep, intense dark background with a subtle touch of red
+    borderColor: 'border-red-600',
+    accentColor: 'bg-rose-500',
+    textColor: 'text-red-100',
     motto: 'Innovation Through Automation',
     description:
       'Advancing the theory and practice of robotics, automation, and intelligent systems through our ROBO TIDING newsletter and cutting-edge workshops.',
