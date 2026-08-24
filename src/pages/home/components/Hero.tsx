@@ -106,15 +106,15 @@ const Hero = () => {
 
             <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed font-sans">
               We're a community of engineering students who organize{' '}
-              <span className="font-serif italic text-orange-500 underline decoration-orange-400/40 decoration-2 underline-offset-4">
+              <span className="font-serif font-bold text-orange-500 underline decoration-orange-400/40 decoration-2 underline-offset-4">
                 workshops, hackathons, and tech events
               </span>{' '}
               to help you learn{' '}
-              <span className="font-serif italic text-primary underline decoration-indigo-400/40 decoration-2 underline-offset-4">
+              <span className="font-serif font-bold text-primary underline decoration-indigo-400/40 decoration-2 underline-offset-4">
                 cutting-edge technology
               </span>
               , build amazing projects, and connect with{' '}
-              <span className="font-serif italic text-rose-500 underline decoration-rose-400/40 decoration-2 underline-offset-4">
+              <span className="font-serif font-bold text-rose-500 underline decoration-rose-400/40 decoration-2 underline-offset-4">
                 like-minded innovators
               </span>
               .
