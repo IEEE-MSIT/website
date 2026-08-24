@@ -103,50 +103,50 @@ const EventCard: React.FC<EventCardProps> = ({ event, className = '', onOpenDeta
         </div>
 
         <div className="mt-auto flex gap-2">
-            <motion.button
-              whileHover={!isCompleted || onOpenDetails ? { scale: 1.02 } : {}}
-              whileTap={!isCompleted || onOpenDetails ? { scale: 0.97 } : {}}
-              className={`w-full py-2 rounded-full transition-colors font-medium text-sm ${
-                onOpenDetails
-                  ? 'bg-primary text-white hover:bg-primary-hover hover:shadow-md'
-                  : isCompleted
-                    ? 'bg-gray-200 text-gray-600 cursor-default'
-                    : 'bg-primary text-white hover:bg-primary-hover hover:shadow-md'
-              }`}
-              onClick={(e) => {
-                e.stopPropagation();
-                if (onOpenDetails) onOpenDetails();
-                else if (!isCompleted) handlePrimary();
-              }}
-              disabled={!onOpenDetails && isCompleted}
-            >
-              {onOpenDetails
-                ? 'View Details'
+          <motion.button
+            whileHover={!isCompleted || onOpenDetails ? { scale: 1.02 } : {}}
+            whileTap={!isCompleted || onOpenDetails ? { scale: 0.97 } : {}}
+            className={`w-full py-2 rounded-full transition-colors font-medium text-sm ${
+              onOpenDetails
+                ? 'bg-primary text-white hover:bg-primary-hover hover:shadow-md'
                 : isCompleted
-                  ? 'Event Ended'
-                  : event.actionLinks?.some((l: string) => l.startsWith('register:'))
-                    ? 'Register'
-                    : event.actionLinks?.some((l: string) => l.startsWith('livestream:'))
-                      ? 'Join Livestream'
-                      : 'View Details'}
-            </motion.button>
+                  ? 'bg-gray-200 text-gray-600 cursor-default'
+                  : 'bg-primary text-white hover:bg-primary-hover hover:shadow-md'
+            }`}
+            onClick={(e) => {
+              e.stopPropagation();
+              if (onOpenDetails) onOpenDetails();
+              else if (!isCompleted) handlePrimary();
+            }}
+            disabled={!onOpenDetails && isCompleted}
+          >
+            {onOpenDetails
+              ? 'View Details'
+              : isCompleted
+                ? 'Event Ended'
+                : event.actionLinks?.some((l: string) => l.startsWith('register:'))
+                  ? 'Register'
+                  : event.actionLinks?.some((l: string) => l.startsWith('livestream:'))
+                    ? 'Join Livestream'
+                    : 'View Details'}
+          </motion.button>
 
-            <motion.button
-              whileHover={!isCompleted ? { scale: 1.08 } : {}}
-              whileTap={!isCompleted ? { scale: 0.92 } : {}}
-              className={`bg-primary/10 text-primary px-3 py-2 rounded-full transition-colors font-medium text-sm flex items-center gap-1 ${
-                isCompleted ? 'opacity-50 cursor-not-allowed' : 'hover:bg-primary hover:text-white'
-              }`}
-              title={isCompleted ? 'Sharing disabled for ended events' : 'Share Event'}
-              onClick={(e) => {
-                e.stopPropagation();
-                if (!isCompleted) handleShare();
-              }}
-              aria-disabled={isCompleted}
-              disabled={isCompleted}
-            >
-              <Share2 className="w-4 h-4" />
-            </motion.button>
+          <motion.button
+            whileHover={!isCompleted ? { scale: 1.08 } : {}}
+            whileTap={!isCompleted ? { scale: 0.92 } : {}}
+            className={`bg-primary/10 text-primary px-3 py-2 rounded-full transition-colors font-medium text-sm flex items-center gap-1 ${
+              isCompleted ? 'opacity-50 cursor-not-allowed' : 'hover:bg-primary hover:text-white'
+            }`}
+            title={isCompleted ? 'Sharing disabled for ended events' : 'Share Event'}
+            onClick={(e) => {
+              e.stopPropagation();
+              if (!isCompleted) handleShare();
+            }}
+            aria-disabled={isCompleted}
+            disabled={isCompleted}
+          >
+            <Share2 className="w-4 h-4" />
+          </motion.button>
         </div>
       </div>
     </motion.div>

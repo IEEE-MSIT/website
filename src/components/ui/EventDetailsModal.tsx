@@ -134,7 +134,8 @@ const EventDetailsModal: React.FC<EventDetailsModalProps> = ({ event, onClose })
                 const livestreamUrl = link.startsWith('livestream:')
                   ? link.split('livestream:')[1]?.trim()
                   : null;
-                const href = registerUrl || livestreamUrl || (/^https?:\/\//i.test(link) ? link : null);
+                const href =
+                  registerUrl || livestreamUrl || (/^https?:\/\//i.test(link) ? link : null);
                 if (!href) return null;
                 return (
                   <a
