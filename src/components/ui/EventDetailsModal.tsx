@@ -53,7 +53,7 @@ const EventDetailsModal: React.FC<EventDetailsModalProps> = ({ event, onClose })
             alt=""
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
           <button
             type="button"
             onClick={onClose}
@@ -63,11 +63,14 @@ const EventDetailsModal: React.FC<EventDetailsModalProps> = ({ event, onClose })
             <X className="w-4 h-4" />
           </button>
           <div className="absolute bottom-4 left-4 right-16">
-            <p className="text-white/90 text-xs uppercase tracking-wide mb-1">
+            <p className="text-white/90 text-xs uppercase tracking-wide mb-1 drop-shadow-sm">
               {event.type}
               {event.status ? ` · ${event.status}` : ''}
             </p>
-            <h2 id="event-details-title" className="text-2xl md:text-3xl font-serif text-white">
+            <h2
+              id="event-details-title"
+              className="text-2xl md:text-3xl font-serif text-white drop-shadow-md"
+            >
               {event.title}
             </h2>
           </div>
