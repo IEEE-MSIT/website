@@ -18,7 +18,7 @@ const ChapterHighlights = () => {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-serif text-black mb-4">
-            Choose Your <span className="text-primary">Engineering</span> House
+            Choose Your <span className="text-orange-500">Engineering</span> House
           </h2>
           <p className="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
             Which chapter calls to your engineering spirit? Each house has its own noble traditions

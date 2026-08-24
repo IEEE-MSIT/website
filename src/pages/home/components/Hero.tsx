@@ -103,15 +103,21 @@ const Hero = () => {
               </em>
               , IEEE
             </p>
-            <p className="text-lg md:text-xl text-black mb-8 leading-relaxed">
+
+            <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed font-sans">
               We're a community of engineering students who organize{' '}
-              <em className="border-b-2 border-dashed border-primary">
+              <span className="font-serif italic text-orange-500 underline decoration-orange-400/40 decoration-2 underline-offset-4">
                 workshops, hackathons, and tech events
-              </em>{' '}
+              </span>{' '}
               to help you learn{' '}
-              <em className="border-b-2 border-dashed border-secondary">cutting-edge technology</em>
+              <span className="font-serif italic text-primary underline decoration-indigo-400/40 decoration-2 underline-offset-4">
+                cutting-edge technology
+              </span>
               , build amazing projects, and connect with{' '}
-              <em className="border-b-2 border-dashed border-accent">like-minded innovators</em>.
+              <span className="font-serif italic text-rose-500 underline decoration-rose-400/40 decoration-2 underline-offset-4">
+                like-minded innovators
+              </span>
+              .
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
