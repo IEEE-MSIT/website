@@ -8,6 +8,7 @@ export interface Event {
   status: EventStatusType;
   startDate: string | null;
   endDate: string | null;
+  vtool?: string | null;
   venue: string | null;
   registrationType: RegistrationTypeType | null;
   actionLinks: string[] | null;

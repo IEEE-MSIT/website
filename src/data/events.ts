@@ -6,6 +6,7 @@ export const events = [
     status: 'completed',
     startDate: '22 April 2026',
     endDate: '22 April 2026',
+    vtool: '',
     venue: 'MSIT, Room No. 406',
     registrationType: 'free',
     actionLinks: [
@@ -26,6 +27,7 @@ export const events = [
     status: 'completed',
     startDate: '23 June 2026',
     endDate: '23 June 2026',
+    vtool: '',
     venue: 'Online',
     registrationType: 'free',
     actionLinks: [
@@ -47,6 +49,7 @@ export const events = [
     status: 'completed',
     startDate: '13th May 2026',
     endDate: '13th May 2026',
+    vtool: '',
     venue: 'Google Meet',
     registrationType: 'free',
     actionLinks: [
@@ -68,6 +71,7 @@ export const events = [
     status: 'completed',
     startDate: '14th April 2026',
     endDate: '14th April 2026',
+    vtool: '',
     venue: 'MSIT',
     registrationType: 'free',
     actionLinks: ['contact: Mehak : +91 8368215595', 'contact: Satyam : +91 7451005000'],
@@ -86,6 +90,7 @@ export const events = [
     status: 'completed',
     startDate: '13 April, 2026',
     endDate: '13 April, 2026',
+    vtool: '',
     venue: 'Google Meet',
     registrationType: 'free',
     actionLinks: ['join: Online Webinar'],
@@ -104,6 +109,7 @@ export const events = [
     status: 'completed',
     startDate: '16 April 2026',
     endDate: '16 April 2026',
+    vtool: '',
     venue: 'Room No 206',
     registrationType: 'free',
     actionLinks: ['contact: JAYANT : 95999 18990', 'contact: RADHIKA : 96504 22130'],
@@ -122,6 +128,7 @@ export const events = [
     status: 'completed',
     startDate: '17th April 2026',
     endDate: '17th April 2026',
+    vtool: '',
     venue: 'Room no. 206',
     registrationType: 'free',
     actionLinks: ['contact: Sumit Roy : +91 8510020963', 'contact: Lakshay : +91 7988944892'],
@@ -140,6 +147,7 @@ export const events = [
     status: 'completed',
     startDate: '18th April, 2026',
     endDate: '18th April, 2026',
+    vtool: '',
     venue: 'Online',
     registrationType: 'free',
     actionLinks: [
@@ -161,6 +169,7 @@ export const events = [
     status: 'completed',
     startDate: '21st April 2026',
     endDate: '22nd April 2026',
+    vtool: '',
     venue: 'Online',
     registrationType: 'free',
     actionLinks: ['contact: Vanisha Raj (SIG Lead) : +91 85058 26381'],
@@ -182,6 +191,7 @@ export const events = [
     status: 'completed',
     startDate: 'July 13th, 2025',
     endDate: 'July 13th, 2025',
+    vtool: '',
     venue: 'Live Workshop Session (Online)',
     registrationType: null,
     actionLinks: [
@@ -205,6 +215,7 @@ export const events = [
     status: 'completed',
     startDate: 'Aug 19th 2026',
     endDate: 'Aug 21st 2026',
+    vtool: 'https://events.vtools.ieee.org/m/567513',
     venue: 'MSIT',
     registrationType: 'free',
     actionLinks: [
@@ -226,6 +237,7 @@ export const events = [
     status: 'completed',
     startDate: '18 July 2026',
     endDate: '18 July 2026',
+    vtool: '',
     venue: 'Google Meet',
     registrationType: 'free',
     actionLinks: [
@@ -246,6 +258,7 @@ export const events = [
     status: 'completed',
     startDate: '11th July 2026',
     endDate: '11th July 2026',
+    vtool: '',
     venue: 'Google Meet',
     registrationType: 'free',
     actionLinks: [
@@ -266,6 +279,7 @@ export const events = [
     status: 'completed',
     startDate: '04th July 2026',
     endDate: '04th July 2026',
+    vtool: '',
     venue: 'Online Webinar',
     registrationType: 'free',
     actionLinks: [
@@ -286,7 +300,8 @@ export const events = [
   //   status: 'completed',
   //   startDate: '2nd July 2026',
   //   endDate: '2nd July 2026',
-  //   venue: 'Online',
+  // vtool:'',
+  // venue: 'Online',
   //   registrationType: 'free',
   //   actionLinks: ['join: Online Session'],
   //   prizes: null,
@@ -303,6 +318,7 @@ export const events = [
     status: 'completed',
     startDate: '27 June 2026',
     endDate: '27 June 2026',
+    vtool: '',
     venue: 'Online',
     registrationType: 'free',
     actionLinks: [
@@ -323,6 +339,7 @@ export const events = [
     status: 'completed',
     startDate: '23 June 2026',
     endDate: '30 June 2026',
+    vtool: '',
     venue: 'Online',
     registrationType: 'free',
     actionLinks: ['https://wie.ieee.org'],

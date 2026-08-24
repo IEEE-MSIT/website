@@ -1,12 +1,15 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { events } from '../../data/data';
 import EventCard from '../../components/ui/EventCard';
+import EventDetailsModal from '../../components/ui/EventDetailsModal';
 import { ArrowLeft } from 'lucide-react';
 import { HOME_PATH } from '../../constants/paths';
 import { Link } from 'react-router-dom';
+import type { Event } from '../../types';
 
 const EventsPage: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
   const societies = useMemo(() => {
     const set = new Set<string>();
@@ -106,7 +109,11 @@ const EventsPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {paginatedEvents.map((event, idx) => (
               <div key={idx} className="h-full flex">
-                <EventCard event={event} className="flex-1" />
+                <EventCard
+                  event={event}
+                  className="flex-1"
+                  onOpenDetails={() => setSelectedEvent(event)}
+                />
               </div>
             ))}
           </div>
@@ -158,6 +165,10 @@ const EventsPage: React.FC = () => {
           </div>
         </div>
       </main>
+
+      {selectedEvent && (
+        <EventDetailsModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
+      )}
     </>
   );
 };

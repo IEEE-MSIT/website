@@ -6,11 +6,16 @@ import type { Event } from '../../types';
 interface EventCardProps {
   event: Event;
   className?: string;
+  onOpenDetails?: () => void;
 }
 
-const EventCard: React.FC<EventCardProps> = ({ event, className = '' }) => {
+const EventCard: React.FC<EventCardProps> = ({ event, className = '', onOpenDetails }) => {
   const isCompleted = String((event && event.status) || '').toLowerCase() === 'completed';
   const handlePrimary = () => {
+    if (onOpenDetails) {
+      onOpenDetails();
+      return;
+    }
     const registerLink = event.actionLinks
       ?.find((l: string) => l.startsWith('register:'))
       ?.split('register:')[1]
@@ -40,7 +45,10 @@ const EventCard: React.FC<EventCardProps> = ({ event, className = '' }) => {
   return (
     <motion.div
       whileHover={{ y: -6, transition: { duration: 0.25, ease: 'easeOut' } }}
-      className={`${className} overflow-hidden rounded-xl bg-white flex flex-col group shadow-sm hover:shadow-xl transition-shadow duration-300 h-full border border-gray-100/90`}
+      className={`${className} overflow-hidden rounded-xl bg-white flex flex-col group shadow-sm hover:shadow-xl transition-shadow duration-300 h-full border border-gray-100/90 ${
+        onOpenDetails ? 'cursor-pointer' : ''
+      }`}
+      onClick={onOpenDetails}
     >
       <div className="relative w-full overflow-hidden" style={{ paddingTop: '75%' }}>
         <img
@@ -95,39 +103,50 @@ const EventCard: React.FC<EventCardProps> = ({ event, className = '' }) => {
         </div>
 
         <div className="mt-auto flex gap-2">
-          <motion.button
-            whileHover={!isCompleted ? { scale: 1.02 } : {}}
-            whileTap={!isCompleted ? { scale: 0.97 } : {}}
-            className={`w-full py-2 rounded-full transition-colors font-medium text-sm ${
-              isCompleted
-                ? 'bg-gray-200 text-gray-600 cursor-default'
-                : 'bg-primary text-white hover:bg-primary-hover hover:shadow-md'
-            }`}
-            onClick={isCompleted ? undefined : handlePrimary}
-            disabled={isCompleted}
-          >
-            {isCompleted
-              ? 'Event Ended'
-              : event.actionLinks?.some((l: string) => l.startsWith('register:'))
-                ? 'Register'
-                : event.actionLinks?.some((l: string) => l.startsWith('livestream:'))
-                  ? 'Join Livestream'
-                  : 'View Details'}
-          </motion.button>
+            <motion.button
+              whileHover={!isCompleted || onOpenDetails ? { scale: 1.02 } : {}}
+              whileTap={!isCompleted || onOpenDetails ? { scale: 0.97 } : {}}
+              className={`w-full py-2 rounded-full transition-colors font-medium text-sm ${
+                onOpenDetails
+                  ? 'bg-primary text-white hover:bg-primary-hover hover:shadow-md'
+                  : isCompleted
+                    ? 'bg-gray-200 text-gray-600 cursor-default'
+                    : 'bg-primary text-white hover:bg-primary-hover hover:shadow-md'
+              }`}
+              onClick={(e) => {
+                e.stopPropagation();
+                if (onOpenDetails) onOpenDetails();
+                else if (!isCompleted) handlePrimary();
+              }}
+              disabled={!onOpenDetails && isCompleted}
+            >
+              {onOpenDetails
+                ? 'View Details'
+                : isCompleted
+                  ? 'Event Ended'
+                  : event.actionLinks?.some((l: string) => l.startsWith('register:'))
+                    ? 'Register'
+                    : event.actionLinks?.some((l: string) => l.startsWith('livestream:'))
+                      ? 'Join Livestream'
+                      : 'View Details'}
+            </motion.button>
 
-          <motion.button
-            whileHover={!isCompleted ? { scale: 1.08 } : {}}
-            whileTap={!isCompleted ? { scale: 0.92 } : {}}
-            className={`bg-primary/10 text-primary px-3 py-2 rounded-full transition-colors font-medium text-sm flex items-center gap-1 ${
-              isCompleted ? 'opacity-50 cursor-not-allowed' : 'hover:bg-primary hover:text-white'
-            }`}
-            title={isCompleted ? 'Sharing disabled for ended events' : 'Share Event'}
-            onClick={isCompleted ? undefined : handleShare}
-            aria-disabled={isCompleted}
-            disabled={isCompleted}
-          >
-            <Share2 className="w-4 h-4" />
-          </motion.button>
+            <motion.button
+              whileHover={!isCompleted ? { scale: 1.08 } : {}}
+              whileTap={!isCompleted ? { scale: 0.92 } : {}}
+              className={`bg-primary/10 text-primary px-3 py-2 rounded-full transition-colors font-medium text-sm flex items-center gap-1 ${
+                isCompleted ? 'opacity-50 cursor-not-allowed' : 'hover:bg-primary hover:text-white'
+              }`}
+              title={isCompleted ? 'Sharing disabled for ended events' : 'Share Event'}
+              onClick={(e) => {
+                e.stopPropagation();
+                if (!isCompleted) handleShare();
+              }}
+              aria-disabled={isCompleted}
+              disabled={isCompleted}
+            >
+              <Share2 className="w-4 h-4" />
+            </motion.button>
         </div>
       </div>
     </motion.div>
