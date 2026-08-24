@@ -1,12 +1,15 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ArrowRight, Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { events } from '../../../data/data';
 import EventCard from '../../../components/ui/EventCard';
+import EventDetailsModal from '../../../components/ui/EventDetailsModal';
+import type { Event } from '../../../types';
 
 const Events = () => {
   const eventsCarouselRef = useRef<HTMLDivElement>(null);
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const scrollAmount = 400;
 
   const scrollEventsCarousel = (direction: 'left' | 'right') => {
@@ -86,7 +89,7 @@ const Events = () => {
                   transition={{ duration: 0.4, delay: index * 0.08 }}
                   className="w-[280px]"
                 >
-                  <EventCard event={event} />
+                  <EventCard event={event} onOpenDetails={() => setSelectedEvent(event)} />
                 </motion.div>
               ))}
             </div>
@@ -98,7 +101,7 @@ const Events = () => {
               <div className="flex gap-4 pb-4 w-max">
                 {events.map((event, index) => (
                   <div key={index} className="w-[200px] h-[440px]">
-                    <EventCard event={event} />
+                    <EventCard event={event} onOpenDetails={() => setSelectedEvent(event)} />
                   </div>
                 ))}
               </div>
@@ -133,6 +136,10 @@ const Events = () => {
           </motion.div>
         </div>
       </div>
+
+      {selectedEvent && (
+        <EventDetailsModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
+      )}
     </section>
   );
 };
