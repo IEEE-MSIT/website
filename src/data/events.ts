@@ -49,7 +49,7 @@ export const events = [
     status: 'completed',
     startDate: '13th May 2026',
     endDate: '13th May 2026',
-    vtool: '',
+    vtool: 'https://events.vtools.ieee.org/m/565215',
     venue: 'Google Meet',
     registrationType: 'free',
     actionLinks: [
@@ -147,7 +147,7 @@ export const events = [
     status: 'completed',
     startDate: '18th April, 2026',
     endDate: '18th April, 2026',
-    vtool: '',
+    vtool: 'https://events.vtools.ieee.org/m/565171',
     venue: 'Online',
     registrationType: 'free',
     actionLinks: [
@@ -237,7 +237,7 @@ export const events = [
     status: 'completed',
     startDate: '18 July 2026',
     endDate: '18 July 2026',
-    vtool: '',
+    vtool: 'https://events.vtools.ieee.org/m/568527',
     venue: 'Google Meet',
     registrationType: 'free',
     actionLinks: [
@@ -318,7 +318,7 @@ export const events = [
     status: 'completed',
     startDate: '27 June 2026',
     endDate: '27 June 2026',
-    vtool: '',
+    vtool: 'https://events.vtools.ieee.org/m/567460',
     venue: 'Online',
     registrationType: 'free',
     actionLinks: [
@@ -384,7 +384,7 @@ export const events = [
     description:
       "IEEE Women in Engineering (WIE) organizes 'The STAR Program' to inspire young minds in STEM by introducing them to scientific concepts, career opportunities, and engaging hands-on activities, including building simple circuits and interactive project evaluations.",
     isRelevant: true,
-    cloudinary_url: 'WIE.png',
+    cloudinary_url: '/WIE.png',
     organisedBy: 'IEEE WIE MSIT',
   },
   {
@@ -405,5 +405,28 @@ export const events = [
     cloudinary_url:
       'https://events.vtools.ieee.org/vtools_ui/media/display/97055157-ede0-4f0e-b035-4b61ee556834',
     organisedBy: 'IEEE WiE MSIT',
+  },
+  {
+    title: 'Salesforce Agentforce Developer Workshop',
+    type: 'workshop',
+    category: 'AI & Careers',
+    status: 'completed',
+    startDate: '24 August 2026',
+    endDate: '24 August 2026',
+    vtool: 'https://events.vtools.ieee.org/m/574264',
+    venue: '406 Seminar hall, MSIT building',
+    registrationType: 'free',
+    actionLinks: [
+      'https://chat.whatsapp.com/join_group',
+      'contact: Poonam (CS Chair person) : +91 9773856422',
+      'contact: Shankul (CS Vice Chair person) : +91 7840808449',
+    ],
+    prizes: null,
+    description:
+      'The IEEE Computer Society Chapter organized an expert talk featuring Mr. Diggaj Sharma from Salesforce for the Salesforce Agentforce Developer Workshop (Building AI-Powered Autonomous Agents for Next-Gen Applications). Topics covered include AI + CRM Integration, Intelligent Agent Building, Workflow Execution, Real-World AI Workflows, AI Agents, Large Language Models (LLMs), types of agents, and MCP Servers. Chapter Advisor: Dr. Pooja Kherva.',
+    isRelevant: true,
+    cloudinary_url:
+      'https://events.vtools.ieee.org/vtools_ui/media/display/59d79ef4-3c05-4faf-a5cf-a4544e0b0ae8',
+    organisedBy: 'IEEE MSIT Computer Society',
   },
 ];
